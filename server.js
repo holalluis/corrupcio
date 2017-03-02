@@ -4,7 +4,7 @@ app.listen(3000,function(){console.log('app escoltant al port 3000')});
 
 //root
 app.get('/',function(req,res){
-	res.sendFile(__dirname+"/index.html")
+	res.sendFile("<h1>index.html</h1> <a href=/hola>hola</a>")
 });
 
 //GET hola
