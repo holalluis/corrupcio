@@ -7,6 +7,7 @@
 		#formularis li {
 			padding:0.5em;
 			margin-bottom:0.5em;
+			margin-right:1em;
 			background:#f5f5f5;
 			border:1px solid #ccc;
 		}
@@ -21,6 +22,7 @@
 		}
 		#formularis li form table input{
 			line-height:2em;
+			font-size:14px;
 			width:200px;
 			outline:none;
 		}
@@ -48,7 +50,7 @@
 	<li>Insertar Persona
 		<form method=post action=data/insert/persona.php>
 			<table>
-				<tr><th>Nom *<td><input name=nom placeholder="Nom i cognoms persona" required>
+				<tr><th>Nom *<td><input name=nom placeholder="Nom i cognoms" required>
 				<tr><th>Data naixement<td><input type=date name=naixement>
 				<tr><th><td><button>Insertar</button>
 			</table>
@@ -68,4 +70,7 @@
 				<tr><th><td><button>Insertar</button>
 			</table>
 		</form>
+	<li>Insertar Condemna #TODO
+	<li>Insertar Relació Partit-Cas #TODO
+	<li>Insertar Relació Empresa-Cas #TODO
 </ul>

@@ -79,3 +79,18 @@
 		<li><a href="https://es.wikipedia.org/wiki/Anexo:Casos_judiciales_relacionados_con_corrupci%C3%B3n_pol%C3%ADtica_en_Espa%C3%B1a">https://es.wikipedia.org/wiki/Anexo:Casos_judiciales_relacionados_con_corrupci%C3%B3n_pol%C3%ADtica_en_Espa%C3%B1a</a>
 	</ul>
 </div>
+
+<!--per fer-->
+<hr>
+<div style="padding:1em;">TASQUES DESENVOLUPAMENT WEB
+	<ul>
+		<li>Inserció de condemnes
+		<li>Inserció de relacions partits-casos
+		<li>Inserció de relacions empreses-casos
+		<li>casos.php
+		<li>persones.php
+		<li>partits.php
+		<li>empreses.php
+		<li>Comprovar noms repetits durant la inserció
+	</ul>
+</div>
