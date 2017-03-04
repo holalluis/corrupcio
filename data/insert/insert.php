@@ -8,7 +8,7 @@
 	//inserta ordre general
 	function insert($sql){
 		global $mysql;
-		mysqli_query($mysql,$sql) or die(mysql_error());
+		mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
 		echo "
 			<div style=text-align:center>
 				<b>$sql</b>
@@ -19,30 +19,5 @@
 		";
 	}
 
-	//inserta un cas
-	function insertCas($nom,$espoli,$any) {
-		$sql="INSERT INTO casos (nom,espoli,any) VALUES ('$nom',$espoli,$any)";
-		insert($sql);
-	}
-
-	//inserta una persona
-	function insertPersona($nom,$naixement)
-	{
-		$sql="INSERT INTO persones (nom,naixement) VALUES ('$nom','$naixement')";
-		insert($sql);
-	}
-
-	//inserta un partit
-	function insertPartit($nom,$nom_llarg)
-	{
-		$sql="INSERT INTO partits (nom,nom_llarg) VALUES ('$nom','$nom_llarg')";
-		insert($sql);
-	}
-
-	//inserta una empresa
-	function insertEmpresa($nom)
-	{
-		$sql="INSERT INTO empreses (nom) VALUES ('$nom')";
-		insert($sql);
-	}
+	header("location: ".$_SERVER['HTTP_REFERER']);
 ?>

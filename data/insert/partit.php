@@ -10,5 +10,6 @@ $nom_llarg=mysql_real_escape_string($_POST['nom_llarg']);
 if($nom=="")die("nom en blanc");
 
 //inserta
-insertPartit($nom,$nom_llarg);
+$sql="INSERT INTO partits (nom,nom_llarg) VALUES ('$nom','$nom_llarg')";
+insert($sql);
 ?>

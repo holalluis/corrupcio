@@ -11,11 +11,23 @@
 			background:#f5f5f5;
 			border:1px solid #ccc;
 		}
+		#formularis li .activador{
+			cursor:pointer;
+			color:rgba(0,0,0,0.55);
+		}
+		#formularis li .activador:hover{
+			text-decoration:underline;
+			color:black;
+		}
 		#formularis li form{
 			margin-top:1em;
+			display:none;
+		}
+		#formularis li.visible form{
+			display:block;
 		}
 		#formularis li form table{
-			margin-left:3em;
+			margin-left:1em;
 		}
 		#formularis li form table th{
 			padding:0 0.5em;
@@ -26,19 +38,38 @@
 			width:200px;
 			outline:none;
 		}
+		#formularis li form table select {
+			width:100%;
+			padding:1em;;
+		}
 		#formularis li form table button {
 			width:100%;
 			padding:1em;;
 		}
 	</style>
-</head><body>
+	<script>
+		function init()
+		{
+			listeners()
+		}
+		function listeners()
+		{
+			var lis=qsa("#formularis > li > span.activador");
+			for(var i=0;i<lis.length;i++)
+			{
+				lis[i].onclick=function(){this.parentNode.classList.toggle('visible')}
+			}
+		}
+	</script>
+</head><body onload=init()>
 <?php include'navbar.php'?>
 
 <h1>Insertar a la base de dades</h1>
 <div style="padding:0 0 1em 1em">Les dades amb un asterisc (*) són obligatòries</div>
 
 <ul id=formularis>
-	<li>Insertar Cas de corrupció 
+	<li>
+		<span class=activador>Nou Cas</span>
 		<form method=post action=data/insert/cas.php>
 			<table>
 				<tr><th>Nom *<td><input name=nom placeholder="Cas x" required>
@@ -47,7 +78,9 @@
 				<tr><th><td><button>Insertar</button>
 			</table>
 		</form>
-	<li>Insertar Persona
+	</li>
+	<li>
+		<span class=activador>Nova Persona</span>
 		<form method=post action=data/insert/persona.php>
 			<table>
 				<tr><th>Nom *<td><input name=nom placeholder="Nom i cognoms" required>
@@ -55,7 +88,9 @@
 				<tr><th><td><button>Insertar</button>
 			</table>
 		</form>
-	<li>Insertar Partit polític
+	</li>
+	<li>
+		<span class=activador>Nou Partit</span>
 		<form method=post action=data/insert/partit.php>
 			<table>
 				<tr><th>Nom *<td><input name=nom placeholder="Sigles partit" required>
@@ -63,14 +98,14 @@
 				<tr><th><td><button>Insertar</button>
 			</table>
 		</form>
-	<li>Insertar Empresa
+	</li>
+	<li>
+		<span class=activador>Nova Empresa</span>
 		<form method=post action=data/insert/empresa.php>
 			<table>
 				<tr><th>Nom *<td><input name=nom placeholder="Nom empresa" required>
 				<tr><th><td><button>Insertar</button>
 			</table>
 		</form>
-	<li>Insertar Condemna #TODO
-	<li>Insertar Relació Partit-Cas #TODO
-	<li>Insertar Relació Empresa-Cas #TODO
+	</li>
 </ul>

@@ -13,6 +13,6 @@ if($espoli=="")$espoli=0;
 if($any=="")$any=0;
 
 //inserta
-insertCas($nom,$espoli,$any);
-
+$sql="INSERT INTO casos (nom,espoli,any) VALUES ('$nom',$espoli,$any)";
+insert($sql);
 ?>

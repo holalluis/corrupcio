@@ -11,5 +11,6 @@ if($nom=="")die("nom en blanc");
 if($naixement=="")$naixement="0000-00-00";
 
 //inserta
-insertPersona($nom,$naixement);
+$sql="INSERT INTO persones (nom,naixement) VALUES ('$nom','$naixement')";
+insert($sql);
 ?>

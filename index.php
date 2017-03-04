@@ -5,72 +5,90 @@
 			padding:0.5em;
 		}
 	</style>
+	<style>
+		#resum a {
+			text-decoration:none;
+			color:#bbb;
+		}
+		#resum a:hover {
+			color:#666;
+		}
+	</style>
+	<style>
+		#top5 {
+			margin:auto;
+		}
+		#top5 td{
+			padding:0 0.5em;
+		}
+	</style>
 </head><body>
 <?php include'navbar.php'?>
 
 <!--titol-->
-<h1>Corrupció &mdash; Pàgina inicial &mdash; Resum base de dades</h1>
+<h1>Inici &mdash; Resum base de dades</h1>
 
 <!--resum-->
-<?php
-	function compta($taula) {
-		global $mysql;
-		$n=0;
-		$sql="SELECT COUNT(*) FROM $taula";
-		$res=mysqli_query($mysql,$sql) or die(mysql_error());
-		$row=mysqli_fetch_assoc($res);
-		$n=current($row);
-		return $n;
-	}
-
-	function troba($taula){
-		global $mysql;
-		$sql="SELECT nom FROM $taula ORDER BY id DESC LIMIT 5 ";
-		$res=mysqli_query($mysql,$sql) or die(mysql_error());
-		echo "<span style=color:#ccc>";
-		while($row=mysqli_fetch_assoc($res))
-		{
-			echo $row['nom'].", ";
+<ul id=resum>
+	<?php
+		function compta($taula) {
+			global $mysql;
+			$n=0;
+			$sql="SELECT COUNT(*) FROM $taula";
+			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$row=mysqli_fetch_assoc($res);
+			$n=current($row);
+			return $n;
 		}
-		echo "...</span>";
-	}
-?>
-<ul>
-	<li>Casos de corrupció <?php echo "(".compta('casos').") &mdash; "; troba('casos')?> 
-	<li>Persones implicades <?php echo "(".compta('persones').") &mdash; "; troba('persones')?> 
-	<li>Partits implicats <?php echo "(".compta('partits').") &mdash; "; troba('partits')?> 
-	<li>Empreses implicades <?php echo "(".compta('empreses').") &mdash; "; troba('empreses')?> 
+
+		function troba($taula,$item){
+			global $mysql;
+			$sql="SELECT id,nom FROM $taula ORDER BY id DESC LIMIT 5 ";
+			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			echo "<span style=color:#ccc>";
+			while($row=mysqli_fetch_assoc($res))
+			{
+				$id=$row['id'];
+				$nom=$row['nom'];
+				echo "<a href=$item.php?id=$id 
+							>$nom</a>, ";
+			}
+			echo "...</span>";
+		}
+	?>
+	<li>Casos de corrupció        <?php echo "(".compta('casos').") &mdash; ";    troba('casos','cas')?> 
+	<li>Persones implicades       <?php echo "(".compta('persones').") &mdash; "; troba('persones','persona')?> 
+	<li>Partits implicats         <?php echo "(".compta('partits').") &mdash; ";  troba('partits','partit')?> 
+	<li>Empreses implicades       <?php echo "(".compta('empreses').") &mdash; "; troba('empreses','empresa')?> 
+	<li>Relacions persona-cas     (<?php echo compta('relacional_persona_cas')?>)
+	<li>Relacions persona-partit  (<?php echo compta('relacional_persona_partit')?>)
+	<li>Relacions persona-empresa (<?php echo compta('relacional_persona_empresa')?>)
+	<li>Condemnes                 (<?php echo compta('condemnes')?>)
 </ul>
 
-<!--top 5-->
+<!--top 5 casos--><hr>
 <div style="padding:1em;">
-	<table id=top5>
-		<tr><th colspan=2>Top 5
+	<table id=top5><tr><th colspan=2>Top 5 casos
 		<?php
 			$sql="SELECT * FROM casos ORDER BY espoli DESC LIMIT 5";
-			$res=mysqli_query($mysql,$sql) or die(mysql_error());
+			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
 			$i=1;
 			while($row=mysqli_fetch_assoc($res))
 			{
+				$id=$row['id'];
 				$nom=$row['nom'];
 				$espoli=$row['espoli'];
 				echo "<tr>
-					<td>$i. $nom
+					<td>$i. <a href=cas.php?id=$id>$nom</a>
 					<td>$espoli eur
 				";
 				$i++;
 			}
 		?>
 	</table>
-		<style>
-			#top5 td{
-				padding:0 0.5em;
-			}
-		</style>
 </div>
 
-<!--links-->
-<hr>
+<!--links--><hr>
 <div style="padding:1em;">LINKS
 	<ul>
 		<li><a href="https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n">https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n</a>
@@ -80,17 +98,15 @@
 	</ul>
 </div>
 
-<!--per fer-->
-<hr>
-<div style="padding:1em;">TASQUES DESENVOLUPAMENT WEB
+<!--per fer--> <hr>
+<div style="padding:1em;">DESENVOLUPAMENT
 	<ul>
-		<li>Inserció de condemnes
-		<li>Inserció de relacions partits-casos
-		<li>Inserció de relacions empreses-casos
-		<li>casos.php
-		<li>persones.php
-		<li>partits.php
-		<li>empreses.php
+		<li>Totes les Operacions CRUD (create,read,update,delete)
+		<li>Estructura condemna només ha de dependre de relacio persona-cas
+		<li>Poder buscar a la base de dades
 		<li>Comprovar noms repetits durant la inserció
+		<li>Comprovar relacions repetides durant inserció
 	</ul>
 </div>
+
+<!--footer--><?php include'footer.php'?>

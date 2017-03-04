@@ -9,5 +9,6 @@ $nom=mysql_real_escape_string($_POST['nom']);
 if($nom=="")die("nom en blanc");
 
 //inserta
-insertEmpresa($nom);
+$sql="INSERT INTO empreses (nom) VALUES ('$nom')";
+insert($sql);
 ?>
