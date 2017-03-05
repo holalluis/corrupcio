@@ -1,10 +1,9 @@
 ## Desenvolupament
 <ul>
-  <li> Implementar spec d'operacions d'esborrar
-  <li> Comprovar noms repetits durant la inserció
-  <li> Comprovar relacions repetides durant inserció
-  <li> Acabar totes les operacions CRUD (create,read,update,delete)
-  <li> Poder buscar a la base de dades
+  <li> Implementar spec operacions esborrar
+  <li> Comprovar si E objectes repetits durant inserció
+  <li> Acabar totes les operacions CRUD (create read update delete)
+  <li> Poder buscar
 </ul>
 
 # Corrupció
