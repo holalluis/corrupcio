@@ -65,47 +65,47 @@
 </head><body onload=init()>
 <?php include'navbar.php'?>
 
-<h1>Insertar a la base de dades</h1>
+<h1>Inserta a la base de dades</h1>
 <div style="padding:0 0 1em 1em">Les dades amb un asterisc (*) són obligatòries</div>
 
 <ul id=formularis>
 	<li>
-		<span class=activador>Nou Cas</span>
+		<span class=activador>Nou cas</span>
 		<form method=post action=data/insert/cas.php>
 			<table>
 				<tr><th>Nom *<td><input name=nom placeholder="Cas x" required>
 				<tr><th>Espoli<td><input type=number name=espoli placeholder="euros">
 				<tr><th>Any<td><input type=number name=any value="<?php echo date("Y",time())?>">
-				<tr><th><td><button>Insertar</button>
+				<tr><th><td><button>Inserta</button>
 			</table>
 		</form>
 	</li>
 	<li>
-		<span class=activador>Nova Persona</span>
+		<span class=activador>Nova persona</span>
 		<form method=post action=data/insert/persona.php>
 			<table>
 				<tr><th>Nom *<td><input name=nom placeholder="Nom i cognoms" required>
 				<tr><th>Data naixement<td><input type=date name=naixement>
-				<tr><th><td><button>Insertar</button>
+				<tr><th><td><button>Inserta</button>
 			</table>
 		</form>
 	</li>
 	<li>
-		<span class=activador>Nou Partit</span>
+		<span class=activador>Nou partit</span>
 		<form method=post action=data/insert/partit.php>
 			<table>
 				<tr><th>Nom *<td><input name=nom placeholder="Sigles partit" required>
 				<tr><th>Nom llarg *<td><input name=nom_llarg placeholder="Nom sencer partit" required>
-				<tr><th><td><button>Insertar</button>
+				<tr><th><td><button>Inserta</button>
 			</table>
 		</form>
 	</li>
 	<li>
-		<span class=activador>Nova Empresa</span>
+		<span class=activador>Nova empresa</span>
 		<form method=post action=data/insert/empresa.php>
 			<table>
 				<tr><th>Nom *<td><input name=nom placeholder="Nom empresa" required>
-				<tr><th><td><button>Insertar</button>
+				<tr><th><td><button>Inserta</button>
 			</table>
 		</form>
 	</li>

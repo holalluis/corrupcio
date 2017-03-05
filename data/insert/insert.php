@@ -1,9 +1,11 @@
 <?php
 	/*
-		CRUD - create, read, update, delete
+		CRUD : CREATE, read, update, delete
 		wrappers
 	*/
-	include'../../mysql.php';
+	$root=realpath($_SERVER["DOCUMENT_ROOT"]);
+	$root.="/corrupcio";
+	include"$root/mysql.php";
 
 	//inserta ordre general
 	function insert($sql){
@@ -13,8 +15,8 @@
 			<div style=text-align:center>
 				<b>$sql</b>
 				<br>Executat correctament
-				<br><a href='../../index.php'>Inici</a>
-				<br><a href='../../insert.php'>Seguir insertant</a>
+				<br><a href='$root/index.php'>Inici</a>
+				<br><a href='$root/insert.php'>Seguir insertant</a>
 			</div>
 		";
 	}

@@ -1,16 +1,18 @@
-
 <div id=navbar>
 	<div id='burger' onclick="">&#9776;</div>
-	<div class='navbar_item' onclick=window.location='index.php'> INICI</div>
-	<div class='navbar_item' onclick=window.location='casos.php'> Casos de corrupció </div>
-	<div class='navbar_item' onclick=window.location='persones.php'> Persones </div>
-	<div class='navbar_item' onclick=window.location='partits.php'> Partits </div>
-	<div class='navbar_item' onclick=window.location='empreses.php'> Empreses </div>
+	<div class='navbar_item' onclick=window.location='index.php'    > INICI</div>
+	<div class='navbar_item' onclick=window.location='casos.php'    > Casos</div>
+	<div class='navbar_item' onclick=window.location='persones.php' > Persones</div>
+	<div class='navbar_item' onclick=window.location='partits.php'  > Partits</div>
+	<div class='navbar_item' onclick=window.location='empreses.php' > Empreses</div>
+	<div class='navbar_item' onclick=window.location='relacions.php'> Relacions</div>
 	<div class='navbar_item' onclick=window.location='condemnes.php'> Condemnes</div>
-	<div class='navbar_item' onclick=window.location='insert.php'> AFEGIR </div>
-	<div class='navbar_item' onclick="qs('#busca').classList.toggle('amagat');qs('#q').focus()"> Busca</div>
+	<div class='navbar_item' onclick=window.location='insert.php'   > INSERTA</div>
+	<div class='navbar_item' onclick="qs('#busca').classList.toggle('amagat');qs('#q').focus()">Busca</div>
 </div>
-<!--busca--><?php include 'busca.php'?>
+
+<!--menu buscar-->
+<?php include 'busca.php'?>
 
 <style>
 	#navbar {

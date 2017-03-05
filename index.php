@@ -4,21 +4,15 @@
 		h1{
 			padding:0.5em;
 		}
-	</style>
-	<style>
-		#resum a {
+		ul#resum a {
 			text-decoration:none;
 			color:#bbb;
 		}
-		#resum a:hover {
+		ul#resum a:hover {
 			color:#666;
+			text-decoration:underline;
 		}
-	</style>
-	<style>
-		#top5 {
-			margin:auto;
-		}
-		#top5 td{
+		table#top5 td{
 			padding:0 0.5em;
 		}
 	</style>
@@ -45,21 +39,21 @@
 			global $mysql;
 			$sql="SELECT id,nom FROM $taula ORDER BY id DESC LIMIT 5 ";
 			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
-			echo "<span style=color:#ccc>";
+			$items=array();
 			while($row=mysqli_fetch_assoc($res))
 			{
 				$id=$row['id'];
 				$nom=$row['nom'];
-				echo "<a href=$item.php?id=$id 
-							>$nom</a>, ";
+				$items[]="<a href=$item.php?id=$id>$nom</a>";
 			}
-			echo "...</span>";
+
+			return "&rarr;<span style=color:#ccc> ".join(', ',$items)."...</span>";
 		}
 	?>
-	<li>Casos de corrupció        <?php echo "(".compta('casos').") &mdash; ";    troba('casos','cas')?> 
-	<li>Persones implicades       <?php echo "(".compta('persones').") &mdash; "; troba('persones','persona')?> 
-	<li>Partits implicats         <?php echo "(".compta('partits').") &mdash; ";  troba('partits','partit')?> 
-	<li>Empreses implicades       <?php echo "(".compta('empreses').") &mdash; "; troba('empreses','empresa')?> 
+	<li>Casos de corrupció        (<?php echo compta('casos').")    ".troba('casos','cas')?> 
+	<li>Persones                  (<?php echo compta('persones').") ".troba('persones','persona')?> 
+	<li>Partits                   (<?php echo compta('partits').")  ".troba('partits','partit')?> 
+	<li>Empreses                  (<?php echo compta('empreses').") ".troba('empreses','empresa')?> 
 	<li>Relacions persona-cas     (<?php echo compta('relacions_persona_cas')?>)
 	<li>Relacions persona-partit  (<?php echo compta('relacions_persona_partit')?>)
 	<li>Relacions persona-empresa (<?php echo compta('relacions_persona_empresa')?>)

@@ -17,12 +17,12 @@
 <!--resum-->
 <table id=condemnes>
 	<?php
-			$sql="SELECT 
+			$sql="
+				SELECT 
+					condemnes.id,
+					condemnes.anys_de_preso,
 					persones.nom AS persona,
-					persones.id AS persona_id,
-					casos.nom AS cas,
-					anys_de_preso,
-					condemnes.any AS any
+					casos.nom AS cas
 				FROM condemnes,relacions_persona_cas,persones,casos
 				WHERE 
 					condemnes.relacio_persona_cas_id=relacions_persona_cas.id
@@ -32,18 +32,17 @@
 			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
 			while($row=mysqli_fetch_assoc($res))
 			{
-				$persona=$row['persona'];
-				$persona_id=$row['persona_id'];
-				$cas=$row['cas'];
+				$id=$row['id'];
 				$anys_de_preso=$row['anys_de_preso'];
-				$any=$row['any'];
+				$persona=$row['persona'];
+				$cas=$row['cas'];
 				echo "<tr>
-					<td><a href=persona.php?id=$persona_id>$persona</a>
-					<td>$cas
-					<td>$anys_de_preso anys de presó
-					<td>Inici: $any
+					<td>
+						<a href=condemna.php?id=$id>
+							$persona &rarr;
+							$anys_de_preso anys &mdash;
+							pel $cas
 				";
-
 			}
 	?>
 </table>
