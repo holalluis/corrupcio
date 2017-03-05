@@ -98,15 +98,4 @@
 	</ul>
 </div>
 
-<!--per fer--> <hr>
-<div style="padding:1em;">DESENVOLUPAMENT
-	<ul>
-		<li>Totes les Operacions CRUD (create,read,update,delete)
-		<li>Estructura condemna només ha de dependre de relacio persona-cas
-		<li>Poder buscar a la base de dades
-		<li>Comprovar noms repetits durant la inserció
-		<li>Comprovar relacions repetides durant inserció
-	</ul>
-</div>
-
 <!--footer--><?php include'footer.php'?>

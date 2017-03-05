@@ -4,9 +4,21 @@
 ## Monetització
 	Publicitat
 
-### Proposta repartiment beneficis
-	55% Programació
+### Proposta beneficis
+	65% Programació
 	30% Omplir dades
 	5%  Buscar publicitat
-	10% Reserva
+
+## Per fer
+
+<!--per fer--> <hr>
+<div style="padding:1em;">DESENVOLUPAMENT
+	<ul>
+		<li>Totes les Operacions CRUD (create,read,update,delete)
+		<li>Estructura condemna només ha de dependre de relacio persona-cas
+		<li>Poder buscar a la base de dades
+		<li>Comprovar noms repetits durant la inserció
+		<li>Comprovar relacions repetides durant inserció
+	</ul>
+</div>
 
