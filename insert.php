@@ -12,6 +12,7 @@
 			border:1px solid #ccc;
 		}
 		#formularis li .activador{
+			display:block;
 			cursor:pointer;
 			color:rgba(0,0,0,0.55);
 		}

@@ -60,9 +60,9 @@
 	<li>Persones implicades       <?php echo "(".compta('persones').") &mdash; "; troba('persones','persona')?> 
 	<li>Partits implicats         <?php echo "(".compta('partits').") &mdash; ";  troba('partits','partit')?> 
 	<li>Empreses implicades       <?php echo "(".compta('empreses').") &mdash; "; troba('empreses','empresa')?> 
-	<li>Relacions persona-cas     (<?php echo compta('relacional_persona_cas')?>)
-	<li>Relacions persona-partit  (<?php echo compta('relacional_persona_partit')?>)
-	<li>Relacions persona-empresa (<?php echo compta('relacional_persona_empresa')?>)
+	<li>Relacions persona-cas     (<?php echo compta('relacions_persona_cas')?>)
+	<li>Relacions persona-partit  (<?php echo compta('relacions_persona_partit')?>)
+	<li>Relacions persona-empresa (<?php echo compta('relacions_persona_empresa')?>)
 	<li>Condemnes                 (<?php echo compta('condemnes')?>)
 </ul>
 
