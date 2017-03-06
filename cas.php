@@ -155,7 +155,7 @@
 					<input name=cas_id type=hidden value=<?php echo $cas->id?>>
 					<table>
 						<tr><th>Afegeix condemna<th>Anys de presó<th>Delictes<th>Inici
-						<td rowspan=2><button>afegeix</button>
+						<td rowspan=2><button>afegir</button>
 						<tr><td>
 							<select name=relacio_persona_cas_id>
 								<?php
@@ -209,7 +209,7 @@
 			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Partits implicats directa/indirectament (<?php echo $n ?>)
+		Partits implicats (<?php echo $n ?>)
 		<ul>
 		<?php
 			while($row=mysqli_fetch_assoc($res))
@@ -248,7 +248,7 @@
 			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Empreses implicades directa/indirectament (<?php echo $n ?>)
+		Empreses implicades (<?php echo $n ?>)
 		<ul>
 		<?php
 			while($row=mysqli_fetch_assoc($res))
@@ -263,4 +263,8 @@
 		?>
 		</ul>
 	</li>
+</ul>
+
+<ul>
+	<li> <button>esborra cas #TODO</button>
 </ul>

@@ -5,10 +5,11 @@
 	<div class='navbar_item' onclick=window.location='casos.php'    > Casos</div>
 	<div class='navbar_item' onclick=window.location='partits.php'  > Partits</div>
 	<div class='navbar_item' onclick=window.location='empreses.php' > Empreses</div>
-	<div class='navbar_item' onclick=window.location='relacions.php'> Relacions</div>
 	<div class='navbar_item' onclick=window.location='condemnes.php'> Condemnes</div>
-	<div class='navbar_item' onclick=window.location='insert.php'   > INSERTA</div>
+	<div class='navbar_item' onclick=window.location='relacions.php'> Connexions</div>
 	<div class='navbar_item' onclick="qs('#busca').classList.toggle('amagat');qs('#q').focus()">Busca</div>
+	<div class='navbar_item' style=float:right>Edit mode ON</div>
+	<div class='navbar_item' style=float:right onclick=window.location='insert.php'> Inserta</div>
 </div>
 
 <!--menu buscar-->

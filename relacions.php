@@ -35,7 +35,8 @@
 			{
 				$persona=$row['persona'];
 				$cas=$row['cas'];
-				echo "<tr><td>$persona<td>&rarr;<td>$cas";
+				$descripcio=$row['descripcio'];
+				echo "<tr><td>$persona<td>&rarr;<td>$cas<td>$descripcio";
 			}
 	?>
 </table>
@@ -58,7 +59,8 @@
 			{
 				$persona=$row['persona'];
 				$partit=$row['partit'];
-				echo "<tr><td>$persona<td>&rarr;<td>$partit";
+				$descripcio=$row['descripcio'];
+				echo "<tr><td>$persona<td>&rarr;<td>$partit<td>$descripcio";
 			}
 	?>
 </table>
@@ -81,7 +83,8 @@
 			{
 				$persona=$row['persona'];
 				$empresa=$row['empresa'];
-				echo "<tr><td>$persona<td>&rarr;<td>$empresa";
+				$descripcio=$row['descripcio'];
+				echo "<tr><td>$persona<td>&rarr;<td>$empresa<td>$descripcio";
 			}
 	?>
 </table>

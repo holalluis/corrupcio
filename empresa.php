@@ -76,7 +76,6 @@
 			</li>
 		</ul>
 	</li>
-
 	<!--relacions persona-empresa * persona-cas-->
 	<li>
 		<?php
@@ -100,7 +99,7 @@
 			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Casos relacionats directa/indirectament (<?php echo $n ?>)
+		Casos relacionats (<?php echo $n ?>)
 		<ul>
 		<?php
 			while($row=mysqli_fetch_assoc($res))
@@ -115,7 +114,6 @@
 		?>
 		</ul>
 	</li>
-
 	<!--relacions persona-empresa * persona-partit-->
 	<li>
 		<?php
@@ -139,7 +137,7 @@
 			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Partits relacionats directa/indirectament (<?php echo $n ?>)
+		Partits relacionats (<?php echo $n ?>)
 		<ul>
 		<?php
 			while($row=mysqli_fetch_assoc($res))
@@ -154,5 +152,8 @@
 		?>
 		</ul>
 	</li>
+</ul>
 
+<ul>
+	<li> <button>esborra empresa #TODO</button>
 </ul>

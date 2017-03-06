@@ -24,7 +24,7 @@
 <h1>Partits &rsaquo; <?php echo $partit->nom ?></h1>
 
 <ul>
-	<li>Nom llarg: <?php echo $partit->nom_llarg ?>
+	<li>Nom sencer: <?php echo $partit->nom_llarg ?>
 		<button onclick="update('partits','<?php echo $id ?>','nom_llarg')">modifica</button>
 	</li>
 
@@ -105,7 +105,7 @@
 			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Casos relacionats directa/indirectament (<?php echo $n ?>)
+		Casos relacionats (<?php echo $n ?>)
 		<ul>
 		<?php
 			while($row=mysqli_fetch_assoc($res))
@@ -144,7 +144,7 @@
 			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Empreses relacionades directa/indirectament (<?php echo $n ?>)
+		Empreses relacionades (<?php echo $n ?>)
 		<ul>
 		<?php
 			while($row=mysqli_fetch_assoc($res))
@@ -159,4 +159,8 @@
 		?>
 		</ul>
 	</li>
+</ul>
+
+<ul>
+	<li><button>esborra partit #TODO</button>
 </ul>

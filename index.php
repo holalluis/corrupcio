@@ -4,11 +4,16 @@
 		h1{
 			padding:0.5em;
 		}
-		ul#resum a {
+		ul#resum table td {
+			padding:0;
+			border:none;
+			max-width:45%;
+		}
+		ul#resum td:nth-child(n+2) a {
 			text-decoration:none;
 			color:#bbb;
 		}
-		ul#resum a:hover {
+		ul#resum td:nth-child(n+2) a:hover {
 			color:#666;
 			text-decoration:underline;
 		}
@@ -24,40 +29,42 @@
 
 <!--resum-->
 <ul id=resum>
-	<?php
-		function compta($taula) {
-			global $mysql;
-			$n=0;
-			$sql="SELECT COUNT(*) FROM $taula";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
-			$row=mysqli_fetch_assoc($res);
-			$n=current($row);
-			return $n;
-		}
-
-		function troba($taula,$item){
-			global $mysql;
-			$sql="SELECT id,nom FROM $taula ORDER BY id DESC LIMIT 5 ";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
-			$items=array();
-			while($row=mysqli_fetch_assoc($res))
-			{
-				$id=$row['id'];
-				$nom=$row['nom'];
-				$items[]="<a href=$item.php?id=$id>$nom</a>";
+	<table>
+		<?php
+			function compta($taula) {
+				global $mysql;
+				$n=0;
+				$sql="SELECT COUNT(*) FROM $taula";
+				$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+				$row=mysqli_fetch_assoc($res);
+				$n=current($row);
+				return $n;
 			}
 
-			return "&rarr;<span style=color:#ccc> ".join(', ',$items)."...</span>";
-		}
-	?>
-	<li>Persones                   (<?php echo compta('persones').") ".troba('persones','persona')?> 
-	<li>Casos de corrupció         (<?php echo compta('casos').")    ".troba('casos','cas')?> 
-	<li>Partits                    (<?php echo compta('partits').")  ".troba('partits','partit')?> 
-	<li>Empreses                   (<?php echo compta('empreses').") ".troba('empreses','empresa')?> 
-	<li>Connexions persona-cas     (<?php echo compta('relacions_persona_cas')?>)
-	<li>Connexions persona-partit  (<?php echo compta('relacions_persona_partit')?>)
-	<li>Connexions persona-empresa (<?php echo compta('relacions_persona_empresa')?>)
-	<li>Condemnes                  (<?php echo compta('condemnes')?>)
+			function troba($taula,$item){
+				global $mysql;
+				$sql="SELECT id,nom FROM $taula ORDER BY id DESC LIMIT 5 ";
+				$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+				$items=array();
+				while($row=mysqli_fetch_assoc($res))
+				{
+					$id=$row['id'];
+					$nom=$row['nom'];
+					$items[]="<a href=$item.php?id=$id>$nom</a>";
+				}
+
+				return "<span style=color:#ccc> ".join(', ',$items)."...</span>";
+			}
+		?>
+		<tr><td><li><a href=persones.php>Persones</a>                    (<?php echo compta('persones').") <td>".troba('persones','persona')?> 
+		<tr><td><li><a href=casos.php>Casos de corrupció</a>             (<?php echo compta('casos').")    <td>".troba('casos','cas')?> 
+		<tr><td><li><a href=partits.php>Partits</a>                      (<?php echo compta('partits').")  <td>".troba('partits','partit')?> 
+		<tr><td><li><a href=empreses.php>Empreses</a>                    (<?php echo compta('empreses').") <td>".troba('empreses','empresa')?> 
+		<tr><td><li><a href=condemnes.php>Condemnes</a>                  (<?php echo compta('condemnes')?>)
+		<tr><td><li><a href=relacions.php>Connexions persona-cas</a>     (<?php echo compta('relacions_persona_cas')?>)
+		<tr><td><li><a href=relacions.php>Connexions persona-partit</a>  (<?php echo compta('relacions_persona_partit')?>)
+		<tr><td><li><a href=relacions.php>Connexions persona-empresa</a> (<?php echo compta('relacions_persona_empresa')?>)
+	</table>
 </ul>
 
 <!--top 5 casos--><hr>

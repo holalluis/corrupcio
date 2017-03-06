@@ -212,7 +212,7 @@
 					<input name=persona_id type=hidden value=<?php echo $persona->id?>>
 					<table>
 						<tr><th>Afegeix condemna<th>Anys de presó<th>Delictes<th>Inici
-						<td rowspan=2><button>afegeix</button>
+						<td rowspan=2><button>afegir</button>
 						<tr><td>
 							<select name=relacio_persona_cas_id>
 								<?php
@@ -242,4 +242,8 @@
 			</li>
 		</ul>
 	</li>
+</ul>
+
+<ul>
+	<li><button>esborra persona #TODO</button>
 </ul>
