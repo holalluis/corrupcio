@@ -9,6 +9,7 @@
 		$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
 		$row=mysqli_fetch_assoc($res);
 		$empresa=new stdclass;
+		$empresa->id=$row['id'];
 		$empresa->nom=$row['nom'];
 	?>
 	<style>
@@ -22,7 +23,136 @@
 <h1>Empreses &rsaquo; <?php echo $empresa->nom ?></h1>
 
 <ul>
-	<li>Casos relacionats
-	<li>Persones relacionades
-	<li>Partits relacionats
+	<li>
+		<?php
+			$sql="
+				SELECT rel.id, rel.persona_id, persones.nom AS persona
+				FROM relacions_persona_empresa AS rel, persones 
+				WHERE 
+					rel.persona_id=persones.id 
+					AND rel.empresa_id=$empresa->id
+				ORDER BY nom
+				";
+			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$n=mysqli_num_rows($res);
+		?>
+		Persones relacionades (<?php echo $n ?>)
+		<ul>
+			<?php
+				while($row=mysqli_fetch_assoc($res))
+				{
+					$id=$row['id'];
+					$persona=$row['persona'];
+					$persona_id=$row['persona_id'];
+					echo "<li>
+						<a href=persona.php?id=$persona_id>$persona</a>
+						<button onclick=esborra('relacions_persona_empresa',$id)>esborra</button>
+					";
+				}
+			?>
+			<li>
+				<form method=post action=data/insert/relacio_persona_empresa.php>
+					<select name=persona_id>
+						<?php
+							//busca persones no relacionades l'empresa
+							$sql="
+								SELECT id, nom 
+								FROM persones
+								WHERE id NOT IN (SELECT persona_id FROM relacions_persona_empresa WHERE empresa_id = $empresa->id)
+								ORDER BY nom
+							";
+							$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+							while($row=mysqli_fetch_assoc($res))
+							{
+								$id=$row['id'];
+								$nom=$row['nom'];
+								echo "<option value=$id>$nom";
+							}
+						?>
+					</select>
+					<input name=empresa_id type=hidden value=<?php echo $empresa->id?>>
+					<button>afegir</button>
+				</form>
+			</li>
+		</ul>
+	</li>
+
+	<!--relacions persona-empresa * persona-cas-->
+	<li>
+		<?php
+			//busca casos relacionats amb les persones relacionades
+			$sql="
+				SELECT 
+					casos.id AS cas_id,
+					casos.nom AS cas,
+					persones.nom AS persona
+				FROM 
+					relacions_persona_empresa AS rel_pe,
+					relacions_persona_cas     AS rel_pc, 
+					casos,
+					persones
+				WHERE
+					rel_pe.empresa_id = $empresa->id      AND
+					rel_pe.persona_id = rel_pc.persona_id AND
+					casos.id          = rel_pc.cas_id     AND
+					persones.id       = rel_pc.persona_id
+			";
+			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$n=mysqli_num_rows($res);
+		?>
+		Casos relacionats directa/indirectament (<?php echo $n ?>)
+		<ul>
+		<?php
+			while($row=mysqli_fetch_assoc($res))
+			{
+				$cas_id=$row['cas_id'];
+				$cas=$row['cas'];
+				$persona=$row['persona'];
+				echo "<li> 
+					<a href=cas.php?id=$cas_id>$cas</a> (&larr; $persona)
+				";
+			}
+		?>
+		</ul>
+	</li>
+
+	<!--relacions persona-empresa * persona-partit-->
+	<li>
+		<?php
+			//busca partits relacionats amb les persones relacionades
+			$sql="
+				SELECT 
+					partits.id AS partit_id,
+					partits.nom AS partit,
+					persones.nom AS persona
+				FROM 
+					relacions_persona_empresa AS rel_pe,
+					relacions_persona_partit  AS rel_pp, 
+					partits,
+					persones
+				WHERE
+					rel_pe.empresa_id = $empresa->id      AND
+					rel_pe.persona_id = rel_pp.persona_id AND
+					partits.id        = rel_pp.partit_id  AND
+					persones.id       = rel_pp.persona_id
+			";
+			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$n=mysqli_num_rows($res);
+		?>
+		Partits relacionats directa/indirectament (<?php echo $n ?>)
+		<ul>
+		<?php
+			while($row=mysqli_fetch_assoc($res))
+			{
+				$partit_id=$row['partit_id'];
+				$partit=$row['partit'];
+				$persona=$row['persona'];
+				echo "<li> 
+					<a href=partit.php?id=$partit_id>$partit</a> (&larr; $persona)
+				";
+			}
+		?>
+		</ul>
+	</li>
+
 </ul>

@@ -1,8 +1,8 @@
 <div id=navbar>
 	<div id='burger' onclick="">&#9776;</div>
 	<div class='navbar_item' onclick=window.location='index.php'    > INICI</div>
-	<div class='navbar_item' onclick=window.location='casos.php'    > Casos</div>
 	<div class='navbar_item' onclick=window.location='persones.php' > Persones</div>
+	<div class='navbar_item' onclick=window.location='casos.php'    > Casos</div>
 	<div class='navbar_item' onclick=window.location='partits.php'  > Partits</div>
 	<div class='navbar_item' onclick=window.location='empreses.php' > Empreses</div>
 	<div class='navbar_item' onclick=window.location='relacions.php'> Relacions</div>

@@ -209,7 +209,7 @@
 			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Partits implicats directament/indirectament (<?php echo $n ?>)
+		Partits implicats directa/indirectament (<?php echo $n ?>)
 		<ul>
 		<?php
 			while($row=mysqli_fetch_assoc($res))
@@ -248,7 +248,7 @@
 			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Empreses implicades directament/indirectament (<?php echo $n ?>)
+		Empreses implicades directa/indirectament (<?php echo $n ?>)
 		<ul>
 		<?php
 			while($row=mysqli_fetch_assoc($res))

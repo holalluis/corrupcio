@@ -13,11 +13,11 @@
 	</style>
 </head><body>
 <?php include'navbar.php'?>
-<!--titol--><h1>Relacions</h1>
+<!--titol--><h1>Connexions entre persones, casos, partits i empreses</h1>
 
 <div id=root>
 
-<h3>Persona-Cas</h3>
+<h3>Persona-cas</h3>
 <table id=relacions_persona_cas>
 	<?php
 			$sql=
@@ -40,7 +40,7 @@
 	?>
 </table>
 
-<h3>Persona-Partit</h3>
+<h3>Persona-partit</h3>
 <table id=relacions_persona_partit>
 	<?php
 			$sql=
@@ -63,7 +63,7 @@
 	?>
 </table>
 
-<h3>Persona-Empresa</h3>
+<h3>Persona-empresa</h3>
 <table id=relacions_persona_empresa>
 	<?php
 			$sql=

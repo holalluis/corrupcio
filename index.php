@@ -50,14 +50,14 @@
 			return "&rarr;<span style=color:#ccc> ".join(', ',$items)."...</span>";
 		}
 	?>
-	<li>Casos de corrupció        (<?php echo compta('casos').")    ".troba('casos','cas')?> 
-	<li>Persones                  (<?php echo compta('persones').") ".troba('persones','persona')?> 
-	<li>Partits                   (<?php echo compta('partits').")  ".troba('partits','partit')?> 
-	<li>Empreses                  (<?php echo compta('empreses').") ".troba('empreses','empresa')?> 
-	<li>Relacions persona-cas     (<?php echo compta('relacions_persona_cas')?>)
-	<li>Relacions persona-partit  (<?php echo compta('relacions_persona_partit')?>)
-	<li>Relacions persona-empresa (<?php echo compta('relacions_persona_empresa')?>)
-	<li>Condemnes                 (<?php echo compta('condemnes')?>)
+	<li>Persones                   (<?php echo compta('persones').") ".troba('persones','persona')?> 
+	<li>Casos de corrupció         (<?php echo compta('casos').")    ".troba('casos','cas')?> 
+	<li>Partits                    (<?php echo compta('partits').")  ".troba('partits','partit')?> 
+	<li>Empreses                   (<?php echo compta('empreses').") ".troba('empreses','empresa')?> 
+	<li>Connexions persona-cas     (<?php echo compta('relacions_persona_cas')?>)
+	<li>Connexions persona-partit  (<?php echo compta('relacions_persona_partit')?>)
+	<li>Connexions persona-empresa (<?php echo compta('relacions_persona_empresa')?>)
+	<li>Condemnes                  (<?php echo compta('condemnes')?>)
 </ul>
 
 <!--top 5 casos--><hr>
