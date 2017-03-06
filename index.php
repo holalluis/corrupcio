@@ -2,6 +2,9 @@
 	<?php include'imports.php' ?>
 	<style>
 		h1{
+			padding-top:0.5em;
+		}
+		h2{
 			padding:0.5em;
 		}
 		ul#resum table td {
@@ -17,45 +20,49 @@
 			color:#666;
 			text-decoration:underline;
 		}
+		ul#resum table li {
+			margin-top:   0.2em;
+			margin-bottom:0.3em;
+		}
 		table#top5 td{
-			padding:0 0.5em;
+			padding:0.3em 0.5em;
 		}
 	</style>
 </head><body>
 <?php include'navbar.php'?>
 
 <!--titol-->
-<h1>Inici &mdash; Resum base de dades</h1>
+<h1 style=text-align:center>Gran enciclopèdia de la corrupció</h1>
+<h2>Inici &mdash; Resum base de dades</h2>
 
 <!--resum-->
 <ul id=resum>
+	<?php
+		function compta($taula) {
+			global $mysql;
+			$n=0;
+			$sql="SELECT COUNT(*) FROM $taula";
+			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$row=mysqli_fetch_assoc($res);
+			$n=current($row);
+			return $n;
+		}
+
+		function troba($taula,$item){
+			global $mysql;
+			$sql="SELECT id,nom FROM $taula ORDER BY id DESC LIMIT 5 ";
+			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$items=array();
+			while($row=mysqli_fetch_assoc($res))
+			{
+				$id=$row['id'];
+				$nom=$row['nom'];
+				$items[]="<a href=$item.php?id=$id>$nom</a>";
+			}
+			return "<span style=color:#ccc> ".join(', ',$items)."...</span>";
+		}
+	?>
 	<table>
-		<?php
-			function compta($taula) {
-				global $mysql;
-				$n=0;
-				$sql="SELECT COUNT(*) FROM $taula";
-				$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
-				$row=mysqli_fetch_assoc($res);
-				$n=current($row);
-				return $n;
-			}
-
-			function troba($taula,$item){
-				global $mysql;
-				$sql="SELECT id,nom FROM $taula ORDER BY id DESC LIMIT 5 ";
-				$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
-				$items=array();
-				while($row=mysqli_fetch_assoc($res))
-				{
-					$id=$row['id'];
-					$nom=$row['nom'];
-					$items[]="<a href=$item.php?id=$id>$nom</a>";
-				}
-
-				return "<span style=color:#ccc> ".join(', ',$items)."...</span>";
-			}
-		?>
 		<tr><td><li><a href=persones.php>Persones</a>                    (<?php echo compta('persones').") <td>".troba('persones','persona')?> 
 		<tr><td><li><a href=casos.php>Casos de corrupció</a>             (<?php echo compta('casos').")    <td>".troba('casos','cas')?> 
 		<tr><td><li><a href=partits.php>Partits</a>                      (<?php echo compta('partits').")  <td>".troba('partits','partit')?> 
@@ -90,7 +97,7 @@
 </div>
 
 <!--links--><hr>
-<div style="padding:1em;">LINKS
+<div style="padding:1em;">LINKS provisionals
 	<ul>
 		<li><a href="https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n">https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n</a>
 		<li><a href="https://llumsitaquigrafs.cat/">https://llumsitaquigrafs.cat/</a>

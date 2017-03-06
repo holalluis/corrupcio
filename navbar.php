@@ -21,6 +21,7 @@
 		border-bottom:1px solid #ccc;
 		height:50px;
 		padding-left:30px;
+		text-shadow: 0 1px 0 #fff;
 	}
 	#navbar #burger {
 		display:inline-block;

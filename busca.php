@@ -1,7 +1,9 @@
 
 <div id=busca class=amagat>
-	<input id=q type=search placeholder="Busca persones, casos, partits, empreses">
-	<button>&#128270;</button>
+	<form method=get action=resultats.php>
+		<input id=q name=q type=search placeholder="Busca persones, casos, partits, empreses">
+		<button>&#128270;</button>
+	</form>
 </div>
 
 <style>
@@ -17,7 +19,9 @@
 	}
 	#busca input#q {
 		width:50%;
-		font-size:18px;
 		outline:none;
+	}
+	#busca form button {
+		margin-left:-3px;
 	}
 </style>

@@ -1,9 +1,14 @@
 *{margin:0}
 body{
 	overflow-y:scroll;
+	font-family:"Lucida Console", Monaco, monospace;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 table{border-collapse:collapse}
 th,td{border:1px solid #ccc}
 th{font-weight:normal}
-li{margin-bottom:0.3em;margin-top:0.3em}
+li{margin-bottom:0.5em;margin-top:0.5em}
 hr{border:none;border-bottom:1px solid #ccc}
+a{text-decoration:none}
+a:hover{text-decoration:underline}

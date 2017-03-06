@@ -1,9 +1,9 @@
 ## Desenvolupament
 <ul>
   <li> Implementar spec operacions esborrar
-  <li> Comprovar si E objectes repetits durant inserció
+  <li> Comprovar si E objectes repetits durant inserció (relacions)
   <li> Acabar totes les operacions CRUD (create read update delete)
-  <li> Poder buscar
+  <li> Implementar cerques 
 </ul>
 
 # Corrupció
