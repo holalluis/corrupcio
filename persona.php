@@ -4,10 +4,16 @@
 		/* INPUT: id de la persona*/
 		$id=$_GET['id'] or die('persona id no especificat');
 
-		//objecte persona
+		//sql query
 		$sql="SELECT * FROM persones WHERE id=$id";
 		$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+		$n=mysqli_num_rows($res);
 		$row=mysqli_fetch_assoc($res);
+
+		//si no resultats, fora
+		if($n==0){header("location: persones.php");}
+
+		//objecte persona
 		$persona=new stdclass;
 		$persona->id=$row['id'];
 		$persona->nom=$row['nom'];
@@ -245,5 +251,5 @@
 </ul>
 
 <ul>
-	<li><button>esborra persona #TODO</button>
+	<li><button onclick=esborra('persones',<?php echo $persona->id ?>)>esborra persona</button>
 </ul>

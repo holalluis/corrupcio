@@ -4,10 +4,16 @@
 		/* INPUT: id empresa */
 		$id=$_GET['id'] or die('empresa id no especificat');
 
-		//objecte persona
+		//sql query
 		$sql="SELECT * FROM empreses WHERE id=$id";
 		$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+		$n=mysqli_num_rows($res);
 		$row=mysqli_fetch_assoc($res);
+
+		//si no resultats, fora
+		if($n==0){header("location: empreses.php");}
+
+		//objecte empresa
 		$empresa=new stdclass;
 		$empresa->id=$row['id'];
 		$empresa->nom=$row['nom'];
@@ -155,5 +161,5 @@
 </ul>
 
 <ul>
-	<li> <button>esborra empresa #TODO</button>
+	<li><button onclick=esborra('empreses',<?php echo $empresa->id ?>)>esborra empresa</button>
 </ul>

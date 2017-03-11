@@ -4,10 +4,16 @@
 		/* INPUT: id del cas de corrupció*/
 		$id=$_GET['id'] or die('cas id no especificat');
 
-		//objecte cas
+		//sql query
 		$sql="SELECT * FROM casos WHERE id=$id";
 		$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+		$n=mysqli_num_rows($res);
 		$row=mysqli_fetch_assoc($res);
+
+		//si no resultats, fora
+		if($n==0){header("location: casos.php");}
+
+		//objecte cas
 		$cas=new stdclass;
 		$cas->id=$row['id'];
 		$cas->nom=$row['nom'];
@@ -266,5 +272,5 @@
 </ul>
 
 <ul>
-	<li> <button>esborra cas #TODO</button>
+	<li> <button onclick=esborra('casos',<?php echo $cas->id ?>)>esborra cas</button>
 </ul>

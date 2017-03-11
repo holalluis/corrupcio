@@ -1,7 +1,10 @@
 <?php include'mysql.php'?>
-
+<!--utf8 and CSS-->
 <meta charset=utf-8>
+<link rel="icon" href="img/ico.png" type="image/x-icon">
 <link rel=stylesheet href=css.css>
+<meta name="description" content="">
+
 <title>Corrupció</title>
 
 <script>

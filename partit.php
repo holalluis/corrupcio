@@ -4,10 +4,16 @@
 		/* INPUT: id del partit*/
 		$id=$_GET['id'] or die('partit id no especificat');
 
-		//objecte persona
+		//sql query
 		$sql="SELECT * FROM partits WHERE id=$id";
 		$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+		$n=mysqli_num_rows($res);
 		$row=mysqli_fetch_assoc($res);
+
+		//si no resultats, fora
+		if($n==0){header("location: partits.php");}
+
+		//objecte partit
 		$partit=new stdclass;
 		$partit->id=$row['id'];
 		$partit->nom=$row['nom'];
@@ -162,5 +168,5 @@
 </ul>
 
 <ul>
-	<li><button>esborra partit #TODO</button>
+	<li><button onclick=esborra('partits',<?php echo $partit->id ?>)>esborra partit</button>
 </ul>

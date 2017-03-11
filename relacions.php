@@ -31,6 +31,10 @@
 				ORDER BY persones.nom
 			";
 			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			if(mysqli_num_rows($res)==0)
+			{
+				echo "<tr><td><span style=color:#666>~No hi ha resultats</span>";
+			}
 			while($row=mysqli_fetch_assoc($res))
 			{
 				$persona=$row['persona'];
@@ -55,6 +59,10 @@
 				ORDER BY persones.nom
 			";
 			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			if(mysqli_num_rows($res)==0)
+			{
+				echo "<tr><td><span style=color:#666>~No hi ha resultats</span>";
+			}
 			while($row=mysqli_fetch_assoc($res))
 			{
 				$persona=$row['persona'];
@@ -79,6 +87,10 @@
 				ORDER BY persones.nom
 			";
 			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			if(mysqli_num_rows($res)==0)
+			{
+				echo "<tr><td><span style=color:#666>~No hi ha resultats</span>";
+			}
 			while($row=mysqli_fetch_assoc($res))
 			{
 				$persona=$row['persona'];
