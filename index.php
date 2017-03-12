@@ -34,7 +34,7 @@
 <!--titol-->
 <h1 style=text-align:center>Gran enciclopèdia de la Corrupció</h1>
 
-<h2>Inici &mdash; Resum base de dades</h2>
+<h2>Pàgina principal &mdash; Resum base de dades</h2>
 
 <!--resum-->
 <ul id=resum>
@@ -97,7 +97,8 @@
 	</table>
 </div>
 
-<!--links--><hr>
+<hr>
+<!--links
 <div style="padding:1em;">LINKS
 	<ul>
 		<li><a href="https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n">https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n</a>
@@ -106,5 +107,6 @@
 		<li><a href="https://es.wikipedia.org/wiki/Anexo:Casos_judiciales_relacionados_con_corrupci%C3%B3n_pol%C3%ADtica_en_Espa%C3%B1a">https://es.wikipedia.org/wiki/Anexo:Casos_judiciales_relacionados_con_corrupci%C3%B3n_pol%C3%ADtica_en_Espa%C3%B1a</a>
 	</ul>
 </div>
+-->
 
 <!--footer--><?php include'footer.php'?>

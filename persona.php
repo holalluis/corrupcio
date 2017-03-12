@@ -243,7 +243,7 @@
 					$anys_de_preso=$row['anys_de_preso'];
 					$cas=$row['cas'];
 					echo "<li>
-						<a href=condemna.php?id=$id>$cas &rarr; $anys_de_preso any/s de presó</a>
+						<a href=condemna.php?id=$id>$cas &rarr; $anys_de_preso anys de presó</a>
 					";
 				}
 			?>

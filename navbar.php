@@ -32,25 +32,28 @@
 		text-shadow: 0 1px 0 #fff;
 	}
 	#navbar #burger {
-		display:inline-block;
 		color:rgba(0,0,0,0.55);
-		font-size:18px;
 		cursor:pointer;
+		display:inline-block;
+		font-size:18px;
 		padding:0.5em 0.5em 0.5em 0;
 	}
 	#navbar #burger:hover {
 		color:black;
 	}
 	#navbar .navbar_item {
-		display:inline-block;
-		padding:1em 0.5em;
-		cursor:pointer;
-		border-bottom:1px solid transparent;
+		border-bottom:2px solid transparent;
 		color:rgba(0,0,0,0.55);
+		cursor:pointer;
+		display:inline-block;
+		height:34px;
+		padding:15px 0.5em 0 0.5em;
+		vertical-align:top;
+		transition:background 0.15s;
 	}
 	#navbar .navbar_item:hover {
 		background:#f0f0f0;
-		border-bottom:1px solid blue;
+		border-bottom:2px solid #abc;
 		color:rgba(0,0,0,0.85);
 	}
 </style>

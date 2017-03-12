@@ -1,5 +1,5 @@
 <div id=footer>
-	<div class='footer_item'>Corrupció <?php echo date('Y') ?></div>
+	<div class='footer_item' onclick=window.location='about.php'>Corrupció <?php echo date('Y') ?></div>
 	<div class='footer_item' onclick=window.location='README.md'>README.md</div>
 	<div class='footer_item'>Contacta</div>
 	<div class='footer_item'>Avís legal</div>

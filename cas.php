@@ -168,7 +168,7 @@
 					$persona=$row['persona'];
 					$persona_id=$row['persona_id'];
 					echo "<li>
-						<a href=condemna.php?id=$id>$persona: $anys_de_preso any/s de presó ($any) </a>
+						<a href=condemna.php?id=$id>$persona: $anys_de_preso anys de presó ($any) </a>
 					";
 				}
 			?>
