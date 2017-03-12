@@ -1,8 +1,8 @@
 ## Desenvolupament
 <ul>
-  <li> Implementar spec operacions esborrar
-  <li> Comprovar si E objectes repetits durant inserció (relacions)
-  <li> Acabar totes les operacions CRUD (create read update delete)
+	<li> CRUD - Afegir descripcions a relacions_persona_x (càrrecs)
+	<li> CRUD - Comprovar si E objectes repetits durant inserció a cada taula
+	<li> CRUD - Afegir permisos a update i delete
   <li> Implementar cerques 
 </ul>
 

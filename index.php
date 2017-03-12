@@ -32,7 +32,8 @@
 <?php include'navbar.php'?>
 
 <!--titol-->
-<h1 style=text-align:center>Gran enciclopèdia de la corrupció</h1>
+<h1 style=text-align:center>Gran enciclopèdia de la Corrupció</h1>
+
 <h2>Inici &mdash; Resum base de dades</h2>
 
 <!--resum-->
@@ -97,7 +98,7 @@
 </div>
 
 <!--links--><hr>
-<div style="padding:1em;">LINKS provisionals
+<div style="padding:1em;">LINKS
 	<ul>
 		<li><a href="https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n">https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n</a>
 		<li><a href="https://llumsitaquigrafs.cat/">https://llumsitaquigrafs.cat/</a>

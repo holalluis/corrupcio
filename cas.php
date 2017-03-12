@@ -40,14 +40,18 @@
 	<li>
 		Any: 
 		<?php echo $cas->any ?> 
-		<button onclick="update('casos','<?php echo $cas->id ?>','any')">modifica</button>
+		<?php if($edit_mode){ ?>
+			<button onclick="update('casos','<?php echo $cas->id ?>','any')">modifica</button>
+		<?php } ?>
 	</li>
 
 	<!--espoli-->
 	<li>
 		Espoli: 
 		<?php echo $cas->espoli ?> euros 
-		<button onclick="update('casos','<?php echo $cas->id ?>','espoli')">modifica</button>
+		<?php if($edit_mode){ ?>
+			<button onclick="update('casos','<?php echo $cas->id ?>','espoli')">modifica</button>
+		<?php } ?>
 	</li>
 
 	<!--estat-->
@@ -62,7 +66,9 @@
 				echo $cas->estat;
 			}
 		?>
-		<button onclick="update('casos','<?php echo $cas->id ?>','estat')">modifica</button>
+		<?php if($edit_mode){ ?>
+			<button onclick="update('casos','<?php echo $cas->id ?>','estat')">modifica</button>
+		<?php } ?>
 	</li>
 
 	<!--relacions persona-cas-->
@@ -89,34 +95,45 @@
 					$persona_id=$row['persona_id'];
 					echo "<li>
 						<a href=persona.php?id=$persona_id>$nom</a>
-						<button onclick=esborra('relacions_persona_cas',$id)>esborra</button>
 					";
+					if($edit_mode){
+						echo "
+						<button onclick=esborra('relacions_persona_cas',$id)>esborra</button>
+						";
+					}
 				}
 			?>
-			<li>
-				<form method=post action=data/insert/relacio_persona_cas.php>
-					<select name=persona_id>
-						<?php
-							//busca persones no implicades en el cas
-							$sql="
-								SELECT id, nom 
-								FROM persones
-								WHERE id NOT IN (SELECT persona_id FROM relacions_persona_cas WHERE cas_id = $cas->id)
-								ORDER BY nom
-							";
-							$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
-							while($row=mysqli_fetch_assoc($res))
-							{
-								$id=$row['id'];
-								$nom=$row['nom'];
-								echo "<option value=$id>$nom";
-							}
-						?>
-					</select>
-					<input name=cas_id type=hidden value=<?php echo $cas->id?>>
-					<button>afegir</button>
-				</form>
-			</li>
+			<?php
+				if($edit_mode)
+				{
+					?>
+					<li>
+						<form method=post action=data/insert/relacio_persona_cas.php>
+							<select name=persona_id>
+								<?php
+									//busca persones no implicades en el cas
+									$sql="
+										SELECT id, nom 
+										FROM persones
+										WHERE id NOT IN (SELECT persona_id FROM relacions_persona_cas WHERE cas_id = $cas->id)
+										ORDER BY nom
+									";
+									$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+									while($row=mysqli_fetch_assoc($res))
+									{
+										$id=$row['id'];
+										$nom=$row['nom'];
+										echo "<option value=$id>$nom";
+									}
+								?>
+							</select>
+							<input name=cas_id type=hidden value=<?php echo $cas->id?>>
+							<button>afegir</button>
+						</form>
+					</li>
+					<?php
+				}
+			?>
 		</ul>
 	</li>
 
@@ -151,44 +168,50 @@
 					$persona=$row['persona'];
 					$persona_id=$row['persona_id'];
 					echo "<li>
-						<span>$persona: $anys_de_preso any/s de presó ($any) </span>
-						<button onclick=esborra('condemnes',$id)>esborra</button>
-						";
+						<a href=condemna.php?id=$id>$persona: $anys_de_preso any/s de presó ($any) </a>
+					";
 				}
 			?>
-			<li>
-				<form method=post action=data/insert/condemna.php>
-					<input name=cas_id type=hidden value=<?php echo $cas->id?>>
-					<table>
-						<tr><th>Afegeix condemna<th>Anys de presó<th>Delictes<th>Inici
-						<td rowspan=2><button>afegir</button>
-						<tr><td>
-							<select name=relacio_persona_cas_id>
-								<?php
-									//persones relacionades amb el cas
-									$sql="
-										SELECT relacions_persona_cas.id, persones.nom
-										FROM relacions_persona_cas, persones
-										WHERE 
-											relacions_persona_cas.persona_id=persones.id
-											AND cas_id=$cas->id 
-										ORDER BY nom
-										";
-									$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
-									while($row=mysqli_fetch_assoc($res))
-									{
-										$id=$row['id'];
-										$nom=$row['nom'];
-										echo "<option value=$id>$nom";
-									}
-								?>
-							</select>
-						<td><input name=anys_de_preso placeholder="Anys de presó">
-						<td><textarea name=delictes placeholder="Delictes"></textarea>
-						<td><input name=any placeholder="Any" value="<?php echo date("Y")?>">
-					</table>
-				</form>
-			</li>
+			<?php
+				if($edit_mode)
+				{
+					?>
+					<li>
+						<form method=post action=data/insert/condemna.php>
+							<input name=cas_id type=hidden value=<?php echo $cas->id?>>
+							<table>
+								<tr><th>Afegeix condemna<th>Anys de presó<th>Delictes<th>Inici
+								<td rowspan=2><button>afegir</button>
+								<tr><td>
+									<select name=relacio_persona_cas_id>
+										<?php
+											//persones relacionades amb el cas
+											$sql="
+												SELECT relacions_persona_cas.id, persones.nom
+												FROM relacions_persona_cas, persones
+												WHERE 
+													relacions_persona_cas.persona_id=persones.id
+													AND cas_id=$cas->id 
+												ORDER BY nom
+												";
+											$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+											while($row=mysqli_fetch_assoc($res))
+											{
+												$id=$row['id'];
+												$nom=$row['nom'];
+												echo "<option value=$id>$nom";
+											}
+										?>
+									</select>
+								<td><input name=anys_de_preso placeholder="Anys de presó">
+								<td><textarea name=delictes placeholder="Delictes"></textarea>
+								<td><input name=any placeholder="Any" value="<?php echo date("Y")?>">
+							</table>
+						</form>
+					</li>
+					<?php
+				}
+			?>
 		</ul>
 	</li>
 
@@ -271,6 +294,13 @@
 	</li>
 </ul>
 
-<ul>
-	<li> <button onclick=esborra('casos',<?php echo $cas->id ?>)>esborra cas</button>
-</ul>
+<?php 
+	if($edit_mode)
+	{ 
+		?>
+		<ul>
+			<li><button onclick=esborra('casos',<?php echo $cas->id ?>)>esborra cas</button>
+		</ul>
+		<?php 
+	} 
+?>

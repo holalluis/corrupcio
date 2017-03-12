@@ -17,7 +17,7 @@
 
 <div id=root>
 
-<h3>Persona-cas</h3>
+<h3>Persona &rarr; cas</h3>
 <table id=relacions_persona_cas>
 	<?php
 			$sql=
@@ -45,7 +45,7 @@
 	?>
 </table>
 
-<h3>Persona-partit</h3>
+<h3>Persona &rarr; partit</h3>
 <table id=relacions_persona_partit>
 	<?php
 			$sql=
@@ -73,7 +73,7 @@
 	?>
 </table>
 
-<h3>Persona-empresa</h3>
+<h3>Persona &rarr; empresa</h3>
 <table id=relacions_persona_empresa>
 	<?php
 			$sql=

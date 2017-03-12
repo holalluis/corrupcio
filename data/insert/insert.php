@@ -7,6 +7,12 @@
 	$root.="/corrupcio";
 	include"$root/mysql.php";
 
+	//comprova permís
+	include"$root/edit/edit_mode.php";
+	if(!$edit_mode){
+		die("Error: edit mode OFF");
+	}
+
 	//inserta ordre general
 	function insert($sql){
 		global $mysql;

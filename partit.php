@@ -31,7 +31,9 @@
 
 <ul>
 	<li>Nom sencer: <?php echo $partit->nom_llarg ?>
-		<button onclick="update('partits','<?php echo $id ?>','nom_llarg')">modifica</button>
+		<?php if($edit_mode){ ?>
+			<button onclick="update('partits','<?php echo $partit->id ?>','nom_llarg')">modifica</button>
+		<?php } ?>
 	</li>
 
 	<li>
@@ -57,34 +59,46 @@
 					$persona_id=$row['persona_id'];
 					echo "<li>
 						<a href=persona.php?id=$persona_id>$persona</a>
-						<button onclick=esborra('relacions_persona_partit',$id)>esborra</button>
 					";
+					if($edit_mode)
+					{
+						echo "
+						<button onclick=esborra('relacions_persona_partit',$id)>esborra</button>
+						";
+					}
 				}
 			?>
-			<li>
-				<form method=post action=data/insert/relacio_persona_partit.php>
-					<select name=persona_id>
-						<?php
-							//busca persones no relacionades amb el partit
-							$sql="
-								SELECT id, nom 
-								FROM persones
-								WHERE id NOT IN (SELECT persona_id FROM relacions_persona_partit WHERE partit_id = $partit->id)
-								ORDER BY nom
-							";
-							$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
-							while($row=mysqli_fetch_assoc($res))
-							{
-								$id=$row['id'];
-								$nom=$row['nom'];
-								echo "<option value=$id>$nom";
-							}
-						?>
-					</select>
-					<input name=partit_id type=hidden value=<?php echo $partit->id?>>
-					<button>afegir</button>
-				</form>
-			</li>
+			<?php
+				if($edit_mode)
+				{
+					?>
+					<li>
+						<form method=post action=data/insert/relacio_persona_partit.php>
+							<select name=persona_id>
+								<?php
+									//busca persones no relacionades amb el partit
+									$sql="
+										SELECT id, nom 
+										FROM persones
+										WHERE id NOT IN (SELECT persona_id FROM relacions_persona_partit WHERE partit_id = $partit->id)
+										ORDER BY nom
+									";
+									$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+									while($row=mysqli_fetch_assoc($res))
+									{
+										$id=$row['id'];
+										$nom=$row['nom'];
+										echo "<option value=$id>$nom";
+									}
+								?>
+							</select>
+							<input name=partit_id type=hidden value=<?php echo $partit->id?>>
+							<button>afegir</button>
+						</form>
+					</li>
+					<?php
+				}
+			?>
 		</ul>
 	</li>
 
@@ -167,6 +181,13 @@
 	</li>
 </ul>
 
-<ul>
-	<li><button onclick=esborra('partits',<?php echo $partit->id ?>)>esborra partit</button>
-</ul>
+<?php
+	if($edit_mode)
+	{
+		?>
+		<ul>
+			<li><button onclick=esborra('partits',<?php echo $partit->id ?>)>esborra partit</button>
+		</ul>
+		<?php
+	}
+?>

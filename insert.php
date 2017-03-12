@@ -1,5 +1,11 @@
 <!doctype html><html><head>
 	<?php include'imports.php' ?>
+	<?php 
+		if(!$edit_mode)
+		{
+			header("location:index.php");
+		}
+	?>
 	<style>
 		h1{
 			padding:0.5em;
@@ -101,10 +107,10 @@
 		</form>
 	</li>
 	<li>
-		<span class=activador>Nova empresa</span>
+		<span class=activador>Nova empresa/institució</span>
 		<form method=post action=data/insert/empresa.php>
 			<table>
-				<tr><th>Nom *<td><input name=nom placeholder="Nom empresa" required>
+				<tr><th>Nom *<td><input name=nom placeholder="Nom empresa/institució" required>
 				<tr><th><td><button>Inserta</button>
 			</table>
 		</form>

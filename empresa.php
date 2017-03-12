@@ -52,34 +52,46 @@
 					$persona_id=$row['persona_id'];
 					echo "<li>
 						<a href=persona.php?id=$persona_id>$persona</a>
-						<button onclick=esborra('relacions_persona_empresa',$id)>esborra</button>
 					";
+					if($edit_mode)
+					{
+						echo "
+						<button onclick=esborra('relacions_persona_empresa',$id)>esborra</button>
+						";
+					}
 				}
 			?>
-			<li>
-				<form method=post action=data/insert/relacio_persona_empresa.php>
-					<select name=persona_id>
-						<?php
-							//busca persones no relacionades l'empresa
-							$sql="
-								SELECT id, nom 
-								FROM persones
-								WHERE id NOT IN (SELECT persona_id FROM relacions_persona_empresa WHERE empresa_id = $empresa->id)
-								ORDER BY nom
-							";
-							$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
-							while($row=mysqli_fetch_assoc($res))
-							{
-								$id=$row['id'];
-								$nom=$row['nom'];
-								echo "<option value=$id>$nom";
-							}
-						?>
-					</select>
-					<input name=empresa_id type=hidden value=<?php echo $empresa->id?>>
-					<button>afegir</button>
-				</form>
-			</li>
+			<?php
+				if($edit_mode)
+				{
+					?>
+					<li>
+						<form method=post action=data/insert/relacio_persona_empresa.php>
+							<select name=persona_id>
+								<?php
+									//busca persones no relacionades l'empresa
+									$sql="
+										SELECT id, nom 
+										FROM persones
+										WHERE id NOT IN (SELECT persona_id FROM relacions_persona_empresa WHERE empresa_id = $empresa->id)
+										ORDER BY nom
+									";
+									$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+									while($row=mysqli_fetch_assoc($res))
+									{
+										$id=$row['id'];
+										$nom=$row['nom'];
+										echo "<option value=$id>$nom";
+									}
+								?>
+							</select>
+							<input name=empresa_id type=hidden value=<?php echo $empresa->id?>>
+							<button>afegir</button>
+						</form>
+					</li>
+					<?php
+				}
+			?>
 		</ul>
 	</li>
 	<!--relacions persona-empresa * persona-cas-->
@@ -160,6 +172,13 @@
 	</li>
 </ul>
 
-<ul>
-	<li><button onclick=esborra('empreses',<?php echo $empresa->id ?>)>esborra empresa</button>
-</ul>
+<?php
+	if($edit_mode)
+	{
+		?>
+		<ul>
+			<li><button onclick=esborra('empreses',<?php echo $empresa->id ?>)>esborra empresa</button>
+		</ul>
+		<?php
+	}
+?>

@@ -15,7 +15,7 @@
 <?php include'navbar.php'?>
 
 <!--titol-->
-<h1>Resultats cerca "<?php echo $q?>"</h1>
+<h1>Resultats cerca '<?php echo $q?>'</h1>
 
 <div id=root>
 	En desenvolupament

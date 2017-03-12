@@ -7,6 +7,12 @@
 	$root.="/corrupcio";
 	include"$root/mysql.php";
 
+	//comprova permís
+	include"$root/edit/edit_mode.php";
+	if(!$edit_mode){
+		die("Error: edit mode OFF");
+	}
+
 	//input
 	$taula = $_POST['taula'];
 	$id    = $_POST['id'];

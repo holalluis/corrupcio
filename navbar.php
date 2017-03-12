@@ -8,8 +8,16 @@
 	<div class='navbar_item' onclick=window.location='condemnes.php'> Condemnes</div>
 	<div class='navbar_item' onclick=window.location='relacions.php'> Connexions</div>
 	<div class='navbar_item' onclick="qs('#busca').classList.toggle('amagat');qs('#q').focus()">Busca</div>
-	<div class='navbar_item' style=float:right>Edit mode ON</div>
-	<div class='navbar_item' style=float:right onclick=window.location='insert.php'> Inserta</div>
+
+	<?php include'edit_mode.php'?>
+	<?php 
+		if($edit_mode)
+		{
+			?>
+			<div class='navbar_item' style=float:right onclick=window.location='insert.php'> Inserta</div>
+			<?php
+		}
+	?>
 </div>
 
 <!--menu buscar-->
