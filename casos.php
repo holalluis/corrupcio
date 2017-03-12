@@ -7,6 +7,7 @@
 		#casos {
 			margin-left:2em;
 		}
+		#navbar div[pagina=casos]{color:black}
 	</style>
 </head><body>
 <?php include'navbar.php'?>

@@ -10,6 +10,7 @@
 		table[id^="relacions"]{
 			margin-bottom:1em;
 		}
+		#navbar div[pagina=relacions]{color:black}
 	</style>
 </head><body>
 <?php include'navbar.php'?>

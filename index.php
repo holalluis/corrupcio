@@ -27,6 +27,7 @@
 		table#top5 td{
 			padding:0.3em 0.5em;
 		}
+		#navbar div[pagina=inici]{color:black}
 	</style>
 </head><body>
 <?php include'navbar.php'?>

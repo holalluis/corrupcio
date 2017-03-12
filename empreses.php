@@ -7,6 +7,7 @@
 		#empreses {
 			margin-left:2em;
 		}
+		#navbar div[pagina=empreses]{color:black}
 	</style>
 </head><body>
 <?php include'navbar.php'?>

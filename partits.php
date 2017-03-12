@@ -7,6 +7,7 @@
 		#partits {
 			margin-left:2em;
 		}
+		#navbar div[pagina=partits]{color:black}
 	</style>
 </head><body>
 <?php include'navbar.php'?>

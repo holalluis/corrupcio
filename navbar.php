@@ -1,12 +1,12 @@
 <div id=navbar>
 	<div id='burger' onclick="">&#9776;</div>
-	<div class='navbar_item' onclick=window.location='index.php'    > INICI</div>
-	<div class='navbar_item' onclick=window.location='persones.php' > Persones</div>
-	<div class='navbar_item' onclick=window.location='casos.php'    > Casos</div>
-	<div class='navbar_item' onclick=window.location='partits.php'  > Partits</div>
-	<div class='navbar_item' onclick=window.location='empreses.php' > Empreses</div>
-	<div class='navbar_item' onclick=window.location='condemnes.php'> Condemnes</div>
-	<div class='navbar_item' onclick=window.location='relacions.php'> Connexions</div>
+	<div class='navbar_item' pagina=inici     onclick=window.location='index.php'    > INICI</div>
+	<div class='navbar_item' pagina=persones  onclick=window.location='persones.php' > Persones</div>
+	<div class='navbar_item' pagina=casos     onclick=window.location='casos.php'    > Casos</div>
+	<div class='navbar_item' pagina=partits   onclick=window.location='partits.php'  > Partits</div>
+	<div class='navbar_item' pagina=empreses  onclick=window.location='empreses.php' > Empreses</div>
+	<div class='navbar_item' pagina=condemnes onclick=window.location='condemnes.php'> Condemnes</div>
+	<div class='navbar_item' pagina=relacions onclick=window.location='relacions.php'> Connexions</div>
 	<div class='navbar_item' onclick="qs('#busca').classList.toggle('amagat');qs('#q').focus()">Busca</div>
 
 	<?php include'edit_mode.php'?>
