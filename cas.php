@@ -22,13 +22,11 @@
 		$cas->estat=$row['estat'];
 	?>
 	<style>
-		h1{
-			padding:0.5em;
-		}
 		form {
 			display:inline-block;
 			vertical-align:top;
 		}
+		#navbar div[pagina=casos]{color:black}
 	</style>
 </head><body>
 <?php include'navbar.php'?>
@@ -75,7 +73,7 @@
 	<li>
 		<?php
 			$sql="
-				SELECT rel.id, rel.persona_id, persones.nom
+				SELECT rel.id, rel.persona_id, rel.descripcio, persones.nom
 				FROM relacions_persona_cas AS rel, persones 
 				WHERE 
 					rel.persona_id=persones.id 
@@ -90,15 +88,19 @@
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{
-					$id=$row['id'];
+					$rel_id=$row['id'];
 					$nom=$row['nom'];
 					$persona_id=$row['persona_id'];
+					$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
 						<a href=persona.php?id=$persona_id>$nom</a>
+						&mdash;
+						<span class=descripcio>$descripcio</span>
 					";
 					if($edit_mode){
 						echo "
-						<button onclick=esborra('relacions_persona_cas',$id)>esborra</button>
+							<button onclick=update('relacions_persona_cas',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
+							<button onclick=esborra('relacions_persona_cas',$rel_id)>esborra</button>
 						";
 					}
 				}

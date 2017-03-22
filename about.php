@@ -4,8 +4,29 @@
 <?php include'navbar.php'?>
 
 <!--titol-->
-<h1  style=text-align:center>Gran enciclopèdia de la Corrupció</h1>
-<h2  style=text-align:center>About</h2>
-<div style=text-align:center>Per fer</div>
+<h1>Gran enciclopèdia de la Corrupció</h1>
+<h2>About</h2>
+<div style="padding-left:1em;max-width:50em;margin:0 auto">
+	<p>
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+		Bla bla bla bla bla bla bla bla bla 
+	</p>
+</div>
 
 <!--footer--><?php include'footer.php'?>

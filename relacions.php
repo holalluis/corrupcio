@@ -1,14 +1,15 @@
 <!doctype html><html><head>
 	<?php include'imports.php' ?>
 	<style>
-		h1{
-			padding:0.5em;
-		}
 		div#root {
 			padding-left:30px;
 		}
 		table[id^="relacions"]{
-			margin-bottom:1em;
+			margin-top:0.5em;
+			margin-bottom:2em;
+		}
+		table[id^="relacions"] td {
+			padding:0 0.2em;
 		}
 		#navbar div[pagina=relacions]{color:black}
 	</style>
@@ -18,7 +19,7 @@
 
 <div id=root>
 
-<h3>Persona &rarr; cas</h3>
+<h3>Persona &rarr; Cas</h3>
 <table id=relacions_persona_cas>
 	<?php
 			$sql=
@@ -40,13 +41,13 @@
 			{
 				$persona=$row['persona'];
 				$cas=$row['cas'];
-				$descripcio=$row['descripcio'];
-				echo "<tr><td>$persona<td>&rarr;<td>$cas<td>$descripcio";
+				$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
+				echo "<tr> <td>$persona <td>&rarr; <td>$cas <td><span class=descripcio>$descripcio";
 			}
 	?>
 </table>
 
-<h3>Persona &rarr; partit</h3>
+<h3>Persona &rarr; Partit</h3>
 <table id=relacions_persona_partit>
 	<?php
 			$sql=
@@ -68,13 +69,13 @@
 			{
 				$persona=$row['persona'];
 				$partit=$row['partit'];
-				$descripcio=$row['descripcio'];
-				echo "<tr><td>$persona<td>&rarr;<td>$partit<td>$descripcio";
+				$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
+				echo "<tr><td>$persona<td>&rarr;<td>$partit<td><span class=descripcio>$descripcio";
 			}
 	?>
 </table>
 
-<h3>Persona &rarr; empresa</h3>
+<h3>Persona &rarr; Empresa</h3>
 <table id=relacions_persona_empresa>
 	<?php
 			$sql=
@@ -96,8 +97,8 @@
 			{
 				$persona=$row['persona'];
 				$empresa=$row['empresa'];
-				$descripcio=$row['descripcio'];
-				echo "<tr><td>$persona<td>&rarr;<td>$empresa<td>$descripcio";
+				$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
+				echo "<tr><td>$persona<td>&rarr;<td>$empresa<td><span class=descripcio>$descripcio";
 			}
 	?>
 </table>

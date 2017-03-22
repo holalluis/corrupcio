@@ -1,9 +1,6 @@
 <!doctype html><html><head>
 	<?php include'imports.php' ?>
 	<style>
-		h1{
-			padding:0.5em;
-		}
 		#condemnes {
 			margin-left:2em;
 		}

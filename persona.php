@@ -18,15 +18,14 @@
 		$persona->id=$row['id'];
 		$persona->nom=$row['nom'];
 		$persona->naixement=$row['naixement'];
+		$persona->modificacio=$row['modificacio'];
 	?>
 	<style>
-		h1{
-			padding:0.5em;
-		}
 		form {
 			display:inline-block;
 			vertical-align:top;
 		}
+		#navbar div[pagina=persones]{color:black}
 	</style>
 </head><body>
 <?php include'navbar.php'?>
@@ -34,12 +33,13 @@
 <h1>Persones &rsaquo; <?php echo $persona->nom ?></h1>
 
 <ul>
+	<!--data de naixement-->
 	<li>
 		Naixement:
-		<?php echo $persona->naixement ?>
-		(edat: 
-		<?php 
-			function getAge($then){
+		<?php echo date("d/m/Y",strtotime($persona->naixement)) ?>
+		(<?php 
+			function getAge($then)
+			{
 				$then_ts = strtotime($then);
 				$then_year = date('Y',$then_ts);
 				$age = date('Y') - $then_year;
@@ -47,8 +47,20 @@
 				return $age;
 			}
 			echo getAge($persona->naixement);
-		?>)
+		?> anys)
+
+		<!--edita data de naixement-->
+		<?php
+			if($edit_mode)
+			{
+				echo "
+					<button onclick=update('persones',$persona->id,'naixement','$persona->naixement')>edita</button> 
+				";
+			}
+		?>
 	</li>
+
+	<!--relacions persona cas-->
 	<li>
 		<?php
 			$sql="
@@ -68,12 +80,18 @@
 					$rel_id=$row['rel_id'];
 					$nom=$row['nom'];
 					$cas_id=$row['cas_id'];
+					$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
-						<a href=cas.php?id=$cas_id>$nom</a>
+						<a href=cas.php?id=$cas_id>$nom</a> 
+						&mdash; 
+						<span class=descripcio>$descripcio</span>
 					";
 					if($edit_mode)
 					{
-						echo "<button onclick=esborra('relacions_persona_cas',$rel_id)>esborra</button>";
+						echo "
+							<button onclick=update('relacions_persona_cas',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
+							<button onclick=esborra('relacions_persona_cas',$rel_id)>esborra</button>
+						";
 					}
 				}
 			?>
@@ -105,6 +123,8 @@
 			?>
 		</ul>
 	</li>
+
+	<!--relacions persona partit-->
 	<li>
 		<?php
 			$sql="
@@ -124,13 +144,17 @@
 					$rel_id=$row['rel_id'];
 					$nom=$row['nom'];
 					$partit_id=$row['partit_id'];
+					$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
 						<a href=partit.php?id=$partit_id>$nom</a>
+						&mdash;
+						<span class=descripcio>$descripcio</span>
 						";
 					if($edit_mode)
 					{
 						echo "
-						<button onclick=esborra('relacions_persona_partit',$rel_id)>esborra</button>
+							<button onclick=update('relacions_persona_partit',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
+							<button onclick=esborra('relacions_persona_partit',$rel_id)>esborra</button>
 						";
 					}
 				}
@@ -163,6 +187,8 @@
 			?>
 		</ul>
 	</li>
+
+	<!--relacions persona empresa-->
 	<li>
 		<?php
 			$sql="
@@ -182,13 +208,17 @@
 					$rel_id=$row['rel_id'];
 					$nom=$row['nom'];
 					$empresa_id=$row['empresa_id'];
+					$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
 						<a href=empresa.php?id=$empresa_id>$nom</a>
+						&mdash;
+						<span class=descripcio>$descripcio</span>
 						";
 					if($edit_mode)
 					{
 						echo "
-						<button onclick=esborra('relacions_persona_empresa',$rel_id)>esborra</button>
+							<button onclick=update('relacions_persona_empresa',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
+							<button onclick=esborra('relacions_persona_empresa',$rel_id)>esborra</button>
 						";
 					}
 				}
@@ -221,6 +251,8 @@
 			?>
 		</ul>
 	</li>
+
+	<!--condemnes-->
 	<li>
 		<?php
 			$sql="
@@ -289,6 +321,11 @@
 			?>
 		</ul>
 	</li>
+
+	<!--data modificació-->
+	<li>
+		Última modificació: <?php echo date("d/m/Y H:i:s",strtotime($persona->modificacio)) ?>
+	</li>
 </ul>
 
 <?php
@@ -296,8 +333,9 @@
 	{
 		?>
 		<ul>
-			<li><button onclick=esborra('persones',<?php echo $persona->id ?>)>esborra persona</button>
+			<li> <button onclick=esborra('persones',<?php echo $persona->id ?>)>esborra persona</button>
 		</ul>
 		<?php
 	}
 ?>
+

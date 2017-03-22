@@ -22,9 +22,7 @@
 		$condemna->any=$row['any'];
 	?>
 	<style>
-		h1{
-			padding:0.5em;
-		}
+		#navbar div[pagina=condemnes]{color:black}
 	</style>
 </head><body>
 <?php include'navbar.php'?>

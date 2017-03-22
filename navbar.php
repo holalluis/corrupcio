@@ -25,16 +25,18 @@
 
 <style>
 	#navbar {
+		margin:0;
 		background:#e5e5e5;
 		border-bottom:1px solid #ccc;
 		height:50px;
-		padding-left:30px;
+		padding-left:40px;
 		text-shadow: 0 1px 0 #fff;
 	}
 	#navbar #burger {
 		color:rgba(0,0,0,0.55);
 		cursor:pointer;
 		display:inline-block;
+		display:none;
 		font-size:18px;
 		padding:0.5em 0.5em 0.5em 0;
 	}

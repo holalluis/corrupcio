@@ -1,11 +1,11 @@
 <!doctype html><html><head>
 	<?php include'imports.php' ?>
 	<style>
-		h1{
-			padding:0.5em;
-		}
 		#partits {
 			margin-left:2em;
+		}
+		#partits td{
+			padding:0 0.2em;
 		}
 		#navbar div[pagina=partits]{color:black}
 	</style>

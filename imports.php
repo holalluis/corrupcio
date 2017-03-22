@@ -2,6 +2,7 @@
 
 <!--utf-8, css-->
 <meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="img/ico.png" type="image/x-icon">
 <link rel="stylesheet" href="css.css">
 <meta name="description" content="corrupció">
@@ -24,6 +25,9 @@
 			?>
 			//esborra un objecte d'una taula
 			function esborra(taula,id) {
+
+				if(!confirm("S'esborrarà l'element "+taula+"->id "+id+". Continuar?")){return}
+
 				var sol=new XMLHttpRequest();
 				sol.open('POST',"data/esborra/esborra.php",true);
 				sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -39,9 +43,15 @@
 			}
 
 			//update un camp de l'objecte id
-			function update(taula,id,camp) {
-				var nouValor=prompt("Escriu nou valor per "+taula+"."+camp+":");
-				if(!nouValor)return;
+			function update(taula,id,camp,current) {
+				current=current||"";//valor actual (opcional)
+
+				function urldecode(url){return decodeURIComponent(url.replace(/\+/g,' '))}
+
+				var pro="Escriu nou valor per "+taula+"."+camp+":";
+				var nouValor=prompt(pro,urldecode(current));
+				if(!nouValor){return}
+
 				var sol=new XMLHttpRequest();
 				sol.open('POST',"data/update.php",true);
 				sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");

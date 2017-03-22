@@ -1,9 +1,11 @@
 ## Desenvolupament
 <ul>
-	<li> CRUD - Afegir descripcions a relacions_persona_x (càrrecs)
-	<li> CRUD - Comprovar si E objectes repetits durant inserció a cada taula
-	<li> CRUD - Afegir permisos a update i delete
+  <li> CRUD - Afegir descripcions a relacions_persona_x (càrrecs)
+  <li> CRUD - Comprovar si E objectes repetits durant inserció a cada taula
   <li> Implementar cerques 
+  <li> Poder descarregar base de dades
+  <li> Implementar llista de passwords correctes associats a col·laboradors
+  <li> Implementar log de canvis associats a un password
 </ul>
 
 # Corrupció
@@ -19,7 +21,7 @@
 	Preferentment algú que es dediqui al món del periodisme.
 </p>
 
-##Estructura de dades Corrupció
+## Estructura de dades Corrupció
 - Taules (8)
 	- Taules d'objectes (5)
 		- casos 

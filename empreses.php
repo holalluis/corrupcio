@@ -1,11 +1,11 @@
 <!doctype html><html><head>
 	<?php include'imports.php' ?>
 	<style>
-		h1{
-			padding:0.5em;
-		}
 		#empreses {
 			margin-left:2em;
+		}
+		#empreses td{
+			padding:0 0.2em;
 		}
 		#navbar div[pagina=empreses]{color:black}
 	</style>

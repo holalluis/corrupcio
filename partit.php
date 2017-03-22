@@ -20,9 +20,7 @@
 		$partit->nom_llarg=$row['nom_llarg'];
 	?>
 	<style>
-		h1{
-			padding:0.5em;
-		}
+		#navbar div[pagina=partits]{color:black}
 	</style>
 </head><body>
 <?php include'navbar.php'?>
@@ -39,7 +37,7 @@
 	<li>
 		<?php
 			$sql="
-				SELECT rel.id, rel.persona_id, persones.nom AS persona
+				SELECT rel.id, rel.persona_id, rel.descripcio, persones.nom AS persona
 				FROM relacions_persona_partit AS rel, persones 
 				WHERE 
 					rel.persona_id=persones.id 
@@ -54,16 +52,20 @@
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{
-					$id=$row['id'];
+					$rel_id=$row['id'];
 					$persona=$row['persona'];
 					$persona_id=$row['persona_id'];
+					$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
 						<a href=persona.php?id=$persona_id>$persona</a>
+						&mdash;
+						<span class=descripcio>$descripcio</span>
 					";
 					if($edit_mode)
 					{
 						echo "
-						<button onclick=esborra('relacions_persona_partit',$id)>esborra</button>
+							<button onclick=update('relacions_persona_partit',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
+							<button onclick=esborra('relacions_persona_partit',$rel_id)>esborra</button>
 						";
 					}
 				}

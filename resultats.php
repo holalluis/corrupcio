@@ -4,9 +4,6 @@
 		$q=$_GET['q'] or die('no has buscat res');
 	?>
 	<style>
-		h1{
-			padding:0.5em;
-		}
 		div#root {
 			padding-left:1em;
 		}
@@ -18,7 +15,9 @@
 <h1>Resultats cerca '<?php echo $q?>'</h1>
 
 <div id=root>
-	En desenvolupament
+
+	<u><b style=color:red>Nota:</b> el motor de cerques encara està en desenvolupament</u>
+
 	<ul>
 		<!--Persones-->
 		<li>

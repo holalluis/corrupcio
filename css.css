@@ -1,9 +1,17 @@
+/* 
 *{margin:0}
+*/
 body{
+	margin:0 auto;
 	overflow-y:scroll;
-	font-family:"Lucida Console", Monaco, monospace;
 	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
 	font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+h1{
+	padding-left:0.75em;
+}
+h2{
+	padding-left:1em;
 }
 table{border-collapse:collapse}
 th,td{border:1px solid #ccc}
@@ -12,3 +20,15 @@ li{margin-bottom:0.5em;margin-top:0.5em}
 hr{border:none;border-bottom:1px solid #ccc}
 a{text-decoration:none}
 a:hover{text-decoration:underline}
+
+/*descripcions de relacions persona_{cas,partit,empresa}*/
+span.descripcio {
+	font-size:12px;
+	color:#666;
+}
+
+/* data última modificació*/
+div.modificacio {
+	font-style:italic;
+	font-size:11px;
+}

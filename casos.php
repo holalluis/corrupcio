@@ -1,11 +1,11 @@
 <!doctype html><html><head>
 	<?php include'imports.php' ?>
 	<style>
-		h1{
-			padding:0.5em;
-		}
 		#casos {
 			margin-left:2em;
+		}
+		#casos td{
+			padding:0 0.2em;
 		}
 		#navbar div[pagina=casos]{color:black}
 	</style>
