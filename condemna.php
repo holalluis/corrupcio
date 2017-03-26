@@ -26,9 +26,12 @@
 	</style>
 </head><body>
 <?php include'navbar.php'?>
-<h1>Condemnes &rsaquo; condemna <?php echo $condemna->id ?></h1>
+<h1>
+	Condemnes &rsaquo; condemna <?php echo $condemna->id ?>
+</h1>
 
 <ul>
+	<!--persona-->
 	<li>
 		Persona: 
 		<?php
@@ -46,6 +49,8 @@
 			echo "<a href=persona.php?id=$persona_id>$persona</a>";
 		?>
 	</li>
+
+  <!--cas-->
 	<li>
 		Cas: 
 		<?php
@@ -63,38 +68,46 @@
 			echo "<a href=cas.php?id=$cas_id>$cas</a>";
 		?>
 	</li>
+
+	<!--anys de presó-->
 	<li>
-		Anys de preso:
+		Anys de presó:
 		<?php
 			echo $condemna->anys_de_preso;
 		?>
 		<?php if($edit_mode){ ?>
-			<button onclick="update('condemnes','<?php echo $condemna->id ?>','anys_de_preso')">modifica</button>
+			<button onclick="update('condemnes','<?php echo $condemna->id ?>','anys_de_preso', '<?php echo urlencode($condemna->anys_de_preso) ?>')">modifica</button>
 		<?php } ?>
 	</li>
+
+	<!--delictes-->
 	<li>
 		Delictes: 
 		<?php echo $condemna->delictes ?>
 		<?php if($edit_mode){ ?>
-			<button onclick="update('condemnes','<?php echo $condemna->id ?>','delictes')">modifica</button>
+			<button onclick="update('condemnes','<?php echo $condemna->id ?>','delictes', '<?php echo urlencode($condemna->delictes) ?>')">modifica</button>
 		<?php } ?>
 	</li>
+
+	<!--inici condemna-->
 	<li>
 		Inici:
 		<?php echo $condemna->any ?>
 		<?php if($edit_mode){ ?>
-			<button onclick="update('condemnes','<?php echo $condemna->id ?>','any')">modifica</button>
+			<button onclick="update('condemnes','<?php echo $condemna->id ?>','any', '<?php echo urlencode($condemna->any) ?>')">modifica</button>
 		<?php } ?>
 	</li>
+
+	<!--esborrar-->
+	<?php
+		if($edit_mode)
+		{
+			?>
+			<li>
+			  <button onclick=esborra('condemnes',<?php echo $condemna->id ?>)>esborra condemna</button>
+			</li>
+			<?php
+		}
+	?>
 </ul>
 
-<?php
-	if($edit_mode)
-	{
-		?>
-		<ul>
-			<li><button onclick=esborra('condemnes',<?php echo $condemna->id ?>)>esborra condemna</button>
-		</ul>
-		<?php
-	}
-?>

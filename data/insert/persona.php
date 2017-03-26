@@ -7,8 +7,8 @@ $nom       = $mysql->escape_string($_POST['nom']);
 $naixement = $mysql->escape_string($_POST['naixement']);
 
 //comprova inputs
-if($nom=="")die("nom en blanc");
-if($naixement=="")$naixement="0000-00-00";
+if(empty($nom))die("nom en blanc");
+if(empty($naixement))$naixement="0000-00-00";
 
 //comprova si ja existeix abans d'insertar
 $n=mysqli_num_rows($mysql->query("SELECT 1 FROM persones WHERE nom='$nom'"));

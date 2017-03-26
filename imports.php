@@ -25,9 +25,7 @@
 			?>
 			//esborra un objecte d'una taula
 			function esborra(taula,id) {
-
 				if(!confirm("S'esborrarà l'element "+taula+"->id "+id+". Continuar?")){return}
-
 				var sol=new XMLHttpRequest();
 				sol.open('POST',"data/esborra.php",true);
 				sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");

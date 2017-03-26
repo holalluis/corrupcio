@@ -6,7 +6,7 @@ include'insert.php';
 $nom=$mysql->escape_string($_POST['nom']);
 
 //comprova inputs
-if($nom=="")die("nom en blanc");
+if(empty($nom))die("nom en blanc");
 
 //comprova si ja existeix abans d'insertar
 $n=mysqli_num_rows($mysql->query("SELECT 1 FROM empreses WHERE nom='$nom'"));

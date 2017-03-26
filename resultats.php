@@ -1,7 +1,11 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
 	<?php
-		$q=$_GET['q'] or die('no has buscat res');
+		//processa query
+		function error_q(){die("No has buscat res");}
+		if(!isset($_GET['q'])){error_q();}
+		if(empty($_GET['q'])){error_q();}
+		$q=$_GET['q'] or error_q();
 	?>
 	<style>
 		div#root {
@@ -14,26 +18,32 @@
 <!--titol-->
 <h1>Resultats cerca '<?php echo $q?>'</h1>
 
+<?php 	
+	//fx general per buscar
+	function cerca($taula,$link)
+	{
+		global $q,$mysql;
+		$sql="SELECT id,nom FROM $taula WHERE nom LIKE '%$q%' ORDER BY nom";
+		$res=$mysql->query($sql) or die(mysqli_error($mysql));
+		echo "(".mysqli_num_rows($res).")";
+		echo "<ul>";
+		while($row=mysqli_fetch_assoc($res))
+		{
+			$id=$row['id'];
+			$nom=$row['nom'];
+			echo "
+				<li> <a href=$link.php?id=$id>$nom</a>
+			";
+		}
+		echo "</ul>";
+	}
+?>
+
 <div id=root>
-
-	<u><b style=color:red>Nota:</b> el motor de cerques encara està en desenvolupament</u>
-
 	<ul>
-		<!--Persones-->
-		<li>
-			Persones (0)
-		</li>
-		<!--Casos-->
-		<li>
-			Casos (0)
-		</li>
-		<!--Partits-->
-		<li>
-			Partits (0)
-		</li>
-		<!--Empreses-->
-		<li>
-			Empreses (0)
-		</li>
+		<li>Persones <?php cerca('persones','persona')?></li>
+		<li>Casos    <?php cerca('casos','cas')?></li>
+		<li>Partits  <?php cerca('partits','partit')?></li>
+		<li>Empreses <?php cerca('empreses','empresa')?></li>
 	</ul>
 </div>

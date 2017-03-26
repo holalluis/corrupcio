@@ -31,18 +31,23 @@
 	<?php 
 		if($edit_mode)
 		{
-			echo "
-				<button onclick=\"update('partits',$partit->id,'nom','$partit->nom')\">edita nom</button> 
-			";
+			?>
+			<button onclick="update('partits',<?php echo $partit->id ?>,'nom','<?php echo urlencode($partit->nom) ?>')">edita nom</button> 
+			<?php
 		}
 	?>
 </h1>
 
 <ul>
 	<li>Nom sencer: <?php echo $partit->nom_llarg ?>
-		<?php if($edit_mode){ ?>
-			<button onclick="update('partits','<?php echo $partit->id ?>','nom_llarg','<?php echo $partit->nom_llarg ?>')">modifica</button>
-		<?php } ?>
+		<?php 
+			if($edit_mode)
+			{ 
+				?>
+				<button onclick="update('partits','<?php echo $partit->id ?>','nom_llarg','<?php echo urlencode($partit->nom_llarg) ?>')">modifica</button>
+				<?php 
+			} 
+		?>
 	</li>
 
 	<li>

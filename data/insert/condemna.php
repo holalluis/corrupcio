@@ -9,9 +9,15 @@ $delictes=$mysql->escape_string($_POST['delictes']);
 $any=$_POST['any'];
 
 //comprova input
-if($anys_de_preso=="")die("Anys de preso no especificat");
+if(empty($anys_de_preso)){
+	die("Anys de preso no especificat");
+}
 
 //inserta
-$sql="INSERT INTO condemnes (relacio_persona_cas_id,anys_de_preso,delictes,any) VALUES ($relacio_persona_cas_id,$anys_de_preso,'$delictes',$any)";
+$sql="
+	INSERT INTO condemnes 
+	       ( relacio_persona_cas_id, anys_de_preso,  delictes,  any) 
+	VALUES ($relacio_persona_cas_id,$anys_de_preso,'$delictes',$any)
+";
 insert($sql);
 ?>

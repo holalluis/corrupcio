@@ -15,7 +15,7 @@
 	</style>
 </head><body>
 <?php include'navbar.php'?>
-<!--titol--><h1>Connexions entre persones, casos, partits i empreses</h1>
+<!--titol--><h1>Connexions</h1>
 
 <div id=root>
 

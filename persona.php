@@ -35,9 +35,9 @@
 	<?php 
 		if($edit_mode)
 		{
-			echo "
-				<button onclick=\"update('persones',$persona->id,'nom','$persona->nom')\">edita nom</button> 
-			";
+			?>
+			<button onclick="update('persones',<?php echo $persona->id ?>,'nom','<?php echo urlencode($persona->nom) ?>')">edita nom</button> 
+			<?php
 		}
 	?>
 </h1>
@@ -63,9 +63,9 @@
 		<?php
 			if($edit_mode)
 			{
-				echo "
-					<button onclick=update('persones',$persona->id,'naixement','$persona->naixement')>edita</button> 
-				";
+				?>
+				<button onclick=update('persones',<?php echo $persona->id ?>,'naixement','<?php echo urlencode($persona->naixement) ?>')>edita</button> 
+				<?php
 			}
 		?>
 	</li>

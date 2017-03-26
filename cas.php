@@ -37,9 +37,9 @@
 	<?php 
 		if($edit_mode)
 		{
-			echo "
-				<button onclick=\"update('casos',$cas->id,'nom','$cas->nom')\">edita nom</button> 
-			";
+			?>
+			<button onclick="update('casos',<?php echo $cas->id ?>,'nom','<?php echo urlencode($cas->nom) ?>')">edita nom</button> 
+			<?php
 		}
 	?>
 </h1>
@@ -50,7 +50,7 @@
 		Any: 
 		<?php echo $cas->any ?> 
 		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','any','<?php echo $cas->any?>')">modifica</button>
+			<button onclick="update('casos','<?php echo $cas->id ?>','any','<?php echo urlencode($cas->any) ?>')">modifica</button>
 		<?php } ?>
 	</li>
 
@@ -59,7 +59,7 @@
 		Espoli: 
 		<?php echo $cas->espoli ?> euros 
 		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','espoli','<?php echo $cas->espoli ?>')">modifica</button>
+			<button onclick="update('casos','<?php echo $cas->id ?>','espoli','<?php echo urlencode($cas->espoli) ?>')">modifica</button>
 		<?php } ?>
 	</li>
 
@@ -76,7 +76,7 @@
 			}
 		?>
 		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','estat','<?php echo $cas->estat?>')">modifica</button>
+			<button onclick="update('casos','<?php echo $cas->id ?>','estat','<?php echo urlencode($cas->estat) ?>')">modifica</button>
 		<?php } ?>
 	</li>
 

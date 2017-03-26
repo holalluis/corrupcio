@@ -2,11 +2,8 @@
 <ul>
   <li> CRUD caràcters màxims per inserts
   <li> CRUD caràcters màxims per updates
-  <li> Implementar cerques 
-  <li> Implementar llista de passwords correctes associats a col·laboradors a "data/access.php"
   <li> Implementar log de canvis associats a un col·laborador
   <li> Implementar avis legal
-  <li> Formulari de contacte & avisar d'un error
   <li> Poder descarregar base de dades
 </ul>
 

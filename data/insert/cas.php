@@ -9,9 +9,9 @@ $espoli=$_POST['espoli'];
 $any=$_POST['any'];
 
 //comprova inputs
-if($nom=="")die("nom en blanc");
-if($espoli=="")$espoli=0;
-if($any=="")$any=0;
+if(empty($nom))die("nom en blanc");
+if(empty($espoli))$espoli=0;
+if(empty($any))$any=0;
 
 //comprova si ja existeix abans d'insertar
 $n=mysqli_num_rows($mysql->query("SELECT 1 FROM casos WHERE nom='$nom'"));

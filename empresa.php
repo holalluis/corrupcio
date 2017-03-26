@@ -30,9 +30,9 @@
 	<?php 
 		if($edit_mode)
 		{
-			echo "
-				<button onclick=\"update('empreses',$empresa->id,'nom','$empresa->nom')\">edita nom</button> 
-			";
+			?>
+			<button onclick="update('empreses',<?php echo $empresa->id ?>,'nom','<?php echo urlencode($empresa->nom) ?>')">edita nom</button> 
+			<?php
 		}
 	?>
 </h1>
