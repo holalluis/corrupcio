@@ -3,6 +3,8 @@
 		CRUD : CREATE, read, update, delete
 		wrappers
 	*/
+
+	//connecta
 	$root=realpath($_SERVER["DOCUMENT_ROOT"]);
 	$root.="/corrupcio";
 	include"$root/mysql.php";
@@ -16,16 +18,16 @@
 	//inserta ordre general
 	function insert($sql){
 		global $mysql;
-		mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+		$mysql->query($sql) or die(mysqli_error($mysql));
 		echo "
-			<div style=text-align:center>
-				<b>$sql</b>
-				<br>Executat correctament
-				<br><a href='$root/index.php'>Inici</a>
-				<br><a href='$root/insert.php'>Seguir insertant</a>
-			</div>
+			<ul>
+				<li>$sql</li>
+				<li>Executat correctament</li>
+				<li><a href='$root/index.php'>Inici</a></li>
+				<li><a href='$root/insert.php'>Seguir insertant</a></li>
+			</ul>
 		";
+		header("location: ".$_SERVER['HTTP_REFERER']);
 	}
 
-	header("location: ".$_SERVER['HTTP_REFERER']);
 ?>

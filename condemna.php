@@ -6,7 +6,7 @@
 
 		//sql query
 		$sql="SELECT * FROM condemnes WHERE id=$id";
-		$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+		$res=$mysql->query($sql) or die(mysqli_error($mysql));
 		$n=mysqli_num_rows($res);
 		$row=mysqli_fetch_assoc($res);
 
@@ -39,7 +39,7 @@
 					persones.id=rel.persona_id AND
 					rel.id=$condemna->relacio_persona_cas_id
 			";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$row=mysqli_fetch_assoc($res);
 			$persona=$row['persona'];
 			$persona_id=$row['persona_id'];
@@ -56,7 +56,7 @@
 					casos.id=rel.cas_id AND
 					rel.id=$condemna->relacio_persona_cas_id
 			";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$row=mysqli_fetch_assoc($res);
 			$cas=$row['cas'];
 			$cas_id=$row['cas_id'];

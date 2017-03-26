@@ -6,7 +6,7 @@
 
 		//sql query
 		$sql="SELECT * FROM casos WHERE id=$id";
-		$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+		$res=$mysql->query($sql) or die(mysqli_error($mysql));
 		$n=mysqli_num_rows($res);
 		$row=mysqli_fetch_assoc($res);
 
@@ -20,6 +20,7 @@
 		$cas->espoli=$row['espoli'];
 		$cas->any=$row['any'];
 		$cas->estat=$row['estat'];
+		$cas->modificacio=$row['modificacio'];
 	?>
 	<style>
 		form {
@@ -31,7 +32,17 @@
 </head><body>
 <?php include'navbar.php'?>
 
-<h1>Casos de corrupció &rsaquo; <?php echo $cas->nom ?></h1>
+<h1>
+	Casos de corrupció &rsaquo; <?php echo $cas->nom ?>
+	<?php 
+		if($edit_mode)
+		{
+			echo "
+				<button onclick=\"update('casos',$cas->id,'nom','$cas->nom')\">edita nom</button> 
+			";
+		}
+	?>
+</h1>
 
 <ul>
 	<!--any-->
@@ -39,7 +50,7 @@
 		Any: 
 		<?php echo $cas->any ?> 
 		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','any')">modifica</button>
+			<button onclick="update('casos','<?php echo $cas->id ?>','any','<?php echo $cas->any?>')">modifica</button>
 		<?php } ?>
 	</li>
 
@@ -48,7 +59,7 @@
 		Espoli: 
 		<?php echo $cas->espoli ?> euros 
 		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','espoli')">modifica</button>
+			<button onclick="update('casos','<?php echo $cas->id ?>','espoli','<?php echo $cas->espoli ?>')">modifica</button>
 		<?php } ?>
 	</li>
 
@@ -65,7 +76,7 @@
 			}
 		?>
 		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','estat')">modifica</button>
+			<button onclick="update('casos','<?php echo $cas->id ?>','estat','<?php echo $cas->estat?>')">modifica</button>
 		<?php } ?>
 	</li>
 
@@ -80,7 +91,7 @@
 					AND rel.cas_id=$cas->id
 				ORDER BY nom
 				";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
 		Persones implicades (<?php echo $n ?>)
@@ -120,7 +131,7 @@
 										WHERE id NOT IN (SELECT persona_id FROM relacions_persona_cas WHERE cas_id = $cas->id)
 										ORDER BY nom
 									";
-									$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+									$res=$mysql->query($sql) or die(mysqli_error($mysql));
 									while($row=mysqli_fetch_assoc($res))
 									{
 										$id=$row['id'];
@@ -156,7 +167,7 @@
 					AND rel.persona_id=persones.id
 					AND rel.cas_id=$cas->id
 				";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
 		Condemnes (<?php echo $n ?>)
@@ -196,7 +207,7 @@
 													AND cas_id=$cas->id 
 												ORDER BY nom
 												";
-											$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+											$res=$mysql->query($sql) or die(mysqli_error($mysql));
 											while($row=mysqli_fetch_assoc($res))
 											{
 												$id=$row['id'];
@@ -237,7 +248,7 @@
 					partits.id        = rel_pp.partit_id  AND
 					persones.id       = rel_pp.persona_id
 			";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
 		Partits implicats (<?php echo $n ?>)
@@ -276,7 +287,7 @@
 					empreses.id       = rel_pe.empresa_id AND
 					persones.id       = rel_pe.persona_id
 			";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
 		Empreses implicades (<?php echo $n ?>)
@@ -294,15 +305,21 @@
 		?>
 		</ul>
 	</li>
-</ul>
 
-<?php 
-	if($edit_mode)
-	{ 
-		?>
-		<ul>
-			<li><button onclick=esborra('casos',<?php echo $cas->id ?>)>esborra cas</button>
-		</ul>
-		<?php 
-	} 
-?>
+	<!--data modificació-->
+	<li>
+		Última modificació: <?php echo date("d/m/Y H:i:s",strtotime($cas->modificacio)) ?>
+	</li>
+
+	<!--esborrar-->
+	<?php 
+		if($edit_mode)
+		{ 
+			?>
+			<li>
+				<button onclick=esborra('casos',<?php echo $cas->id ?>)>esborra cas</button>
+			</li>
+			<?php 
+		} 
+	?>
+</ul>

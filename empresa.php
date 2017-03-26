@@ -6,7 +6,7 @@
 
 		//sql query
 		$sql="SELECT * FROM empreses WHERE id=$id";
-		$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+		$res=$mysql->query($sql) or die(mysqli_error($mysql));
 		$n=mysqli_num_rows($res);
 		$row=mysqli_fetch_assoc($res);
 
@@ -17,6 +17,7 @@
 		$empresa=new stdclass;
 		$empresa->id=$row['id'];
 		$empresa->nom=$row['nom'];
+		$empresa->modificacio=$row['modificacio'];
 	?>
 	<style>
 		#navbar div[pagina=empreses]{color:black}
@@ -24,7 +25,17 @@
 </head><body>
 <?php include'navbar.php'?>
 
-<h1>Empreses &rsaquo; <?php echo $empresa->nom ?></h1>
+<h1>
+	Empreses &rsaquo; <?php echo $empresa->nom ?>
+	<?php 
+		if($edit_mode)
+		{
+			echo "
+				<button onclick=\"update('empreses',$empresa->id,'nom','$empresa->nom')\">edita nom</button> 
+			";
+		}
+	?>
+</h1>
 
 <ul>
 	<li>
@@ -37,7 +48,7 @@
 					AND rel.empresa_id=$empresa->id
 				ORDER BY nom
 				";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
 		Persones relacionades (<?php echo $n ?>)
@@ -78,7 +89,7 @@
 										WHERE id NOT IN (SELECT persona_id FROM relacions_persona_empresa WHERE empresa_id = $empresa->id)
 										ORDER BY nom
 									";
-									$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+									$res=$mysql->query($sql) or die(mysqli_error($mysql));
 									while($row=mysqli_fetch_assoc($res))
 									{
 										$id=$row['id'];
@@ -116,7 +127,7 @@
 					casos.id          = rel_pc.cas_id     AND
 					persones.id       = rel_pc.persona_id
 			";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
 		Casos relacionats (<?php echo $n ?>)
@@ -154,7 +165,7 @@
 					partits.id        = rel_pp.partit_id  AND
 					persones.id       = rel_pp.persona_id
 			";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
 		Partits relacionats (<?php echo $n ?>)
@@ -172,15 +183,22 @@
 		?>
 		</ul>
 	</li>
+
+	<!--data modificació-->
+	<li>
+		Última modificació: <?php echo date("d/m/Y H:i:s",strtotime($empresa->modificacio)) ?>
+	</li>
+
+	<!--esborrar-->
+	<?php
+		if($edit_mode)
+		{
+			?>
+			<li>
+				<button onclick=esborra('empreses',<?php echo $empresa->id ?>)>esborra empresa</button>
+			</li>
+			<?php
+		}
+	?>
 </ul>
 
-<?php
-	if($edit_mode)
-	{
-		?>
-		<ul>
-			<li><button onclick=esborra('empreses',<?php echo $empresa->id ?>)>esborra empresa</button>
-		</ul>
-		<?php
-	}
-?>

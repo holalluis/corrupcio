@@ -1,18 +1,20 @@
 ## Desenvolupament
 <ul>
-  <li> CRUD - Afegir descripcions a relacions_persona_x (càrrecs)
-  <li> CRUD - Comprovar si E objectes repetits durant inserció a cada taula
+  <li> CRUD caràcters màxims per inserts
+  <li> CRUD caràcters màxims per updates
   <li> Implementar cerques 
+  <li> Implementar llista de passwords correctes associats a col·laboradors a "data/access.php"
+  <li> Implementar log de canvis associats a un col·laborador
+  <li> Implementar avis legal
+  <li> Formulari de contacte & avisar d'un error
   <li> Poder descarregar base de dades
-  <li> Implementar llista de passwords correctes associats a col·laboradors
-  <li> Implementar log de canvis associats a un password
 </ul>
 
 # Corrupció
 <p>
-	LA GRAN ENCICLOPÈDIA DE LA CORRUPCIÓ (gec.cat)
+	GRAN ENCICLOPÈDIA DE LA CORRUPCIÓ (gec.cat)
 	Web per recopilar els casos de corrupció a l'estat espanyol, una mena 
-	d'enciclopèdia de la corrupció, com a projecte a fer en el temps lliure. 
+	com a projecte fer en el temps lliure. 
 	La idea seria tenir una llista ordenada de "casos", i poder-los comparar. 
 	Llavors, poder visualitzar dades, com per exemple gràfics de barres 
 	d'euros estafats, gent implicada, anys de condemna, etc. Es podria 
@@ -24,22 +26,25 @@
 ## Estructura de dades Corrupció
 - Taules (8)
 	- Taules d'objectes (5)
-		- casos 
-		- persones
-		- partits 
-		- empreses 
-		- condemnes
-	- Taules de relacions (3)
-		- relacions_persona_cas
-		- relacions_partit_cas
-		- relacions_empresa_cas
+    - casos 
+    - persones
+    - partits 
+    - empreses 
+    - condemnes
+	- Taules relacionals (3)
+    - relacions_persona_cas
+    - relacions_partit_cas
+    - relacions_empresa_cas
+- MySQL triggers
+  - on delete {cas,persona,partit,empresa} delete relacions
+  - on delete relacions_persona_cas delete condemna
+  - on update {cas,persona,partit,empresa} update timestamp
 
 ## Repartiment inversio/benefici
 	- 60% Programació i manteniment
 	- 30% Omplir dades i manteniment
-	- 10% Reserva app per pagar serveis a contractar
+	- 10% Reserva per pagar serveis a contractar
 
-## Serveis a contractar
+## Coses a contractar
 	- Posar publicitat
-	- Dissenyador gràfic (logo)
-
+	- Dissenyador gràfic (logo & publi placement)

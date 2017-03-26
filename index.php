@@ -27,7 +27,7 @@
 <?php include'navbar.php'?>
 
 <!--titol-->
-<h1>Gran enciclopèdia de la Corrupció</h1>
+<h1>Gran Enciclopèdia de la Corrupció</h1>
 
 <h2>Pàgina principal &mdash; Resum base de dades</h2>
 
@@ -38,7 +38,7 @@
 			global $mysql;
 			$n=0;
 			$sql="SELECT COUNT(*) FROM $taula";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$row=mysqli_fetch_assoc($res);
 			$n=current($row);
 			return $n;
@@ -47,7 +47,7 @@
 		function troba($taula,$item){
 			global $mysql;
 			$sql="SELECT id,nom FROM $taula ORDER BY id DESC LIMIT 5 ";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$items=array();
 			while($row=mysqli_fetch_assoc($res))
 			{
@@ -75,7 +75,7 @@
 	<table id=top5><tr><th colspan=2>Top 5 casos
 		<?php
 			$sql="SELECT * FROM casos ORDER BY espoli DESC LIMIT 5";
-			$res=mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$i=1;
 			while($row=mysqli_fetch_assoc($res))
 			{

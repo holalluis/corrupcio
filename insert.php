@@ -77,7 +77,7 @@
 		<form method=post action=data/insert/cas.php>
 			<table>
 				<tr><th>Nom *<td><input name=nom placeholder="Cas x" required>
-				<tr><th>Espoli<td><input type=number name=espoli placeholder="euros">
+				<tr><th>Espoli<td><input type=number name=espoli placeholder="Euros">
 				<tr><th>Any<td><input type=number name=any value="<?php echo date("Y",time())?>">
 				<tr><th><td><button>Inserta</button>
 			</table>

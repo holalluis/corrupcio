@@ -3,12 +3,18 @@
 include'insert.php';
 
 //processa POST
-$nom=mysql_real_escape_string($_POST['nom']);
-$naixement=mysql_real_escape_string($_POST['naixement']);
+$nom       = $mysql->escape_string($_POST['nom']);
+$naixement = $mysql->escape_string($_POST['naixement']);
 
 //comprova inputs
 if($nom=="")die("nom en blanc");
 if($naixement=="")$naixement="0000-00-00";
+
+//comprova si ja existeix abans d'insertar
+$n=mysqli_num_rows($mysql->query("SELECT 1 FROM persones WHERE nom='$nom'"));
+if($n){
+	die("Error. La persona '$nom' ja existeix ($n resultats)");
+}
 
 //inserta
 $sql="INSERT INTO persones (nom,naixement) VALUES ('$nom','$naixement')";

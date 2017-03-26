@@ -1,18 +1,18 @@
 <?php
 	$onclick = $edit_mode ? "window.location='edit/logout.php'" : "access()";
 ?>
-<div class='navbar_item' style=float:right onclick="<?php echo $onclick ?>">
+<div 
+	class='navbar_item' 
+	style=float:right 
+	onclick="<?php echo $onclick ?>">
+
 	<?php
-		if($edit_mode)
-		{
+		if($edit_mode){
 			echo "Edit mode ON";
 		}
-		else
-		{
+		else{
 			?>
-			<div>
-					Edit mode OFF
-			</div>
+			<div>Edit mode OFF</div>
 			<script>
 				function access()
 				{
@@ -25,7 +25,7 @@
 						if(this.readyState==4&&this.status==200)
 						{
 							console.log(this.responseText);
-							window.location.reload();
+							window.location.reload();//millorar
 						}
 					}
 					sol.send("pass="+pass);

@@ -29,7 +29,7 @@
 				if(!confirm("S'esborrarà l'element "+taula+"->id "+id+". Continuar?")){return}
 
 				var sol=new XMLHttpRequest();
-				sol.open('POST',"data/esborra/esborra.php",true);
+				sol.open('POST',"data/esborra.php",true);
 				sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				sol.onreadystatechange=function()
 				{
@@ -67,12 +67,15 @@
 			}
 
 			//envia ordre sql al servidor DANGER
-			function sql2json(sql,callback) {
+			function sql2json(sql,callback)
+			{
 				var sol=new XMLHttpRequest();
 				sol.open('POST','data/sql2json.php',true);
 				sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-				sol.onreadystatechange=function() {
-					if(this.readyState==4&&this.status==200) {
+				sol.onreadystatechange=function()
+				{
+					if(this.readyState==4&&this.status==200)
+					{
 						var json=JSON.parse(this.responseText);
 						callback(json)
 					}

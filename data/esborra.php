@@ -18,17 +18,19 @@
 	$id    = $_POST['id'];
 
 	//comprova input
-	if($taula=="" || $id=="") die('Taula o id en blanc');
+	if($taula=="" || $id==""){
+		die('Taula o id en blanc');
+	}
 	
 	//delete
 	$sql="DELETE FROM $taula WHERE id=$id";
-	mysqli_query($mysql,$sql) or die(mysqli_error($mysql));
+	$mysql->query($sql) or die(mysqli_error($mysql));
 
 	echo "
-		<div style=text-align:center>
-			<b>$sql</b>
-			<br>Executat correctament
-			<br><a href='$root/index.php'>Inici</a>
-		</div>
+		<ul>
+			<li>$sql</li>
+			<li>Executat correctament</li>
+			<li><a href='$root/index.php'>Inici</a></li>
+		</ul>
 	";
 ?>
