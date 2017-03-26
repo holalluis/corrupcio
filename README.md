@@ -1,10 +1,10 @@
-## Desenvolupament
+## Desenvolupament tasques pendents
 <ul>
   <li> CRUD caràcters màxims per inserts
   <li> CRUD caràcters màxims per updates
   <li> Implementar log de canvis associats a un col·laborador
-  <li> Implementar avis legal
   <li> Poder descarregar base de dades
+	<li> Implementar avis legal
 </ul>
 
 # Corrupció
@@ -23,15 +23,15 @@
 ## Estructura de dades Corrupció
 - Taules (8)
 	- Taules d'objectes (5)
-    - casos 
-    - persones
-    - partits 
-    - empreses 
-    - condemnes
+		- casos 
+		- persones
+		- partits 
+		- empreses 
+		- condemnes
 	- Taules relacionals (3)
-    - relacions_persona_cas
-    - relacions_partit_cas
-    - relacions_empresa_cas
+		- relacions_persona_cas
+		- relacions_partit_cas
+		- relacions_empresa_cas
 - MySQL triggers
   - on delete {cas,persona,partit,empresa} delete relacions
   - on delete relacions_persona_cas delete condemna
