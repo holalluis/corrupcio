@@ -20,6 +20,7 @@
 		$condemna->anys_de_preso=$row['anys_de_preso'];
 		$condemna->delictes=$row['delictes'];
 		$condemna->any=$row['any'];
+		$condemna->modificacio=$row['modificacio'];
 	?>
 	<style>
 		#navbar div[pagina=condemnes]{color:black}
@@ -96,6 +97,11 @@
 		<?php if($edit_mode){ ?>
 			<button onclick="update('condemnes','<?php echo $condemna->id ?>','any', '<?php echo urlencode($condemna->any) ?>')">modifica</button>
 		<?php } ?>
+	</li>
+
+	<!--data modificació-->
+	<li>
+		Última modificació: <?php echo date("d/m/Y H:i:s",strtotime($condemna->modificacio)) ?>
 	</li>
 
 	<!--esborrar-->
