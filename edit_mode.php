@@ -3,12 +3,11 @@
 ?>
 <div 
 	class='navbar_item' 
-	style=float:right 
 	onclick="<?php echo $onclick ?>">
 
 	<?php
 		if($edit_mode){
-			echo "Edit mode ON";
+			echo "<span>Edit mode ON</span>";
 		}
 		else{
 			?>

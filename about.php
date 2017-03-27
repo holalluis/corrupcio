@@ -6,18 +6,17 @@
 <!--titol-->
 <h1>Gran Enciclopèdia de la Corrupció</h1>
 <h2>About</h2>
-<div style="padding-left:1em;max-width:50em;margin:0 auto">
+<div style="padding-left:1.5em;max-width:50em;">
 	<p>
-		La Gran Enciclopèdia de la Corrupció 
-		va néixer el març del 2017 
-		amb l'ànim de ser una font d'informació útil pels ciutadans.
+		La Gran Enciclopèdia de la Corrupció va néixer el març del 2017 
+		amb l'objectiu de ser una eina útil a la societat.
 
 		La web és un pur exercici de modelització informàtica, 
 		la qual es basa en modelar fenomens o processos utilitzant estructures de dades.
 		
 		<br><br>
 
-		El model (creat amb MySQL) consta de 4 taules principals:
+		El model consta de 4 taules principals:
 		<ul>
 			<li>Persones
 			<li>Casos
@@ -31,6 +30,14 @@
 			<li>Relacions Persona-Cas
 			<li>Relacions Partit-Cas
 			<li>Relacions Empresa-Cas
+		</ul>
+		
+		Els llenguatges de programació utilitzats han sigut:
+		<ul>
+			<li>PHP
+			<li>MySQL
+			<li>Javascript
+			<li>HTML/CSS
 		</ul>
 	</p>
 </div>

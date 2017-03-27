@@ -2,9 +2,9 @@
 <ul>
   <li> CRUD caràcters màxims per inserts
   <li> CRUD caràcters màxims per updates
-  <li> Implementar log de canvis associats a un col·laborador
+  <li> Implementar col·laboradors (user,password)
+  <li> Taula log: canvis associats a un col·laborador
   <li> Poder descarregar base de dades
-	<li> Implementar avis legal
 </ul>
 
 # Corrupció

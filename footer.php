@@ -1,7 +1,7 @@
 <div id=footer>
 	<div class='footer_item' onclick=window.location='about.php'>Corrupció <?php echo date('Y') ?></div>
 	<div class='footer_item' onclick=window.location='contact.php'>Contacta o Informa d'un error</div>
-	<div class='footer_item' onclick=window.location='README.md'>README.md</div>
+	<div class='footer_item' onclick=window.open('README.md')>README.md</div>
 </div>
 
 <style>

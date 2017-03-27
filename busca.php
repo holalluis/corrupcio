@@ -10,7 +10,7 @@
 
 <style>
 	#busca {
-		background:#f0f0f0;
+		background:#fafafa;
 		text-align:center;
 		padding:2em;
 		border-bottom:1px solid #ccc
@@ -20,7 +20,7 @@
 		display:none;
 	}
 	#busca input#q {
-		width:50%;
+		width:45%;
 		outline:none;
 		font-size:22px;
 	}
