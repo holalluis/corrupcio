@@ -29,7 +29,9 @@
 <!--titol-->
 <h1>Gran Enciclopèdia de la Corrupció</h1>
 
-<h2>Pàgina principal &mdash; Resum base de dades</h2>
+<h2>Pàgina principal</h2>
+
+<h2>Resum base de dades</h2>
 
 <!--resum-->
 <ul id=resum>
@@ -98,11 +100,12 @@
 -->
 <div style="padding:1em;">LINKS
 	<ul>
-		<li><a target=_blank href="https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n">https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n</a>
-		<li><a target=_blank href="https://llumsitaquigrafs.cat/">https://llumsitaquigrafs.cat/</a>
-		<li><a target=_blank href="https://atles.llumsitaquigrafs.cat/">https://atles.llumsitaquigrafs.cat/</a>
+		<li><a target=_blank href="https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n">
+		15mpedia.org/wiki/[...]</a>
+		<li><a target=_blank href="https://llumsitaquigrafs.cat/">llumsitaquigrafs.cat/</a>
+		<li><a target=_blank href="https://atles.llumsitaquigrafs.cat/">atles.llumsitaquigrafs.cat/</a>
 		<li><a target=_blank href="https://es.wikipedia.org/wiki/Anexo:Casos_judiciales_relacionados_con_corrupci%C3%B3n_pol%C3%ADtica_en_Espa%C3%B1a">
-		https://es.wikipedia.org/wiki/Anexo:Casos_judiciales_relacionados...</a>
+		es.wikipedia.org/[...]</a>
 	</ul>
 </div>
 
