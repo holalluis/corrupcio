@@ -15,7 +15,7 @@
 			<script>
 				function access()
 				{
-					var pass=prompt("Password:",'12345');
+					var pass=prompt("Password:");
 					var sol=new XMLHttpRequest();
 					sol.open('POST','edit/access.php',true);
 					sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");

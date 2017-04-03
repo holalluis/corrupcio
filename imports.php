@@ -1,17 +1,18 @@
+<!--connecta-->
 <?php include'mysql.php'?>
+
+<!--permís per edit mode, cookie fa de password-->
+<?php include'edit/edit_mode.php'?>
 
 <!--utf-8, css-->
 <meta charset=utf-8>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <link rel="icon" href="img/ico.png" type="image/x-icon">
 <link rel="stylesheet" href="css.css">
 <meta name="description" content="corrupció">
 
 <!--title-->
 <title>Corrupció</title>
-
-<!--permís per edit mode, cookie fa de password-->
-<?php include'edit/edit_mode.php'?>
 
 <script>
 	//utils

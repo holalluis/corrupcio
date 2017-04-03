@@ -101,7 +101,8 @@
 		<li><a target=_blank href="https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n">https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n</a>
 		<li><a target=_blank href="https://llumsitaquigrafs.cat/">https://llumsitaquigrafs.cat/</a>
 		<li><a target=_blank href="https://atles.llumsitaquigrafs.cat/">https://atles.llumsitaquigrafs.cat/</a>
-		<li><a target=_blank href="https://es.wikipedia.org/wiki/Anexo:Casos_judiciales_relacionados_con_corrupci%C3%B3n_pol%C3%ADtica_en_Espa%C3%B1a">https://es.wikipedia.org/wiki/Anexo:Casos_judiciales_relacionados_con_corrupci%C3%B3n_pol%C3%ADtica_en_Espa%C3%B1a</a>
+		<li><a target=_blank href="https://es.wikipedia.org/wiki/Anexo:Casos_judiciales_relacionados_con_corrupci%C3%B3n_pol%C3%ADtica_en_Espa%C3%B1a">
+		https://es.wikipedia.org/wiki/Anexo:Casos_judiciales_relacionados...</a>
 	</ul>
 </div>
 

@@ -36,7 +36,10 @@
 		flex-wrap:wrap;
 		justify-content:space-between;
 	}
-	#navbar .flex {display:flex}
+	#navbar .flex {
+		display:flex;
+		flex-wrap:wrap;
+	}
 	#navbar .navbar_item {
 		display:block;
 		padding:0.8em 0.5em;
