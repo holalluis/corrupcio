@@ -6,6 +6,7 @@ body{
 	overflow-y:scroll;
 	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
 	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	font-family:"San Francisco", -apple-system, system-ui, ".SFNSText-Regular", sans-serif;
 }
 h1{
 	padding-left:0.75em;
@@ -26,7 +27,6 @@ span.descripcio {
 	font-size:12px;
 	color:#666;
 }
-
 /* data última modificació*/
 div.modificacio {
 	font-style:italic;
