@@ -50,7 +50,6 @@
 			width:100%;
 			padding:1em;;
 		}
-		#navbar div[pagina=insert]{color:black}
 	</style>
 	<script>
 		function init()
