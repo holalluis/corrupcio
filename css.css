@@ -22,6 +22,12 @@ hr{border:none;border-bottom:1px solid #ccc}
 a{text-decoration:none}
 a:hover{text-decoration:underline}
 
+/*classe general*/
+.flex {
+	display:flex;
+	flex-wrap:wrap;
+}
+
 /*descripcions de relacions persona_{cas,partit,empresa}*/
 span.descripcio {
 	font-size:12px;

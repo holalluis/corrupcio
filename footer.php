@@ -1,25 +1,27 @@
 <div id=footer>
-	<div class='footer_item' onclick=window.location='about.php'>Corrupció <?php echo date('Y') ?></div>
-	<div class='footer_item' onclick=window.location='contact.php'>Contacta o Informa d'un error</div>
-	<div class='footer_item' onclick=window.open('README.md')>README.md</div>
+	<div class=item onclick=window.location='about.php'>Corrupció <?php echo date('Y') ?></div>
+	<div class=item onclick=window.location='contact.php'>Contacta o Informa d'un error</div>
+	<div class=item onclick=window.open('README.md')>README.md</div>
 </div>
 
 <style>
 	#footer {
-		padding:30px;
+		padding-left:1em;
+		padding-top:1em;
 		background:#e5e5e5;
 		border-top:1px solid #ccc;
 		padding-bottom:300px;
 		text-shadow: 0 1px 0 #fff;
+		display:flex;
 	}
-	#footer .footer_item {
+	#footer .item {
 		display:inline-block;
 		padding:1em;
 		cursor:pointer;
 		border-bottom:1px solid transparent;
 		color:rgba(0,0,0,0.55);
 	}
-	#footer .footer_item:hover {
+	#footer .item:hover {
 		background:#f0f0f0;
 		color:rgba(0,0,0,0.85);
 	}

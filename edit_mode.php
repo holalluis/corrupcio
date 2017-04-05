@@ -2,16 +2,14 @@
 	$onclick = $edit_mode ? "window.location='edit/logout.php'" : "access()";
 ?>
 <div 
-	class='navbar_item' 
-	onclick="<?php echo $onclick ?>">
-
+	class=item 
+	onclick="<?php echo $onclick ?>"
+	>
+	<div>Edit mode</div>
 	<?php
-		if($edit_mode){
-			echo "<span>Edit mode ON</span>";
-		}
-		else{
+		if(!$edit_mode)
+		{
 			?>
-			<div>Edit mode OFF</div>
 			<script>
 				function access()
 				{

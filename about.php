@@ -5,14 +5,12 @@
 
 <!--titol-->
 <h1>Gran Enciclopèdia de la Corrupció</h1>
-<h2>About</h2>
+<h2>About (modificar més endavant)</h2>
 <div style="padding-left:1.5em;max-width:50em;">
 	<p>
-		La Gran Enciclopèdia de la Corrupció va néixer el març del 2017 
-		amb l'objectiu de ser una eina útil a la societat.
-
-		La web és un pur exercici de modelització informàtica, 
-		la qual es basa en modelar fenomens o processos utilitzant estructures de dades.
+		La Gran Enciclopèdia de la Corrupció va néixer el març del 2017.
+		És un pur exercici de modelització informàtica, 
+		la qual es basa en modelar fenomens utilitzant estructures de dades.
 		
 		<br><br>
 

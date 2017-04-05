@@ -28,9 +28,7 @@
 
 <!--titol-->
 <h1>Gran Enciclopèdia de la Corrupció</h1>
-
 <h2>Pàgina principal</h2>
-
 <h2>Resum base de dades</h2>
 
 <!--resum-->
