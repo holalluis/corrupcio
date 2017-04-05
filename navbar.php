@@ -1,35 +1,8 @@
-<?php 
-	//edit mode header
-	if($edit_mode)
-	{ 
-		?>
-		<div id=edit_mode_header>
-			<div>Edit mode ON</div>
-			<div class=item><a href='insert.php'>Inserta</a>    </div>
-			<div class=item><a href='edit/logout.php'>Sortir</a></div>
-		</div>
-		<style>
-			#edit_mode_header {
-				text-align:center;
-				background:#666;
-				color:white;
-				display:flex;
-			}
-			#edit_mode_header div {
-				padding:0.8em 0.5em;
-			}
-			#edit_mode_header div.item:hover {
-				background:#888;
-			}
-			#edit_mode_header a {
-				color:white;
-			}
-		</style>
-		<?php
-	}
-?>
+<?php include'edit_mode.php'?>
 
+<!--navbar-->
 <div id=navbar class=flex>
+
 	<div class=flex>
 		<div class=item pagina=inici     onclick=window.location='index.php'    >Inici</div>
 		<div class=item pagina=persones  onclick=window.location='persones.php' >Persones</div>
@@ -40,13 +13,41 @@
 		<div class=item pagina=relacions onclick=window.location='relacions.php'>Connexions</div>
 		<div class=item onclick="qs('#busca').classList.toggle('amagat');qs('#q').focus()">Busca</div>
 	</div>
+
+	<!--boto per iniciar edit mode-->
 	<div>
-		<?php include'edit_mode.php'?>
+		<?php
+			if(!$edit_mode)
+			{
+				?>
+				<div class=item onclick=access()>
+					<div>Edit mode</div>
+					<script>
+						function access()
+						{
+							var pass=prompt("Password:");
+							var sol=new XMLHttpRequest();
+							sol.open('POST','edit/access.php',true);
+							sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+							sol.onreadystatechange=function()
+							{
+								if(this.readyState==4&&this.status==200)
+								{
+									console.log(this.responseText);
+									window.location.reload();//millorar
+								}
+							}
+							sol.send("pass="+pass);
+						}
+					</script>
+				</div>
+				<?php
+			}
+		?>
 	</div>
 </div>
 
-<!--menu buscar-->
-<?php include 'busca.php'?>
+<!--menu buscar--><?php include 'busca.php'?>
 
 <style>
 	#navbar {
