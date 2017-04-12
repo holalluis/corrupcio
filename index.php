@@ -55,7 +55,7 @@
 				$nom=$row['nom'];
 				$items[]="<a href=$item.php?id=$id>$nom</a>";
 			}
-			return "<span style=color:#ccc> ".join(', ',$items)."...</span>";
+			return "<span style=color:#ccc> ".join(', ',$items)."</span>";
 		}
 	?>
 	<table>
