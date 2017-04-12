@@ -1,26 +1,20 @@
-## Desenvolupament tasques pendents
-<ul>
-  <li> CRUD caràcters màxims per inserts
-  <li> CRUD caràcters màxims per updates
-  <li> Implementar col·laboradors (user,password)
-  <li> Taula log: canvis associats a un col·laborador
-  <li> Poder descarregar base de dades
-</ul>
+# Corrupcio
+GRAN ENCICLOPEDIA DE LA CORRUPCIO
+Web per recopilar els casos de corrupcio a l'estat espanyol, 
+La idea es tenir una llista ordenada de "casos", i poder-los comparar. 
+Llavors, poder visualitzar dades, com per exemple grafics de barres 
+d'euros estafats, gent implicada, anys de condemna, etc. 
+Es podria monetitzar amb publicitat. 
 
-# Corrupció
-<p>
-	GRAN ENCICLOPÈDIA DE LA CORRUPCIÓ (gec.cat)
-	Web per recopilar els casos de corrupció a l'estat espanyol, 
-	un projecte fer en el temps lliure. 
-	La idea seria tenir una llista ordenada de "casos", i poder-los comparar. 
-	Llavors, poder visualitzar dades, com per exemple gràfics de barres 
-	d'euros estafats, gent implicada, anys de condemna, etc. Es podria 
-	monetitzar amb publicitat. Si algú vol col·laborar amb la part de 
-	recopilació de dades jo faria la programació. 
-	Preferentment algú que es dediqui al món del periodisme.
-</p>
+## Tasques pendents (programacio)
+- CRUD - fixar caracters maxims per inserts
+- CRUD - fixar caracters maxims per updates
+- Agrupar connexions cas i empresa repetits
+- Implementar col.laboradors (user,password)
+- Taula log: canvis associats a un col.laborador
+- Poder descarregar base de dades
 
-## Estructura de dades Corrupció
+## Estructura de dades Corrupcio
 - Taules (8)
 	- Taules d'objectes (5)
 		- casos 
@@ -37,11 +31,11 @@
   - on delete relacions_persona_cas delete condemna
   - on update {cas,persona,partit,empresa} update timestamp
 
-## Repartiment inversio/benefici
-	- 60% Programació i manteniment
+## Proposta inicial de repartiment inversio/benefici
+	- 60% Programacio i manteniment
 	- 30% Omplir dades i manteniment
 	- 10% Reserva per pagar serveis a contractar
 
-## Coses a contractar
+## Coses a contractar en un futur
 	- Posar publicitat
-	- Dissenyador gràfic (logo & publi placement)
+	- Dissenyador grafic (logo & publi placement)

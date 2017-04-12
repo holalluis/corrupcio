@@ -9,6 +9,8 @@ body{
 	font-family:"San Francisco", -apple-system, system-ui, ".SFNSText-Regular", sans-serif;
 	font-size:13px;
 }
+
+/*h1,h2,h3*/
 h1,h2,h3{ 
 	font-weight:normal;
 	padding-left:8px; 
@@ -17,27 +19,36 @@ h1{font-size:18px}
 h2{font-size:16px}
 h3{font-size:14px}
 
-table{border-collapse:collapse}
-th,td{border:1px solid #ccc}
-th{font-weight:normal}
+/*ul*/
+ul{
+	padding-left:25px;
+}
 li{margin-bottom:0.5em;margin-top:0.5em}
+
+/*table*/
+table{border-collapse:collapse}
+th{font-weight:normal}
+th,td{border:1px solid #ccc}
+
+/*misc*/
 hr{border:none;border-bottom:1px solid #ccc}
 a{text-decoration:none}
 a:hover{text-decoration:underline}
 
 /*classe general*/
-.flex {
+.flex{
 	display:flex;
 	flex-wrap:wrap;
 }
 
 /*descripcions de relacions persona_{cas,partit,empresa}*/
-span.descripcio {
+span.descripcio{
 	font-size:12px;
 	color:#666;
 }
-/* data última modificació*/
-div.modificacio {
+
+/*data última modificació*/
+div.modificacio{
 	font-style:italic;
 	font-size:11px;
 }
