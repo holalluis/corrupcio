@@ -1,23 +1,6 @@
 <!doctype html><html><head>
 	<?php include'imports.php' ?>
 	<style>
-		ul#resum table td {
-			padding:0;
-			border:none;
-			max-width:45%;
-		}
-		ul#resum td:nth-child(n+2) a {
-			text-decoration:none;
-			color:#bbb;
-		}
-		ul#resum td:nth-child(n+2) a:hover {
-			color:#666;
-			text-decoration:underline;
-		}
-		ul#resum table li {
-			margin-top:   0.2em;
-			margin-bottom:0.3em;
-		}
 		table#top5 td{
 			padding:0.3em 0.5em;
 		}
@@ -44,6 +27,7 @@
 			return $n;
 		}
 
+		//no utilitzat per ara
 		function troba($taula,$item){
 			global $mysql;
 			$sql="SELECT id,nom FROM $taula ORDER BY id DESC LIMIT 5 ";
@@ -58,16 +42,14 @@
 			return "<span style=color:#ccc> ".join(', ',$items)."</span>";
 		}
 	?>
-	<table>
-		<tr><td><li><a href="persones.php">Persones</a>                    (<?php echo compta('persones').") <td>".troba('persones','persona')?> 
-		<tr><td><li><a href="casos.php">Casos de corrupció</a>             (<?php echo compta('casos').")    <td>".troba('casos','cas')?> 
-		<tr><td><li><a href="partits.php">Partits</a>                      (<?php echo compta('partits').")  <td>".troba('partits','partit')?> 
-		<tr><td><li><a href="empreses.php">Empreses</a>                    (<?php echo compta('empreses').") <td>".troba('empreses','empresa')?> 
-		<tr><td><li><a href="condemnes.php">Condemnes</a>                  (<?php echo compta('condemnes')?>)
-		<tr><td><li><a href="relacions.php">Connexions persona-cas</a>     (<?php echo compta('relacions_persona_cas')?>)
-		<tr><td><li><a href="relacions.php">Connexions persona-partit</a>  (<?php echo compta('relacions_persona_partit')?>)
-		<tr><td><li><a href="relacions.php">Connexions persona-empresa</a> (<?php echo compta('relacions_persona_empresa')?>)
-	</table>
+	<li><a href="persones.php"> Persones</a>                   (<?php echo compta('persones')?>)
+	<li><a href="casos.php">    Casos de corrupció</a>         (<?php echo compta('casos')?>)
+	<li><a href="partits.php">  Partits</a>                    (<?php echo compta('partits')?>)
+	<li><a href="empreses.php"> Empreses</a>                   (<?php echo compta('empreses')?>)
+	<li><a href="condemnes.php">Condemnes</a>                  (<?php echo compta('condemnes')?>)
+	<li><a href="relacions.php">Connexions persona-cas</a>     (<?php echo compta('relacions_persona_cas')?>)
+	<li><a href="relacions.php">Connexions persona-partit</a>  (<?php echo compta('relacions_persona_partit')?>)
+	<li><a href="relacions.php">Connexions persona-empresa</a> (<?php echo compta('relacions_persona_empresa')?>)
 </ul>
 
 <!--top 5 casos--><hr>
