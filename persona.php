@@ -297,10 +297,9 @@
 						<form method=post action=data/insert/condemna.php>
 							<input name=persona_id type=hidden value=<?php echo $persona->id?>>
 							<table>
-								<tr><th>Afegeix condemna<th>Anys de presó<th>Delictes<th>Inici
-								<td rowspan=2><button>afegir condemna</button>
-								<tr><td>
-									<select name=relacio_persona_cas_id>
+								<tr>
+									<th>Nova condemna
+									<td><select name=relacio_persona_cas_id>
 										<?php
 											//casos relacionts amb la persona
 											$sql="
@@ -320,9 +319,11 @@
 											}
 										?>
 									</select>
-								<td><input name=anys_de_preso placeholder="Anys de presó">
-								<td><textarea name=delictes placeholder="Delictes"></textarea>
-								<td><input name=any placeholder="Any" value="<?php echo date("Y")?>">
+								</tr>
+								<tr><th>Anys de presó<td><input name=anys_de_preso placeholder="Anys de presó">
+								<tr><th>Delictes<td><textarea name=delictes placeholder="Delictes"></textarea>
+								<tr><th>Inici<td><input name=any placeholder="Any" value="<?php echo date("Y")?>">
+								<tr><td colspan=2 style=text-align:center><button>afegir condemna</button>
 							</table>
 						</form>
 					</li>

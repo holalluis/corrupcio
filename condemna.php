@@ -77,7 +77,7 @@
 			echo $condemna->anys_de_preso;
 		?>
 		<?php if($edit_mode){ ?>
-			<button onclick="update('condemnes','<?php echo $condemna->id ?>','anys_de_preso', '<?php echo urlencode($condemna->anys_de_preso) ?>')">modifica</button>
+			<button onclick="update('condemnes','<?php echo $condemna->id ?>','anys_de_preso', '<?php echo urlencode($condemna->anys_de_preso) ?>')">edita anys de presó</button>
 		<?php } ?>
 	</li>
 
@@ -86,7 +86,7 @@
 		Delictes: 
 		<?php echo $condemna->delictes ?>
 		<?php if($edit_mode){ ?>
-			<button onclick="update('condemnes','<?php echo $condemna->id ?>','delictes', '<?php echo urlencode($condemna->delictes) ?>')">modifica</button>
+			<button onclick="update('condemnes','<?php echo $condemna->id ?>','delictes', '<?php echo urlencode($condemna->delictes) ?>')">edita delictes</button>
 		<?php } ?>
 	</li>
 
@@ -95,7 +95,7 @@
 		Inici:
 		<?php echo $condemna->any ?>
 		<?php if($edit_mode){ ?>
-			<button onclick="update('condemnes','<?php echo $condemna->id ?>','any', '<?php echo urlencode($condemna->any) ?>')">modifica</button>
+			<button onclick="update('condemnes','<?php echo $condemna->id ?>','any', '<?php echo urlencode($condemna->any) ?>')">edita any inici</button>
 		<?php } ?>
 	</li>
 

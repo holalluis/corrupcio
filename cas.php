@@ -51,7 +51,7 @@
 		Any: 
 		<?php echo $cas->any ?> 
 		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','any','<?php echo urlencode($cas->any) ?>')">modifica any</button>
+			<button onclick="update('casos','<?php echo $cas->id ?>','any','<?php echo urlencode($cas->any) ?>')">edita any</button>
 		<?php } ?>
 	</li>
 
@@ -60,7 +60,7 @@
 		Espoli: 
 		<?php echo $cas->espoli ?> euros 
 		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','espoli','<?php echo urlencode($cas->espoli) ?>')">modifica espoli</button>
+			<button onclick="update('casos','<?php echo $cas->id ?>','espoli','<?php echo urlencode($cas->espoli) ?>')">edita espoli</button>
 		<?php } ?>
 	</li>
 
@@ -77,7 +77,7 @@
 			}
 		?>
 		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','estat','<?php echo urlencode($cas->estat) ?>')">modifica estat</button>
+			<button onclick="update('casos','<?php echo $cas->id ?>','estat','<?php echo urlencode($cas->estat) ?>')">edita estat</button>
 		<?php } ?>
 	</li>
 
@@ -95,7 +95,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Persones implicades (<?php echo $n ?>)
+		Persones relacionades (<?php echo $n ?>)
 		<ul style=list-style-type:decimal>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
@@ -209,9 +209,7 @@
 						<form method=post action=data/insert/condemna.php>
 							<input name=cas_id type=hidden value=<?php echo $cas->id?>>
 							<table>
-								<tr><th>Afegeix condemna<th>Anys de presó<th>Delictes<th>Inici
-								<td rowspan=2><button>afegir condemna</button>
-								<tr><td>
+								<tr><th>Nova condemna<td>
 									<select name=relacio_persona_cas_id>
 										<?php
 											//persones relacionades amb el cas
@@ -232,9 +230,11 @@
 											}
 										?>
 									</select>
-								<td><input name=anys_de_preso placeholder="Anys de presó">
-								<td><textarea name=delictes placeholder="Delictes"></textarea>
-								<td><input name=any placeholder="Any" value="<?php echo date("Y")?>">
+								</tr>
+								<tr><th>Anys de presó<td><input name=anys_de_preso placeholder="Anys de presó">
+								<tr><th>Delictes<td><textarea name=delictes placeholder="Delictes"></textarea>
+								<tr><th>Inici<td><input name=any placeholder="Any" value="<?php echo date("Y")?>">
+								<tr><td colspan=2 style=text-align:center><button>afegir condemna</button>
 							</table>
 						</form>
 					</li>
@@ -268,7 +268,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Partits implicats (<?php echo $n ?>)
+		Partits relacionats (<?php echo $n ?>)
 		<ul>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
@@ -307,7 +307,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Empreses implicades (<?php echo $n ?>)
+		Empreses relacionades (<?php echo $n ?>)
 		<ul>
 		<?php
 			while($row=mysqli_fetch_assoc($res))

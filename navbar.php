@@ -16,36 +16,34 @@
 		Busca
 	</div>
 	<!--edit mode-->
-	<div>
-		<?php
-			if(!$edit_mode)
-			{
-				?>
-				<div class=item onclick=access()>
-					<div>Edit mode</div>
-					<script>
-						function access()
+	<?php
+		if(!$edit_mode)
+		{
+			?>
+			<div class=item onclick=access()>
+				<div>Edit mode</div>
+				<script>
+					function access()
+					{
+						var pass=prompt("Password:");
+						var sol=new XMLHttpRequest();
+						sol.open('POST','edit/access.php',true);
+						sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+						sol.onreadystatechange=function()
 						{
-							var pass=prompt("Password:");
-							var sol=new XMLHttpRequest();
-							sol.open('POST','edit/access.php',true);
-							sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-							sol.onreadystatechange=function()
+							if(this.readyState==4&&this.status==200)
 							{
-								if(this.readyState==4&&this.status==200)
-								{
-									console.log(this.responseText);
-									window.location.reload();//millorar
-								}
+								console.log(this.responseText);
+								window.location.reload();//millorar
 							}
-							sol.send("pass="+pass);
 						}
-					</script>
-				</div>
-				<?php
-			}
-		?>
-	</div>
+						sol.send("pass="+pass);
+					}
+				</script>
+			</div>
+			<?php
+		}
+	?>
 </div>
 
 <!--menu buscar--><?php include'busca.php'?>

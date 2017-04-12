@@ -44,7 +44,7 @@
 			if($edit_mode)
 			{ 
 				?>
-				<button onclick="update('partits','<?php echo $partit->id ?>','nom_llarg','<?php echo urlencode($partit->nom_llarg) ?>')">modifica</button>
+				<button onclick="update('partits','<?php echo $partit->id ?>','nom_llarg','<?php echo urlencode($partit->nom_llarg) ?>')">edita nom sencer</button>
 				<?php 
 			} 
 		?>
@@ -81,7 +81,7 @@
 					{
 						echo "
 							<button onclick=update('relacions_persona_partit',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
-							<button onclick=esborra('relacions_persona_partit',$rel_id)>esborra</button>
+							<button onclick=esborra('relacions_persona_partit',$rel_id)>esborra connexió</button>
 						";
 					}
 				}
@@ -111,7 +111,7 @@
 								?>
 							</select>
 							<input name=partit_id type=hidden value=<?php echo $partit->id?>>
-							<button>afegir</button>
+							<button>afegir connexió</button>
 						</form>
 					</li>
 					<?php

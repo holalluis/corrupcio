@@ -5,7 +5,8 @@
 		function error_q(){die("No has buscat res");}
 		if(!isset($_GET['q'])){error_q();}
 		if(empty($_GET['q'])){error_q();}
-		$q=$_GET['q'] or error_q();
+		if(trim($_GET['q'])==""){error_q();}
+		$q=trim($_GET['q']);
 	?>
 	<style>
 		div#root {
@@ -19,7 +20,9 @@
 <h1>Resultats cerca '<?php echo $q?>'</h1>
 
 <?php 	
-	function norm($str) {
+	//funcio general per buscar
+	function cerca($taula,$link) {
+		global $q,$mysql;
 		//canvia accents pel caràcter '%' (wildcard per qualsevol nombre de caràcters a mysql)
 		$replace = array(
 				'à' => '%', 'á' => '%', 'À' => '%', 'Á' => '%',
@@ -28,13 +31,7 @@
 				'ò' => '%', 'ó' => '%', 'Ò' => '%', 'Ó' => '%',
 				'ù' => '%', 'u' => '%', 'Ù' => '%', 'Ú' => '%',
 		);
-		return strtr($str,$replace);
-	}
-
-	//funcio general per buscar
-	function cerca($taula,$link) {
-		global $q,$mysql;
-		$q=norm($q);
+		$q=strtr($q,$replace);
 		$sql="
 			SELECT id,nom 
 			FROM $taula 
