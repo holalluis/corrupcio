@@ -24,7 +24,7 @@
 		$replace = array(
 				'à' => '%', 'á' => '%', 'À' => '%', 'Á' => '%',
 				'è' => '%', 'é' => '%', 'È' => '%', 'É' => '%',
-				'ì' => '%', 'i' => '%', 'Ì' => '%', 'Í' => '%',
+				'ì' => '%', 'í' => '%', 'Ì' => '%', 'Í' => '%',
 				'ò' => '%', 'ó' => '%', 'Ò' => '%', 'Ó' => '%',
 				'ù' => '%', 'u' => '%', 'Ù' => '%', 'Ú' => '%',
 		);
@@ -35,17 +35,22 @@
 	function cerca($taula,$link) {
 		global $q,$mysql;
 		$q=norm($q);
-		$sql="SELECT id,nom FROM $taula WHERE nom LIKE '%$q%' ORDER BY nom ";
+		$sql="
+			SELECT id,nom 
+			FROM $taula 
+			WHERE 
+				REPLACE( REPLACE( REPLACE(
+				REPLACE( REPLACE( REPLACE(
+				REPLACE( 
+				REPLACE(nom,'à','a'),'á','a'),'è','e'),'é','e'),'í','i'),'ò','o'),'ó','o'),'ú','u')
+			LIKE '%$q%' ORDER BY nom ";
 		$res=$mysql->query($sql) or die(mysqli_error($mysql));
 		echo "(".mysqli_num_rows($res).")";
 		echo "<ul>";
-		while($row=mysqli_fetch_assoc($res))
-		{
+		while($row=mysqli_fetch_assoc($res)) {
 			$id=$row['id'];
 			$nom=$row['nom'];
-			echo "
-				<li> <a href=$link.php?id=$id>$nom</a>
-			";
+			echo "<li><a href=$link.php?id=$id>$nom</a>";
 		}
 		echo "</ul>";
 	}

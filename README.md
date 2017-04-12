@@ -9,7 +9,7 @@ Es podria monetitzar amb publicitat.
 ## Tasques pendents (programacio)
 - CRUD - fixar caracters maxims per inserts
 - CRUD - fixar caracters maxims per updates
-- Agrupar connexions cas i empresa repetits
+- Grafic de barres sota del top5 a pagina inicial
 - Implementar col.laboradors (user,password)
 - Taula log: canvis associats a un col.laborador
 - Poder descarregar base de dades

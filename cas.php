@@ -96,7 +96,7 @@
 			$n=mysqli_num_rows($res);
 		?>
 		Persones implicades (<?php echo $n ?>)
-		<ul>
+		<ul style=list-style-type:decimal>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{
@@ -105,7 +105,7 @@
 					$persona_id=$row['persona_id'];
 					$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
 					$ordre=$row['ordre'];
-					echo "<li> <span class=monospace>$ordre.</span>";
+					echo "<li>";
 					if($edit_mode)
 					{
 						echo " <select title=ordre onchange=updateOrdre($rel_id,this.value)>";

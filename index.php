@@ -87,7 +87,7 @@
 
 <!--links
 -->
-<div><h3>LINKS</h3>
+<div><h3>Links</h3>
 	<ul>
 		<li><a target=_blank href="https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n">
 		15mpedia.org/wiki/[...]</a>
