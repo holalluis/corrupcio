@@ -6,6 +6,7 @@
 
 <style>
 	#footer {
+		margin-top:10em;
 		padding-left:1em;
 		padding-top:1em;
 		background:#e5e5e5;

@@ -1,61 +1,69 @@
 <!doctype html><html><head>
-	<?php include'imports.php' ?>
+	<?php include'imports.php'?>
 	<style>
+		#navbar div[pagina=inici]{color:black}
+		table#top5 {
+			margin-left:10px;
+		}
 		table#top5 td{
 			padding:0.3em 0.5em;
 		}
-		#navbar div[pagina=inici]{color:black}
 	</style>
 </head><body>
 <?php include'navbar.php'?>
 
 <!--titol-->
 <h1>Gran Enciclopèdia de la Corrupció</h1>
-<h2>
-	Pàgina principal : Resum base de dades
-</h2>
+<h2>Pàgina principal (resum)</h2>
 
 <!--resum-->
-<ul id=resum>
-	<?php
-		function compta($taula){
-			global $mysql;
-			$n=0;
-			$sql="SELECT COUNT(*) FROM $taula";
-			$res=$mysql->query($sql) or die(mysqli_error($mysql));
-			$row=mysqli_fetch_assoc($res);
-			$n=current($row);
-			return $n;
-		}
-
-		//no utilitzat per ara
-		function troba($taula,$item){
-			global $mysql;
-			$sql="SELECT id,nom FROM $taula ORDER BY id DESC LIMIT 5 ";
-			$res=$mysql->query($sql) or die(mysqli_error($mysql));
-			$items=array();
-			while($row=mysqli_fetch_assoc($res))
-			{
-				$id=$row['id'];
-				$nom=$row['nom'];
-				$items[]="<a href=$item.php?id=$id>$nom</a>";
+<div style=margin-right:20px>
+	<ul id=resum>
+		<?php
+			function compta($taula){
+				global $mysql;
+				$n=0;
+				$sql="SELECT COUNT(*) FROM $taula";
+				$res=$mysql->query($sql) or die(mysqli_error($mysql));
+				$row=mysqli_fetch_assoc($res);
+				$n=current($row);
+				return $n;
 			}
-			return "<span style=color:#ccc> ".join(', ',$items)."</span>";
-		}
-	?>
-	<li><a href="persones.php"> Persones</a>                   (<?php echo compta('persones')?>)
-	<li><a href="casos.php">    Casos de corrupció</a>         (<?php echo compta('casos')?>)
-	<li><a href="partits.php">  Partits</a>                    (<?php echo compta('partits')?>)
-	<li><a href="empreses.php"> Empreses</a>                   (<?php echo compta('empreses')?>)
-	<li><a href="condemnes.php">Condemnes</a>                  (<?php echo compta('condemnes')?>)
-	<li><a href="relacions.php">Connexions persona-cas</a>     (<?php echo compta('relacions_persona_cas')?>)
-	<li><a href="relacions.php">Connexions persona-partit</a>  (<?php echo compta('relacions_persona_partit')?>)
-	<li><a href="relacions.php">Connexions persona-empresa</a> (<?php echo compta('relacions_persona_empresa')?>)
-</ul>
 
-<!--top 5 casos--><hr>
-<div style="padding:10px">
-	<table id=top5><tr><th colspan=2>Top 5 casos
+			//no utilitzat per ara
+			function troba($taula,$item){
+				global $mysql;
+				$sql="SELECT id,nom FROM $taula ORDER BY id DESC LIMIT 5 ";
+				$res=$mysql->query($sql) or die(mysqli_error($mysql));
+				$items=array();
+				while($row=mysqli_fetch_assoc($res))
+				{
+					$id=$row['id'];
+					$nom=$row['nom'];
+					$items[]="<a href=$item.php?id=$id>$nom</a>";
+				}
+				return "<span style=color:#ccc> ".join(', ',$items)."</span>";
+			}
+		?>
+		<li><a href="persones.php"> Persones</a>                   (<?php echo compta('persones')?>)
+		<li><a href="casos.php">    Casos de corrupció</a>         (<?php echo compta('casos')?>)
+		<li><a href="partits.php">  Partits</a>                    (<?php echo compta('partits')?>)
+		<li><a href="empreses.php"> Empreses</a>                   (<?php echo compta('empreses')?>)
+		<li><a href="condemnes.php">Condemnes</a>                  (<?php echo compta('condemnes')?>)
+		<li><a href="relacions.php">Connexions</a>
+			(<?php 
+				$suma=compta('relacions_persona_cas')+
+					compta('relacions_persona_partit')+
+					compta('relacions_persona_empresa');
+				echo $suma;
+			?>)
+	</ul>
+</div>
+
+<hr><!--top 5 casos-->
+<div>
+	<table id=top5>
+		<tr><th colspan=2>Top 5 casos
 		<?php
 			$sql="SELECT * FROM casos ORDER BY espoli DESC LIMIT 5";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));

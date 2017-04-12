@@ -1,5 +1,5 @@
 <!doctype html><html><head>
-	<?php include'imports.php' ?>
+	<?php include'imports.php'?>
 	<style>
 		#condemnes {
 			margin-left:10px;

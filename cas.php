@@ -1,5 +1,5 @@
 <!doctype html><html><head>
-	<?php include'imports.php' ?>
+	<?php include'imports.php'?>
 	<?php
 		/* INPUT: id del cas de corrupció*/
 		$id=$_GET['id'] or die('cas id no especificat');
@@ -51,7 +51,7 @@
 		Any: 
 		<?php echo $cas->any ?> 
 		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','any','<?php echo urlencode($cas->any) ?>')">modifica</button>
+			<button onclick="update('casos','<?php echo $cas->id ?>','any','<?php echo urlencode($cas->any) ?>')">modifica any</button>
 		<?php } ?>
 	</li>
 
@@ -60,7 +60,7 @@
 		Espoli: 
 		<?php echo $cas->espoli ?> euros 
 		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','espoli','<?php echo urlencode($cas->espoli) ?>')">modifica</button>
+			<button onclick="update('casos','<?php echo $cas->id ?>','espoli','<?php echo urlencode($cas->espoli) ?>')">modifica espoli</button>
 		<?php } ?>
 	</li>
 
@@ -77,7 +77,7 @@
 			}
 		?>
 		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','estat','<?php echo urlencode($cas->estat) ?>')">modifica</button>
+			<button onclick="update('casos','<?php echo $cas->id ?>','estat','<?php echo urlencode($cas->estat) ?>')">modifica estat</button>
 		<?php } ?>
 	</li>
 
@@ -263,23 +263,23 @@
 					rel_pc.persona_id = rel_pp.persona_id AND
 					partits.id        = rel_pp.partit_id  AND
 					persones.id       = rel_pp.persona_id
+				GROUP BY partit
 			";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
 		Partits implicats (<?php echo $n ?>)
 		<ul>
-		<?php
-			while($row=mysqli_fetch_assoc($res))
-			{
-				$partit_id=$row['partit_id'];
-				$partit=$row['partit'];
-				$persona=$row['persona'];
-				echo "<li> 
-					<a href=partit.php?id=$partit_id>$partit</a> (&larr; $persona)
-				";
-			}
-		?>
+			<?php
+				while($row=mysqli_fetch_assoc($res))
+				{
+					$partit_id=$row['partit_id'];
+					$partit=$row['partit'];
+					echo "<li> 
+						<a href=partit.php?id=$partit_id>$partit</a>
+					";
+				}
+			?>
 		</ul>
 	</li>
 
@@ -302,6 +302,7 @@
 					rel_pc.persona_id = rel_pe.persona_id AND
 					empreses.id       = rel_pe.empresa_id AND
 					persones.id       = rel_pe.persona_id
+				GROUP BY empresa
 			";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
@@ -313,9 +314,8 @@
 			{
 				$empresa_id=$row['empresa_id'];
 				$empresa=$row['empresa'];
-				$persona=$row['persona'];
 				echo "<li> 
-					<a href=empresa.php?id=$empresa_id>$empresa</a> (&larr; $persona)
+					<a href=empresa.php?id=$empresa_id>$empresa</a>
 				";
 			}
 		?>

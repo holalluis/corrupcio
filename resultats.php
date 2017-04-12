@@ -9,7 +9,7 @@
 	?>
 	<style>
 		div#root {
-			padding-left:1em;
+			padding-left:10px;
 		}
 	</style>
 </head><body>
@@ -19,11 +19,23 @@
 <h1>Resultats cerca '<?php echo $q?>'</h1>
 
 <?php 	
-	//fx general per buscar
-	function cerca($taula,$link)
-	{
+	function norm($str) {
+		//canvia accents pel caràcter '%' (wildcard per qualsevol nombre de caràcters a mysql)
+		$replace = array(
+				'à' => '%', 'á' => '%', 'À' => '%', 'Á' => '%',
+				'è' => '%', 'é' => '%', 'È' => '%', 'É' => '%',
+				'ì' => '%', 'i' => '%', 'Ì' => '%', 'Í' => '%',
+				'ò' => '%', 'ó' => '%', 'Ò' => '%', 'Ó' => '%',
+				'ù' => '%', 'u' => '%', 'Ù' => '%', 'Ú' => '%',
+		);
+		return strtr($str,$replace);
+	}
+
+	//funcio general per buscar
+	function cerca($taula,$link) {
 		global $q,$mysql;
-		$sql="SELECT id,nom FROM $taula WHERE nom LIKE '%$q%' ORDER BY nom";
+		$q=norm($q);
+		$sql="SELECT id,nom FROM $taula WHERE nom LIKE '%$q%' ORDER BY nom ";
 		$res=$mysql->query($sql) or die(mysqli_error($mysql));
 		echo "(".mysqli_num_rows($res).")";
 		echo "<ul>";

@@ -1,16 +1,17 @@
 <!doctype html><html><head>
-	<?php include'imports.php' ?>
+<?php include'imports.php'?>
 </head><body>
 <?php include'navbar.php'?>
 
 <!--titol-->
 <h1>Gran Enciclopèdia de la Corrupció</h1>
 <h2>About (modificar més endavant)</h2>
-<div style="padding-left:1.5em;max-width:50em;">
-	<p>
-		La Gran Enciclopèdia de la Corrupció va néixer el març del 2017.
-		És un pur exercici de modelització informàtica, 
-		la qual es basa en modelar fenomens utilitzant estructures de dades.
+<div style="padding-left:10px;max-width:50em;">
+	<p style=text-align:justify>
+		La Gran Enciclopèdia de la Corrupció va néixer el març del 2017,
+		com a exercici de modelització informàtica per posar ordre a 
+		totes les dades generades arran de la corrupció política
+		durant els últims anys.
 		
 		<br><br>
 

@@ -1,5 +1,5 @@
 <!doctype html><html><head>
-	<?php include'imports.php' ?>
+	<?php include'imports.php'?>
 	<?php
 		/* INPUT: id condemna */
 		$id=$_GET['id'] or die('condemna id no especificat');

@@ -1,5 +1,5 @@
 <!doctype html><html><head>
-	<?php include'imports.php' ?>
+	<?php include'imports.php'?>
 	<?php
 		/* INPUT: id empresa */
 		$id=$_GET['id'] or die('empresa id no especificat');
@@ -126,6 +126,7 @@
 					rel_pe.persona_id = rel_pc.persona_id AND
 					casos.id          = rel_pc.cas_id     AND
 					persones.id       = rel_pc.persona_id
+				GROUP BY cas
 			";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
@@ -137,9 +138,8 @@
 			{
 				$cas_id=$row['cas_id'];
 				$cas=$row['cas'];
-				$persona=$row['persona'];
 				echo "<li> 
-					<a href=cas.php?id=$cas_id>$cas</a> (&larr; $persona)
+					<a href=cas.php?id=$cas_id>$cas</a>
 				";
 			}
 		?>
@@ -164,6 +164,7 @@
 					rel_pe.persona_id = rel_pp.persona_id AND
 					partits.id        = rel_pp.partit_id  AND
 					persones.id       = rel_pp.persona_id
+				GROUP BY partit
 			";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
@@ -175,9 +176,8 @@
 			{
 				$partit_id=$row['partit_id'];
 				$partit=$row['partit'];
-				$persona=$row['persona'];
 				echo "<li> 
-					<a href=partit.php?id=$partit_id>$partit</a> (&larr; $persona)
+					<a href=partit.php?id=$partit_id>$partit</a>
 				";
 			}
 		?>

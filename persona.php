@@ -1,5 +1,5 @@
 <!doctype html><html><head>
-	<?php include'imports.php' ?>
+	<?php include'imports.php'?>
 	<?php
 		/* INPUT: id de la persona*/
 		$id=$_GET['id'] or die('persona id no especificat');
@@ -64,7 +64,7 @@
 			if($edit_mode)
 			{
 				?>
-				<button onclick=update('persones',<?php echo $persona->id ?>,'naixement','<?php echo urlencode($persona->naixement) ?>')>edita</button> 
+				<button onclick=update('persones',<?php echo $persona->id ?>,'naixement','<?php echo urlencode($persona->naixement) ?>')>edita naixement</button> 
 				<?php
 			}
 		?>

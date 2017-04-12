@@ -1,5 +1,5 @@
 <!doctype html><html><head>
-	<?php include'imports.php' ?>
+	<?php include'imports.php'?>
 	<?php
 		/* INPUT: id del partit*/
 		$id=$_GET['id'] or die('partit id no especificat');
@@ -139,23 +139,23 @@
 					rel_pp.persona_id = rel_pc.persona_id AND
 					casos.id          = rel_pc.cas_id  AND
 					persones.id       = rel_pc.persona_id
+				GROUP BY cas
 			";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
 		Casos relacionats (<?php echo $n ?>)
 		<ul>
-		<?php
-			while($row=mysqli_fetch_assoc($res))
-			{
-				$cas_id=$row['cas_id'];
-				$cas=$row['cas'];
-				$persona=$row['persona'];
-				echo "<li> 
-					<a href=cas.php?id=$cas_id>$cas</a> (&larr; $persona)
-				";
-			}
-		?>
+			<?php
+				while($row=mysqli_fetch_assoc($res))
+				{
+					$cas_id=$row['cas_id'];
+					$cas=$row['cas'];
+					echo "<li> 
+						<a href=cas.php?id=$cas_id>$cas</a>
+					";
+				}
+			?>
 		</ul>
 	</li>
 
@@ -178,6 +178,7 @@
 					rel_pp.persona_id = rel_pe.persona_id AND
 					empreses.id       = rel_pe.empresa_id AND
 					persones.id       = rel_pe.persona_id
+				GROUP BY empresa
 			";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
@@ -189,9 +190,8 @@
 			{
 				$empresa_id=$row['empresa_id'];
 				$empresa=$row['empresa'];
-				$persona=$row['persona'];
 				echo "<li> 
-					<a href=empresa.php?id=$empresa_id>$empresa</a> (&larr; $persona)
+					<a href=empresa.php?id=$empresa_id>$empresa</a>
 				";
 			}
 		?>
