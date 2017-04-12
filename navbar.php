@@ -2,7 +2,6 @@
 
 <!--navbar-->
 <div id=navbar class=flex>
-
 	<div class=flex>
 		<div class=item pagina=inici     onclick=window.location='index.php'    >Inici</div>
 		<div class=item pagina=persones  onclick=window.location='persones.php' >Persones</div>
@@ -11,10 +10,12 @@
 		<div class=item pagina=empreses  onclick=window.location='empreses.php' >Empreses</div>
 		<div class=item pagina=condemnes onclick=window.location='condemnes.php'>Condemnes</div>
 		<div class=item pagina=relacions onclick=window.location='relacions.php'>Connexions</div>
-		<div class=item onclick="qs('#busca').classList.toggle('amagat');qs('#q').focus()">Busca</div>
 	</div>
-
-	<!--boto per iniciar edit mode-->
+	<!--buscar-->
+	<div class=item onclick="qs('#busca').classList.toggle('amagat');qs('#q').focus()">
+		Busca
+	</div>
+	<!--edit mode-->
 	<div>
 		<?php
 			if(!$edit_mode)
@@ -47,7 +48,7 @@
 	</div>
 </div>
 
-<!--menu buscar--><?php include 'busca.php'?>
+<!--menu buscar--><?php include'busca.php'?>
 
 <style>
 	#navbar {
@@ -60,7 +61,7 @@
 		justify-content:space-between;
 	}
 	#navbar .item {
-		padding:0.8em 0.5em;
+		padding:0.4em 0.5em 0.65em 0.5em;
 		text-align:center;
 		color:rgba(0,0,0,0.55);
 		cursor:pointer;
