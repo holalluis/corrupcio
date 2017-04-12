@@ -26,7 +26,7 @@
 <?php include'navbar.php'?>
 
 <h1>
-	Empreses &rsaquo; <?php echo $empresa->nom ?>
+	<span onclick=window.location='empreses.php'>Empreses</span> &rsaquo; <?php echo $empresa->nom ?>
 	<?php 
 		if($edit_mode)
 		{

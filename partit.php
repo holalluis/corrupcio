@@ -27,7 +27,7 @@
 <?php include'navbar.php'?>
 
 <h1>
-	Partits &rsaquo; <?php echo $partit->nom ?>
+	<span onclick=window.location='partits.php'>Partits</span> &rsaquo; <?php echo $partit->nom ?>
 	<?php 
 		if($edit_mode)
 		{

@@ -34,7 +34,7 @@
 <?php include'navbar.php'?>
 
 <h1>
-	Casos de corrupció &rsaquo; <?php echo $cas->nom ?>
+	<span onclick=window.location='casos.php'>Casos de corrupció</span> &rsaquo; <?php echo $cas->nom ?>
 	<?php 
 		if($edit_mode)
 		{

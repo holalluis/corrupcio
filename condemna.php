@@ -28,7 +28,7 @@
 </head><body>
 <?php include'navbar.php'?>
 <h1>
-	Condemnes &rsaquo; condemna <?php echo $condemna->id ?>
+	<span onclick=window.location='condemnes.php'>Condemnes</span> &rsaquo; condemna <?php echo $condemna->id ?>
 </h1>
 
 <ul>
