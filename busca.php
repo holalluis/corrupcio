@@ -25,6 +25,10 @@
 	}
 	#busca form button {
 		padding:5px 16px;
+		background:#ddd;
 		border:1px solid #ccc;
+	}
+	#busca form button:hover {
+		background:#eee;
 	}
 </style>
