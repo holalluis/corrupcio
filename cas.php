@@ -28,6 +28,7 @@
 			vertical-align:top;
 		}
 		#navbar div[pagina=casos]{color:black}
+		span.monospace {font-family:monospace}
 	</style>
 </head><body>
 <?php include'navbar.php'?>
@@ -84,12 +85,12 @@
 	<li>
 		<?php
 			$sql="
-				SELECT rel.id, rel.persona_id, rel.descripcio, persones.nom
+				SELECT rel.id, rel.persona_id, rel.descripcio, rel.ordre, persones.nom
 				FROM relacions_persona_cas AS rel, persones 
 				WHERE 
 					rel.persona_id=persones.id 
 					AND rel.cas_id=$cas->id
-				ORDER BY nom
+				ORDER BY ordre
 				";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
@@ -103,7 +104,22 @@
 					$nom=$row['nom'];
 					$persona_id=$row['persona_id'];
 					$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
-					echo "<li>
+					$ordre=$row['ordre'];
+					echo "<li> <span class=monospace>$ordre.</span>";
+					if($edit_mode)
+					{
+						echo " <select title=ordre onchange=updateOrdre($rel_id,this.value)>";
+						for($j=1;$j<=$n;$j++)
+						{
+							if($j==$ordre)
+								echo "<option selected>$j";
+							else
+								echo "<option>$j";
+								
+						}
+						echo "</select> ";
+					}
+					echo "
 						<a href=persona.php?id=$persona_id>$nom</a>
 						&mdash;
 						<span class=descripcio>$descripcio</span>
@@ -111,7 +127,7 @@
 					if($edit_mode){
 						echo "
 							<button onclick=update('relacions_persona_cas',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
-							<button onclick=esborra('relacions_persona_cas',$rel_id)>esborra</button>
+							<button onclick=esborra('relacions_persona_cas',$rel_id)>esborra connexió</button>
 						";
 					}
 				}
@@ -141,7 +157,7 @@
 								?>
 							</select>
 							<input name=cas_id type=hidden value=<?php echo $cas->id?>>
-							<button>afegir</button>
+							<button>afegir connexió</button>
 						</form>
 					</li>
 					<?php
@@ -194,7 +210,7 @@
 							<input name=cas_id type=hidden value=<?php echo $cas->id?>>
 							<table>
 								<tr><th>Afegeix condemna<th>Anys de presó<th>Delictes<th>Inici
-								<td rowspan=2><button>afegir</button>
+								<td rowspan=2><button>afegir condemna</button>
 								<tr><td>
 									<select name=relacio_persona_cas_id>
 										<?php

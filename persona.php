@@ -100,7 +100,7 @@
 					{
 						echo "
 							<button onclick=update('relacions_persona_cas',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
-							<button onclick=esborra('relacions_persona_cas',$rel_id)>esborra</button>
+							<button onclick=esborra('relacions_persona_cas',$rel_id)>esborra connexió</button>
 						";
 					}
 				}
@@ -125,7 +125,7 @@
 									}
 								?>
 							</select>
-							<button>afegir</button>
+							<button>afegir connexió</button>
 						</form>
 					</li>
 					<?php
@@ -164,7 +164,7 @@
 					{
 						echo "
 							<button onclick=update('relacions_persona_partit',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
-							<button onclick=esborra('relacions_persona_partit',$rel_id)>esborra</button>
+							<button onclick=esborra('relacions_persona_partit',$rel_id)>esborra connexió</button>
 						";
 					}
 				}
@@ -189,7 +189,7 @@
 									}
 								?>
 							</select>
-							<button>afegir</button>
+							<button>afegir connexió</button>
 						</form>
 					</li>
 				<?php
@@ -228,7 +228,7 @@
 					{
 						echo "
 							<button onclick=update('relacions_persona_empresa',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
-							<button onclick=esborra('relacions_persona_empresa',$rel_id)>esborra</button>
+							<button onclick=esborra('relacions_persona_empresa',$rel_id)>esborra connexió</button>
 						";
 					}
 				}
@@ -253,7 +253,7 @@
 									}
 								?>
 							</select>
-							<button>afegir</button>
+							<button>afegir connexió</button>
 						</form>
 					</li>
 					<?php
@@ -298,7 +298,7 @@
 							<input name=persona_id type=hidden value=<?php echo $persona->id?>>
 							<table>
 								<tr><th>Afegeix condemna<th>Anys de presó<th>Delictes<th>Inici
-								<td rowspan=2><button>afegir</button>
+								<td rowspan=2><button>afegir condemna</button>
 								<tr><td>
 									<select name=relacio_persona_cas_id>
 										<?php
@@ -349,4 +349,3 @@
 		}
 	?>
 </ul>
-

@@ -8,11 +8,8 @@ body{
 	font-family:"Trebuchet MS", Helvetica, sans-serif;
 	font-family:"San Francisco", -apple-system, system-ui, ".SFNSText-Regular", sans-serif;
 }
-h1{
-	padding-left:0.75em;
-}
-h2{
-	padding-left:1em;
+h1,h2,h3{
+	padding-left:8px;
 }
 table{border-collapse:collapse}
 th,td{border:1px solid #ccc}

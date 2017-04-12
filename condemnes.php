@@ -2,7 +2,7 @@
 	<?php include'imports.php' ?>
 	<style>
 		#condemnes {
-			margin-left:2em;
+			margin-left:10px;
 		}
 		#navbar div[pagina=condemnes]{color:black}
 	</style>

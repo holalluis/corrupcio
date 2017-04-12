@@ -69,7 +69,7 @@
 					{
 						echo "
 							<button onclick=update('relacions_persona_empresa',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
-							<button onclick=esborra('relacions_persona_empresa',$rel_id)>esborra</button>
+							<button onclick=esborra('relacions_persona_empresa',$rel_id)>esborra connexió</button>
 						";
 					}
 				}
@@ -99,7 +99,7 @@
 								?>
 							</select>
 							<input name=empresa_id type=hidden value=<?php echo $empresa->id?>>
-							<button>afegir</button>
+							<button>afegir connexió</button>
 						</form>
 					</li>
 					<?php

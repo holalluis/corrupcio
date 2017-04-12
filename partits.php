@@ -2,7 +2,7 @@
 	<?php include'imports.php' ?>
 	<style>
 		#partits {
-			margin-left:2em;
+			margin-left:10px;
 		}
 		#partits td{
 			padding:0 0.2em;

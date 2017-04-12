@@ -1,12 +1,10 @@
 <!doctype html><html><head>
 	<?php include'imports.php' ?>
 	<style>
-		div#root {
-			padding-left:30px;
-		}
 		table[id^="relacions"]{
 			margin-top:0.5em;
 			margin-bottom:2em;
+			margin-left:10px;
 		}
 		table[id^="relacions"] td {
 			padding:0 0.2em;

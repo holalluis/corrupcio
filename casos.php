@@ -2,7 +2,7 @@
 	<?php include'imports.php' ?>
 	<style>
 		#casos {
-			margin-left:2em;
+			margin-left:10px;
 		}
 		#casos td{
 			padding:0 0.2em;

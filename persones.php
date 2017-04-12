@@ -2,7 +2,7 @@
 	<?php include'imports.php' ?>
 	<style>
 		#persones {
-			margin-left:2em;
+			margin-left:10px;
 		}
 		#persones td{
 			padding:0 0.2em;

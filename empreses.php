@@ -2,7 +2,7 @@
 	<?php include'imports.php' ?>
 	<style>
 		#empreses {
-			margin-left:2em;
+			margin-left:10px;
 		}
 		#empreses td{
 			padding:0 0.2em;

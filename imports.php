@@ -65,6 +65,25 @@
 				sol.send("taula="+taula+"&id="+id+"&camp="+camp+"&nouValor="+nouValor);
 			}
 
+			//update ordre de relacio_persona_cas
+			function updateOrdre(rel_id,nouValor) {
+
+				function urldecode(url){return decodeURIComponent(url.replace(/\+/g,' '))}
+
+				var sol=new XMLHttpRequest();
+				sol.open('POST',"data/update.php",true);
+				sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				sol.onreadystatechange=function()
+				{
+					if(this.readyState==4&&this.status==200)
+					{
+						console.log(this.responseText);
+						window.location.reload();
+					}
+				}
+				sol.send("taula=relacions_persona_cas&id="+rel_id+"&camp=ordre&nouValor="+nouValor);
+			}
+
 			//envia ordre sql al servidor DANGER
 			function sql2json(sql,callback)
 			{
