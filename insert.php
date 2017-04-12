@@ -69,7 +69,7 @@
 <?php include'navbar.php'?>
 
 <h1>Inserta a la base de dades</h1>
-<div style="padding:0 0 1em 1em">Les dades amb un asterisc (*) són obligatòries</div>
+<div style=margin-left:10px;font-size:10px>Les dades amb un asterisc (*) són obligatòries</div>
 
 <ul id=formularis>
 	<li>

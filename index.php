@@ -71,7 +71,7 @@
 </ul>
 
 <!--top 5 casos--><hr>
-<div style="padding:1em;">
+<div style="padding:10px">
 	<table id=top5><tr><th colspan=2>Top 5 casos
 		<?php
 			$sql="SELECT * FROM casos ORDER BY espoli DESC LIMIT 5";
@@ -96,7 +96,7 @@
 
 <!--links
 -->
-<div style="padding:1em;">LINKS
+<div><h3>LINKS</h3>
 	<ul>
 		<li><a target=_blank href="https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n">
 		15mpedia.org/wiki/[...]</a>

@@ -26,6 +26,7 @@
 			}
 			#edit_mode_header .edit_mode_on {
 				padding:0.8em 0.5em;
+				color:#ccc;
 			}
 			#edit_mode_header .item {
 				padding:0.8em 0.5em;

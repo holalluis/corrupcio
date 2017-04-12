@@ -7,10 +7,16 @@ body{
 	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
 	font-family:"Trebuchet MS", Helvetica, sans-serif;
 	font-family:"San Francisco", -apple-system, system-ui, ".SFNSText-Regular", sans-serif;
+	font-size:13px;
 }
-h1,h2,h3{
-	padding-left:8px;
+h1,h2,h3{ 
+	font-weight:normal;
+	padding-left:8px; 
 }
+h1{font-size:18px}
+h2{font-size:16px}
+h3{font-size:14px}
+
 table{border-collapse:collapse}
 th,td{border:1px solid #ccc}
 th{font-weight:normal}
