@@ -9,11 +9,11 @@ Es podria monetitzar amb publicitat.
 ## Tasques pendents (programacio)
 - CRUD - fixar caracters maxims per inserts
 - CRUD - fixar caracters maxims per updates
-- Eliminar espais a final de paraula per cerques
 - Grafic de barres sota del top5 a pagina inicial
-- Implementar col.laboradors (user,password)
-- Taula log: canvis associats a un col.laborador
-- Poder descarregar base de dades
+- Poder descarregar base de dades sencera
+- Registre de canvis:
+	- 1. Implementar col.laboradors (user,password)
+	- 2. Taula log: canvis associats a un col.laborador
 
 ## Estructura de dades Corrupcio
 - Taules (8)

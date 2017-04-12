@@ -7,11 +7,11 @@
 
 			<div class=flex>
 				<div class=edit_mode_on>Edit mode ON</div>
-				<div class=item> <a href='insert.php'>Inserta</a></div>
+				<div class=item><a href='insert.php'>Inserta</a></div>
 			</div>
 
-			<div class=flex>
-				<div class=item><a href='edit/logout.php'>Sortir</a></div>
+			<div class=flex onclick=window.location='edit/logout.php' style=cursor:pointer>
+				<div class=item><a href='#'>Sortir</a></div>
 			</div>
 
 		</div>
