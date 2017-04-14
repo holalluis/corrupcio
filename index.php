@@ -13,7 +13,7 @@
 <?php include'navbar.php'?>
 
 <!--titol-->
-<h1>Gran Enciclopèdia de la Corrupció (v0.1)</h1>
+<h1>Gran Enciclopèdia de la Corrupció <i style=color:#999>v0.1</i></h1>
 <h2>Pàgina principal (resum)</h2>
 
 <!--resum-->

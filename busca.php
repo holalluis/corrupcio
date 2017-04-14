@@ -20,6 +20,7 @@
 	#busca input#q {
 		padding-top:0.5em;
 		padding-bottom:0.5em;
+		padding-left:0.2em;
 		width:300px;
 		outline:none;
 		border:1px solid #ccc;

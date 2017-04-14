@@ -2,22 +2,24 @@
 
 <!--navbar-->
 <div id=navbar>
+	<!--items-->
 	<div class=item_container>
+		<!--burger simbol-->
 		<div class='item burger' onclick=burgerClick()>
-			<div style="border-radius:0.3em;border:1px solid #666;height:30px;width:30px;margin:auto">
-				<hr> <hr> <hr>
+			<div style="border-radius:0.3em;border:1px solid #666;height:30px;width:30px;">
+				<hr><hr><hr><!--3 linies-->
 				<script>
-					function burgerClick()
-					{
+					//mostra o amaga items per mobil portrait
+					function burgerClick() {
 						var items=qsa("#navbar .item_container .item[pagina]");
-						for(var i=0;i<items.length;i++)
-						{
+						for(var i=0;i<items.length;i++) {
 							items[i].classList.toggle('invisible');
 						}
 					}
 				</script>
 			</div>
 		</div>
+		<!--main nav items: per mobil estan invisibles per defecte-->
 		<div class='item invisible' pagina=inici     onclick=window.location='index.php'    >Inici</div>
 		<div class='item invisible' pagina=persones  onclick=window.location='persones.php' >Persones</div>
 		<div class='item invisible' pagina=casos     onclick=window.location='casos.php'    >Casos</div>
@@ -25,40 +27,39 @@
 		<div class='item invisible' pagina=empreses  onclick=window.location='empreses.php' >Empreses</div>
 		<div class='item invisible' pagina=condemnes onclick=window.location='condemnes.php'>Condemnes</div>
 		<div class='item invisible' pagina=relacions onclick=window.location='relacions.php'>Connexions</div>
+		<!--edit mode-->
+		<?php
+			if(!$edit_mode and !$view_mode) {
+				?>
+				<div class='item invisible' pagina onclick=access()>
+					<div>Edit mode</div>
+					<script>
+						function access()
+						{
+							var pass=prompt("Password:");
+							var sol=new XMLHttpRequest();
+							sol.open('POST','edit/access.php',true);
+							sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+							sol.onreadystatechange=function()
+							{
+								if(this.readyState==4&&this.status==200)
+								{
+									console.log(this.responseText);
+									window.location.reload();//millorar
+								}
+							}
+							sol.send("pass="+pass);
+						}
+					</script>
+				</div>
+				<?php
+			}
+		?>
 	</div>
 	<!--buscar-->
-	<div class=item onclick="qs('#busca').classList.toggle('amagat');qs('#q').focus()">
+	<div class='item invisible' pagina onclick="qs('#busca').classList.toggle('amagat');qs('#q').focus()">
 		Busca
 	</div>
-	<!--edit mode-->
-	<?php
-		if(!$edit_mode)
-		{
-			?>
-			<div class=item onclick=access()>
-				<div>Edit mode</div>
-				<script>
-					function access()
-					{
-						var pass=prompt("Password:");
-						var sol=new XMLHttpRequest();
-						sol.open('POST','edit/access.php',true);
-						sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-						sol.onreadystatechange=function()
-						{
-							if(this.readyState==4&&this.status==200)
-							{
-								console.log(this.responseText);
-								window.location.reload();//millorar
-							}
-						}
-						sol.send("pass="+pass);
-					}
-				</script>
-			</div>
-			<?php
-		}
-	?>
 </div>
 
 <!--menu buscar--><?php include'busca.php'?>
@@ -80,6 +81,7 @@
 	}
 	#navbar .item {
 		padding:0.4em 0.5em 0.65em 0.5em;
+		line-height:2.35em; 
 		text-align:left;
 		color:rgba(0,0,0,0.55);
 		cursor:pointer;
@@ -92,12 +94,12 @@
 
 	/*burger symbol*/
 	#navbar .item.burger {display:none}
-	#navbar .burger hr {width:40%;background:black;}
+	#navbar .burger hr {width:40%;border-bottom:1px solid #666;}
 
 	/* mobile portrait */
-	@media only screen and (max-width:425px) { 
+	@media only screen and (max-width:560px) { 
 		#navbar .item_container{display:block} 
-		#navbar .item.burger {display:block}
+		#navbar .item.burger {display:block;text-align:center}
 		#navbar .item_container .invisible {
 			color:transparent;
 			visibility:hidden;
