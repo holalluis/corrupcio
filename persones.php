@@ -22,7 +22,11 @@
 <table id=persones>
 	<?php
 			$sql="
-				SELECT p.id, p.nom, rel.id AS cas_id, rel.nom AS cas, rel2.nom AS partit, rel3.nom AS empresa
+				SELECT 
+					p.id, p.nom, 
+					rel.id  AS cas_id,     rel.nom  AS cas, 
+					rel2.id AS partit_id,  rel2.nom AS partit, 
+					rel3.id AS empresa_id, rel3.nom AS empresa
 				FROM persones AS p
 				LEFT JOIN 
 					(
@@ -58,15 +62,18 @@
 				$id=$row['id'];
 				$nom=$row['nom'];
 				$cas=$row['cas'];
+				$cas_id=$row['cas_id'];
 				$partit=$row['partit'];
+				$partit_id=$row['partit_id'];
 				$empresa=$row['empresa'];
+				$empresa_id=$row['empresa_id'];
 
 				echo "
 					<tr>
 						<td><a href=persona.php?id=$id>$nom</a>
-						<td>$cas
-						<td>$partit
-						<td>$empresa
+						<td><a href=cas.php?id=$cas_id>$cas</a>
+						<td><a href=partit.php?id=$partit_id>$partit</a>
+						<td><a href=empresa.php?id=$empresa_id>$empresa</a>
 				";
 			}
 	?>

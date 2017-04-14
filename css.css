@@ -39,6 +39,10 @@ hr{border:none;border-bottom:1px solid #ccc}
 a{text-decoration:none}
 a:hover{text-decoration:underline}
 
+/*titols*/
+span[onclick]{cursor:pointer}
+span[onclick]:hover{text-decoration:underline}
+
 /*classe general*/
 .flex{
 	display:flex;
