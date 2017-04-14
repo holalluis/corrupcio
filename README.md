@@ -33,8 +33,8 @@ Es podria monetitzar amb publicitat.
   - on update {cas,persona,partit,empresa} update timestamp
 
 ## Proposta inicial de repartiment inversio/benefici
-	- 60% Programacio i manteniment
-	- 30% Omplir dades i manteniment
+	- 55% Programacio i manteniment
+	- 35% Omplir dades i manteniment
 	- 10% Reserva per pagar serveis a contractar
 
 ## Coses a contractar en un futur

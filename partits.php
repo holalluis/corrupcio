@@ -5,7 +5,7 @@
 			margin-left:10px;
 		}
 		#partits td{
-			padding:0 0.2em;
+			padding:0 0.4em;
 		}
 		#navbar div[pagina=partits]{color:black}
 	</style>
@@ -18,7 +18,13 @@
 <!--resum-->
 <table id=partits>
 	<?php
-			$sql="SELECT * FROM partits ORDER BY nom";
+			$sql="
+				SELECT p.id, p.nom, p.nom_llarg, COUNT(rel.id) AS persones
+				FROM partits AS p
+				LEFT JOIN relacions_persona_partit AS rel
+				ON p.id=rel.partit_id
+				GROUP BY nom
+				ORDER BY nom";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
 			{
@@ -29,10 +35,12 @@
 				$id=$row['id'];
 				$nom=$row['nom'];
 				$nom_llarg=$row['nom_llarg'];
+				$persones=$row['persones'];
 				echo "
 					<tr>
 						<td><a href=partit.php?id=$id>$nom</a>
 						<td>$nom_llarg
+						<td>$persones persones
 				";
 			}
 	?>

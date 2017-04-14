@@ -73,7 +73,17 @@
 
 <ul id=formularis>
 	<li>
-		<span class=activador>Nou cas</span>
+		<span class=activador>Afegir persona</span>
+		<form method=post action=data/insert/persona.php>
+			<table>
+				<tr><th>Nom *<td><input name=nom placeholder="Nom i cognoms" required>
+				<tr><th>Data naixement<td><input type=date name=naixement>
+				<tr><th><td><button>Inserta</button>
+			</table>
+		</form>
+	</li>
+	<li>
+		<span class=activador>Afegir cas</span>
 		<form method=post action=data/insert/cas.php>
 			<table>
 				<tr><th>Nom *<td><input name=nom placeholder="Cas x" required>
@@ -84,17 +94,7 @@
 		</form>
 	</li>
 	<li>
-		<span class=activador>Nova persona</span>
-		<form method=post action=data/insert/persona.php>
-			<table>
-				<tr><th>Nom *<td><input name=nom placeholder="Nom i cognoms" required>
-				<tr><th>Data naixement<td><input type=date name=naixement>
-				<tr><th><td><button>Inserta</button>
-			</table>
-		</form>
-	</li>
-	<li>
-		<span class=activador>Nou partit</span>
+		<span class=activador>Afegir partit</span>
 		<form method=post action=data/insert/partit.php>
 			<table>
 				<tr><th>Nom *<td><input name=nom placeholder="Sigles partit" required>
@@ -104,7 +104,7 @@
 		</form>
 	</li>
 	<li>
-		<span class=activador>Nova empresa/institució</span>
+		<span class=activador>Afegir empresa/institució</span>
 		<form method=post action=data/insert/empresa.php>
 			<table>
 				<tr><th>Nom *<td><input name=nom placeholder="Nom empresa/institució" required>

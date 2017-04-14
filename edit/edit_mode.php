@@ -1,13 +1,22 @@
 <?php
-	//global permis per editar
+	//permis per editar
 	$edit_mode=false;
 
-	//llista de passwords vàlids (futur: base de dades)
+	//veure com queda
+	$view_mode=false;
+
+	//llista de passwords vàlids per edit mode (futur: base de dades)
 	$passwords=array("9999","421868");
 
-	//el password es el valor del cookie 'edit_mode'
+	//password es el valor del cookie 'edit_mode'
 	if(isset($_COOKIE['edit_mode']) && in_array($_COOKIE['edit_mode'],$passwords))
 	{
 		$edit_mode=true;
+	}
+
+	//obre view mode depenent de les cookies
+	if(isset($_COOKIE['view_mode']))
+	{
+		$view_mode=true;
 	}
 ?>

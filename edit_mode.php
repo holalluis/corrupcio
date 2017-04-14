@@ -4,16 +4,30 @@
 	{ 
 		?>
 		<div id=edit_mode_header>
-
+			<!--insert-->
 			<div class=flex>
-				<div class=edit_mode_on>Edit mode ON</div>
-				<div class=item><a href='insert.php'>Inserta</a></div>
+				<div class=item><a href='insert.php'>Inserta persones, casos, partits, empreses</a></div>
 			</div>
 
-			<div class=flex onclick=window.location='edit/logout.php' style=cursor:pointer>
-				<div class=item><a href='#'>Sortir</a></div>
+			<div class=flex >
+				<!--view mode-->
+				<div class=edit_mode_on title="Opció per veure com queda la pàgina sense sortir de Edit mode">
+					View mode <?php if($view_mode) echo "ON "; else echo "OFF"; ?>
+					<button onclick=window.location='edit/view_mode.php'>ON/OFF</button>
+				</div>
+				<!--edit mode-->
+				<div class=edit_mode_on title="Permís per editar les pàgines">
+					Edit mode ON
+					<button onclick=window.location='edit/logout.php'>Sortir</button>
+				</div>
 			</div>
 
+			<?php
+				if($view_mode)
+				{
+					$edit_mode=false;
+				}
+			?>
 		</div>
 
 		<style>

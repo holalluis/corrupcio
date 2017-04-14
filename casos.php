@@ -5,7 +5,7 @@
 			margin-left:10px;
 		}
 		#casos td{
-			padding:0 0.2em;
+			padding:0 0.4em;
 		}
 		#navbar div[pagina=casos]{color:black}
 	</style>
@@ -18,7 +18,14 @@
 <!--resum-->
 <table id=casos>
 	<?php
-			$sql="SELECT * FROM casos ORDER BY any DESC";
+			$sql="
+				SELECT c.id, c.nom, c.any, COUNT(rel.id) AS implicats 
+				FROM casos AS c 
+				LEFT JOIN relacions_persona_cas AS rel
+				ON c.id=rel.cas_id
+				GROUP BY nom
+				ORDER BY nom
+			";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
 			{
@@ -29,10 +36,12 @@
 				$id=$row['id'];
 				$nom=$row['nom'];
 				$any=$row['any'];
+				$implicats=$row['implicats'];
 				echo "
 					<tr>
 						<td><a href=cas.php?id=$id>$nom</a>
 						<td>$any
+						<td>$implicats implicats
 				";
 			}
 	?>
