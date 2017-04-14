@@ -1,8 +1,11 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
 	<style>
-		#persones {
-			margin-left:10px;
+		/*treu els marges a portrait*/
+		@media only screen and (min-width:560px) { 
+			#persones {
+				margin-left:10px;
+			}
 		}
 		#persones td{
 			padding:0 0.4em;

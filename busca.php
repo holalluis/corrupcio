@@ -11,11 +11,15 @@
 		background:#fafafa;
 		text-align:center;
 		padding:1em 0;
-		border-bottom:1px solid #ccc
+		border-bottom:1px solid #ccc;
+		transition:height 1.15s;
 	}
 	#busca.amagat {
-		display:block;
-		display:none;
+		color:transparent;
+		visibility:hidden;
+		height:0;
+		padding:0;
+		border:none;
 	}
 	#busca input#q {
 		padding-top:0.5em;
