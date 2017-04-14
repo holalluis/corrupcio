@@ -1,8 +1,8 @@
 <?php include'edit_mode.php'?>
 
 <!--navbar-->
-<div id=navbar class=flex>
-	<div class=flex>
+<div id=navbar>
+	<div class=item_container>
 		<div class=item pagina=inici     onclick=window.location='index.php'    >Inici</div>
 		<div class=item pagina=persones  onclick=window.location='persones.php' >Persones</div>
 		<div class=item pagina=casos     onclick=window.location='casos.php'    >Casos</div>
@@ -58,9 +58,14 @@
 		flex-wrap:wrap;
 		justify-content:space-between;
 	}
+	#navbar .item_container {
+		display:flex;/*the net ninja css flexbox playlist*/
+		flex-wrap:wrap;
+		justify-content:space-between;
+	}
 	#navbar .item {
 		padding:0.4em 0.5em 0.65em 0.5em;
-		text-align:center;
+		text-align:left;
 		color:rgba(0,0,0,0.55);
 		cursor:pointer;
 		transition:all 0.15s;
@@ -68,5 +73,10 @@
 	#navbar .item:hover {
 		background:#f0f0f0;
 		color:rgba(0,0,0,0.85);
+	}
+
+	/* mobile portrait */
+	@media only screen and (max-width:425px) { 
+		#navbar .item_container{display:block} 
 	}
 </style>
