@@ -13,7 +13,7 @@
 					<button onclick=window.location='edit/logout.php'>SORTIR</button>
 				</div>
 				<!--view mode-->
-				<div class=edit_mode_on title="Opció per veure com queda la pàgina sense sortir de Edit mode">
+				<div class=edit_mode_on title="Opció per veure com queda la pàgina sense sortir de l'Edit mode">
 					<div>
 						View mode <?php if($view_mode) echo "ON "; else echo "OFF"; ?> &nbsp;
 					</div>
