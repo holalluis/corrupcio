@@ -14,7 +14,7 @@
 
 <!--titol-->
 <h1>Gran Enciclopèdia de la Corrupció <i style=color:#999>v0.1</i></h1>
-<h2>Pàgina principal (resum)</h2>
+<h2>Inici</h2>
 
 <!--resum-->
 <div style=margin-right:20px>

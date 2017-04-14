@@ -13,7 +13,10 @@
 <?php include'navbar.php'?>
 
 <!--titol-->
-<h1>Persones</h1>
+<h1>
+	<span onclick=window.location='index.php'>Inici</span> &rsaquo; 
+	Persones
+</h1>
 
 <!--resum-->
 <table id=persones>

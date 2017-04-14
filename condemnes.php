@@ -13,7 +13,10 @@
 <?php include'navbar.php'?>
 
 <!--titol-->
-<h1>Condemnes</h1>
+<h1>
+	<span onclick=window.location='index.php'>Inici</span> &rsaquo; 
+	Condemnes
+</h1>
 
 <!--resum-->
 <table id=condemnes>

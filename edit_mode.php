@@ -35,6 +35,7 @@
 				text-align:center;
 				background:#666;
 				color:white;
+				text-shadow: 0 1px 0 #000;
 				display:flex;
 				justify-content:space-between;
 			}

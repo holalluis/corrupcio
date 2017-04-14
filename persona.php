@@ -31,7 +31,8 @@
 <?php include'navbar.php'?>
 
 <h1>
-	<span onclick=window.location='persones.php'>Persones</span> &rsaquo; <?php echo $persona->nom ?>
+	<span onclick=window.location='persones.php'>Persones</span> &rsaquo; 
+	<?php echo $persona->nom ?>
 	<?php 
 		if($edit_mode)
 		{

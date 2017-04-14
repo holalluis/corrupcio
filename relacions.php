@@ -13,7 +13,12 @@
 	</style>
 </head><body>
 <?php include'navbar.php'?>
-<!--titol--><h1>Connexions</h1>
+
+<!--titol-->
+<h1>
+	<span onclick=window.location='index.php'>Inici</span> &rsaquo; 
+	Connexions
+</h1>
 
 <div id=root>
 
