@@ -22,7 +22,7 @@
 <table id=persones>
 	<?php
 			$sql="
-				SELECT p.id, p.nom, rel.id AS cas_id, rel.nom AS cas
+				SELECT p.id, p.nom, rel.id AS cas_id, rel.nom AS cas, rel2.nom AS partit, rel3.nom AS empresa
 				FROM persones AS p
 				LEFT JOIN 
 					(
@@ -31,6 +31,20 @@
 						WHERE casos.id=relacions_persona_cas.cas_id
 					) AS rel
 				ON p.id=rel.persona_id
+				LEFT JOIN 
+					(
+						SELECT partits.nom, partits.id, relacions_persona_partit.persona_id
+						FROM partits, relacions_persona_partit 
+						WHERE partits.id=relacions_persona_partit.partit_id
+					) AS rel2
+				ON p.id=rel2.persona_id
+				LEFT JOIN 
+					(
+						SELECT empreses.nom, empreses.id, relacions_persona_empresa.persona_id
+						FROM empreses, relacions_persona_empresa 
+						WHERE empreses.id=relacions_persona_empresa.empresa_id
+					) AS rel3
+				ON p.id=rel3.persona_id
 				GROUP BY nom
 				ORDER BY nom
 				";
@@ -44,14 +58,15 @@
 				$id=$row['id'];
 				$nom=$row['nom'];
 				$cas=$row['cas'];
-
-				//pot ser que la persona no estigui vinculada a cap cas
-				if(empty($cas))$cas="<i style=color:#999>~cap vinculació</i>";
+				$partit=$row['partit'];
+				$empresa=$row['empresa'];
 
 				echo "
 					<tr>
 						<td><a href=persona.php?id=$id>$nom</a>
 						<td>$cas
+						<td>$partit
+						<td>$empresa
 				";
 			}
 	?>
