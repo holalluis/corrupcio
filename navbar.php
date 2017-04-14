@@ -3,13 +3,28 @@
 <!--navbar-->
 <div id=navbar>
 	<div class=item_container>
-		<div class=item pagina=inici     onclick=window.location='index.php'    >Inici</div>
-		<div class=item pagina=persones  onclick=window.location='persones.php' >Persones</div>
-		<div class=item pagina=casos     onclick=window.location='casos.php'    >Casos</div>
-		<div class=item pagina=partits   onclick=window.location='partits.php'  >Partits</div>
-		<div class=item pagina=empreses  onclick=window.location='empreses.php' >Empreses</div>
-		<div class=item pagina=condemnes onclick=window.location='condemnes.php'>Condemnes</div>
-		<div class=item pagina=relacions onclick=window.location='relacions.php'>Connexions</div>
+		<div class='item burger' onclick=burgerClick()>
+			<div style="border-radius:0.3em;border:1px solid #666;height:30px;width:30px;margin:auto">
+				<hr> <hr> <hr>
+				<script>
+					function burgerClick()
+					{
+						var items=qsa("#navbar .item_container .item[pagina]");
+						for(var i=0;i<items.length;i++)
+						{
+							items[i].classList.toggle('invisible');
+						}
+					}
+				</script>
+			</div>
+		</div>
+		<div class='item invisible' pagina=inici     onclick=window.location='index.php'    >Inici</div>
+		<div class='item invisible' pagina=persones  onclick=window.location='persones.php' >Persones</div>
+		<div class='item invisible' pagina=casos     onclick=window.location='casos.php'    >Casos</div>
+		<div class='item invisible' pagina=partits   onclick=window.location='partits.php'  >Partits</div>
+		<div class='item invisible' pagina=empreses  onclick=window.location='empreses.php' >Empreses</div>
+		<div class='item invisible' pagina=condemnes onclick=window.location='condemnes.php'>Condemnes</div>
+		<div class='item invisible' pagina=relacions onclick=window.location='relacions.php'>Connexions</div>
 	</div>
 	<!--buscar-->
 	<div class=item onclick="qs('#busca').classList.toggle('amagat');qs('#q').focus()">
@@ -75,8 +90,20 @@
 		color:rgba(0,0,0,0.85);
 	}
 
+	/*burger symbol*/
+	#navbar .item.burger {display:none}
+	#navbar .burger hr {width:40%;background:black;}
+
 	/* mobile portrait */
 	@media only screen and (max-width:425px) { 
 		#navbar .item_container{display:block} 
+		#navbar .item.burger {display:block}
+		#navbar .item_container .invisible {
+			color:transparent;
+			visibility:hidden;
+			height:0;
+			padding:0;
+			transition:all 0.15s;
+		}
 	}
 </style>
