@@ -4,6 +4,9 @@
 		table[id^="relacions"] td {
 			padding:0 0.2em;
 		}
+		table[id^="relacions"] tr.invisible * {
+			display:none;
+		}
 		#navbar div[pagina=relacions]{color:black}
 
 		/*treu els marges a portrait*/
@@ -25,7 +28,20 @@
 
 <div id=root>
 
-<h3>Persona &rarr; Cas</h3>
+<h3>
+	Persona &rarr; Cas
+	<button onclick=toggleVisib('relacions_persona_cas')>-/+</button>
+	<script>
+		function toggleVisib(table_id)
+		{
+			var files=qsa('#'+table_id+" tr")
+			for(var i=0;i<files.length;i++)
+			{
+				files[i].classList.toggle('invisible');
+			}
+		}
+	</script>
+</h3>
 
 <table id=relacions_persona_cas>
 	<?php
@@ -64,7 +80,10 @@
 	?>
 </table>
 
-<h3>Persona &rarr; Partit</h3>
+<h3>
+	Persona &rarr; Partit
+	<button onclick=toggleVisib('relacions_persona_partit')>-/+</button>
+</h3>
 <table id=relacions_persona_partit>
 	<?php
 			$sql="
@@ -102,7 +121,10 @@
 	?>
 </table>
 
-<h3>Persona &rarr; Empresa</h3>
+<h3>
+	Persona &rarr; Empresa
+	<button onclick=toggleVisib('relacions_persona_empresa')>-/+</button>
+</h3>
 <table id=relacions_persona_empresa>
 	<?php
 			$sql="
