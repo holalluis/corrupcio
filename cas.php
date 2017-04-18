@@ -49,7 +49,8 @@
 <ul>
 	<!--descripció-->
 	<li>
-		Descripció: <?php echo $cas->descripcio?>
+		Descripció: 
+		<p><?php echo $cas->descripcio?></p>
 		<?php if($edit_mode){ ?>
 			<button onclick="update('casos','<?php echo $cas->id ?>','descripcio','<?php echo urlencode($cas->descripcio) ?>')">edita descripció</button>
 		<?php } ?>

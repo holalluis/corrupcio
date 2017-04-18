@@ -42,7 +42,8 @@
 <ul>
 	<!--descripció-->
 	<li>
-		Descripció: <?php echo $partit->descripcio?>
+		Descripció: 
+		<p><?php echo $partit->descripcio?></p>
 		<?php if($edit_mode){ ?>
 			<button onclick="update('partits','<?php echo $partit->id ?>','descripcio','<?php echo urlencode($partit->descripcio) ?>')">edita descripció</button>
 		<?php } ?>

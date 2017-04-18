@@ -41,7 +41,8 @@
 <ul>
 	<!--descripció-->
 	<li>
-		Descripció: <?php echo $empresa->descripcio?>
+		Descripció: 
+		<p><?php echo $empresa->descripcio?></p>
 		<?php if($edit_mode){ ?>
 			<button onclick="update('empreses','<?php echo $empresa->id ?>','descripcio','<?php echo urlencode($empresa->descripcio) ?>')">edita descripció</button>
 		<?php } ?>

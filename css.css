@@ -19,6 +19,8 @@ h1{font-size:18px}
 h2{font-size:17px}
 h3{font-size:15px}
 
+p{text-align:justify;color:#666}
+
 /*ul*/
 ul{
 	margin:0;
