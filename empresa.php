@@ -42,7 +42,18 @@
 	<!--descripció-->
 	<li>
 		Descripció: 
-		<p><?php echo $empresa->descripcio?></p>
+		<p>
+			<?php 
+				if(trim($empresa->descripcio)=="")
+				{
+					echo "<i style=color:#ccc>no hi ha descripció</i>";
+				}
+				else
+				{
+					echo $empresa->descripcio;
+				}
+			?>
+		</p>
 		<?php if($edit_mode){ ?>
 			<button onclick="update('empreses','<?php echo $empresa->id ?>','descripcio','<?php echo urlencode($empresa->descripcio) ?>')">edita descripció</button>
 		<?php } ?>

@@ -43,7 +43,18 @@
 	<!--descripció-->
 	<li>
 		Descripció: 
-		<p><?php echo $partit->descripcio?></p>
+		<p>
+			<?php 
+				if(trim($partit->descripcio)=="")
+				{
+					echo "<i style=color:#ccc>no hi ha descripció</i>";
+				}
+				else
+				{
+					echo $partit->descripcio;
+				}
+			?>
+		</p>
 		<?php if($edit_mode){ ?>
 			<button onclick="update('partits','<?php echo $partit->id ?>','descripcio','<?php echo urlencode($partit->descripcio) ?>')">edita descripció</button>
 		<?php } ?>

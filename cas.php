@@ -50,7 +50,18 @@
 	<!--descripció-->
 	<li>
 		Descripció: 
-		<p><?php echo $cas->descripcio?></p>
+		<p>
+			<?php 
+				if(trim($cas->descripcio)=="")
+				{
+					echo "<i style=color:#ccc>no hi ha descripció</i>";
+				}
+				else
+				{
+					echo $cas->descripcio;
+				}
+			?>
+		</p>
 		<?php if($edit_mode){ ?>
 			<button onclick="update('casos','<?php echo $cas->id ?>','descripcio','<?php echo urlencode($cas->descripcio) ?>')">edita descripció</button>
 		<?php } ?>
