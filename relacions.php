@@ -41,7 +41,7 @@
 					rel.persona_id = persones.id
 					AND
 					rel.cas_id = casos.id
-				ORDER BY cas
+				ORDER BY cas, persona
 			";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
@@ -79,7 +79,7 @@
 					rel.persona_id = persones.id
 					AND
 					rel.partit_id = partits.id
-				ORDER BY partit
+				ORDER BY partit, persona
 			";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
@@ -115,7 +115,7 @@
 					rel.persona_id = persones.id
 					AND
 					rel.empresa_id = empreses.id
-				ORDER BY empresa
+				ORDER BY empresa, persona
 			";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
