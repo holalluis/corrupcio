@@ -1,7 +1,8 @@
 # Corrupcio
-GRAN ENCICLOPEDIA DE LA CORRUPCIO
-Web per recopilar els casos de corrupcio a l'estat espanyol, 
-La idea es tenir una llista ordenada de "casos", i poder-los comparar. 
+## GRAN ENCICLOPEDIA DE LA CORRUPCIO
+
+Web per recopilar casos de corrupcio a l'estat espanyol.
+Tenir una llista ordenada de "casos", i poder-los comparar. 
 Llavors, poder visualitzar dades, com per exemple grafics de barres 
 d'euros estafats, gent implicada, anys de condemna, etc. 
 Es podria monetitzar amb publicitat. 

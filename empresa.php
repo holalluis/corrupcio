@@ -18,6 +18,7 @@
 		$empresa->id=$row['id'];
 		$empresa->nom=$row['nom'];
 		$empresa->modificacio=$row['modificacio'];
+		$empresa->descripcio=$row['descripcio'];
 	?>
 	<style>
 		#navbar div[pagina=empreses]{color:black}
@@ -38,6 +39,15 @@
 </h1>
 
 <ul>
+	<!--descripció-->
+	<li>
+		Descripció: <?php echo $empresa->descripcio?>
+		<?php if($edit_mode){ ?>
+			<button onclick="update('empreses','<?php echo $empresa->id ?>','descripcio','<?php echo urlencode($empresa->descripcio) ?>')">edita descripció</button>
+		<?php } ?>
+	</li>
+
+	<!--persones relacionades-->
 	<li>
 		<?php
 			$sql="

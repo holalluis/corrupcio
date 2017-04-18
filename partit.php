@@ -19,6 +19,7 @@
 		$partit->nom=$row['nom'];
 		$partit->nom_llarg=$row['nom_llarg'];
 		$partit->modificacio=$row['modificacio'];
+		$partit->descripcio=$row['descripcio'];
 	?>
 	<style>
 		#navbar div[pagina=partits]{color:black}
@@ -39,6 +40,14 @@
 </h1>
 
 <ul>
+	<!--descripció-->
+	<li>
+		Descripció: <?php echo $partit->descripcio?>
+		<?php if($edit_mode){ ?>
+			<button onclick="update('partits','<?php echo $partit->id ?>','descripcio','<?php echo urlencode($partit->descripcio) ?>')">edita descripció</button>
+		<?php } ?>
+	</li>
+
 	<li>Nom sencer: <?php echo $partit->nom_llarg ?>
 		<?php 
 			if($edit_mode)

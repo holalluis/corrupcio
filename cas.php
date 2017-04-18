@@ -21,6 +21,7 @@
 		$cas->any=$row['any'];
 		$cas->estat=$row['estat'];
 		$cas->modificacio=$row['modificacio'];
+		$cas->descripcio=$row['descripcio'];
 	?>
 	<style>
 		form {
@@ -46,10 +47,17 @@
 </h1>
 
 <ul>
+	<!--descripció-->
+	<li>
+		Descripció: <?php echo $cas->descripcio?>
+		<?php if($edit_mode){ ?>
+			<button onclick="update('casos','<?php echo $cas->id ?>','descripcio','<?php echo urlencode($cas->descripcio) ?>')">edita descripció</button>
+		<?php } ?>
+	</li>
+
 	<!--any-->
 	<li>
-		Any: 
-		<?php echo $cas->any ?> 
+		Any: <?php echo $cas->any ?> 
 		<?php if($edit_mode){ ?>
 			<button onclick="update('casos','<?php echo $cas->id ?>','any','<?php echo urlencode($cas->any) ?>')">edita any</button>
 		<?php } ?>
