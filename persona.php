@@ -75,7 +75,11 @@
 	<li>
 		<?php
 			$sql="
-				SELECT *,relacions_persona_cas.id AS rel_id 
+				SELECT 
+					relacions_persona_cas.id AS rel_id,
+					casos.nom AS nom,
+					casos.id AS cas_id,
+					relacions_persona_cas.descripcio AS descripcio
 				FROM relacions_persona_cas,casos 
 				WHERE cas_id=casos.id AND persona_id=$persona->id
 				ORDER BY nom
@@ -139,7 +143,11 @@
 	<li>
 		<?php
 			$sql="
-				SELECT *,relacions_persona_partit.id AS rel_id 
+				SELECT 
+					relacions_persona_partit.id AS rel_id,
+					partits.nom,
+					partits.id AS partit_id,
+					relacions_persona_partit.descripcio
 				FROM relacions_persona_partit,partits 
 				WHERE partit_id=partits.id AND persona_id=$persona->id
 				ORDER BY nom
@@ -203,7 +211,11 @@
 	<li>
 		<?php
 			$sql="
-				SELECT *,relacions_persona_empresa.id AS rel_id
+				SELECT 
+					relacions_persona_empresa.id AS rel_id,
+					empreses.nom,
+					empreses.id AS empresa_id,
+					relacions_persona_empresa.descripcio
 				FROM relacions_persona_empresa,empreses 
 				WHERE empresa_id=empreses.id AND persona_id=$persona->id
 				ORDER BY nom

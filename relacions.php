@@ -30,7 +30,12 @@
 <table id=relacions_persona_cas>
 	<?php
 			$sql="
-				SELECT *, persones.id AS persona_id, persones.nom AS persona, casos.id AS cas_id, casos.nom AS cas 
+				SELECT 
+					persones.nom AS persona, 
+					persones.id AS persona_id, 
+					casos.nom AS cas,
+					casos.id AS cas_id, 
+					rel.descripcio
 				FROM relacions_persona_cas AS rel, persones , casos
 				WHERE 
 					rel.persona_id = persones.id
@@ -49,7 +54,6 @@
 				$persona_id=$row['persona_id'];
 				$cas=$row['cas'];
 				$cas_id=$row['cas_id'];
-
 				$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
 				echo "<tr> 
 					<td><a href=persona.php?id=$persona_id>$persona</a> 
@@ -64,7 +68,12 @@
 <table id=relacions_persona_partit>
 	<?php
 			$sql="
-				SELECT *, persones.id AS persona_id, persones.nom AS persona, partits.id AS partit_id, partits.nom AS partit 
+				SELECT 
+					persones.id AS persona_id, 
+					persones.nom AS persona, 
+					partits.id AS partit_id, 
+					partits.nom AS partit,
+					rel.descripcio
 				FROM relacions_persona_partit AS rel, persones , partits
 				WHERE 
 					rel.persona_id = persones.id
@@ -97,9 +106,10 @@
 <table id=relacions_persona_empresa>
 	<?php
 			$sql="
-				SELECT *, 
+				SELECT
 					persones.id AS persona_id, persones.nom AS persona, 
-					empreses.id AS empresa_id, empreses.nom AS empresa 
+					empreses.id AS empresa_id, empreses.nom AS empresa,
+					rel.descripcio
 				FROM relacions_persona_empresa AS rel, persones , empreses
 				WHERE 
 					rel.persona_id = persones.id
