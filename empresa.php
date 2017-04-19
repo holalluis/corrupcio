@@ -42,21 +42,24 @@
 	<!--descripció-->
 	<li>
 		Descripció: 
-		<p>
+		<p class=descripcio>
 			<?php 
 				if(trim($empresa->descripcio)=="")
 				{
-					echo "<i style=color:#ccc>no hi ha descripció</i>";
+					echo "<i class=blanc>~no hi ha descripció</i>";
 				}
 				else
 				{
 					echo $empresa->descripcio;
 				}
+				if($edit_mode)
+				{ 
+					?>
+					<button onclick="update('empreses','<?php echo $empresa->id ?>','descripcio','<?php echo urlencode($empresa->descripcio) ?>')">edita descripció</button>
+					<?php 
+				} 
 			?>
 		</p>
-		<?php if($edit_mode){ ?>
-			<button onclick="update('empreses','<?php echo $empresa->id ?>','descripcio','<?php echo urlencode($empresa->descripcio) ?>')">edita descripció</button>
-		<?php } ?>
 	</li>
 
 	<!--persones relacionades-->
@@ -81,7 +84,7 @@
 					$rel_id=$row['id'];
 					$persona=$row['persona'];
 					$persona_id=$row['persona_id'];
-					$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
+					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
 						<a href=persona.php?id=$persona_id>$persona</a>
 						&mdash; 

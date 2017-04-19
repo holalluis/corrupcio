@@ -43,21 +43,24 @@
 	<!--descripció-->
 	<li>
 		Descripció: 
-		<p>
+		<p class=descripcio>
 			<?php 
 				if(trim($partit->descripcio)=="")
 				{
-					echo "<i style=color:#ccc>no hi ha descripció</i>";
+					echo "<i class=blanc>~no hi ha descripció</i>";
 				}
 				else
 				{
 					echo $partit->descripcio;
 				}
+				if($edit_mode)
+				{ 
+					?>
+					<button onclick="update('partits','<?php echo $partit->id ?>','descripcio','<?php echo urlencode($partit->descripcio) ?>')">edita descripció</button>
+					<?php 
+				} 
 			?>
 		</p>
-		<?php if($edit_mode){ ?>
-			<button onclick="update('partits','<?php echo $partit->id ?>','descripcio','<?php echo urlencode($partit->descripcio) ?>')">edita descripció</button>
-		<?php } ?>
 	</li>
 
 	<li>Nom sencer: <?php echo $partit->nom_llarg ?>
@@ -92,7 +95,7 @@
 					$rel_id=$row['id'];
 					$persona=$row['persona'];
 					$persona_id=$row['persona_id'];
-					$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
+					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
 						<a href=persona.php?id=$persona_id>$persona</a>
 						&mdash;

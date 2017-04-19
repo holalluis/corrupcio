@@ -19,14 +19,12 @@ h1{font-size:18px}
 h2{font-size:17px}
 h3{font-size:15px}
 
-/*utilitzat per descripcions de casos, partits i empreses*/
 p{
 	text-align:justify;
-	color:#666;
-	padding-right:5px;
+	padding-right:10px;
 }
 
-/*ul*/
+/*unsorted list*/
 ul{
 	margin:0;
 	padding-left:25px;
@@ -56,9 +54,15 @@ span[onclick]:hover{text-decoration:underline}
 	flex-wrap:wrap;
 }
 
+/*descripcions casos, partits i empreses*/
 /*descripcions de relacions persona_{cas,partit,empresa}*/
-span.descripcio{
+.descripcio{
+	color:#444;
 	font-size:11px;
-	color:#666;
+}
+
+/*quan el valor val 'empty string'*/
+.blanc{
 	font-style:italic;
+	color:#aaa;
 }

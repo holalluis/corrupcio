@@ -3,8 +3,9 @@
 	<style>
 		table[id^="relacions"] td {
 			padding:0 0.2em;
+			font-size:12px;
 		}
-		table[id^="relacions"] tr.invisible * {
+		table[id^="relacions"].invisible{
 			display:none;
 		}
 		#navbar div[pagina=relacions]{color:black}
@@ -34,11 +35,7 @@
 	<script>
 		function toggleVisib(table_id)
 		{
-			var files=qsa('#'+table_id+" tr")
-			for(var i=0;i<files.length;i++)
-			{
-				files[i].classList.toggle('invisible');
-			}
+			qs('#'+table_id).classList.toggle('invisible');
 		}
 	</script>
 </h3>
@@ -70,7 +67,7 @@
 				$persona_id=$row['persona_id'];
 				$cas=$row['cas'];
 				$cas_id=$row['cas_id'];
-				$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
+				$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 				echo "<tr> 
 					<td><a href=persona.php?id=$persona_id>$persona</a> 
 					<td>&rarr; 
@@ -111,7 +108,7 @@
 				$persona_id=$row['persona_id'];
 				$partit=$row['partit'];
 				$partit_id=$row['partit_id'];
-				$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
+				$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 				echo "<tr>
 					<td><a href=persona.php?id=$persona_id>$persona</a>
 					<td>&rarr;
@@ -150,7 +147,7 @@
 				$persona_id=$row['persona_id'];
 				$empresa=$row['empresa'];
 				$empresa_id=$row['empresa_id'];
-				$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
+				$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 				echo "<tr>
 					<td><a href=persona.php?id=$persona_id>$persona</a>
 					<td>&rarr;

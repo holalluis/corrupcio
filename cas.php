@@ -50,21 +50,24 @@
 	<!--descripció-->
 	<li>
 		Descripció: 
-		<p>
+		<p class=descripcio>
 			<?php 
 				if(trim($cas->descripcio)=="")
 				{
-					echo "<i style=color:#ccc>no hi ha descripció</i>";
+					echo "<i class=blanc>~no hi ha descripció</i>";
 				}
 				else
 				{
 					echo $cas->descripcio;
 				}
+				if($edit_mode)
+				{ 
+					?>
+					<button onclick="update('casos','<?php echo $cas->id ?>','descripcio','<?php echo urlencode($cas->descripcio) ?>')">edita descripció</button>
+					<?php 
+				} 
 			?>
 		</p>
-		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','descripcio','<?php echo urlencode($cas->descripcio) ?>')">edita descripció</button>
-		<?php } ?>
 	</li>
 
 	<!--any-->
@@ -90,7 +93,7 @@
 		<?php 
 			if($cas->estat=="")
 			{
-				echo "<span style=color:#aaa>no definit</span>";
+				echo "<span class=blanc>~no hi ha estat</span>";
 			}
 			else {
 				echo $cas->estat;
@@ -123,7 +126,7 @@
 					$rel_id=$row['id'];
 					$nom=$row['nom'];
 					$persona_id=$row['persona_id'];
-					$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
+					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 					$ordre=$row['ordre'];
 					echo "<li>";
 					if($edit_mode)

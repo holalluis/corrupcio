@@ -318,7 +318,7 @@ CREATE TABLE `relacions_persona_partit` (
 
 LOCK TABLES `relacions_persona_partit` WRITE;
 /*!40000 ALTER TABLE `relacions_persona_partit` DISABLE KEYS */;
-INSERT INTO `relacions_persona_partit` VALUES (11,19,7,'Extresorer de CDC '),(12,28,9,'Diputat al Parlament de Catalunya (1980-1992)'),(13,29,9,'Alcalde de Santa Coloma de Gramenet (2002-2009)'),(14,30,7,'Secretari de la PresidÃ¨ncia de la Generalitat de Catalunya (1980-1990)'),(15,31,7,'Conseller de la Generalitat de Catalunya en els departaments de GovernaciÃ³ (1982-1986), d\'IndÃºstria i Energia (1987-1989), i d\'Economia i Finances (1989-1997)'),(16,32,9,'Regidor d\'Urbanisme i Espai PÃºblic de l\'Ajuntament de Santa Coloma de Gramenet (1995-2009)');
+INSERT INTO `relacions_persona_partit` VALUES (11,19,7,'Extresorer de CDC'),(12,28,9,'Diputat al Parlament de Catalunya (1980-1992)'),(13,29,9,'Alcalde de Santa Coloma de Gramenet (2002-2009)'),(14,30,7,'Secretari de la PresidÃ¨ncia de la Generalitat de Catalunya (1980-1990)'),(15,31,7,'Conseller de la Generalitat de Catalunya en els departaments de GovernaciÃ³ (1982-1986), d\'IndÃºstria i Energia (1987-1989), i d\'Economia i Finances (1989-1997)'),(16,32,9,'Regidor d\'Urbanisme i Espai PÃºblic de l\'Ajuntament de Santa Coloma de Gramenet (1995-2009)');
 /*!40000 ALTER TABLE `relacions_persona_partit` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

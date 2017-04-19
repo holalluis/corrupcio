@@ -95,7 +95,7 @@
 					$rel_id=$row['rel_id'];
 					$nom=$row['nom'];
 					$cas_id=$row['cas_id'];
-					$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
+					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
 						<a href=cas.php?id=$cas_id>$nom</a> 
 						&mdash; 
@@ -163,7 +163,7 @@
 					$rel_id=$row['rel_id'];
 					$nom=$row['nom'];
 					$partit_id=$row['partit_id'];
-					$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
+					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
 						<a href=partit.php?id=$partit_id>$nom</a>
 						&mdash;
@@ -231,7 +231,7 @@
 					$rel_id=$row['rel_id'];
 					$nom=$row['nom'];
 					$empresa_id=$row['empresa_id'];
-					$descripcio=$row['descripcio']=="" ? "<i style=color:#ccc>no hi ha descripció</i>" : $row['descripcio'];
+					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
 						<a href=empresa.php?id=$empresa_id>$nom</a>
 						&mdash;
