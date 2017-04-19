@@ -2,18 +2,20 @@
 ## GRAN ENCICLOPEDIA DE LA CORRUPCIO
 
 Web per recopilar casos de corrupcio a l'estat espanyol.
-Tenir una llista ordenada de "casos", i poder-los comparar. 
-Llavors, poder visualitzar dades, com per exemple grafics de barres 
-d'euros estafats, gent implicada, anys de condemna, etc. 
-Es podria monetitzar amb publicitat. 
+
+## Estat
+En desenvolupament. Encara no anunciat enlloc.
 
 ## Tasques pendents (programacio)
+- Polir codi
 - CRUD - fixar caracters maxims per inserts
 - CRUD - fixar caracters maxims per updates
-- Grafic de barres sota del top5 a pagina inicial
+- Taula de ciutats (pensar)
+- Implementar mysqldump automatic cada setmana o aixi
 - Poder descarregar base de dades sencera
-- Registre de canvis:
-	- 1. Implementar col.laboradors (user,password)
+- Grafic de barres sota del top5 a pagina inicial
+- Crear registre de canvis
+	- 1. Implementar col.laboradors (user, password)
 	- 2. Taula log: canvis associats a un col.laborador
 
 ## Estructura de dades Corrupcio
@@ -41,3 +43,4 @@ Es podria monetitzar amb publicitat.
 ## Coses a contractar en un futur
 	- Posar publicitat
 	- Dissenyador grafic (logo & publi placement)
+

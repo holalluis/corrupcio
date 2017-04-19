@@ -27,10 +27,10 @@ $sql="DELETE FROM $taula WHERE id=$id";
 $mysql->query($sql) or die(mysqli_error($mysql));
 
 echo "
-<ul>
-  <li>$sql</li>
-  <li>Executat correctament</li>
-  <li><a href='$root/index.php'>Inici</a></li>
-</ul>
+	<ul>
+		<li>$sql</li>
+		<li>Executat correctament</li>
+		<li><a href='$root/index.php'>Inici</a></li>
+	</ul>
 ";
 ?>
