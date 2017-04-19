@@ -29,7 +29,6 @@
 			vertical-align:top;
 		}
 		#navbar div[pagina=casos]{color:black}
-		span.monospace {font-family:monospace}
 	</style>
 </head><body>
 <?php include'navbar.php'?>
@@ -73,18 +72,28 @@
 	<!--any-->
 	<li>
 		Any: <?php echo $cas->any ?> 
-		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','any','<?php echo urlencode($cas->any) ?>')">edita any</button>
-		<?php } ?>
+		<?php 
+			if($edit_mode)
+			{ 
+				?>
+				<button onclick="update('casos','<?php echo $cas->id ?>','any','<?php echo urlencode($cas->any) ?>')">edita any</button>
+				<?php 
+			} 
+		?>
 	</li>
 
 	<!--espoli-->
 	<li>
 		Espoli: 
 		<?php echo $cas->espoli ?> euros 
-		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','espoli','<?php echo urlencode($cas->espoli) ?>')">edita espoli</button>
-		<?php } ?>
+		<?php 
+			if($edit_mode)
+			{ 
+				?>
+				<button onclick="update('casos','<?php echo $cas->id ?>','espoli','<?php echo urlencode($cas->espoli) ?>')">edita espoli</button>
+				<?php 
+			} 
+		?>
 	</li>
 
 	<!--estat-->
@@ -95,13 +104,17 @@
 			{
 				echo "<span class=blanc>~no hi ha estat</span>";
 			}
-			else {
+			else
+			{
 				echo $cas->estat;
 			}
+			if($edit_mode)
+			{ 
+				?>
+				<button onclick="update('casos','<?php echo $cas->id ?>','estat','<?php echo urlencode($cas->estat) ?>')">edita estat</button>
+				<?php 
+			} 
 		?>
-		<?php if($edit_mode){ ?>
-			<button onclick="update('casos','<?php echo $cas->id ?>','estat','<?php echo urlencode($cas->estat) ?>')">edita estat</button>
-		<?php } ?>
 	</li>
 
 	<!--relacions persona-cas-->
@@ -147,7 +160,8 @@
 						&mdash;
 						<span class=descripcio>$descripcio</span>
 					";
-					if($edit_mode){
+					if($edit_mode)
+					{
 						echo "
 							<button onclick=update('relacions_persona_cas',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
 							<button onclick=esborra('relacions_persona_cas',$rel_id)>esborra connexió</button>

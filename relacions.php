@@ -5,10 +5,12 @@
 			padding:0 0.2em;
 			font-size:12px;
 		}
-		table[id^="relacions"].invisible{
+		table[id^="relacions"].invisible {
 			display:none;
 		}
 		#navbar div[pagina=relacions]{color:black}
+
+		span.descripcio{display:block;max-width:50em}
 
 		/*treu els marges a portrait*/
 		@media only screen and (min-width:560px) { 
@@ -19,27 +21,26 @@
 			}
 		}
 	</style>
-</head><body>
-<?php include'navbar.php'?>
-
-<h1>
-	<span onclick=window.location='index.php'>Inici</span> &rsaquo; 
-	Connexions
-</h1>
-
-<div id=root>
-
-<h3>
-	Persona &rarr; Cas
-	<button onclick=toggleVisib('relacions_persona_cas')>-/+</button>
 	<script>
+		//fes visible o invisible la taula id
 		function toggleVisib(table_id)
 		{
 			qs('#'+table_id).classList.toggle('invisible');
 		}
 	</script>
-</h3>
+</head><body>
+<?php include'navbar.php'?>
 
+<!--titol-->
+<h1>
+	<span onclick=window.location='index.php'>Inici</span> &rsaquo; 
+	Connexions
+</h1>
+
+<!--root container-->
+<div id=root>
+
+<h3>Persona &rarr; Cas <button onclick=toggleVisib('relacions_persona_cas')>-/+</button></h3>
 <table id=relacions_persona_cas>
 	<?php
 			$sql="
@@ -59,7 +60,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
 			{
-				echo "<tr><td><span style=color:#666>~No hi ha resultats</span>";
+				echo "<tr><td><span class=blanc>~No hi ha resultats</span>";
 			}
 			while($row=mysqli_fetch_assoc($res))
 			{
@@ -77,10 +78,7 @@
 	?>
 </table>
 
-<h3>
-	Persona &rarr; Partit
-	<button onclick=toggleVisib('relacions_persona_partit')>-/+</button>
-</h3>
+<h3>Persona &rarr; Partit <button onclick=toggleVisib('relacions_persona_partit')>-/+</button></h3>
 <table id=relacions_persona_partit>
 	<?php
 			$sql="
@@ -100,7 +98,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
 			{
-				echo "<tr><td><span style=color:#666>~No hi ha resultats</span>";
+				echo "<tr><td><span class=blanc>~No hi ha resultats</span>";
 			}
 			while($row=mysqli_fetch_assoc($res))
 			{
@@ -118,10 +116,7 @@
 	?>
 </table>
 
-<h3>
-	Persona &rarr; Empresa
-	<button onclick=toggleVisib('relacions_persona_empresa')>-/+</button>
-</h3>
+<h3>Persona &rarr; Empresa <button onclick=toggleVisib('relacions_persona_empresa')>-/+</button></h3>
 <table id=relacions_persona_empresa>
 	<?php
 			$sql="
@@ -139,7 +134,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
 			{
-				echo "<tr><td><span style=color:#666>~No hi ha resultats</span>";
+				echo "<tr><td><span class=blanc>~No hi ha resultats</span>";
 			}
 			while($row=mysqli_fetch_assoc($res))
 			{
@@ -152,9 +147,10 @@
 					<td><a href=persona.php?id=$persona_id>$persona</a>
 					<td>&rarr;
 					<td><a href=empresa.php?id=$empresa_id>$empresa</a>
-					<td><span class=descripcio>$descripcio";
+					<td><span class=descripcio>$descripcio
+				";
 			}
 	?>
 </table>
 
-</div>
+</div id=root>

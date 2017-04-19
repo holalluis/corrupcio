@@ -1,8 +1,7 @@
-
 <div id=busca class=amagat>
 	<form method=get action=resultats.php>
 		<input id=q name=q type=search placeholder="Busca persones, casos, partits, empreses" autocomplete=off>
-		<button> &#128270; </button>
+		<button>&#128270;</button>
 	</form>
 </div>
 

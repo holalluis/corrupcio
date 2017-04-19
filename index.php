@@ -13,12 +13,13 @@
 <?php include'navbar.php'?>
 
 <!--titol-->
-<h1>Gran Enciclopèdia de la Corrupció <i style=color:#999>v0.1</i></h1>
+<h1>Gran Enciclopèdia de la Corrupció <i class=blanc>v0.1</i></h1>
+
 <h2>Inici</h2>
 
 <!--resum-->
 <div style=margin-right:20px>
-	<ul id=resum>
+	<ul>
 		<?php
 			function compta($taula){
 				global $mysql;
@@ -28,21 +29,6 @@
 				$row=mysqli_fetch_assoc($res);
 				$n=current($row);
 				return $n;
-			}
-
-			//no utilitzat per ara
-			function troba($taula,$item){
-				global $mysql;
-				$sql="SELECT id,nom FROM $taula ORDER BY id DESC LIMIT 5 ";
-				$res=$mysql->query($sql) or die(mysqli_error($mysql));
-				$items=array();
-				while($row=mysqli_fetch_assoc($res))
-				{
-					$id=$row['id'];
-					$nom=$row['nom'];
-					$items[]="<a href=$item.php?id=$id>$nom</a>";
-				}
-				return "<span style=color:#ccc> ".join(', ',$items)."</span>";
 			}
 		?>
 		<li><a href="persones.php"> Persones</a>                   (<?php echo compta('persones')?>)

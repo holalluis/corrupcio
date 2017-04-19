@@ -4,7 +4,7 @@
 		#partits {
 			margin-left:10px;
 		}
-		#partits td{
+		#partits td {
 			padding:0 0.4em;
 		}
 		#navbar div[pagina=partits]{color:black}
@@ -27,11 +27,12 @@
 				LEFT JOIN relacions_persona_partit AS rel
 				ON p.id=rel.partit_id
 				GROUP BY nom
-				ORDER BY nom";
+				ORDER BY nom
+			";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
 			{
-				echo "<tr><td><span style=color:#666>~No hi ha resultats</span>";
+				echo "<tr><td><span class=blanc>~No hi ha resultats</span>";
 			}
 			while($row=mysqli_fetch_assoc($res))
 			{
