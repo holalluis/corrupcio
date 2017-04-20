@@ -8,9 +8,10 @@ En desenvolupament. Encara no anunciat enlloc.
 
 
 ## Tasques pendents (programacio)
+- Implementar menu amb textarea per fer updates
+- Taula de ciutats (pensar)
 - CRUD - fixar caracters maxims per inserts
 - CRUD - fixar caracters maxims per updates
-- Taula de ciutats (pensar)
 - Implementar mysqldump automatic cada setmana o aixi
 - Poder descarregar base de dades sencera
 - Grafic de barres sota del top5 a pagina inicial
