@@ -33,6 +33,9 @@ ul{
 li{
 	margin-top:0.5em;
 	margin-bottom:0.5em;
+	text-align:justify;
+	max-width:50em;
+	padding-right:10px;
 }
 
 /*table*/
@@ -66,4 +69,12 @@ span[onclick]:hover{text-decoration:underline}
 .blanc{
 	font-style:italic;
 	color:#aaa;
+}
+
+/*treu bordes de les taules a portrait*/
+@media only screen and (max-width:560px) { 
+	th,td {
+		border-left:none;
+		border-right:none;
+	}
 }

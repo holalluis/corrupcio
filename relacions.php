@@ -10,7 +10,7 @@
 		}
 		#navbar div[pagina=relacions]{color:black}
 
-		span.descripcio{display:block;max-width:50em}
+		span.descripcio{display:block;max-width:50em;text-align:justify}
 
 		/*treu els marges a portrait*/
 		@media only screen and (min-width:560px) { 
