@@ -44,7 +44,7 @@
 					<tr>
 						<td><a href=cas.php?id=$id>$nom</a>
 						<td>$any
-						<td>$implicats implicats
+						<td class=numero>$implicats implicats
 				";
 			}
 	?>

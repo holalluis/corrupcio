@@ -57,18 +57,21 @@ span[onclick]:hover{text-decoration:underline}
 	display:flex;
 	flex-wrap:wrap;
 }
-
 /*descripcions casos, partits i empreses*/
 /*descripcions de relacions persona_{cas,partit,empresa}*/
 .descripcio{
 	color:#444;
 	font-size:11px;
 }
-
 /*quan el valor val 'empty string'*/
 .blanc{
 	font-style:italic;
 	color:#aaa;
+	font-size:11px;
+}
+/*euros, nombre de persones, etc*/
+.numero {
+	text-align:right;
 }
 
 /*treu bordes de les taules a portrait*/

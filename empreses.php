@@ -42,7 +42,7 @@
 				echo "
 					<tr>
 						<td><a href=empresa.php?id=$id>$nom</a>
-						<td>$persones persones
+						<td class=numero>$persones persones
 				";
 			}
 	?>

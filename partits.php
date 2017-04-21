@@ -44,7 +44,7 @@
 					<tr>
 						<td><a href=partit.php?id=$id>$nom</a>
 						<td>$nom_llarg
-						<td>$persones persones
+						<td class=numero>$persones persones
 				";
 			}
 	?>
