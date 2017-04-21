@@ -1,11 +1,7 @@
-/* 
-*{margin:0}
-*/
+/*body*/
 body{
 	margin:0 auto;
 	overflow-y:scroll;
-	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
-	font-family:"Trebuchet MS", Helvetica, sans-serif;
 	font-family:"San Francisco", -apple-system, system-ui, ".SFNSText-Regular", sans-serif;
 	font-size:14px;
 }
@@ -19,13 +15,14 @@ h1{font-size:18px}
 h2{font-size:17px}
 h3{font-size:15px}
 
+/*parrafs*/
 p{
 	text-align:justify;
 	padding-right:10px;
 	max-width:50em;
 }
 
-/*unsorted list*/
+/*unsorted lists*/
 ul{
 	margin:0;
 	padding-left:25px;
@@ -48,22 +45,23 @@ hr{border:none;border-bottom:1px solid #ccc}
 a{text-decoration:none}
 a:hover{text-decoration:underline}
 
-/*titols*/
+/*per titols navegables*/
 span[onclick]{cursor:pointer}
 span[onclick]:hover{text-decoration:underline}
+
+/*CLASSES*/
 
 /*classe general*/
 .flex{
 	display:flex;
 	flex-wrap:wrap;
 }
-/*descripcions casos, partits i empreses*/
-/*descripcions de relacions persona_{cas,partit,empresa}*/
+/*descripcions casos, partits i empreses i relacions*/
 .descripcio{
 	color:#444;
 	font-size:11px;
 }
-/*quan el valor val 'empty string'*/
+/*quan el valor val 'empty string' posa el text més clar*/
 .blanc{
 	font-style:italic;
 	color:#aaa;
@@ -73,11 +71,24 @@ span[onclick]:hover{text-decoration:underline}
 .numero {
 	text-align:right;
 }
+/*classe per fer més curtes les descripcions*/
+.nowrap { 
+	white-space: nowrap;
+	overflow: hidden;
+	display: block;
+	text-overflow: ellipsis;
+	transition:all 0.5s;
+	cursor:pointer;
+}
+
+/*MEDIA QUERIES*/
 
 /*treu bordes de les taules a portrait*/
 @media only screen and (max-width:560px) { 
 	th,td {
 		border-left:none;
 		border-right:none;
+		padding-top:1em;
+		padding-bottom:1em;
 	}
 }

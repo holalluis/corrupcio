@@ -7,17 +7,11 @@
 			<div class=flex >
 				<!--edit mode-->
 				<div class=edit_mode_on title="Permís per editar les pàgines">
-					<div>
-						Edit mode ON &nbsp;
-					</div>
-					<button onclick=window.location='edit/logout.php'>SORTIR</button>
+					<button onclick=window.location='edit/logout.php'>SORTIR de l'Edit mode</button>
 				</div>
 				<!--view mode-->
 				<div class=edit_mode_on title="Opció per veure com queda la pàgina sense sortir de l'Edit mode">
-					<div>
-						View mode <?php if($view_mode) echo "ON "; else echo "OFF"; ?> &nbsp;
-					</div>
-					<button onclick=window.location='edit/view_mode.php'>ON/OFF</button>
+					<button onclick=window.location='edit/view_mode.php'>View mode ON/OFF</button>
 				</div>
 			</div>
 

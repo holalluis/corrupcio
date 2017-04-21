@@ -4,9 +4,6 @@
 		#empreses {
 			margin-left:10px;
 		}
-		#empreses td {
-			padding:0 0.4em;
-		}
 		#navbar div[pagina=empreses]{color:black}
 	</style>
 </head><body>

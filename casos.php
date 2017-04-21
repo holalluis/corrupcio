@@ -4,9 +4,6 @@
 		#casos {
 			margin-left:10px;
 		}
-		#casos td {
-			padding:0 0.4em;
-		}
 		#navbar div[pagina=casos]{color:black}
 	</style>
 </head><body>

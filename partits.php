@@ -4,9 +4,6 @@
 		#partits {
 			margin-left:10px;
 		}
-		#partits td {
-			padding:0 0.4em;
-		}
 		#navbar div[pagina=partits]{color:black}
 	</style>
 </head><body>

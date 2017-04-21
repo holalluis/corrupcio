@@ -2,7 +2,6 @@
 	<?php include'imports.php'?>
 	<style>
 		table[id^="relacions"] td {
-			padding:0 0.2em;
 			font-size:12px;
 		}
 		table[id^="relacions"].invisible {

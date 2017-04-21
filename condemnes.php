@@ -4,9 +4,6 @@
 		#condemnes {
 			margin-left:10px;
 		}
-		#condemnes td {
-			padding:0 0.4em;
-		}
 		#navbar div[pagina=condemnes]{color:black}
 	</style>
 </head><body>

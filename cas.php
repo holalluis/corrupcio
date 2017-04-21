@@ -155,11 +155,16 @@
 						}
 						echo "</select> ";
 					}
+
+					echo "<a href=persona.php?id=$persona_id>$nom</a>";
+
 					echo "
-						<a href=persona.php?id=$persona_id>$nom</a>
-						&mdash;
-						<span class=descripcio>$descripcio</span>
+						<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
+							$descripcio
+						</div>
 					";
+
+					//btn edita relacio persona cas
 					if($edit_mode)
 					{
 						echo "
