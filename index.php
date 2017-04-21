@@ -60,7 +60,8 @@
 				$nom=$row['nom'];
 				$espoli=$row['espoli'];
 				echo "<tr>
-					<td>$i. <a href=cas.php?id=$id>$nom</a>
+					<td>$i
+					<td><a href=cas.php?id=$id>$nom</a>
 					<td class=numero>$espoli eur
 				";
 				$i++;
