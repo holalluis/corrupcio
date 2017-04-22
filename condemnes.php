@@ -1,10 +1,14 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
 	<style>
-		#condemnes {
-			margin-left:10px;
-		}
 		#navbar div[pagina=condemnes]{color:black}
+
+		/*treu els marges a portrait*/
+		@media only screen and (min-width:560px) { 
+			#root {
+				margin-left:10px;
+			}
+		}
 	</style>
 </head><body>
 <?php include'navbar.php'?>
@@ -14,6 +18,10 @@
 	<span onclick=window.location='index.php'>Inici</span> &rsaquo; 
 	Condemnes
 </h1>
+
+<div id=root>
+
+<p class=descripcio>Llista de condemnes a persones implicades en casos de corrupció</p>
 
 <!--resum-->
 <table id=condemnes>
@@ -44,9 +52,11 @@
 				echo "<tr>
 					<td>
 						<a href=condemna.php?id=$id>
-							$persona, pel $cas &rarr;
+							$persona ($cas) &rarr;
 							$anys_de_preso anys
 				";
 			}
 	?>
 </table>
+
+</div id=root>

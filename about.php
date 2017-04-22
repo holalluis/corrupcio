@@ -1,13 +1,25 @@
 <!doctype html><html><head>
-<?php include'imports.php'?>
+	<?php include'imports.php'?>
+	<style>
+		#root {
+			font-size:11px;
+		}
+		/*posa marges quant la pantalla és ampla*/
+		@media only screen and (min-width:560px) { 
+			#root {
+				margin-left:10px;
+				margin-right:5px;
+			}
+		}
+	</style>
 </head><body>
 <?php include'navbar.php'?>
 <!--titol--><h1>Gran Enciclopèdia de la Corrupció</h1>
 
-<h2>Quant a</h2>
+<h3>Quant a</h3>
 
-<div style="padding-left:10px">
-	<p>
+<div id=root>
+	<div>
 		La Gran Enciclopèdia de la Corrupció va néixer el març del 2017,
 		com a exercici de modelització informàtica per posar ordre a 
 		totes les dades generades arran de la corrupció política
@@ -36,7 +48,7 @@
 			<li>Javascript
 			<li>HTML/CSS
 		</ul>
-	</p>
+	</div>
 </div>
 
 <!--footer--><?php include'footer.php'?>

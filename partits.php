@@ -1,10 +1,13 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
 	<style>
-		#partits {
-			margin-left:10px;
-		}
 		#navbar div[pagina=partits]{color:black}
+		/*treu els marges a portrait*/
+		@media only screen and (min-width:560px) { 
+			#root {
+				margin-left:10px;
+			}
+		}
 	</style>
 </head><body>
 <?php include'navbar.php'?>
@@ -14,6 +17,10 @@
 	<span onclick=window.location='index.php'>Inici</span> &rsaquo; 
 	Partits
 </h1>
+
+<div id=root>
+
+<p class=descripcio>Llista de partits polítics esquitxats per casos de corrupció</p>
 
 <!--resum-->
 <table id=partits>
@@ -46,3 +53,5 @@
 			}
 	?>
 </table>
+
+</div id=root>

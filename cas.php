@@ -57,7 +57,10 @@
 				}
 				else
 				{
-					echo $cas->descripcio;
+					echo "<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
+						$cas->descripcio
+					</div>
+					";
 				}
 				if($edit_mode)
 				{ 

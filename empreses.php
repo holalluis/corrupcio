@@ -1,10 +1,13 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
 	<style>
-		#empreses {
-			margin-left:10px;
-		}
 		#navbar div[pagina=empreses]{color:black}
+		/*treu els marges a portrait*/
+		@media only screen and (min-width:560px) { 
+			#root {
+				margin-left:10px;
+			}
+		}
 	</style>
 </head><body>
 <?php include'navbar.php'?>
@@ -14,6 +17,10 @@
 	<span onclick=window.location='index.php'>Inici</span> &rsaquo; 
 	Empreses
 </h1>
+
+<div id=root>
+
+<p class=descripcio>Llista d'empreses implicades en casos de corrupció</p>
 
 <!--resum-->
 <table id=empreses>
@@ -44,3 +51,5 @@
 			}
 	?>
 </table>
+
+</div id=root>

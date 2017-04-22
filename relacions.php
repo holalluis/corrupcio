@@ -1,6 +1,7 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
 	<style>
+		#root h3 {padding-left:0}
 		table[id^="relacions"] td {
 			font-size:12px;
 		}
@@ -8,7 +9,6 @@
 			display:none;
 		}
 		#navbar div[pagina=relacions]{color:black}
-
 		span.descripcio{display:block;max-width:50em;text-align:justify}
 
 		/*treu els marges a portrait*/
@@ -16,7 +16,10 @@
 			table[id^="relacions"]{
 				margin-top:0.5em;
 				margin-bottom:2em;
+			}
+			#root{
 				margin-left:10px;
+				margin-right:5px;
 			}
 		}
 	</style>
@@ -39,7 +42,12 @@
 <!--root container-->
 <div id=root>
 
-<h3>Persona &rarr; Cas <button onclick=toggleVisib('relacions_persona_cas')>-/+</button></h3>
+<p class=descripcio>Llista de connexions entre persones, casos, partits i empreses</p>
+
+<h3>
+	<button onclick=toggleVisib('relacions_persona_cas')>+/-</button>
+	Persona &rarr; Cas
+</h3>
 <table id=relacions_persona_cas>
 	<?php
 			$sql="
@@ -77,7 +85,10 @@
 	?>
 </table>
 
-<h3>Persona &rarr; Partit <button onclick=toggleVisib('relacions_persona_partit')>-/+</button></h3>
+<h3>
+	<button onclick=toggleVisib('relacions_persona_partit')>+/-</button>
+	Persona &rarr; Partit 
+</h3>
 <table id=relacions_persona_partit>
 	<?php
 			$sql="
@@ -115,7 +126,10 @@
 	?>
 </table>
 
-<h3>Persona &rarr; Empresa <button onclick=toggleVisib('relacions_persona_empresa')>-/+</button></h3>
+<h3>
+	<button onclick=toggleVisib('relacions_persona_empresa')>+/-</button>
+	Persona &rarr; Empresa
+</h3>
 <table id=relacions_persona_empresa>
 	<?php
 			$sql="

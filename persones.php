@@ -3,7 +3,7 @@
 	<style>
 		/*treu els marges a portrait*/
 		@media only screen and (min-width:560px) { 
-			#persones {
+			#root {
 				margin-left:10px;
 			}
 		}
@@ -17,6 +17,10 @@
 	<span onclick=window.location='index.php'>Inici</span> &rsaquo; 
 	Persones
 </h1>
+
+<div id=root>
+
+<p class=descripcio>Llista de persones relacionades amb casos de corrupció</p>
 
 <!--resum-->
 <table id=persones>
@@ -50,7 +54,7 @@
 					) AS rel3
 				ON p.id=rel3.persona_id
 				GROUP BY nom
-				ORDER BY cas, nom
+				ORDER BY nom,cas
 				";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
@@ -68,13 +72,25 @@
 				$empresa=$row['empresa'];
 				$empresa_id=$row['empresa_id'];
 
+				//ajunta les relacions en un sol string
+				$relacions=[];
+				if($cas!=""){
+					$relacions[]="<a href=cas.php?id=$cas_id>$cas</a>";
+				}
+				if($partit!=""){
+					$relacions[]="<a href=partit.php?id=$partit_id>$partit</a>";
+				}
+				if($empresa!=""){
+					$relacions[]="<a href=empresa.php?id=$empresa_id>$empresa</a>";
+				}
+
 				echo "
 					<tr>
 						<td><a href=persona.php?id=$id>$nom</a>
-						<td><a href=cas.php?id=$cas_id>$cas</a>
-						<td><a href=partit.php?id=$partit_id>$partit</a>
-						<td><a href=empresa.php?id=$empresa_id>$empresa</a>
+						<td style=font-size:11px>".join(', ',$relacions)."
 				";
 			}
 	?>
 </table>
+
+</div id=root>

@@ -28,7 +28,7 @@
 </head><body>
 <?php include'navbar.php'?>
 <h1>
-	<span onclick=window.location='condemnes.php'>Condemnes</span> &rsaquo; id <?php echo $condemna->id ?>
+	<span onclick=window.location='condemnes.php'>Condemnes</span> &rsaquo; condemna
 </h1>
 
 <ul>
@@ -83,8 +83,10 @@
 
 	<!--delictes-->
 	<li>
-		Delictes: 
-		<?php echo $condemna->delictes ?>
+		Delictes comesos: 
+		<p class=descripcio>
+			<?php echo $condemna->delictes ?>
+		</p>
 		<?php if($edit_mode){ ?>
 			<button onclick="update('condemnes','<?php echo $condemna->id ?>','delictes', '<?php echo urlencode($condemna->delictes) ?>')">edita delictes</button>
 		<?php } ?>

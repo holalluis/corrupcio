@@ -56,13 +56,14 @@
 			}
 		?>
 	</div>
-	<!--buscar-->
+
+	<!--btn busca-->
 	<div class='item invisible' pagina onclick="qs('#busca').classList.toggle('amagat');qs('#q').focus()">
 		Busca
 	</div>
 </div>
 
-<!--menu buscar--><?php include'busca.php'?>
+<!--menu busca invisible--><?php include'busca.php'?>
 
 <style>
 	#navbar {
@@ -96,10 +97,10 @@
 	#navbar .item.burger {display:none}
 	#navbar .burger hr {width:40%;border-bottom:1px solid #666;}
 
-	/* mobile portrait */
+	/*mobile portrait*/
 	@media only screen and (max-width:560px) { 
-		#navbar .item_container{display:block} 
-		#navbar .item.burger {display:block;text-align:center}
+		#navbar .item_container{display:block;} 
+		#navbar .item.burger{display:block;text-align:center;}
 		#navbar .item_container .invisible {
 			color:transparent;
 			visibility:hidden;

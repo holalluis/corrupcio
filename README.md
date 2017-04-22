@@ -6,16 +6,13 @@ Web per recopilar casos de corrupcio a l'estat espanyol.
 ## Estat
 En desenvolupament. Encara no anunciat enlloc.
 
-
 ## Tasques pendents (programacio)
+- Poder descarregar base de dades sencera
 - Implementar menu amb textarea per fer updates
 - Taula de ciutats (pensar)
 - CRUD - fixar caracters maxims per inserts
 - CRUD - fixar caracters maxims per updates
-- Implementar mysqldump automatic cada setmana o aixi
-- Poder descarregar base de dades sencera
 - Grafic de barres sota del top5 a pagina inicial
-- Comprar llibreta per apuntar coses importants
 - Crear registre de canvis
 	- 1. Implementar col.laboradors (user, password)
 	- 2. Taula log: canvis associats a un col.laborador

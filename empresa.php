@@ -50,7 +50,11 @@
 				}
 				else
 				{
-					echo $empresa->descripcio;
+					echo "
+						<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
+							$empresa->descripcio
+						</div>
+					";
 				}
 				if($edit_mode)
 				{ 
@@ -87,9 +91,14 @@
 					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
 						<a href=persona.php?id=$persona_id>$persona</a>
-						&mdash; 
-						<span class=descripcio>$descripcio</span>
 					";
+
+					echo "
+						<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
+							$descripcio
+						</div>
+					";
+
 					if($edit_mode)
 					{
 						echo "
