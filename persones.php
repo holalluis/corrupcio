@@ -22,6 +22,15 @@
 
 <p class=descripcio>Llista de persones relacionades amb casos de corrupció</p>
 
+<?php
+	if($edit_mode)
+	{
+		?>
+		<p class=descripcio style=background:yellow>Nota: les persones sense cap cas vinculat estan marcades amb groc</p>
+		<?php
+	}
+?>
+
 <!--resum-->
 <table id=persones>
 	<?php
@@ -84,8 +93,11 @@
 					$relacions[]="<a href=empresa.php?id=$empresa_id>$empresa</a>";
 				}
 
+				#marca visualment les persones sense cas associat
+				$style= ($cas=="" and $edit_mode)?"style=background:yellow":"";
+
 				echo "
-					<tr>
+					<tr $style>
 						<td><a href=persona.php?id=$id>$nom</a>
 						<td style=font-size:11px>".join(', ',$relacions)."
 				";
