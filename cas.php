@@ -134,8 +134,10 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Persones relacionades (<?php echo $n ?>)
-		<ul style=list-style-type:decimal>
+		<span onclick=qs('#persones_relacionades').classList.toggle('invisible');>
+			Persones relacionades (<?php echo $n ?>)
+		</span>
+		<ul id=persones_relacionades style=list-style-type:decimal>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{
@@ -231,8 +233,10 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Condemnes (<?php echo $n ?>)
-		<ul>
+		<span onclick=qs('#condemnes').classList.toggle('invisible');>
+			Condemnes (<?php echo $n ?>)
+		</span>
+		<ul id=condemnes>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{
@@ -313,8 +317,10 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Partits relacionats (<?php echo $n ?>)
-		<ul>
+		<span onclick=qs('#partits').classList.toggle('invisible');>
+			Partits relacionats (<?php echo $n ?>)
+		</span>
+		<ul id=partits>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{
@@ -352,18 +358,20 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Empreses relacionades (<?php echo $n ?>)
-		<ul>
-		<?php
-			while($row=mysqli_fetch_assoc($res))
-			{
-				$empresa_id=$row['empresa_id'];
-				$empresa=$row['empresa'];
-				echo "<li> 
-					<a href=empresa.php?id=$empresa_id>$empresa</a>
-				";
-			}
-		?>
+		<span onclick=qs('#empreses').classList.toggle('invisible');>
+			Empreses relacionades (<?php echo $n ?>)
+		</span>
+		<ul id=empreses>
+			<?php
+				while($row=mysqli_fetch_assoc($res))
+				{
+					$empresa_id=$row['empresa_id'];
+					$empresa=$row['empresa'];
+					echo "<li> 
+						<a href=empresa.php?id=$empresa_id>$empresa</a>
+					";
+				}
+			?>
 		</ul>
 	</li>
 

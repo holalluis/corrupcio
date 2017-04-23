@@ -87,8 +87,10 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Casos relacionats (<?php echo $n ?>)
-		<ul>
+		<span onclick=qs('#casos').classList.toggle('invisible');>
+			Casos relacionats (<?php echo $n ?>)
+		</span>
+		<ul id=casos>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{
@@ -98,8 +100,12 @@
 					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
 						<a href=cas.php?id=$cas_id>$nom</a> 
-						&mdash; 
-						<span class=descripcio>$descripcio</span>
+					";
+
+					echo "
+						<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
+							$descripcio
+						</div>
 					";
 					if($edit_mode)
 					{
@@ -155,8 +161,10 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Partits relacionats (<?php echo $n ?>)
-		<ul>
+		<span onclick=qs('#partits').classList.toggle('invisible');>
+			Partits relacionats (<?php echo $n ?>)
+		</span>
+		<ul id=partits>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{
@@ -166,9 +174,12 @@
 					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
 						<a href=partit.php?id=$partit_id>$nom</a>
-						&mdash;
-						<span class=descripcio>$descripcio</span>
-						";
+					";
+					echo "
+						<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
+							$descripcio
+						</div>
+					";
 					if($edit_mode)
 					{
 						echo "
@@ -223,8 +234,10 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Empreses relacionades (<?php echo $n ?>)
-		<ul>
+		<span onclick=qs('#empreses').classList.toggle('invisible');>
+			Empreses relacionades (<?php echo $n ?>)
+		</span>
+		<ul id=empreses>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{
@@ -234,9 +247,12 @@
 					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 					echo "<li>
 						<a href=empresa.php?id=$empresa_id>$nom</a>
-						&mdash;
-						<span class=descripcio>$descripcio</span>
-						";
+					";
+					echo "
+						<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
+							$descripcio
+						</div>
+					";
 					if($edit_mode)
 					{
 						echo "
@@ -289,8 +305,10 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Condemnes rebudes (<?php echo $n?>)
-		<ul>
+		<span onclick=qs('#condemnes').classList.toggle('invisible');>
+			Condemnes rebudes (<?php echo $n?>)
+		</span>
+		<ul id=condemnes>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{

@@ -2,11 +2,17 @@
 	<?php include'imports.php'?>
 	<style>
 		#navbar div[pagina=inici]{color:black}
-		table#top5 {
-			margin-left:10px;
+		#top5{
+			margin-top:10px;
 		}
-		table#top5 td{
+		#top5 td, #top5 th{
 			padding:0.3em 0.5em;
+		}
+		/*treu els marges a portrait*/
+		@media only screen and (min-width:560px) { 
+			#root {
+				margin-left:10px;
+			}
 		}
 	</style>
 </head><body>
@@ -17,8 +23,10 @@
 
 <h2>Inici</h2>
 
+<div id=root>
+
 <!--resum-->
-<div style=margin-right:20px>
+<div>
 	<ul>
 		<?php
 			function compta($taula){
@@ -46,7 +54,7 @@
 	</ul>
 </div>
 
-<hr><!--top 5 casos-->
+<!--top 5 casos-->
 <div>
 	<table id=top5>
 		<tr><th colspan=3>Top 5 casos
@@ -70,8 +78,6 @@
 	</table>
 </div>
 
-<hr>
-
 <!--links
 -->
 <div><h3>Links</h3>
@@ -84,5 +90,7 @@
 		es.wikipedia.org/[...]</a>
 	</ul>
 </div>
+
+</div id=root>
 
 <!--footer--><?php include'footer.php'?>

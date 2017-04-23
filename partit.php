@@ -91,8 +91,10 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Persones relacionades (<?php echo $n ?>)
-		<ul>
+		<span onclick=qs('#persones_relacionades').classList.toggle('invisible');>
+			Persones relacionades (<?php echo $n ?>)
+		</span>
+		<ul id=persones_relacionades>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{
@@ -177,8 +179,10 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Casos relacionats (<?php echo $n ?>)
-		<ul>
+		<span onclick=qs('#casos').classList.toggle('invisible');>
+			Casos relacionats (<?php echo $n ?>)
+		</span>
+		<ul id=casos>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{
@@ -216,8 +220,10 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		Empreses relacionades (<?php echo $n ?>)
-		<ul>
+		<span onclick=qs('#empreses').classList.toggle('invisible');>
+			Empreses relacionades (<?php echo $n ?>)
+		</span>
+		<ul id=empreses>
 		<?php
 			while($row=mysqli_fetch_assoc($res))
 			{

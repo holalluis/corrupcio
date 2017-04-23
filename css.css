@@ -27,6 +27,8 @@ ul{
 	margin:0;
 	padding-left:25px;
 }
+ul.invisible {display:none}
+
 li{
 	margin-top:0.5em;
 	margin-bottom:0.5em;
@@ -85,6 +87,9 @@ span[onclick]:hover{text-decoration:underline}
 
 /*treu bordes de les taules a portrait*/
 @media only screen and (max-width:560px) { 
+	table {
+		width:100%;
+	}
 	th,td {
 		border-left:none;
 		border-right:none;
