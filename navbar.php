@@ -58,8 +58,14 @@
 	</div>
 
 	<!--btn busca-->
-	<div class='item invisible' pagina onclick="qs('#busca').classList.toggle('amagat');qs('#q').focus()">
+	<div class='item invisible' pagina onclick=mostraBusca()>
 		Busca
+		<script>
+			function mostraBusca(){
+				qs('#busca').classList.toggle('amagat');
+				setTimeout(function(){qs('#busca #q').focus()},300);
+			}
+		</script>
 	</div>
 </div>
 

@@ -126,7 +126,7 @@
 							<select name=cas_id>
 								<?php
 									//selecciona casos on la persona no estigui implicada
-									$sql="SELECT id,nom FROM casos WHERE id NOT IN (SELECT cas_id FROM relacions_persona_cas WHERE persona_id=$persona->id )";
+									$sql="SELECT id,nom FROM casos WHERE id NOT IN (SELECT cas_id FROM relacions_persona_cas WHERE persona_id=$persona->id ) ORDER BY nom";
 									$res=$mysql->query($sql) or die(mysqli_error($mysql));
 									while($row=mysqli_fetch_assoc($res))
 									{
@@ -199,7 +199,7 @@
 							<select name=partit_id>
 								<?php
 									//selecciona partits on la persona no estigui implicada
-									$sql="SELECT id,nom FROM partits WHERE id NOT IN (SELECT partit_id FROM relacions_persona_partit WHERE persona_id=$persona->id)";
+									$sql="SELECT id,nom FROM partits WHERE id NOT IN (SELECT partit_id FROM relacions_persona_partit WHERE persona_id=$persona->id) ORDER BY nom";
 									$res=$mysql->query($sql) or die(mysqli_error($mysql));
 									while($row=mysqli_fetch_assoc($res))
 									{
@@ -272,7 +272,7 @@
 							<select name=empresa_id>
 								<?php
 									//selecciona empreses on la persona no estigui implicada
-									$sql="SELECT id,nom FROM empreses WHERE id NOT IN (SELECT empresa_id FROM relacions_persona_empresa WHERE persona_id=$persona->id)";
+									$sql="SELECT id,nom FROM empreses WHERE id NOT IN (SELECT empresa_id FROM relacions_persona_empresa WHERE persona_id=$persona->id) ORDER BY nom";
 									$res=$mysql->query($sql) or die(mysqli_error($mysql));
 									while($row=mysqli_fetch_assoc($res))
 									{

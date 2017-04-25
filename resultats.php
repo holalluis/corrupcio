@@ -13,8 +13,17 @@
 			padding-left:10px;
 		}
 	</style>
-</head><body>
+	<script>
+		function init()
+		{
+			qs('#busca').classList.remove('amagat');
+			qs('#busca #q').value="<?php echo $q?>"
+			setTimeout(function(){qs('#busca #q').select()},250)
+		}
+	</script>
+</head><body onload=init()>
 <?php include'navbar.php'?>
+
 
 <!--titol-->
 <h1>Resultats cerca '<?php echo $q?>'</h1>
