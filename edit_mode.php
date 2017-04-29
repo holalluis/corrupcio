@@ -29,6 +29,7 @@
 			#edit_mode_header {
 				text-align:center;
 				background:#666;
+				background:linear-gradient(#666,#888);
 				color:white;
 				text-shadow: 0 1px 0 #000;
 				padding:2px;

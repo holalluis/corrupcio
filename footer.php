@@ -7,9 +7,9 @@
 <style>
 	#footer {
 		margin-top:10em;
-		background:#e5e5e5;
+		background:linear-gradient(#e5e5e5,#f5f5f5);
 		border-top:1px solid #ccc;
-		padding-bottom:300px;
+		padding-bottom:250px;
 		text-shadow:0 1px 0 #fff;
 		display:flex;
 	}
