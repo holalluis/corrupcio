@@ -21,8 +21,6 @@
 <!--titol-->
 <h1>Gran Enciclopèdia de la Corrupció <i class=blanc>v0.1</i></h1>
 
-<h2>Inici</h2>
-
 <div id=root>
 
 <!--resum-->

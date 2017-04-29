@@ -78,7 +78,6 @@
 				$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 				echo "<tr> 
 					<td><a href=persona.php?id=$persona_id>$persona</a> 
-					<td>&rarr; 
 					<td><a href=cas.php?id=$cas_id>$cas</a>
 					<td><span class=descripcio>$descripcio";
 			}
@@ -119,7 +118,6 @@
 				$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 				echo "<tr>
 					<td><a href=persona.php?id=$persona_id>$persona</a>
-					<td>&rarr;
 					<td><a href=partit.php?id=$partit_id>$partit</a>
 					<td><span class=descripcio>$descripcio";
 			}
@@ -158,7 +156,6 @@
 				$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
 				echo "<tr>
 					<td><a href=persona.php?id=$persona_id>$persona</a>
-					<td>&rarr;
 					<td><a href=empresa.php?id=$empresa_id>$empresa</a>
 					<td><span class=descripcio>$descripcio
 				";
