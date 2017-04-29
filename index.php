@@ -37,8 +37,8 @@
 				return $n;
 			}
 		?>
-		<li><a href="persones.php"> Persones</a>                   (<?php echo compta('persones')?>)
 		<li><a href="casos.php">    Casos de corrupció</a>         (<?php echo compta('casos')?>)
+		<li><a href="persones.php"> Persones</a>                   (<?php echo compta('persones')?>)
 		<li><a href="partits.php">  Partits</a>                    (<?php echo compta('partits')?>)
 		<li><a href="empreses.php"> Empreses</a>                   (<?php echo compta('empreses')?>)
 		<li><a href="condemnes.php">Condemnes</a>                  (<?php echo compta('condemnes')?>)

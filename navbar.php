@@ -21,8 +21,8 @@
 		</div>
 		<!--main nav items: per mobil estan invisibles per defecte-->
 		<div class='item invisible' pagina=inici     onclick=window.location='index.php'    >Inici</div>
-		<div class='item invisible' pagina=persones  onclick=window.location='persones.php' >Persones</div>
 		<div class='item invisible' pagina=casos     onclick=window.location='casos.php'    >Casos</div>
+		<div class='item invisible' pagina=persones  onclick=window.location='persones.php' >Persones</div>
 		<div class='item invisible' pagina=partits   onclick=window.location='partits.php'  >Partits</div>
 		<div class='item invisible' pagina=empreses  onclick=window.location='empreses.php' >Empreses</div>
 		<div class='item invisible' pagina=condemnes onclick=window.location='condemnes.php'>Condemnes</div>
