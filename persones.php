@@ -26,7 +26,7 @@
 	if($edit_mode)
 	{
 		?>
-		<p class=descripcio style=background:yellow>Nota: les persones sense cap cas vinculat estan marcades amb groc</p>
+		<p class=descripcio style=background:yellow>Nota edit mode: les persones sense cas vinculat estan marcades amb groc</p>
 		<?php
 	}
 ?>

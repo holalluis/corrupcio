@@ -1,5 +1,4 @@
-# Corrupcio
-## GRAN ENCICLOPEDIA DE LA CORRUPCIO
+# GRAN ENCICLOPEDIA DE LA CORRUPCIO
 
 Web per recopilar casos de corrupcio a l'estat espanyol.
 
@@ -7,15 +6,15 @@ Web per recopilar casos de corrupcio a l'estat espanyol.
 En desenvolupament. Encara no anunciat enlloc.
 
 ## Tasques pendents (programacio)
-- Poder descarregar base de dades sencera
-- Implementar menu amb textarea per fer updates
-- Taula de ciutats (pensar)
 - CRUD - fixar caracters maxims per inserts
 - CRUD - fixar caracters maxims per updates
+- Poder descarregar base de dades sencera
+- Implementar textarea per updates (edit mode)
 - Grafic de barres sota del top5 a pagina inicial
-- Crear registre de canvis
-	- 1. Implementar col.laboradors (user, password)
-	- 2. Taula log: canvis associats a un col.laborador
+- Incorporar ciutats (pensar)
+- Registre de canvis
+	- 1. Col.laboradors (user, password)
+	- 2. Log: canvis associats a un col.laborador . poder desfer canvis
 
 ## CSS breakpoints (mobils i tablets)
 - 560px (mobil portrait) (navbar)
@@ -33,7 +32,7 @@ En desenvolupament. Encara no anunciat enlloc.
 		- relacions_partit_cas
 		- relacions_empresa_cas
 - MySQL triggers
-  - on delete {cas,persona,partit,empresa} delete relacions
+  - on delete {cas,persona,partit,empresa} delete relacions_persona_X
   - on delete relacions_persona_cas delete condemna
   - on update {cas,persona,partit,empresa} update timestamp
 
@@ -42,7 +41,7 @@ En desenvolupament. Encara no anunciat enlloc.
 	- 40% Omplir dades i manteniment
 	- 10% Reserva per pagar serveis a contractar
 
-## Coses a contractar en un futur
+## Contractar més endavant
 	- Posar publicitat
 	- Dissenyador grafic (logo & publi placement)
 
