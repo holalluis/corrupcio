@@ -12,13 +12,13 @@
 </head><body>
 <?php include'navbar.php'?>
 
+<div id=root>
+
 <!--titol-->
 <h1>
 	<span onclick=window.location='index.php'>Inici</span> &rsaquo; 
 	Persones
 </h1>
-
-<div id=root>
 
 <p class=descripcio>Llista de persones relacionades amb casos de corrupció</p>
 

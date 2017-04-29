@@ -24,10 +24,6 @@
 </head><body onload=init()>
 <?php include'navbar.php'?>
 
-
-<!--titol-->
-<h1>Resultats cerca '<?php echo $q?>'</h1>
-
 <?php 	
 	//funcio general per buscar
 	function cerca($taula,$link) {
@@ -63,10 +59,15 @@
 ?>
 
 <div id=root>
-	<ul>
-		<li>Persones <?php cerca('persones','persona')?></li>
-		<li>Casos    <?php cerca('casos','cas')?></li>
-		<li>Partits  <?php cerca('partits','partit')?></li>
-		<li>Empreses <?php cerca('empreses','empresa')?></li>
-	</ul>
+
+<!--titol-->
+<h1>Resultats cerca '<?php echo $q?>'</h1>
+
+<ul>
+	<li>Persones <?php cerca('persones','persona')?></li>
+	<li>Casos    <?php cerca('casos','cas')?></li>
+	<li>Partits  <?php cerca('partits','partit')?></li>
+	<li>Empreses <?php cerca('empreses','empresa')?></li>
+</ul>
+
 </div>

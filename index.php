@@ -18,10 +18,10 @@
 </head><body>
 <?php include'navbar.php'?>
 
+<div id=root>
+
 <!--titol-->
 <h1>Gran Enciclopèdia de la Corrupció <i class=blanc>v0.1</i></h1>
-
-<div id=root>
 
 <!--resum-->
 <div>

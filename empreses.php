@@ -12,13 +12,13 @@
 </head><body>
 <?php include'navbar.php'?>
 
+<div id=root>
+
 <!--titol-->
 <h1>
 	<span onclick=window.location='index.php'>Inici</span> &rsaquo; 
 	Empreses
 </h1>
-
-<div id=root>
 
 <p class=descripcio>Llista d'empreses implicades en casos de corrupció</p>
 

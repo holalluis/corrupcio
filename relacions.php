@@ -33,14 +33,14 @@
 </head><body>
 <?php include'navbar.php'?>
 
+<!--root container-->
+<div id=root>
+
 <!--titol-->
 <h1>
 	<span onclick=window.location='index.php'>Inici</span> &rsaquo; 
 	Connexions
 </h1>
-
-<!--root container-->
-<div id=root>
 
 <p class=descripcio>Llista de connexions entre persones, casos, partits i empreses</p>
 

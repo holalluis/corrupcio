@@ -12,13 +12,13 @@
 </head><body>
 <?php include'navbar.php'?>
 
+<div id=root>
+
 <!--titol-->
 <h1>
 	<span onclick=window.location='index.php'>Inici</span> &rsaquo; 
 	Partits
 </h1>
-
-<div id=root>
 
 <p class=descripcio>Llista de partits polítics esquitxats per casos de corrupció</p>
 
