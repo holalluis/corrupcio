@@ -31,16 +31,15 @@
 				background:#666;
 				color:white;
 				text-shadow: 0 1px 0 #000;
-				display:flex;
-				justify-content:space-between;
 				padding:2px;
+				display:flex;
 			}
 			#edit_mode_header button {
 				padding:0.5em;
 				border-radius:0.5em;
 				border:none;
 				background:#fafafa;
-				margin:1px;
+				margin:2px;
 			}
 			#edit_mode_header button:hover {
 				background:#ccc;
