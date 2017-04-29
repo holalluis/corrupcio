@@ -60,8 +60,9 @@ span[onclick]:hover{text-decoration:underline}
 }
 /*descripcions casos, partits i empreses i relacions*/
 .descripcio{
-	color:#444;
+	color:#111;
 	font-size:11px;
+	margin-top:6px;
 }
 /*quan el valor val 'empty string' posa el text més clar*/
 .blanc{

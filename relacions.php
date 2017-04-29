@@ -45,7 +45,7 @@
 <p class=descripcio>Llista de connexions entre persones, casos, partits i empreses</p>
 
 <h3>
-	<button onclick=toggleVisib('relacions_persona_cas')>+/-</button>
+	<button onclick=toggleVisib('relacions_persona_cas')>-</button>
 	Persona &rarr; Cas
 </h3>
 <table id=relacions_persona_cas>
@@ -85,7 +85,7 @@
 </table>
 
 <h3>
-	<button onclick=toggleVisib('relacions_persona_partit')>+/-</button>
+	<button onclick=toggleVisib('relacions_persona_partit')>-</button>
 	Persona &rarr; Partit 
 </h3>
 <table id=relacions_persona_partit>
@@ -125,7 +125,7 @@
 </table>
 
 <h3>
-	<button onclick=toggleVisib('relacions_persona_empresa')>+/-</button>
+	<button onclick=toggleVisib('relacions_persona_empresa')>-</button>
 	Persona &rarr; Empresa
 </h3>
 <table id=relacions_persona_empresa>
