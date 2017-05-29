@@ -2,8 +2,11 @@
 body{
 	margin:0 auto;
 	overflow-y:scroll;
-	font-family:"San Francisco", -apple-system, system-ui, ".SFNSText-Regular", sans-serif;
 	font-size:14px;
+
+	font-family:"San Francisco", -apple-system, system-ui, ".SFNSText-Regular", sans-serif;
+	/*provant*/
+	font-family: 'Lucida Grande', helvetica, arial, verdana, sans-serif;
 }
 
 /*h1,h2,h3*/
