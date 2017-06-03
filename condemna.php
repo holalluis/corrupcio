@@ -27,6 +27,9 @@
 	</style>
 </head><body>
 <?php include'navbar.php'?>
+
+<div id=root>
+
 <h1>
 	<span onclick=window.location='condemnes.php'>Condemnes</span> &rsaquo; condemna
 </h1>
@@ -119,3 +122,4 @@
 	?>
 </ul>
 
+</div>

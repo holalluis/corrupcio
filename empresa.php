@@ -26,6 +26,8 @@
 </head><body>
 <?php include'navbar.php'?>
 
+<div id=root>
+
 <h1>
 	<span onclick=window.location='empreses.php'>Empreses</span> &rsaquo; <?php echo $empresa->nom ?>
 	<?php 
@@ -242,3 +244,4 @@
 	?>
 </ul>
 
+</div>

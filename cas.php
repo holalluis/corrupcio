@@ -33,6 +33,8 @@
 </head><body>
 <?php include'navbar.php'?>
 
+<div id=root>
+
 <h1>
 	<span onclick=window.location='casos.php'>Casos de corrupció</span> &rsaquo; <?php echo $cas->nom ?>
 	<?php 
@@ -392,3 +394,5 @@
 		} 
 	?>
 </ul>
+
+</div>

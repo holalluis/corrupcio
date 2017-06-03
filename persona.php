@@ -30,6 +30,8 @@
 </head><body>
 <?php include'navbar.php'?>
 
+<div id=root>
+
 <h1>
 	<span onclick=window.location='persones.php'>Persones</span> &rsaquo; 
 	<?php echo $persona->nom ?>
@@ -381,3 +383,5 @@
 		}
 	?>
 </ul>
+
+</div>

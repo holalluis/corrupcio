@@ -27,6 +27,8 @@
 </head><body>
 <?php include'navbar.php'?>
 
+<div id=root>
+
 <h1>
 	<span onclick=window.location='partits.php'>Partits</span> &rsaquo; <?php echo $partit->nom ?>
 	<?php 
@@ -255,3 +257,4 @@
 	?>
 </ul>
 
+</div>

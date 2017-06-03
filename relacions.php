@@ -1,33 +1,42 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
 	<style>
+		#navbar div[pagina=relacions]{color:black}
+
 		#root h3 {padding-left:0}
+		span.descripcio{display:block;max-width:50em;}
+
 		table[id^="relacions"] td {
 			font-size:12px;
 		}
 		table[id^="relacions"].invisible {
 			display:none;
 		}
-		#navbar div[pagina=relacions]{color:black}
-		span.descripcio{display:block;max-width:50em;text-align:justify}
 
-		/*treu els marges a portrait*/
+		button.toggleVisib {
+			border:1px solid #ccc;
+			outline:none;
+		}
+		button.toggleVisib:before {
+			content:'-';
+		}
+		button.toggleVisib.plegat:before {
+			content:'+';
+		}
+
+		/*posa marge si no portrait*/
 		@media only screen and (min-width:560px) { 
 			table[id^="relacions"]{
 				margin-top:0.5em;
 				margin-bottom:2em;
 			}
-			#root{
-				margin-left:10px;
-				margin-right:5px;
-			}
 		}
 	</style>
 	<script>
 		//fes visible o invisible la taula id
-		function toggleVisib(table_id)
-		{
+		function toggleVisib(table_id,btn) {
 			qs('#'+table_id).classList.toggle('invisible');
+			btn.classList.toggle('plegat');
 		}
 	</script>
 </head><body>
@@ -45,7 +54,7 @@
 <p class=descripcio>Llista de connexions entre persones, casos, partits i empreses</p>
 
 <h3>
-	<button onclick=toggleVisib('relacions_persona_cas')>-</button>
+	<button class=toggleVisib onclick=toggleVisib('relacions_persona_cas',this)></button>
 	Persona &rarr; Cas
 </h3>
 <table id=relacions_persona_cas>
@@ -79,13 +88,13 @@
 				echo "<tr> 
 					<td><a href=persona.php?id=$persona_id>$persona</a> 
 					<td><a href=cas.php?id=$cas_id>$cas</a>
-					<td><span class=descripcio>$descripcio";
+					<td><span class='descripcio' onclick=this.classList.toggle('nowrap')>$descripcio";
 			}
 	?>
 </table>
 
 <h3>
-	<button onclick=toggleVisib('relacions_persona_partit')>-</button>
+	<button class=toggleVisib onclick=toggleVisib('relacions_persona_partit',this)></button>
 	Persona &rarr; Partit 
 </h3>
 <table id=relacions_persona_partit>
@@ -125,7 +134,7 @@
 </table>
 
 <h3>
-	<button onclick=toggleVisib('relacions_persona_empresa')>-</button>
+	<button class=toggleVisib onclick=toggleVisib('relacions_persona_empresa',this)></button>
 	Persona &rarr; Empresa
 </h3>
 <table id=relacions_persona_empresa>

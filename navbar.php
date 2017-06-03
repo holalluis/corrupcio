@@ -69,13 +69,12 @@
 	</div>
 </div>
 
-<!--menu busca invisible--><?php include'busca.php'?>
+<!--menu buscar--><?php include'busca.php'?>
 
 <style>
 	#navbar {
 		margin:0;
 		background:#e5e5e5;
-		background:linear-gradient(#e5e5e5,#f8f8f8);
 		border-bottom:1px solid #ccc;
 		text-shadow: 0 1px 0 #fff;
 		display:flex;/*the net ninja css flexbox playlist*/

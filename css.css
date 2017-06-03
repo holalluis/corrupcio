@@ -3,15 +3,19 @@ body{
 	margin:0 auto;
 	overflow-y:scroll;
 	font-size:14px;
-
-	font-family:"San Francisco", -apple-system, system-ui, ".SFNSText-Regular", sans-serif;
-	/*provant*/
-	font-family: 'Lucida Grande', helvetica, arial, verdana, sans-serif;
+	/*fonts*/
+	font-family:'San Francisco', system-ui, sans-serif;
+	font-family:'Lucida Grande',helvetica,arial,verdana,sans-serif;
 }
 
 /*h1,h2,h3*/
-h1,h2,h3{font-weight:normal}
-h1{font-size:18px}
+h1,h2,h3{
+	font-weight:normal;
+}
+h1{
+	font-size:18px;
+	border-bottom:1px solid #ccc;
+}
 h2{font-size:17px}
 h3{font-size:15px}
 
@@ -86,7 +90,15 @@ span[onclick]:hover{text-decoration:underline}
 
 /*MEDIA QUERIES*/
 
-/*treu bordes de les taules a portrait*/
+/*posa marge a <div id=root> si no portrait*/
+@media only screen and (min-width:560px) { 
+	#root {
+		margin-left:10px;
+		margin-right:5px;
+	}
+}
+
+/*tables no border a portrait*/
 @media only screen and (max-width:560px) { 
 	table {
 		width:100%;
