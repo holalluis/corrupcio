@@ -6,6 +6,7 @@ Web per recopilar casos de corrupcio a l'estat espanyol.
 En desenvolupament. Encara no anunciat enlloc.
 
 ## Tasques pendents (programacio)
+- [millora] al botó view mode posar [on]/off - on/[off]
 - [millora] Afegir descripcions de coses a les cerques
 - [millora] CRUD - fixar caracters maxims per inserts
 - [millora] CRUD - fixar caracters maxims per updates
