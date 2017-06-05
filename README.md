@@ -6,13 +6,14 @@ Web per recopilar casos de corrupcio a l'estat espanyol.
 En desenvolupament. Encara no anunciat enlloc.
 
 ## Tasques pendents (programacio)
-- CRUD - fixar caracters maxims per inserts
-- CRUD - fixar caracters maxims per updates
-- Poder descarregar base de dades sencera
-- Implementar textarea per updates (edit mode)
-- Grafic de barres sota del top5 a pagina inicial
-- Incorporar ciutats (pensar)
-- Registre de canvis
+- [millora] Afegir descripcions de coses a les cerques
+- [millora] CRUD - fixar caracters maxims per inserts
+- [millora] CRUD - fixar caracters maxims per updates
+- [millora] Implementar textarea customitzat per fer updates (edit mode)
+- [nou] Poder descarregar base de dades sencera
+- [nou] Grafic de barres sota del top5 a pagina inicial
+- [nou] Incorporar ciutats (pensar)
+- [nou] Registre de canvis
 	- 1. Col.laboradors (user, password)
 	- 2. Log: canvis associats a un col.laborador . poder desfer canvis
 
@@ -36,10 +37,10 @@ En desenvolupament. Encara no anunciat enlloc.
   - on delete relacions_persona_cas delete condemna
   - on update {cas,persona,partit,empresa} update timestamp
 
-## Proposta inicial de repartiment inversio/benefici
-	- 10% Reserva per pagar serveis a contractar
-	- 45% Programacio i manteniment
-	- 45% Omplir dades i manteniment
+## Repartiment inversio/benefici
+	- 10% Reserva per pagar coses
+	- 45% Programacio i manteniment (lluís)
+	- 45% Omplir dades i manteniment (roger, mireia)
 
 ## Contractar més endavant
 	- Posar publicitat
