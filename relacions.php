@@ -15,6 +15,7 @@
 
 		button.toggleVisib {
 			border:1px solid #ccc;
+			background:#eee;
 			outline:none;
 		}
 		button.toggleVisib:before {

@@ -1,12 +1,6 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
 	<style>
-		/*treu els marges a portrait*/
-		@media only screen and (min-width:560px) { 
-			#root {
-				margin-left:10px;
-			}
-		}
 		#navbar div[pagina=casos]{color:black}
 	</style>
 </head><body>
@@ -20,7 +14,7 @@
 	Casos de corrupció
 </h1>
 
-<p class=descripcio>Llista de casos de corrupció</p>
+<div> <p class=descripcio>Casos de corrupció ordenats per nombre de persones implicades</p> </div>
 
 <!--resum-->
 <table id=casos>

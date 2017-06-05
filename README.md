@@ -37,9 +37,9 @@ En desenvolupament. Encara no anunciat enlloc.
   - on update {cas,persona,partit,empresa} update timestamp
 
 ## Proposta inicial de repartiment inversio/benefici
-	- 50% Programacio i manteniment
-	- 40% Omplir dades i manteniment
 	- 10% Reserva per pagar serveis a contractar
+	- 45% Programacio i manteniment
+	- 45% Omplir dades i manteniment
 
 ## Contractar més endavant
 	- Posar publicitat

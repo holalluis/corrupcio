@@ -20,7 +20,7 @@
 	Empreses
 </h1>
 
-<p class=descripcio>Llista d'empreses implicades en casos de corrupció</p>
+<div><p class=descripcio>Empreses afectades per casos de corrupció</p></div>
 
 <!--resum-->
 <table id=empreses>
@@ -52,4 +52,4 @@
 	?>
 </table>
 
-</div id=root>
+</div>

@@ -2,7 +2,6 @@
 	<?php include'imports.php'?>
 	<style>
 		#navbar div[pagina=condemnes]{color:black}
-
 		/*treu els marges a portrait*/
 		@media only screen and (min-width:560px) { 
 			#root {
@@ -21,7 +20,7 @@
 	Condemnes
 </h1>
 
-<p class=descripcio>Llista de condemnes a persones implicades en casos de corrupció</p>
+<div><p class=descripcio>Condemnes caigudes a persones implicades en casos de corrupció</p></div>
 
 <!--resum-->
 <table id=condemnes>
@@ -59,4 +58,4 @@
 	?>
 </table>
 
-</div id=root>
+</div>

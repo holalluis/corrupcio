@@ -20,7 +20,7 @@
 	Partits
 </h1>
 
-<p class=descripcio>Llista de partits polítics esquitxats per casos de corrupció</p>
+<p class=descripcio>Tots els partits polítics afectats per casos de corrupció</p>
 
 <!--resum-->
 <table id=partits>

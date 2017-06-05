@@ -92,7 +92,7 @@
 		text-align:left;
 		color:rgba(0,0,0,0.55);
 		cursor:pointer;
-		transition:all 0.15s;
+		transition:all 0.1s;
 	}
 	#navbar .item:hover {
 		background:#f0f0f0;

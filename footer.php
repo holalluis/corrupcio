@@ -7,7 +7,6 @@
 <style>
 	#footer {
 		margin-top:2em;
-		padding-bottom:200px;
 		background:linear-gradient(#e5e5e5,white);
 		border-top:1px solid #ccc;
 		text-shadow:0 1px 0 #fff;

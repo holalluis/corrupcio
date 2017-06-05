@@ -21,7 +21,7 @@
 <div id=root>
 
 <!--titol-->
-<h1>Enciclopèdia de la Corrupció <i class=blanc>v0.1</i></h1>
+<h1>Enciclopèdia de la corrupció <i class=blanc>v0.1</i></h1>
 
 <!--resum-->
 <div>
