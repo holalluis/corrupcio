@@ -17,7 +17,7 @@
 
 <div id=root>
 
-<!--titol--><h1>Enciclopèdia de la Corrupció</h1>
+<!--titol--><h1>Enciclopèdia de la corrupció</h1>
 
 <h3>Quant a</h3>
 

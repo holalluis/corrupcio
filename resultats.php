@@ -49,7 +49,10 @@
 		while($row=mysqli_fetch_assoc($res)) {
 			$id=$row['id'];
 			$nom=$row['nom'];
-			echo "<li><a href=$link.php?id=$id>$nom</a>";
+			echo "
+				<li class=item>
+				<a href=$link.php?id=$id>$nom</a>
+			";
 		}
 		echo "</ul>";
 	}
@@ -81,7 +84,8 @@
 			$nom=$row['nom'];
 			$persona_id=$row['persona_id'];
 			$descripcio=$row['descripcio'];
-			echo "<li>
+			echo "
+				<li class=item>
 				<a href=persona.php?id=$persona_id>$nom</a>
 				<div class=descripcio>$descripcio</div>
 			";
@@ -102,7 +106,7 @@
 	<li>Empreses <?php cerca('empreses','empresa')?></li>
 
 	<li>
-		Connexions
+		Connexions entre persones amb casos, partits i/o empreses
 		<?php cercaRelacions('relacions_persona_cas')?>
 		<?php cercaRelacions('relacions_persona_partit')?>
 		<?php cercaRelacions('relacions_persona_empresa')?>

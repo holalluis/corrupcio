@@ -1,11 +1,6 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
-	<?php 
-		if(!$edit_mode)
-		{
-			header("location:index.php");
-		}
-	?>
+	<?php if(!$edit_mode){header("location:index.php");}?>
 	<style>
 		#formularis li {
 			padding:0.5em;
@@ -68,8 +63,10 @@
 </head><body onload=init()>
 <?php include'navbar.php'?>
 
+<div id=root>
+
 <h1>Inserta a la base de dades</h1>
-<div style=margin-left:10px;font-size:10px>Les dades amb un asterisc (*) són obligatòries</div>
+<div style=font-size:10px>Les dades amb un asterisc (*) són obligatòries</div>
 
 <ul id=formularis>
 	<li>
@@ -113,3 +110,5 @@
 		</form>
 	</li>
 </ul>
+
+</div>

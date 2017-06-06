@@ -53,7 +53,7 @@
 	Connexions
 </h1>
 
-<p class=descripcio>Llista de connexions entre persones, casos, partits i empreses</p>
+<p class=descripcio>Connexions entre persones amb casos, partits i/o empreses</p>
 
 <h3>
 	<button class=toggleVisib onclick=toggleVisib('relacions_persona_cas',this)></button>

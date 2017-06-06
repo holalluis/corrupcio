@@ -18,10 +18,10 @@
 				<button onclick="window.location='edit/view_mode.php'">
 					<?php 
 						if($view_mode) {
-							echo "View mode [ON]/OFF";
+							echo "View mode <b>ON</b>/OFF";
 						}
 						else {
-							echo "View mode ON/[OFF]";
+							echo "View mode ON/<b>OFF</b>";
 						}
 					?>
 				</button>
@@ -47,6 +47,7 @@
 				text-shadow: 0 1px 0 #000;
 				padding:2px;
 				display:flex;
+				flex-wrap:wrap;
 			}
 			#edit_mode_header button {
 				padding:0.5em;

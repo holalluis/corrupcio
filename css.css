@@ -51,10 +51,20 @@ li.item {
 	margin:0;
 }
 
+li.item:nth-child(odd) {
+	background:#f8f8f8;
+}
+
 /*tables*/
 table{border-collapse:collapse}
+tr:nth-child(odd){
+	background:#f8f8f8;
+}
 th{font-weight:normal}
-th,td{border:1px solid #ccc}
+th,td{
+	border:1px solid #ccc;
+	padding:2px;
+}
 
 /*misc*/
 hr{border:none;border-bottom:1px solid #ccc}

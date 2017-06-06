@@ -1,39 +1,33 @@
-<div id=busca class=amagat>
+<div id=busca>
 	<form action=resultats.php method=get>
-		<input id=q name=q type=search placeholder="Busca persones, casos, partits, empreses" autocomplete=off>
+		<input id=q name=q type=search placeholder="Busca persones, casos, partits, empreses" autocomplete=off required>
 		<button>&#128270;</button>
 	</form>
 </div>
 
 <style>
 	#busca {
-		background:#fafafa;
 		text-align:center;
-		padding:1em 0;
-		border-bottom:1px solid #ccc;
-		transition:all 0.2s;
 	}
-	#busca.amagat {
-		color:transparent;
-		visibility:hidden;
-		height:0;
-		padding:0;
-		border:none;
-		transition:all 0s;
+	#busca form {
+		display:flex;
 	}
 	#busca input#q {
 		padding-top:0.5em;
 		padding-bottom:0.5em;
 		padding-left:0.2em;
 		width:300px;
+		height:25px;
 		outline:none;
 		border:1px solid #ccc;
 		margin-bottom:2px;
 	}
 	#busca form button {
-		padding:5px 16px;
-		background:#ddd;
+		background:#fff;
 		border:1px solid #ccc;
+		display:block;
+		margin-left:-1px;
+		height:25px;
 	}
 	#busca form button:hover {
 		background:#eee;

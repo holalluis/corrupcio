@@ -8,7 +8,9 @@
 </head><body>
 <?php include'navbar.php'?>
 
-<!--titol--><h1>Gran Enciclopèdia de la Corrupció</h1>
+<div id=root>
+
+<!--titol--><h1>Enciclopèdia de la corrupció</h1>
 
 <h2>Contacta</h2>
 
@@ -39,4 +41,6 @@
 
 		echo('<br><br>Missatge enviat. Gràcies per contactar amb nosaltres. Ens posarem en contacte amb tu en el mínim temps possible.');
 	?>
+</div>
+
 </div>

@@ -27,49 +27,15 @@
 		<div class='item invisible' pagina=empreses  onclick=window.location='empreses.php' >Empreses</div>
 		<div class='item invisible' pagina=condemnes onclick=window.location='condemnes.php'>Condemnes</div>
 		<div class='item invisible' pagina=relacions onclick=window.location='relacions.php'>Connexions</div>
-		<!--edit mode-->
-		<?php
-			if(!$edit_mode and !$view_mode) {
-				?>
-				<div class='item invisible' pagina onclick=access()>
-					<div>Edit mode</div>
-					<script>
-						function access()
-						{
-							var pass=prompt("Password:");
-							var sol=new XMLHttpRequest();
-							sol.open('POST','edit/access.php',true);
-							sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-							sol.onreadystatechange=function()
-							{
-								if(this.readyState==4&&this.status==200)
-								{
-									console.log(this.responseText);
-									window.location.reload();//millorar
-								}
-							}
-							sol.send("pass="+pass);
-						}
-					</script>
-				</div>
-				<?php
-			}
-		?>
 	</div>
 
-	<!--btn busca-->
-	<div class='item invisible' pagina onclick=mostraBusca()>
-		Busca
-		<script>
-			function mostraBusca(){
-				qs('#busca').classList.toggle('amagat');
-				setTimeout(function(){qs('#busca #q').focus()},300);
-			}
-		</script>
+	<!--menu buscar-->
+	<div class="item invisible">
+		<?php include'busca.php'?>
 	</div>
+
 </div>
 
-<!--menu buscar--><?php include'busca.php'?>
 
 <style>
 	#navbar {

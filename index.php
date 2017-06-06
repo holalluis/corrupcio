@@ -55,7 +55,7 @@
 <!--top 5 casos-->
 <div>
 	<table id=top5>
-		<tr><th colspan=3>Top 5 casos
+		<tr><th colspan=3>Top 5
 		<?php
 			$sql="SELECT * FROM casos ORDER BY espoli DESC LIMIT 5";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
