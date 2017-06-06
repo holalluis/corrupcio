@@ -34,7 +34,7 @@
 		if($edit_mode)
 		{
 			?>
-			<button onclick="update('empreses',<?php echo $empresa->id ?>,'nom','<?php echo urlencode($empresa->nom) ?>')">edita nom</button> 
+			<button class=update onclick="update('empreses',<?php echo $empresa->id ?>,'nom','<?php echo urlencode($empresa->nom) ?>')">edita nom</button> 
 			<?php
 		}
 	?>
@@ -61,7 +61,7 @@
 				if($edit_mode)
 				{ 
 					?>
-					<button onclick="update('empreses','<?php echo $empresa->id ?>','descripcio','<?php echo urlencode($empresa->descripcio) ?>')">edita descripció</button>
+					<button class=update onclick="update('empreses','<?php echo $empresa->id ?>','descripcio','<?php echo urlencode($empresa->descripcio) ?>')">edita descripció</button>
 					<?php 
 				} 
 			?>
@@ -93,7 +93,8 @@
 					$persona=$row['persona'];
 					$persona_id=$row['persona_id'];
 					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
-					echo "<li>
+					echo "
+						<li class=item>
 						<a href=persona.php?id=$persona_id>$persona</a>
 					";
 
@@ -106,8 +107,8 @@
 					if($edit_mode)
 					{
 						echo "
-							<button onclick=update('relacions_persona_empresa',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
-							<button onclick=esborra('relacions_persona_empresa',$rel_id)>esborra connexió</button>
+							<button class=update onclick=update('relacions_persona_empresa',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
+							<button class=update onclick=esborra('relacions_persona_empresa',$rel_id)>esborra connexió</button>
 						";
 					}
 				}
@@ -118,7 +119,7 @@
 					?>
 					<li>
 						<form method=post action=data/insert/relacio_persona_empresa.php>
-							<select name=persona_id>
+							<select class=update name=persona_id>
 								<?php
 									//busca persones no relacionades l'empresa
 									$sql="
@@ -137,7 +138,7 @@
 								?>
 							</select>
 							<input name=empresa_id type=hidden value=<?php echo $empresa->id?>>
-							<button>afegir connexió</button>
+							<button class=update>afegir connexió amb la persona seleccionada</button>
 						</form>
 					</li>
 					<?php
@@ -178,7 +179,8 @@
 			{
 				$cas_id=$row['cas_id'];
 				$cas=$row['cas'];
-				echo "<li> 
+				echo "
+					<li class=item> 
 					<a href=cas.php?id=$cas_id>$cas</a>
 				";
 			}
@@ -218,7 +220,8 @@
 			{
 				$partit_id=$row['partit_id'];
 				$partit=$row['partit'];
-				echo "<li> 
+				echo "
+					<li class=item> 
 					<a href=partit.php?id=$partit_id>$partit</a>
 				";
 			}
@@ -237,7 +240,7 @@
 		{
 			?>
 			<li>
-				<button onclick=esborra('empreses',<?php echo $empresa->id ?>)>esborra empresa</button>
+				<button class=update onclick=esborra('empreses',<?php echo $empresa->id ?>)>esborra empresa</button>
 			</li>
 			<?php
 		}

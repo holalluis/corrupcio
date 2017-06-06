@@ -80,7 +80,7 @@
 			echo $condemna->anys_de_preso;
 		?>
 		<?php if($edit_mode){ ?>
-			<button onclick="update('condemnes','<?php echo $condemna->id ?>','anys_de_preso', '<?php echo urlencode($condemna->anys_de_preso) ?>')">edita anys de presó</button>
+			<button class=update onclick="update('condemnes','<?php echo $condemna->id ?>','anys_de_preso', '<?php echo urlencode($condemna->anys_de_preso) ?>')">edita anys de presó</button>
 		<?php } ?>
 	</li>
 
@@ -91,7 +91,7 @@
 			<?php echo $condemna->delictes ?>
 		</p>
 		<?php if($edit_mode){ ?>
-			<button onclick="update('condemnes','<?php echo $condemna->id ?>','delictes', '<?php echo urlencode($condemna->delictes) ?>')">edita delictes</button>
+			<button class=update onclick="update('condemnes','<?php echo $condemna->id ?>','delictes', '<?php echo urlencode($condemna->delictes) ?>')">edita delictes</button>
 		<?php } ?>
 	</li>
 
@@ -100,7 +100,7 @@
 		Inici:
 		<?php echo $condemna->any ?>
 		<?php if($edit_mode){ ?>
-			<button onclick="update('condemnes','<?php echo $condemna->id ?>','any', '<?php echo urlencode($condemna->any) ?>')">edita any inici</button>
+			<button class=update onclick="update('condemnes','<?php echo $condemna->id ?>','any', '<?php echo urlencode($condemna->any) ?>')">edita any inici</button>
 		<?php } ?>
 	</li>
 
@@ -115,7 +115,7 @@
 		{
 			?>
 			<li>
-			  <button onclick=esborra('condemnes',<?php echo $condemna->id ?>)>esborra condemna</button>
+			  <button class=update onclick=esborra('condemnes',<?php echo $condemna->id ?>)>esborra condemna</button>
 			</li>
 			<?php
 		}

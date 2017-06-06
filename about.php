@@ -14,11 +14,13 @@
 	</style>
 </head><body>
 <?php include'navbar.php'?>
-<!--titol--><h1>Gran Enciclopèdia de la Corrupció</h1>
+
+<div id=root>
+
+<!--titol--><h1>Enciclopèdia de la Corrupció</h1>
 
 <h3>Quant a</h3>
 
-<div id=root>
 	<div>
 		La Gran Enciclopèdia de la Corrupció va néixer el març del 2017,
 		com a exercici de modelització informàtica per posar ordre a 
@@ -41,7 +43,7 @@
 			<li>Relacions Empresa-Cas
 		</ul>
 		<br>
-		Els llenguatges de programació utilitzats han sigut:
+		Els llenguatges de programació utilitzats són:
 		<ul>
 			<li>PHP
 			<li>MySQL
