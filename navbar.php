@@ -72,7 +72,11 @@
 	/*mobile portrait*/
 	@media only screen and (max-width:560px) { 
 		#navbar .item_container{display:block;} 
-		#navbar .item.burger{display:block;text-align:center;}
+		#navbar .item.burger{
+			display:block;
+			text-align:center;
+			width:32px;
+		}
 		#navbar .item_container .invisible {
 			color:transparent;
 			visibility:hidden;

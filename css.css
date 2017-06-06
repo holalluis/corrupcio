@@ -2,7 +2,7 @@
 body{
 	margin:0 auto;
 	overflow-y:scroll;
-	font-size:14px;
+	font-size:13px;
 	font-family:'Lucida Grande',helvetica,arial,verdana,sans-serif;
 }
 
@@ -57,12 +57,17 @@ li.item:nth-child(odd) {
 
 /*tables*/
 table{border-collapse:collapse}
+tr{
+	border:1px solid #ccc;
+}
 tr:nth-child(odd){
 	background:#f8f8f8;
 }
 th{font-weight:normal}
 th,td{
 	border:1px solid #ccc;
+	border-left:none;
+	border-right:none;
 	padding:2px;
 }
 

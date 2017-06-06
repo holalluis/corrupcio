@@ -3,41 +3,31 @@
 	<style>
 		#navbar div[pagina=relacions]{color:black}
 
-		#root h3 {padding-left:0}
-		span.descripcio{display:block;max-width:50em;}
-
-		table[id^="relacions"] td {
-			font-size:12px;
-		}
-		table[id^="relacions"].invisible {
-			display:none;
-		}
-
-		button.toggleVisib {
+		#root button.toggleVisib {
 			border:1px solid #ccc;
 			background:#eee;
 			outline:none;
 			width:25px;
 		}
-		button.toggleVisib:before {
+		#root button.toggleVisib:before {
 			content:'-';
 		}
-		button.toggleVisib.plegat:before {
+		#root button.toggleVisib.plegat:before {
 			content:'+';
 		}
-
-		/*posa marge si no portrait*/
-		@media only screen and (min-width:560px) { 
-			table[id^="relacions"]{
-				margin-top:0.5em;
-				margin-bottom:2em;
-			}
+		#root h3 {
+			padding-left:0;
+			margin-bottom:5px;
+			margin-top:10px;
+		}
+		#root div.invisible {
+			display:none;
 		}
 	</style>
 	<script>
 		//fes visible o invisible la taula id
 		function toggleVisib(table_id,btn) {
-			qs('#'+table_id).classList.toggle('invisible');
+			qs('#root table#'+table_id).parentNode.classList.toggle('invisible');
 			btn.classList.toggle('plegat');
 		}
 	</script>
@@ -59,6 +49,7 @@
 	<button class=toggleVisib onclick=toggleVisib('relacions_persona_cas',this)></button>
 	Persona &rarr; Cas
 </h3>
+<div>
 <table id=relacions_persona_cas>
 	<?php
 			$sql="
@@ -94,11 +85,13 @@
 			}
 	?>
 </table>
+</div>
 
 <h3>
 	<button class=toggleVisib onclick=toggleVisib('relacions_persona_partit',this)></button>
 	Persona &rarr; Partit 
 </h3>
+<div>
 <table id=relacions_persona_partit>
 	<?php
 			$sql="
@@ -134,11 +127,13 @@
 			}
 	?>
 </table>
+</div>
 
 <h3>
 	<button class=toggleVisib onclick=toggleVisib('relacions_persona_empresa',this)></button>
 	Persona &rarr; Empresa
 </h3>
+<div>
 <table id=relacions_persona_empresa>
 	<?php
 			$sql="
@@ -173,5 +168,6 @@
 			}
 	?>
 </table>
+</div>
 
-</div id=root>
+</div root>

@@ -41,6 +41,7 @@
 		border-top:1px solid #ccc;
 		text-shadow:0 1px 0 #fff;
 		display:flex;
+		flex-wrap:wrap;
 	}
 	#footer .titol {
 		padding:0.4em 0.5em 0.65em 0.5em;

@@ -1,6 +1,9 @@
 <div id=busca>
 	<form action=resultats.php method=get>
-		<input id=q name=q type=search placeholder="Busca persones, casos, partits, empreses" autocomplete=off required>
+		<input id=q name=q type=search 
+			placeholder="Busca persones, casos, partits, empreses" 
+			title="Busca persones, casos, partits, empreses"
+			autocomplete=off required>
 		<button>&#128270;</button>
 	</form>
 </div>
@@ -16,8 +19,8 @@
 		padding-top:0.5em;
 		padding-bottom:0.5em;
 		padding-left:0.2em;
-		width:300px;
-		height:25px;
+		width:99%;
+		height:30px;
 		outline:none;
 		border:1px solid #ccc;
 		margin-bottom:2px;
@@ -27,7 +30,7 @@
 		border:1px solid #ccc;
 		display:block;
 		margin-left:-1px;
-		height:25px;
+		height:30px;
 	}
 	#busca form button:hover {
 		background:#eee;
