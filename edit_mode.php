@@ -15,7 +15,7 @@
 
 			<!--problemes-->
 			<div>
-				<button onclick="window.location='orfes.php'">Problemes bbdd</button>
+				<button onclick="window.location='orfes.php'" title="Problemes base de dades">Problemes bbdd</button>
 			</div>
 
 			<!--view mode-->
