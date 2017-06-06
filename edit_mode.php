@@ -4,19 +4,28 @@
 	{ 
 		?>
 		<div id=edit_mode_header>
-			<!--edit mode-->
-			<div title="Permís per editar les pàgines">
-				<button onclick="window.location='edit/logout.php'">SORTIR Edit mode</button>
+			<!--insert-->
+			<div>
+				<button onclick="window.location='insert.php'">Inserta persones, casos, partits, empreses</button>
 			</div>
 
 			<!--view mode-->
 			<div title="Opció per veure com queda la pàgina sense sortir de l'Edit mode">
-				<button onclick="window.location='edit/view_mode.php'">View mode ON/OFF</button>
+				<button onclick="window.location='edit/view_mode.php'">
+					<?php 
+						if($view_mode) {
+							echo "View mode [ON]/OFF";
+						}
+						else {
+							echo "View mode ON/[OFF]";
+						}
+					?>
+				</button>
 			</div>
 
-			<!--insert-->
-			<div>
-				<button onclick="window.location='insert.php'">Inserta persones, casos, partits, empreses</button>
+			<!--edit mode-->
+			<div title="Permís per editar les pàgines">
+				<button onclick="window.location='edit/logout.php'">SORTIR Edit mode</button>
 			</div>
 
 			<?php
@@ -37,7 +46,7 @@
 			}
 			#edit_mode_header button {
 				padding:0.5em;
-				border-radius:0.5em;
+				border-radius:0.1em;
 				border:none;
 				background:#fafafa;
 				margin:2px;
