@@ -8,11 +8,6 @@
 		if(trim($_GET['q'])==""){error_q();}
 		$q=trim($_GET['q']);
 	?>
-	<style>
-		div#root {
-			padding-left:10px;
-		}
-	</style>
 	<script>
 		function init() {
 			qs('#busca').classList.remove('amagat');
