@@ -13,6 +13,11 @@
 				<button onclick="window.location='insert.php'">Inserta persones, casos, partits, empreses</button>
 			</div>
 
+			<!--problemes-->
+			<div>
+				<button onclick="window.location='orfes.php'">Problemes bbdd</button>
+			</div>
+
 			<!--view mode-->
 			<div title="Opció per veure com queda la pàgina sense sortir de l'Edit mode">
 				<button onclick="window.location='edit/view_mode.php'">
