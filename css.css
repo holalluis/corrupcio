@@ -81,11 +81,16 @@ span[onclick]:hover{text-decoration:underline}
 }
 
 /*controls per edit mode (button,select,form)*/
-.update {
+button.update, select.update, form.update {
 	background:linear-gradient(#666,#888);
 	color:white;
 	text-shadow:0 1px 0 #000;
 	border-radius:0px;
+	margin-top:5px;
+}
+
+form.update tr {
+	background:linear-gradient(#666,#888);
 }
 
 /*CLASSES*/
