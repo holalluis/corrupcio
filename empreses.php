@@ -2,12 +2,6 @@
 	<?php include'imports.php'?>
 	<style>
 		#navbar div[pagina=empreses]{color:black}
-		/*treu els marges a portrait*/
-		@media only screen and (min-width:560px) { 
-			#root {
-				margin-left:10px;
-			}
-		}
 	</style>
 </head><body>
 <?php include'navbar.php'?>

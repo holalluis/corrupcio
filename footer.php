@@ -1,10 +1,8 @@
-
 <div id=footer>
 	<div class=titol>Corrupció <?php echo date("Y")?></div>
 	<div class=item onclick=window.location='about.php'>Quant a</div>
 	<div class=item onclick=window.location='contact.php'>Contacte</div>
 	<div class=item onclick=window.open('README.md')>README.md</div>
-
 	<!--edit mode-->
 	<?php
 		if(!$edit_mode and !$view_mode) {
@@ -12,16 +10,13 @@
 			<div class='item invisible' pagina onclick=access()>
 				<div>Edit mode</div>
 				<script>
-					function access()
-					{
+					function access() {
 						var pass=prompt("Password:");
 						var sol=new XMLHttpRequest();
 						sol.open('POST','edit/access.php',true);
 						sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-						sol.onreadystatechange=function()
-						{
-							if(this.readyState==4&&this.status==200)
-							{
+						sol.onreadystatechange=function() {
+							if(this.readyState==4&&this.status==200) {
 								console.log(this.responseText);
 								window.location.reload();//millorar
 							}

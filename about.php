@@ -1,17 +1,5 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
-	<style>
-		#root {
-			font-size:11px;
-		}
-		/*posa marges quant la pantalla és ampla*/
-		@media only screen and (min-width:560px) { 
-			#root {
-				margin-left:10px;
-				margin-right:5px;
-			}
-		}
-	</style>
 </head><body>
 <?php include'navbar.php'?>
 
@@ -21,34 +9,35 @@
 
 <h3>Quant a</h3>
 
-	<div>
+	<div style=color:#545454>
 		La Gran Enciclopèdia de la Corrupció va néixer el març del 2017,
 		com a exercici de modelització informàtica per posar ordre a 
-		totes les dades generades arran de la corrupció política
-		durant els últims anys.
+		totes les dades generades pels mitjans de comunicació arran dels 
+		nombrosos casos de corrupció política que s'han anat fent públics 
+		els últims anys.
 		<br><br>
 		El model consta de 4 taules principals:
 		<ul>
-			<li>Persones
-			<li>Casos
-			<li>Partits
-			<li>Empreses
+			<li>1. Persones
+			<li>2. Casos
+			<li>3. Partits
+			<li>4. Empreses
 		</ul>
 		<br>
 		A més, existeixen 4 taules addicionals amb informació relacionada amb les 4 primeres:
 		<ul>
-			<li>Condemnes
-			<li>Relacions Persona-Cas
-			<li>Relacions Partit-Cas
-			<li>Relacions Empresa-Cas
+			<li>5. Condemnes
+			<li>6. Relacions Persona-Cas
+			<li>7. Relacions Partit-Cas
+			<li>8. Relacions Empresa-Cas
 		</ul>
 		<br>
-		Els llenguatges de programació utilitzats són:
+		Els llenguatges de programació que fan funcionar la web són:
 		<ul>
-			<li>PHP
-			<li>MySQL
-			<li>Javascript
-			<li>HTML/CSS
+			<li>- PHP
+			<li>- HTML/CSS
+			<li>- Javascript
+			<li>- MySQL
 		</ul>
 	</div>
 </div>

@@ -8,12 +8,6 @@
 		#top5 td, #top5 th{
 			padding:0.3em 0.5em;
 		}
-		/*treu els marges a portrait*/
-		@media only screen and (min-width:560px) { 
-			#root {
-				margin-left:10px;
-			}
-		}
 	</style>
 </head><body>
 <?php include'navbar.php'?>
@@ -78,7 +72,7 @@
 
 <!--links
 -->
-<div><h3>Links</h3>
+<div><h3>Links (provisional)</h3>
 	<ul>
 		<li><a target=_blank href="https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n">
 		15mpedia.org/wiki/[...]</a>

@@ -22,8 +22,7 @@
 	/*CRUD ops (update, delete)*/
 	<?php 
 		if($edit_mode)
-		{
-			?>
+		{ ?>
 			//esborra un objecte d'una taula
 			function esborra(taula,id) {
 				if(!confirm("S'esborrarà l'element "+taula+"->id "+id+". Continuar?")){return}
@@ -41,7 +40,7 @@
 				sol.send("taula="+taula+"&id="+id);
 			}
 
-			//update un camp de l'objecte id
+			//update un camp de l'objecte id //TODO millorar
 			function update(taula,id,camp,current) {
 				current=current||"";//valor actual (opcional)
 
@@ -67,7 +66,6 @@
 
 			//update ordre de relacio_persona_cas
 			function updateOrdre(rel_id,nouValor) {
-
 				function urldecode(url){return decodeURIComponent(url.replace(/\+/g,' '))}
 
 				var sol=new XMLHttpRequest();
@@ -84,22 +82,6 @@
 				sol.send("taula=relacions_persona_cas&id="+rel_id+"&camp=ordre&nouValor="+nouValor);
 			}
 
-			//envia ordre sql al servidor DANGER
-			function sql2json(sql,callback)
-			{
-				var sol=new XMLHttpRequest();
-				sol.open('POST','data/sql2json.php',true);
-				sol.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-				sol.onreadystatechange=function()
-				{
-					if(this.readyState==4&&this.status==200)
-					{
-						var json=JSON.parse(this.responseText);
-						callback(json)
-					}
-				}
-				sol.send("sql="+sql)
-			}
 			<?php
 		}
 	?>

@@ -1,20 +1,15 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
 	<?php if(!$edit_mode){header("location:index.php");}?>
-	<script>
-		function init()
-		{
-		}
-	</script>
-</head><body onload=init()>
+</head><body>
 <?php include'navbar.php'?>
 
 <div id=root>
 
 <h1>Elements orfes de la base de dades (=SOLUCIONAR!)</h1>
-<ul>
+<ul style="padding-left:1em;list-style:decimal">
 	<li>
-		<h3>1. Persones sense cas de corrupció associat</h3>
+		<h3>Persones sense cas de corrupció associat</h3>
 		<table>
 			<?php
 				$sql="
@@ -56,8 +51,19 @@
 			?>
 		</table>
 	</li>
+
+	<!--per fer-->
+	<li>Casos de corrupció sense persones vinculades
+		<div>per fer</div>
+	</li>
+	<li>Partits sense persones vinculades
+		<div>per fer</div>
+	</li>
+	<li>Empreses sense persones vinculades
+		<div>per fer</div>
+	</li>
 	<li>
-		<h3>2. Noms repetits</h3>
+		Noms repetits (casos,persones,partits,emppreses)
 		<div>per fer</div>
 	</li>
 </ul>

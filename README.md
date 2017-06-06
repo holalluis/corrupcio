@@ -10,11 +10,11 @@ En desenvolupament. Encara no anunciat enlloc.
 - [millora] CRUD - fixar caracters maxims per updates
 - [millora] Implementar textarea customitzat per fer updates (edit mode)
 
+- [nou] Detector automàtic de problemes: definir problemes
 - [nou] Afegir informació geogràfica (mireia: he pensat que al cas es podria afegir quines comunitats autonomes afecta (veig que punica, per exemple, esquitxa 4 comunitats))
-- [nou] Poder descarregar base de dades sencera
+- [nou] Poder descarregar base de dades sencera (mysqldump)
 - [nou] Grafic de barres sota del top5 a pagina inicial
-- [nou] Incorporar ciutats (pensar)
-- [nou] Registre de canvis
+- [nou] Afegir un registre de canvis
 	- 1. Col.laboradors (user, password)
 	- 2. Log: canvis associats a un col.laborador . poder desfer canvis
 
@@ -46,4 +46,3 @@ En desenvolupament. Encara no anunciat enlloc.
 ## Contractar més endavant
 	- Publicitat
 	- Logo & publi placement
-
