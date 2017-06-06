@@ -89,6 +89,6 @@
 	</ul>
 </div>
 
-</div id=root>
+</div root>
 
 <!--footer--><?php include'footer.php'?>

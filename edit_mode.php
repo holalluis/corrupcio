@@ -25,7 +25,7 @@
 
 			<!--edit mode-->
 			<div title="Permís per editar les pàgines">
-				<button onclick="window.location='edit/logout.php'">SORTIR Edit mode</button>
+				<button onclick="window.location='edit/logout.php'">Sortir edit mode</button>
 			</div>
 
 			<?php

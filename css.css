@@ -3,22 +3,23 @@ body{
 	margin:0 auto;
 	overflow-y:scroll;
 	font-size:14px;
-	/*fonts*/
-	font-family:'San Francisco', system-ui, sans-serif;
 	font-family:'Lucida Grande',helvetica,arial,verdana,sans-serif;
 }
 
-/*h1,h2,h3*/
-h1,h2,h3{
-	font-weight:normal;
-}
 h1{
 	font-size:18px;
 	border-bottom:1px solid #ccc;
 	padding-bottom:5px;
+	font-weight:normal;
 }
-h2{font-size:17px}
-h3{font-size:15px}
+h2{
+	font-size:17px;
+	font-weight:normal;
+}
+h3{
+	font-size:15px;
+	font-weight:normal;
+}
 
 /*parrafs*/
 p{
@@ -30,9 +31,11 @@ p{
 /*unsorted lists*/
 ul{
 	margin:0;
-	padding-left:25px;
+	padding-left:15px;
 }
-ul.invisible {display:none}
+ul.invisible {
+	display:none;
+}
 
 li{
 	margin-top:0.5em;
@@ -41,7 +44,7 @@ li{
 	padding-right:10px;
 }
 
-/*table*/
+/*tables*/
 table{border-collapse:collapse}
 th{font-weight:normal}
 th,td{border:1px solid #ccc}
@@ -54,6 +57,11 @@ a:hover{text-decoration:underline}
 /*per titols navegables*/
 span[onclick]{cursor:pointer}
 span[onclick]:hover{text-decoration:underline}
+
+/*ROOT div*/
+#root {
+	margin-bottom:100px;
+}
 
 /*CLASSES*/
 
