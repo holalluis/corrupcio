@@ -4,6 +4,13 @@
 	{ 
 		?>
 		<div id=edit_mode_header>
+			<div style=padding:0.5em> edit mode </div>
+
+			<!--edit mode-->
+			<div title="Permís per editar les pàgines">
+				<button onclick="window.location='edit/logout.php'">Sortir</button>
+			</div>
+
 			<!--insert-->
 			<div>
 				<button onclick="window.location='insert.php'">Inserta persones, casos, partits, empreses</button>
@@ -14,18 +21,13 @@
 				<button onclick="window.location='edit/view_mode.php'">
 					<?php 
 						if($view_mode) {
-							echo "View mode [ON]/OFF";
+							echo "View mode [ON]";
 						}
 						else {
-							echo "View mode ON/[OFF]";
+							echo "View mode [OFF]";
 						}
 					?>
 				</button>
-			</div>
-
-			<!--edit mode-->
-			<div title="Permís per editar les pàgines">
-				<button onclick="window.location='edit/logout.php'">Sortir edit mode</button>
 			</div>
 
 			<?php

@@ -6,11 +6,11 @@ Web per recopilar casos de corrupcio a l'estat espanyol.
 En desenvolupament. Encara no anunciat enlloc.
 
 ## Tasques pendents (programacio)
-- [millora] al botó view mode posar [on]/off - on/[off]
-- [millora] Afegir descripcions de coses a les cerques
 - [millora] CRUD - fixar caracters maxims per inserts
 - [millora] CRUD - fixar caracters maxims per updates
 - [millora] Implementar textarea customitzat per fer updates (edit mode)
+
+- [nou] Afegir informació geogràfica (mireia: he pensat que al cas es podria afegir quines comunitats autonomes afecta (veig que punica, per exemple, esquitxa 4 comunitats))
 - [nou] Poder descarregar base de dades sencera
 - [nou] Grafic de barres sota del top5 a pagina inicial
 - [nou] Incorporar ciutats (pensar)
@@ -21,7 +21,7 @@ En desenvolupament. Encara no anunciat enlloc.
 ## CSS breakpoints (mobils i tablets)
 - 560px (mobil portrait) (navbar)
 
-## Estructura de dades Corrupcio
+## Estructura de dades
 - Taules (8)
 	- Taules d'objectes (5)
 		- casos 
@@ -44,6 +44,6 @@ En desenvolupament. Encara no anunciat enlloc.
 	- 45% Omplir dades i manteniment (roger, mireia)
 
 ## Contractar més endavant
-	- Posar publicitat
-	- Dissenyador grafic (logo & publi placement)
+	- Publicitat
+	- Logo & publi placement
 
