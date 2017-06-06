@@ -18,29 +18,19 @@
 		<table>
 			<?php
 				$sql="
-					SELECT p.id, p.nom, rel.id AS cas_id, rel.nom AS cas
+					SELECT p.id, p.nom
 					FROM persones AS p
-					LEFT JOIN 
-						(
-							SELECT casos.nom, casos.id, relacions_persona_cas.persona_id
-							FROM casos, relacions_persona_cas 
-							WHERE casos.id=relacions_persona_cas.cas_id
-						) AS rel
-					ON p.id=rel.persona_id
-					GROUP BY nom
-					ORDER BY nom
+					WHERE p.id NOT IN ( SELECT persona_id FROM relacions_persona_cas )
+					ORDER BY p.nom
 				";
 				$res=$mysql->query($sql) or die(mysqli_error($mysql));
 				if(mysqli_num_rows($res)==0) {
-					echo "<tr><td><span class=blanc>~No hi ha resultats</span>";
+					echo "<tr><td><span class=blanc style=color:green>~No hi ha resultats: Totes les persones tenen un cas associat :)</span>";
 				}
 				while($row=mysqli_fetch_assoc($res)) {
 					$id=$row['id'];
 					$nom=$row['nom'];
-					$cas=$row['cas'];
 
-					//només ens interessen els que no tenen cas associat
-					if($cas!=""){continue;}
 					echo "<tr><td><a href=persona.php?id=$id>$nom</a>";
 					?>
 						<td>
