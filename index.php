@@ -70,19 +70,6 @@
 	</table>
 </div>
 
-<!--links
--->
-<div><h3>Links (provisional)</h3>
-	<ul>
-		<li><a target=_blank href="https://15mpedia.org/wiki/Lista_de_casos_de_corrupci%C3%B3n">
-		15mpedia.org/wiki/[...]</a>
-		<li><a target=_blank href="https://llumsitaquigrafs.cat/">llumsitaquigrafs.cat/</a>
-		<li><a target=_blank href="https://atles.llumsitaquigrafs.cat/">atles.llumsitaquigrafs.cat/</a>
-		<li><a target=_blank href="https://es.wikipedia.org/wiki/Anexo:Casos_judiciales_relacionados_con_corrupci%C3%B3n_pol%C3%ADtica_en_Espa%C3%B1a">
-		es.wikipedia.org/[...]</a>
-	</ul>
-</div>
-
 </div root>
 
 <!--footer--><?php include'footer.php'?>
