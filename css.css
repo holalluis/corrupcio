@@ -92,7 +92,7 @@ button.update, select.update, form.update {
 	text-shadow:0 1px 0 #000;
 	border-radius:0px;
 	margin-top:5px;
-	padding:1em;
+	padding:0.5em;
 }
 
 form.update tr {
