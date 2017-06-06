@@ -2,7 +2,7 @@
 body{
 	margin:0 auto;
 	overflow-y:scroll;
-	font-size:13px;
+	font-size:15px;
 	font-family:'Lucida Grande',helvetica,arial,verdana,sans-serif;
 }
 
@@ -108,8 +108,9 @@ form.update tr {
 }
 /*descripcions casos, partits i empreses i relacions*/
 .descripcio{
-	color:#111;
-	font-size:11px;
+	color:#545454;
+	line-height:1.45em;
+	font-size:15px;
 	margin-top:6px;
 }
 /*quan el valor val 'empty string' posa el text més clar*/
