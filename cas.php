@@ -90,7 +90,9 @@
 	<!--espoli-->
 	<li>
 		Espoli: 
-		<?php echo $cas->espoli ?> euros 
+		<?php 
+			echo number_format($cas->espoli,0,",",".");
+		?> euros 
 		<?php 
 			if($edit_mode)
 			{ 

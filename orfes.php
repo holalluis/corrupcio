@@ -63,7 +63,7 @@
 		<div>per fer</div>
 	</li>
 	<li>
-		Noms repetits (casos,persones,partits,emppreses)
+		Noms repetits (casos,persones,partits,empreses)
 		<div>per fer</div>
 	</li>
 </ul>

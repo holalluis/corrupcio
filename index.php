@@ -58,7 +58,7 @@
 			{
 				$id=$row['id'];
 				$nom=$row['nom'];
-				$espoli=$row['espoli'];
+				$espoli=number_format($row['espoli'],0,",",".");
 				echo "<tr>
 					<td>$i
 					<td><a href=cas.php?id=$id>$nom</a>
