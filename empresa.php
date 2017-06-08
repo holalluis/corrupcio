@@ -82,7 +82,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		<span onclick=qs('#persones').classList.toggle('invisible');>
+		<span class=desplegable onclick=qs('#persones').classList.toggle('invisible');>
 			Persones relacionades (<?php echo $n ?>)
 		</span>
 		<ul id=persones>
@@ -170,7 +170,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		<span onclick=qs('#casos').classList.toggle('invisible');>
+		<span class=desplegable onclick=qs('#casos').classList.toggle('invisible');>
 			Casos relacionats (<?php echo $n ?>)
 		</span>
 		<ul id=casos>
@@ -211,7 +211,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		<span onclick=qs('#partits').classList.toggle('invisible');>
+		<span class=desplegable onclick=qs('#partits').classList.toggle('invisible');>
 			Partits relacionats (<?php echo $n ?>)
 		</span>
 		<ul id=partits>

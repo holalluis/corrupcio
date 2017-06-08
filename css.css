@@ -133,6 +133,10 @@ form.update tr {
 	cursor:pointer;
 }
 
+.desplegable:before {
+	content:"\25be ";
+}
+
 /*MEDIA QUERIES*/
 
 /*posa marge a <div id=root> si no portrait*/

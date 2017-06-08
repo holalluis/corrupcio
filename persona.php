@@ -89,7 +89,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		<span onclick=qs('#casos').classList.toggle('invisible');>
+		<span class=desplegable onclick=qs('#casos').classList.toggle('invisible');>
 			Casos relacionats (<?php echo $n ?>)
 		</span>
 		<ul id=casos>
@@ -164,7 +164,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		<span onclick=qs('#partits').classList.toggle('invisible');>
+		<span class=desplegable onclick=qs('#partits').classList.toggle('invisible');>
 			Partits relacionats (<?php echo $n ?>)
 		</span>
 		<ul id=partits>
@@ -238,7 +238,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		<span onclick=qs('#empreses').classList.toggle('invisible');>
+		<span class=desplegable onclick=qs('#empreses').classList.toggle('invisible');>
 			Empreses relacionades (<?php echo $n ?>)
 		</span>
 		<ul id=empreses>
@@ -310,7 +310,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			$n=mysqli_num_rows($res);
 		?>
-		<span onclick=qs('#condemnes').classList.toggle('invisible');>
+		<span class=desplegable onclick=qs('#condemnes').classList.toggle('invisible');>
 			Condemnes rebudes (<?php echo $n?>)
 		</span>
 		<ul id=condemnes>
