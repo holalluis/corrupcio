@@ -282,7 +282,7 @@
 									</select>
 								</tr>
 								<tr><th>Anys de presó<td><input name=anys_de_preso placeholder="Anys de presó">
-								<tr><th>Delictes<td><textarea name=delictes placeholder="Delictes"></textarea>
+								<tr><th>Descripció<td><textarea name=delictes placeholder="Descripció"></textarea>
 								<tr><th>Inici<td><input name=any placeholder="Any" value="<?php echo date("Y")?>">
 								<tr><td colspan=2 style=text-align:center><button>afegir condemna</button>
 							</table>

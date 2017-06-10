@@ -6,6 +6,7 @@ Web per recopilar casos de corrupcio a l'estat espanyol.
 En desenvolupament. Encara no anunciat enlloc.
 
 ## Tasques pendents (programacio)
+- [millora] canviar "delictes" per "descripció" a la taula "condemnes"
 - [millora] CRUD - fixar caracters maxims per inserts
 - [millora] CRUD - fixar caracters maxims per updates
 - [millora] Implementar textarea customitzat per fer updates (edit mode)

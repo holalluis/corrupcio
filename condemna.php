@@ -86,12 +86,12 @@
 
 	<!--delictes-->
 	<li>
-		Delictes comesos: 
+		Descripció: 
 		<p class=descripcio>
 			<?php echo $condemna->delictes ?>
 		</p>
 		<?php if($edit_mode){ ?>
-			<button class=update onclick="update('condemnes','<?php echo $condemna->id ?>','delictes', '<?php echo urlencode($condemna->delictes) ?>')">edita delictes</button>
+			<button class=update onclick="update('condemnes','<?php echo $condemna->id ?>','delictes', '<?php echo urlencode($condemna->delictes) ?>')">edita descripció</button>
 		<?php } ?>
 	</li>
 
