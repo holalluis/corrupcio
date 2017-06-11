@@ -45,21 +45,21 @@
 
 		<style>
 			#edit_mode_header {
-				text-align:center;
 				background:#666;
 				background:linear-gradient(#666,#888);
 				color:white;
-				text-shadow: 0 1px 0 #000;
-				padding:2px;
 				display:flex;
 				flex-wrap:wrap;
+				padding:2px 0;
+				text-align:center;
+				text-shadow:0 1px 0 #000;
 			}
 			#edit_mode_header button {
-				padding:0.5em;
+				background:#fafafa;
 				border-radius:0.1em;
 				border:none;
-				background:#fafafa;
 				margin:2px;
+				padding:0.5em;
 			}
 			#edit_mode_header button:hover {
 				background:#ccc;

@@ -1,11 +1,10 @@
-/*body*/
+/*GENERAL*/
 body{
 	margin:0 auto;
 	overflow-y:scroll;
 	font-size:15px;
 	font-family:'Lucida Grande',helvetica,arial,verdana,sans-serif;
 }
-
 h1{
 	font-size:18px;
 	border-bottom:1px solid #ccc;
@@ -20,42 +19,20 @@ h3{
 	font-size:15px;
 	font-weight:normal;
 }
-
-/*parrafs*/
 p{
 	text-align:justify;
 	padding-right:10px;
 	max-width:50em;
 }
-
-/*unsorted lists*/
 ul{
 	margin:0;
 	list-style:none;
 	padding-left:0;
 }
-ul.invisible {
-	display:none;
-}
-
 li{
 	margin-top:0.5em;
-	margin-bottom:0.5em;
 	max-width:60em;
-	padding-right:10px;
 }
-
-li.item {
-	padding:0.7em;
-	border-bottom:1px solid #ddd;
-	margin:0;
-}
-
-li.item:nth-child(odd) {
-	background:#f8f8f8;
-}
-
-/*tables*/
 table{border-collapse:collapse}
 tr{
 	border:1px solid #ccc;
@@ -70,8 +47,6 @@ th,td{
 	border-right:none;
 	padding:2px;
 }
-
-/*misc*/
 hr{border:none;border-bottom:1px solid #ccc}
 a{text-decoration:none}
 a:hover{text-decoration:underline}
@@ -101,17 +76,30 @@ form.update tr {
 
 /*CLASSES*/
 
-/*classe general*/
 .flex{
 	display:flex;
 	flex-wrap:wrap;
 }
+
+ul.invisible {
+	display:none;
+}
+li.item {
+	padding:0.7em;
+	border-bottom:1px solid #ddd;
+	margin:0;
+}
+li.item:nth-child(odd) {
+	background:#f8f8f8;
+}
+
 /*descripcions casos, partits i empreses i relacions*/
 .descripcio{
 	color:#545454;
 	line-height:1.45em;
 	font-size:14px;
 	margin-top:6px;
+	padding:2px 0;
 }
 /*quan el valor val 'empty string' posa el text més clar*/
 .blanc{
@@ -125,38 +113,48 @@ form.update tr {
 }
 /*classe per fer més curtes les descripcions*/
 .nowrap { 
-	white-space: nowrap;
-	overflow: hidden;
-	display: block;
-	text-overflow: ellipsis;
-	transition:all 0.5s;
 	cursor:pointer;
+	display:block;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	transition:background 0.2s;
+	white-space:nowrap;
+}
+.nowrap:hover{
+	color:black;
 }
 
+/*headers de llistes desplegables (com ara 'Persones relacionades')*/
 .desplegable{
 	display:block;
 	padding:1em 5px;
 	border:1px solid #ccc;
 	background:#abc;
 }
+.desplegable:hover {
+	/*de moment res*/
+}
 .desplegable:before {
-	content:"\25be ";
+	content:"\25be ";/*triangle que apunta cap avall*/
 }
 
 /*MEDIA QUERIES*/
 
-/*posa marge a <div id=root> si no portrait*/
+/*posa padding a <div id=root> si no portrait*/
 @media only screen and (min-width:560px) { 
 	#root {
-		margin-left:10px;
+		padding-left:8px;
 		margin-right:5px;
 	}
 }
 
-/*tables no border a portrait*/
+/*portrait*/
 @media only screen and (max-width:560px) { 
 	table {
 		width:100%;
+	}
+	tr {
+		border:none;
 	}
 	th,td {
 		border-left:none;

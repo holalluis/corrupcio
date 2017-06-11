@@ -1,3 +1,8 @@
+<?php
+	//variables globals (MAJÚSCULA) (nota: edit mode i view mode haurien de ser majúscules, per seguir la convenció)
+	$NOM_APP="Enciclopèdia de la corrupció";
+?>
+
 <!--connecta-->
 <?php include'mysql.php'?>
 
@@ -11,8 +16,7 @@
 <link rel="stylesheet" href="css.css">
 <meta name="description" content="corrupció">
 
-<!--title-->
-<title>Corrupció</title>
+<!--title--><title>Corrupció</title>
 
 <script>
 	//utils

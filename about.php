@@ -10,11 +10,10 @@
 <h3>Quant a</h3>
 
 	<div style=color:#545454>
-		La Gran Enciclopèdia de la Corrupció va néixer el març del 2017,
-		com a exercici de modelització informàtica per posar ordre a 
-		totes les dades generades pels mitjans de comunicació arran dels 
-		nombrosos casos de corrupció política que s'han anat fent públics 
-		els últims anys.
+		L'Enciclopèdia de la Corrupció va néixer el març del 2017,
+		com a exercici de modelització informàtica amb l'objectiu d'ordenar 
+		tot el conjunt de dades generades pels mitjans de comunicació arran dels 
+		nombrosos casos de corrupció política que s'han fet públics els últims anys.
 		<br><br>
 		El model consta de 4 taules principals:
 		<ul>
