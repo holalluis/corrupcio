@@ -133,6 +133,12 @@ form.update tr {
 	cursor:pointer;
 }
 
+.desplegable{
+	display:block;
+	padding:1em 5px;
+	border:1px solid #ccc;
+	background:#abc;
+}
 .desplegable:before {
 	content:"\25be ";
 }
