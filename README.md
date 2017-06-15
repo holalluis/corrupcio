@@ -1,26 +1,25 @@
-# GRAN ENCICLOPEDIA DE LA CORRUPCIO
-
-Web per recopilar casos de corrupcio a l'estat espanyol.
+# ENCICLOPÈDIA DE LA CORRUPCIÓ
+Web per recopilar casos de corrupció a l'estat espanyol.
 
 ## Estat
 En desenvolupament. Encara no anunciat enlloc.
 
-## Tasques pendents (programacio)
-- [millora] canviar "delictes" per "descripció" a la taula "condemnes"
-- [millora] CRUD - fixar caracters maxims per inserts
-- [millora] CRUD - fixar caracters maxims per updates
-- [millora] Implementar textarea customitzat per fer updates (edit mode)
+## Tasques pendents (programació)
+- [millora] CRUD - fixar caràcters màxims per inserts.
+- [millora] CRUD - fixar caràcters màxims per updates.
+- [millora] Canviar "delictes" per "descripció" a la taula "condemnes".
+- [millora] Afegir camp per l'any que es va destapar el cas "any-destapat"?
+- [millora] Implementar textarea customitzat per fer updates (edit mode).
+- [nou] Detector automàtic de problemes: definir problemes.
+- [nou] Afegir informació geogràfica (mireia: he pensat que al cas es podria afegir quines comunitats autonomes afecta (veig que punica, per exemple, esquitxa 4 comunitats)).
+- [nou] Poder descarregar base de dades sencera (mysqldump).
+- [nou] Gràfic de barres sota del top5 a pàgina inicial.
+- [nou] Afegir un registre de canvis.
+	- 1. Col.laboradors (user, password).
+	- 2. Log: canvis associats a un col.laborador . poder desfer canvis.
 
-- [nou] Detector automàtic de problemes: definir problemes
-- [nou] Afegir informació geogràfica (mireia: he pensat que al cas es podria afegir quines comunitats autonomes afecta (veig que punica, per exemple, esquitxa 4 comunitats))
-- [nou] Poder descarregar base de dades sencera (mysqldump)
-- [nou] Grafic de barres sota del top5 a pagina inicial
-- [nou] Afegir un registre de canvis
-	- 1. Col.laboradors (user, password)
-	- 2. Log: canvis associats a un col.laborador . poder desfer canvis
-
-## CSS breakpoints (mobils i tablets)
-- 560px (mobil portrait) (navbar)
+## CSS breakpoints (mòbils i tablets)
+- 560px (mobil portrait) (navbar).
 
 ## Estructura de dades
 - Taules (8)
@@ -39,11 +38,11 @@ En desenvolupament. Encara no anunciat enlloc.
   - on delete relacions_persona_cas delete condemna
   - on update {cas,persona,partit,empresa} update timestamp
 
-## Repartiment inversio/benefici
+## Repartiment inversió/benefici
 	- 10% Reserva per pagar coses
-	- 45% Programacio i manteniment (lluís)
+	- 45% Programació i manteniment (lluís)
 	- 45% Omplir dades i manteniment (roger, mireia)
 
 ## Contractar més endavant
-	- Publicitat
+	- Publi
 	- Logo & publi placement
