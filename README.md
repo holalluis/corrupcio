@@ -5,6 +5,7 @@ Web per recopilar casos de corrupció a l'estat espanyol.
 En desenvolupament. Encara no anunciat enlloc.
 
 ## Tasques pendents (programació)
+- [millora] llista de passwords per edit mode.
 - [millora] CRUD - fixar caràcters màxims per inserts.
 - [millora] CRUD - fixar caràcters màxims per updates.
 - [millora] Canviar "delictes" per "descripció" a la taula "condemnes".
