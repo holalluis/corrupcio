@@ -1,8 +1,8 @@
 <div id=footer>
 	<div class=titol>Corrupció <?php echo date("Y")?></div>
-	<div class=item onclick=window.location='about.php'>Quant a</div>
 	<div class=item onclick=window.location='contact.php'>Contacte</div>
-	<div class=item onclick=window.open('https://github.com/holalluis/corrupcio/blob/master/README.md')>README.md</div>
+	<div class=item onclick=window.location='about.php'>Quant a</div>
+	<div class=item onclick=window.open('https://github.com/holalluis/corrupcio/')>Github</div>
 	<!--edit mode-->
 	<?php
 		if(!$edit_mode and !$view_mode) {
