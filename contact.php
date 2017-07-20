@@ -37,7 +37,7 @@
 
 		mail('holalluis@gmail.com','Contacte formulari corrupció',"$nom\n$mail\n\n$msg") 
 			or 
-		die('Error. Mail no enviat. Torna-ho a intentar més tard.');
+		die('Error. Missatge no enviat. La funció per enviar missatges encara no funciona.');
 
 		echo('<br><br>Missatge enviat. Gràcies per contactar amb nosaltres. Ens posarem en contacte amb tu en el mínim temps possible.');
 	?>

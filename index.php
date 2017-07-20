@@ -2,6 +2,8 @@
 	<?php include'imports.php'?>
 	<style>
 		#navbar div[pagina=inici]{color:black}
+	</style>
+	<style>
 		#top5{
 			margin-top:10px;
 		}
@@ -45,6 +47,8 @@
 			?>)
 	</ul>
 </div>
+
+<hr>
 
 <!--top 5 casos-->
 <div>
