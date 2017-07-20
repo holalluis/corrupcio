@@ -25,7 +25,7 @@
 				LEFT JOIN relacions_persona_cas AS rel
 				ON c.id=rel.cas_id
 				GROUP BY nom
-				ORDER BY implicats DESC,nom
+				ORDER BY registrats DESC,nom
 			";
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
