@@ -8,6 +8,7 @@
 - llista de casos que hauríem de tenir dins la web.
 
 ## Tasques pendents (bugs/millores)
+- [neccesari] posar marges a css mobile (portrait) 
 - [necessari] implementar servei per enviar mails amb PHP.
 - [millora] implementar textarea customitzat per fer updates (edit mode).
 - [millora] anar directament a la pàgina de perfil després de crear un cas, persona, partit o empresa.
