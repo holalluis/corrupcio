@@ -20,7 +20,7 @@
 <table id=casos>
 	<?php
 			$sql="
-				SELECT c.id, c.nom, c.any, COUNT(rel.id) AS implicats 
+				SELECT c.id, c.nom, c.any, c.implicats, COUNT(rel.id) AS registrats 
 				FROM casos AS c 
 				LEFT JOIN relacions_persona_cas AS rel
 				ON c.id=rel.cas_id
@@ -32,17 +32,21 @@
 			{
 				echo "<tr><td><span class=blanc>~No hi ha resultats</span>";
 			}
-			while($row=mysqli_fetch_assoc($res))
-			{
+			while($row=mysqli_fetch_assoc($res)) {
 				$id=$row['id'];
 				$nom=$row['nom'];
 				$any=$row['any'];
+				$registrats=$row['registrats'];
 				$implicats=$row['implicats'];
+				$percentatge = $implicats==0 ? 0 : 100*$registrats/$implicats;
 				echo "
 					<tr>
 						<td><a href=cas.php?id=$id>$nom</a>
-						<td>$any
-						<td class=numero>$implicats implicats
+						<td class=numero>$any
+						<td class=numero>$registrats 
+						de $implicats persones
+						<td><progress max=100 value=$percentatge></progress>
+						<td align=right>".number_format($percentatge,1,",",".")." % 
 				";
 			}
 	?>

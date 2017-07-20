@@ -35,6 +35,7 @@
 		background:linear-gradient(#e5e5e5,white);
 		border-top:1px solid #ccc;
 		text-shadow:0 1px 0 #fff;
+		padding-bottom:20px;
 		display:flex;
 		flex-wrap:wrap;
 	}

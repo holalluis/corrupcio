@@ -35,7 +35,7 @@
 		if($edit_mode)
 		{
 			?>
-			<button class=update onclick="update('partits',<?php echo $partit->id ?>,'nom','<?php echo urlencode($partit->nom) ?>')">edita nom</button> 
+			<button class=update onclick="update('partits',<?php echo $partit->id ?>,'nom','<?php echo urlencode($partit->nom) ?>')">edita</button> 
 			<?php
 		}
 	?>
@@ -44,41 +44,45 @@
 <ul>
 	<!--descripció-->
 	<li>
-		Descripció: 
-		<p class=descripcio>
-			<?php 
-				if(trim($partit->descripcio)=="")
-				{
-					echo "<i class=blanc>~no hi ha descripció</i>";
-				}
-				else
-				{
-					echo "
-						<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
-							$partit->descripcio
-						</div>
-					";
-				}
-				if($edit_mode)
-				{ 
-					?>
-					<button class=update onclick="update('partits','<?php echo $partit->id ?>','descripcio','<?php echo urlencode($partit->descripcio) ?>')">edita descripció</button>
-					<?php 
-				} 
-			?>
-		</p>
-	</li>
-
-	<li>Nom sencer: <?php echo $partit->nom_llarg ?>
 		<?php 
+			if(trim($partit->descripcio)=="")
+			{
+				echo "<i class=blanc>~no hi ha descripció</i>";
+			}
+			else
+			{
+				echo "
+					<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
+						$partit->descripcio
+					</div>
+				";
+			}
 			if($edit_mode)
 			{ 
 				?>
-				<button class=update onclick="update('partits','<?php echo $partit->id ?>','nom_llarg','<?php echo urlencode($partit->nom_llarg) ?>')">edita nom sencer</button>
+				<button class=update onclick="update('partits','<?php echo $partit->id ?>','descripcio','<?php echo urlencode($partit->descripcio) ?>')">
+					edita
+				</button>
 				<?php 
 			} 
 		?>
 	</li>
+
+	<li>
+		Nom sencer: <?php echo $partit->nom_llarg ?>
+		<?php 
+			if($edit_mode)
+			{ 
+				?>
+				<button class=update onclick="update('partits','<?php echo $partit->id ?>','nom_llarg','<?php echo urlencode($partit->nom_llarg) ?>')">
+					edita
+				</button>
+				<?php 
+			} 
+		?>
+	</li>
+
+	<hr>
 
 	<li>
 		<?php
@@ -118,7 +122,7 @@
 					if($edit_mode)
 					{
 						echo "
-							<button class=update onclick=update('relacions_persona_partit',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
+							<button class=update onclick=update('relacions_persona_partit',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita</button> 
 							<button class=update onclick=esborra('relacions_persona_partit',$rel_id)>esborra connexió</button>
 						";
 					}
@@ -130,6 +134,7 @@
 					?>
 					<li>
 						<form method=post action=data/insert/relacio_persona_partit.php>
+							Afegir nova connexió amb una persona:
 							<select class=update name=persona_id>
 								<?php
 									//busca persones no relacionades amb el partit
@@ -149,7 +154,7 @@
 								?>
 							</select>
 							<input name=partit_id type=hidden value=<?php echo $partit->id?>>
-							<button class=update>afegir connexió amb la persona seleccionada</button>
+							<button class=update>afegir connexió</button>
 						</form>
 					</li>
 					<?php
@@ -243,17 +248,16 @@
 	</li>
 
 	<!--data modificació-->
-	<li>
+	<li class=ultima_modificacio>
 		Última modificació: <?php echo date("d/m/Y H:i:s",strtotime($partit->modificacio)) ?>
 	</li>
 	 
-	<!--esborrar-->
+	<!--esborra partit-->
 	<?php
-		if($edit_mode)
-		{
+		if($edit_mode) {
 			?>
 			<li>
-			  <button class=update onclick=esborra('partits',<?php echo $partit->id ?>)>esborra partit</button>
+			  <button class=update onclick=esborra('partits',<?php echo $partit->id ?>)>esborra partit (perill!)</button>
 			</li>
 			<?php
 		}

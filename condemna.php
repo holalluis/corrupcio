@@ -80,42 +80,45 @@
 			echo $condemna->anys_de_preso;
 		?>
 		<?php if($edit_mode){ ?>
-			<button class=update onclick="update('condemnes','<?php echo $condemna->id ?>','anys_de_preso', '<?php echo urlencode($condemna->anys_de_preso) ?>')">edita anys de presó</button>
+			<button class=update onclick="update('condemnes','<?php echo $condemna->id ?>','anys_de_preso', '<?php echo urlencode($condemna->anys_de_preso) ?>')">
+				edita
+			</button>
+		<?php } ?>
+	</li>
+
+	<!--inici condemna-->
+	<li>
+		Inici condemna:
+		<?php echo $condemna->any ?>
+		<?php if($edit_mode){ ?>
+			<button class=update onclick="update('condemnes','<?php echo $condemna->id ?>','any', '<?php echo urlencode($condemna->any) ?>')">edita</button>
 		<?php } ?>
 	</li>
 
 	<!--delictes-->
 	<li>
 		Descripció: 
-		<p class=descripcio>
+		<div class=descripcio>
 			<?php echo $condemna->delictes ?>
-		</p>
+		</div>
 		<?php if($edit_mode){ ?>
-			<button class=update onclick="update('condemnes','<?php echo $condemna->id ?>','delictes', '<?php echo urlencode($condemna->delictes) ?>')">edita descripció</button>
-		<?php } ?>
-	</li>
-
-	<!--inici condemna-->
-	<li>
-		Inici:
-		<?php echo $condemna->any ?>
-		<?php if($edit_mode){ ?>
-			<button class=update onclick="update('condemnes','<?php echo $condemna->id ?>','any', '<?php echo urlencode($condemna->any) ?>')">edita any inici</button>
+			<button class=update onclick="update('condemnes','<?php echo $condemna->id ?>','delictes', '<?php echo urlencode($condemna->delictes) ?>')">
+				edita
+			</button>
 		<?php } ?>
 	</li>
 
 	<!--data modificació-->
-	<li>
+	<li class=ultima_modificacio>
 		Última modificació: <?php echo date("d/m/Y H:i:s",strtotime($condemna->modificacio)) ?>
 	</li>
 
 	<!--esborrar-->
 	<?php
-		if($edit_mode)
-		{
+		if($edit_mode) {
 			?>
 			<li>
-			  <button class=update onclick=esborra('condemnes',<?php echo $condemna->id ?>)>esborra condemna</button>
+			  <button class=update onclick=esborra('condemnes',<?php echo $condemna->id ?>)>esborra condemna (perill!)</button>
 			</li>
 			<?php
 		}

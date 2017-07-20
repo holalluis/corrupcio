@@ -5,9 +5,12 @@
 
 		#root button.toggleVisib {
 			border:1px solid #ccc;
-			background:#eee;
+			background:linear-gradient(#fafafa,#eee);
 			outline:none;
 			width:25px;
+		}
+		#root button.toggleVisib:hover {
+			background:linear-gradient(#eee,#fafafa);
 		}
 		#root button.toggleVisib:before {
 			content:'-';

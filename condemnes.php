@@ -45,8 +45,9 @@
 				echo "<tr>
 					<td>
 						<a href=condemna.php?id=$id>
-							$persona ($cas) &rarr;
-							$anys_de_preso anys
+							$persona ($cas) 
+					</td>
+					<td>$anys_de_preso anys
 				";
 			}
 	?>

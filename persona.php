@@ -39,7 +39,7 @@
 		if($edit_mode)
 		{
 			?>
-			<button class=update onclick="update('persones',<?php echo $persona->id ?>,'nom','<?php echo urlencode($persona->nom) ?>')">edita nom</button> 
+			<button class=update onclick="update('persones',<?php echo $persona->id ?>,'nom','<?php echo urlencode($persona->nom) ?>')">edita</button> 
 			<?php
 		}
 	?>
@@ -51,8 +51,7 @@
 		Naixement:
 		<?php echo date("d/m/Y",strtotime($persona->naixement)) ?>
 		(<?php 
-			function getAge($then)
-			{
+			function getAge($then) {
 				$then_ts = strtotime($then);
 				$then_year = date('Y',$then_ts);
 				$age = date('Y') - $then_year;
@@ -64,14 +63,14 @@
 
 		<!--edita data de naixement-->
 		<?php
-			if($edit_mode)
-			{
+			if($edit_mode) {
 				?>
-				<button class=update onclick=update('persones',<?php echo $persona->id ?>,'naixement','<?php echo urlencode($persona->naixement) ?>')>edita naixement</button> 
+				<button class=update onclick=update('persones',<?php echo $persona->id ?>,'naixement','<?php echo urlencode($persona->naixement) ?>')>edita</button> 
 				<?php
 			}
 		?>
 	</li>
+	<hr>
 
 	<!--relacions persona cas-->
 	<li>
@@ -113,7 +112,7 @@
 					if($edit_mode)
 					{
 						echo "
-							<button class=update onclick=update('relacions_persona_cas',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
+							<button class=update onclick=update('relacions_persona_cas',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita</button> 
 							<button class=update onclick=esborra('relacions_persona_cas',$rel_id)>esborra connexió</button>
 						";
 					}
@@ -125,6 +124,7 @@
 					?>
 					<li>
 						<form method=post action=data/insert/relacio_persona_cas.php>
+							Afegir nova connexió amb un cas:
 							<input type=hidden name=persona_id value="<?php echo $persona->id?>">
 							<select class=update name=cas_id>
 								<?php
@@ -139,7 +139,7 @@
 									}
 								?>
 							</select>
-							<button class=update>afegir connexió amb el cas seleccionat</button>
+							<button class=update>afegir connexió</button>
 						</form>
 					</li>
 					<?php
@@ -187,7 +187,7 @@
 					if($edit_mode)
 					{
 						echo "
-							<button class=update onclick=update('relacions_persona_partit',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
+							<button class=update onclick=update('relacions_persona_partit',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita</button> 
 							<button class=update onclick=esborra('relacions_persona_partit',$rel_id)>esborra connexió</button>
 						";
 					}
@@ -199,6 +199,7 @@
 					?>
 					<li>
 						<form method=post action=data/insert/relacio_persona_partit.php>
+							Afegir nova connexió amb un partit:
 							<input type=hidden name=persona_id value="<?php echo $persona->id?>">
 							<select class=update name=partit_id>
 								<?php
@@ -213,7 +214,7 @@
 									}
 								?>
 							</select>
-							<button class=update>afegir connexió amb el partit seleccionat</button>
+							<button class=update>afegir connexió</button>
 						</form>
 					</li>
 				<?php
@@ -261,7 +262,7 @@
 					if($edit_mode)
 					{
 						echo "
-							<button class=update onclick=update('relacions_persona_empresa',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
+							<button class=update onclick=update('relacions_persona_empresa',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita</button> 
 							<button class=update onclick=esborra('relacions_persona_empresa',$rel_id)>esborra connexió</button>
 						";
 					}
@@ -273,6 +274,7 @@
 					?>
 					<li>
 						<form method=post action=data/insert/relacio_persona_empresa.php>
+							Afegir nova connexió amb una empresa:
 							<input type=hidden name=persona_id value="<?php echo $persona->id?>">
 							<select class=update name=empresa_id>
 								<?php
@@ -287,7 +289,7 @@
 									}
 								?>
 							</select>
-							<button class=update>afegir connexió amb l'empresa seleccionada</button>
+							<button class=update>afegir connexió</button>
 						</form>
 					</li>
 					<?php
@@ -327,15 +329,18 @@
 				}
 			?>
 			<?php
-				if($edit_mode)
-				{
+				//afegir condemna
+				if($edit_mode) {
 					?>
 					<li>
+						<div>
+							Afegir nova condemna:
+						</div>
 						<form class=update method=post action=data/insert/condemna.php>
 							<input name=persona_id type=hidden value=<?php echo $persona->id?>>
 							<table>
 								<tr>
-									<th>Nova condemna
+									<th>Cas
 									<td><select name=relacio_persona_cas_id>
 										<?php
 											//casos relacionts amb la persona
@@ -371,17 +376,16 @@
 	</li>
 
 	<!--data modificació-->
-	<li>
+	<li class=ultima_modificacio>
 		Última modificació: <?php echo date("d/m/Y H:i:s",strtotime($persona->modificacio)) ?>
 	</li>
 
-	<!--esborrar-->
+	<!--esborra persona-->
 	<?php
-		if($edit_mode)
-		{
+		if($edit_mode) {
 			?>
 			<li>
-				<button class=update onclick=esborra('persones',<?php echo $persona->id ?>)>esborra persona</button>
+				<button class=update onclick=esborra('persones',<?php echo $persona->id ?>)>esborra persona (perill!)</button>
 			</li>
 			<?php
 		}

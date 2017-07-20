@@ -1,5 +1,10 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
+	<style>
+		#root {
+			max-width:50em;
+		}
+	</Style>
 </head><body>
 <?php include'navbar.php'?>
 
@@ -9,7 +14,7 @@
 
 <h3>Quant a</h3>
 
-	<div style=color:#545454>
+	<div style=color:#545454;>
 		L'Enciclopèdia de la Corrupció va néixer el març del 2017,
 		com a exercici de modelització informàtica amb l'objectiu d'ordenar 
 		tot el conjunt de dades generades pels mitjans de comunicació arran dels 

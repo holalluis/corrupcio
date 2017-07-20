@@ -1,7 +1,7 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
 	<?php
-		/* INPUT: id empresa */
+		//INPUT: id empresa
 		$id=$_GET['id'] or die('empresa id no especificat');
 
 		//sql query
@@ -31,10 +31,11 @@
 <h1>
 	<span onclick=window.location='empreses.php'>Empreses</span> &rsaquo; <?php echo $empresa->nom ?>
 	<?php 
-		if($edit_mode)
-		{
+		if($edit_mode) {
 			?>
-			<button class=update onclick="update('empreses',<?php echo $empresa->id ?>,'nom','<?php echo urlencode($empresa->nom) ?>')">edita nom</button> 
+			<button class=update onclick="update('empreses',<?php echo $empresa->id ?>,'nom','<?php echo urlencode($empresa->nom) ?>')">
+				edita
+			</button> 
 			<?php
 		}
 	?>
@@ -43,30 +44,28 @@
 <ul>
 	<!--descripció-->
 	<li>
-		Descripció: 
-		<p class=descripcio>
-			<?php 
-				if(trim($empresa->descripcio)=="")
-				{
-					echo "<i class=blanc>~no hi ha descripció</i>";
-				}
-				else
-				{
-					echo "
-						<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
-							$empresa->descripcio
-						</div>
-					";
-				}
-				if($edit_mode)
-				{ 
-					?>
-					<button class=update onclick="update('empreses','<?php echo $empresa->id ?>','descripcio','<?php echo urlencode($empresa->descripcio) ?>')">edita descripció</button>
-					<?php 
-				} 
-			?>
-		</p>
+		<?php 
+			if(trim($empresa->descripcio)=="") {
+				echo "<i class=blanc>~no hi ha descripció</i>";
+			}
+			else {
+				echo "
+					<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
+						$empresa->descripcio
+					</div>
+				";
+			}
+			if($edit_mode) { 
+				?>
+				<button class=update onclick="update('empreses','<?php echo $empresa->id ?>','descripcio','<?php echo urlencode($empresa->descripcio) ?>')">
+					edita
+				</button>
+				<?php 
+			} 
+		?>
 	</li>
+
+	<hr>
 
 	<!--persones relacionades-->
 	<li>
@@ -87,8 +86,7 @@
 		</span>
 		<ul id=persones>
 			<?php
-				while($row=mysqli_fetch_assoc($res))
-				{
+				while($row=mysqli_fetch_assoc($res)) {
 					$rel_id=$row['id'];
 					$persona=$row['persona'];
 					$persona_id=$row['persona_id'];
@@ -104,21 +102,22 @@
 						</div>
 					";
 
-					if($edit_mode)
-					{
+					if($edit_mode) {
 						echo "
-							<button class=update onclick=update('relacions_persona_empresa',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
+							<button class=update onclick=update('relacions_persona_empresa',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>
+								edita
+							</button> 
 							<button class=update onclick=esborra('relacions_persona_empresa',$rel_id)>esborra connexió</button>
 						";
 					}
 				}
 			?>
 			<?php
-				if($edit_mode)
-				{
+				if($edit_mode) {
 					?>
 					<li>
 						<form method=post action=data/insert/relacio_persona_empresa.php>
+							Afegir nova connexió amb una persona:
 							<select class=update name=persona_id>
 								<?php
 									//busca persones no relacionades l'empresa
@@ -129,8 +128,7 @@
 										ORDER BY nom
 									";
 									$res=$mysql->query($sql) or die(mysqli_error($mysql));
-									while($row=mysqli_fetch_assoc($res))
-									{
+									while($row=mysqli_fetch_assoc($res)) {
 										$id=$row['id'];
 										$nom=$row['nom'];
 										echo "<option value=$id>$nom";
@@ -138,7 +136,7 @@
 								?>
 							</select>
 							<input name=empresa_id type=hidden value=<?php echo $empresa->id?>>
-							<button class=update>afegir connexió amb la persona seleccionada</button>
+							<button class=update>afegir connexió</button>
 						</form>
 					</li>
 					<?php
@@ -175,8 +173,7 @@
 		</span>
 		<ul id=casos>
 		<?php
-			while($row=mysqli_fetch_assoc($res))
-			{
+			while($row=mysqli_fetch_assoc($res)) {
 				$cas_id=$row['cas_id'];
 				$cas=$row['cas'];
 				echo "
@@ -216,8 +213,7 @@
 		</span>
 		<ul id=partits>
 		<?php
-			while($row=mysqli_fetch_assoc($res))
-			{
+			while($row=mysqli_fetch_assoc($res)) {
 				$partit_id=$row['partit_id'];
 				$partit=$row['partit'];
 				echo "
@@ -230,17 +226,16 @@
 	</li>
 
 	<!--data modificació-->
-	<li>
+	<li class=ultima_modificacio>
 		Última modificació: <?php echo date("d/m/Y H:i:s",strtotime($empresa->modificacio)) ?>
 	</li>
 
-	<!--esborrar-->
+	<!--esborrar empresa-->
 	<?php
-		if($edit_mode)
-		{
+		if($edit_mode) {
 			?>
 			<li>
-				<button class=update onclick=esborra('empreses',<?php echo $empresa->id ?>)>esborra empresa</button>
+				<button class=update onclick=esborra('empreses',<?php echo $empresa->id ?>)>esborra empresa (perill!)</button>
 			</li>
 			<?php
 		}

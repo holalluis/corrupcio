@@ -5,20 +5,15 @@
 		?>
 		<div id=edit_mode_header>
 			<div style=padding:0.5em> 
-				edit mode 
+				mode editar activat
 			</div>
 
 			<!--insert-->
 			<div>
-				<button onclick="window.location='insert.php'">Inserta persones, casos, partits, empreses</button>
+				<button onclick="window.location='insert.php'">Inserta dades</button>
 			</div>
 
-			<!--problemes-->
-			<div>
-				<button onclick="window.location='orfes.php'" title="Problemes base de dades">Problemes bbdd</button>
-			</div>
-
-			<!--view mode-->
+			<!--activa view mode-->
 			<div title="Opció per veure com queda la pàgina sense sortir de l'Edit mode">
 				<button onclick="window.location='edit/view_mode.php'">
 					<?php 
@@ -32,13 +27,18 @@
 				</button>
 			</div>
 
-			<!--edit mode-->
-			<div title="Permís per editar les pàgines">
+			<!--veure problemes base de dades-->
+			<div>
+				<button onclick="window.location='orfes.php'" title="Problemes base de dades">Veure problemes</button>
+			</div>
+
+			<!--sortir edit mode-->
+			<div title="Sortir del mode editar">
 				<button onclick="window.location='edit/logout.php'">Sortir</button>
 			</div>
 
 			<?php
-				//activa el view mode
+				//activar el view mode
 				if($view_mode) { $edit_mode=false; }
 			?>
 		</div>
@@ -58,7 +58,7 @@
 				background:#fafafa;
 				border-radius:0.1em;
 				border:none;
-				margin:2px;
+				margin:2px 1px;
 				padding:0.5em;
 			}
 			#edit_mode_header button:hover {

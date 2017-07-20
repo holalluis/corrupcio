@@ -1,15 +1,15 @@
+<!--connecta-->
+<?php include'mysql.php'?>
+
 <?php
 	//variables globals (MAJÚSCULA) (nota: edit mode i view mode haurien de ser majúscules, per seguir la convenció)
 	$NOM_APP="Enciclopèdia de la corrupció";
 ?>
 
-<!--connecta-->
-<?php include'mysql.php'?>
-
 <!--permís per edit mode, cookie fa de password-->
 <?php include'edit/edit_mode.php'?>
 
-<!--utf-8, css-->
+<!--utf-8 css-->
 <meta charset=utf-8>
 <meta name="viewport" content="width=device-width">
 <link rel="icon" href="img/ico.png" type="image/x-icon">

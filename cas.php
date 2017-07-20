@@ -22,6 +22,7 @@
 		$cas->estat=$row['estat'];
 		$cas->modificacio=$row['modificacio'];
 		$cas->descripcio=$row['descripcio'];
+		$cas->implicats=$row['implicats'];
 	?>
 	<style>
 		form {
@@ -41,7 +42,7 @@
 		if($edit_mode)
 		{
 			?>
-			<button class=update onclick="update('casos',<?php echo $cas->id ?>,'nom','<?php echo urlencode($cas->nom) ?>')">edita nom</button> 
+			<button class=update onclick="update('casos',<?php echo $cas->id ?>,'nom','<?php echo urlencode($cas->nom) ?>')">edita</button> 
 			<?php
 		}
 	?>
@@ -50,38 +51,37 @@
 <ul>
 	<!--descripció-->
 	<li>
-		Descripció: 
-		<p class=descripcio>
-			<?php 
-				if(trim($cas->descripcio)=="")
-				{
-					echo "<i class=blanc>~no hi ha descripció</i>";
-				}
-				else
-				{
-					echo "<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
+		<?php 
+			if(trim($cas->descripcio)=="")
+			{
+				echo "<i class=blanc>~no hi ha descripció</i>";
+			}
+			else
+			{
+				echo "
+					<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
 						$cas->descripcio
 					</div>
-					";
-				}
-				if($edit_mode)
-				{ 
-					?>
-					<button class=update onclick="update('casos','<?php echo $cas->id ?>','descripcio','<?php echo urlencode($cas->descripcio) ?>')">edita descripció</button>
-					<?php 
-				} 
-			?>
-		</p>
+				";
+			}
+			if($edit_mode)
+			{ 
+				?>
+				<button class=update onclick="update('casos','<?php echo $cas->id ?>','descripcio','<?php echo urlencode($cas->descripcio) ?>')">edita</button>
+				<?php 
+			} 
+		?>
 	</li>
+
+	<hr>
 
 	<!--any-->
 	<li>
 		Any: <?php echo $cas->any ?> 
 		<?php 
-			if($edit_mode)
-			{ 
+			if($edit_mode) { 
 				?>
-				<button class=update onclick="update('casos','<?php echo $cas->id ?>','any','<?php echo urlencode($cas->any) ?>')">edita any</button>
+				<button class=update onclick="update('casos','<?php echo $cas->id ?>','any','<?php echo urlencode($cas->any) ?>')">edita</button>
 				<?php 
 			} 
 		?>
@@ -97,7 +97,7 @@
 			if($edit_mode)
 			{ 
 				?>
-				<button class=update onclick="update('casos','<?php echo $cas->id ?>','espoli','<?php echo urlencode($cas->espoli) ?>')">edita espoli</button>
+				<button class=update onclick="update('casos','<?php echo $cas->id ?>','espoli','<?php echo urlencode($cas->espoli) ?>')">edita</button>
 				<?php 
 			} 
 		?>
@@ -118,11 +118,32 @@
 			if($edit_mode)
 			{ 
 				?>
-				<button class=update onclick="update('casos','<?php echo $cas->id ?>','estat','<?php echo urlencode($cas->estat) ?>')">edita estat</button>
+				<button class=update onclick="update('casos','<?php echo $cas->id ?>','estat','<?php echo urlencode($cas->estat) ?>')">edita</button>
 				<?php 
 			} 
 		?>
 	</li>
+
+	<!--implicats-->
+	<li>
+		Persones implicades: 
+		<?php 
+			if($cas->implicats=="") {
+				echo "<span class=blanc>~no hi ha persones implicades</span>";
+			}
+			else {
+				echo $cas->implicats;
+			}
+			if($edit_mode)
+			{ 
+				?>
+				<button class=update onclick="update('casos','<?php echo $cas->id ?>','implicats','<?php echo urlencode($cas->implicats) ?>')">edita</button>
+				<?php 
+			} 
+		?>
+	</li>
+
+	<hr>
 
 	<!--relacions persona-cas-->
 	<li>
@@ -139,7 +160,11 @@
 			$n=mysqli_num_rows($res);
 		?>
 		<span class=desplegable onclick=qs('#persones_relacionades').classList.toggle('invisible');>
-			Persones relacionades (<?php echo $n ?>)
+			Persones relacionades: <?php echo "$n de $cas->implicats" ?>
+			(<?php
+				$percentatge = $cas->implicats==0 ? "0,0" : number_format(100*$n/$cas->implicats,1,",",".");
+				echo "$percentatge % complet";
+			?>)
 		</span>
 		<ul id=persones_relacionades>
 			<?php
@@ -174,8 +199,8 @@
 					//btn edita relacio persona cas
 					if($edit_mode) {
 						echo "
-							<button class=update onclick=update('relacions_persona_cas',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita descripció</button> 
-							<button class=update onclick=esborra('relacions_persona_cas',$rel_id)>esborra connexió</button>
+							<button class=update onclick=update('relacions_persona_cas',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita</button> 
+							<button class='update esborra' onclick=esborra('relacions_persona_cas',$rel_id)>esborra connexió</button>
 						";
 					}
 				}
@@ -186,6 +211,7 @@
 					?>
 					<li>
 						<form method=post action=data/insert/relacio_persona_cas.php>
+							Afegir nova connexió amb una persona:
 							<select class=update name=persona_id>
 								<?php
 									//busca persones no implicades en el cas
@@ -205,7 +231,7 @@
 								?>
 							</select>
 							<input name=cas_id type=hidden value=<?php echo $cas->id?>>
-							<button class=update>afegir connexió amb la persona seleccionada</button>
+							<button class=update>afegir connexió</button>
 						</form>
 					</li>
 					<?php
@@ -239,8 +265,7 @@
 		</span>
 		<ul id=condemnes>
 			<?php
-				while($row=mysqli_fetch_assoc($res))
-				{
+				while($row=mysqli_fetch_assoc($res)) {
 					$id=$row['id'];
 					$anys_de_preso=$row['anys_de_preso'];
 					$any=$row['any'];
@@ -252,14 +277,16 @@
 				}
 			?>
 			<?php
-				if($edit_mode)
-				{
+				if($edit_mode) {
 					?>
 					<li>
+						<div>
+							Afegir nova condemna:
+						</div>
 						<form class=update method=post action=data/insert/condemna.php>
 							<input name=cas_id type=hidden value=<?php echo $cas->id?>>
 							<table>
-								<tr><th>Nova condemna<td>
+								<tr><th>Persona<td>
 									<select name=relacio_persona_cas_id>
 										<?php
 											//persones relacionades amb el cas
@@ -379,7 +406,7 @@
 	</li>
 
 	<!--data modificació-->
-	<li>
+	<li class=ultima_modificacio>
 		Última modificació: <?php echo date("d/m/Y H:i:s",strtotime($cas->modificacio)) ?>
 	</li>
 
@@ -389,7 +416,7 @@
 		{ 
 			?>
 			<li>
-				<button class=update onclick=esborra('casos',<?php echo $cas->id ?>)>esborra cas</button>
+				<button class=update onclick=esborra('casos',<?php echo $cas->id ?>)>esborra cas (perill!)</button>
 			</li>
 			<?php 
 		} 
