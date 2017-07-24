@@ -14,28 +14,35 @@
 	Casos de corrupció
 </h1>
 
-<div> <p class=descripcio>Casos de corrupció ordenats per nombre de persones implicades</p> </div>
-
-<!--menu ordenar casos per 'x'-->
-<p style=font-size:12px>
-	&darr; Ordenar per:
-	<select onchange="window.location='casos.php?order_by='+this.value">
+<!--menú ordenar casos per 'x'-->
 	<?php
-		$options = [
-			"nom"=>"Alfabèticament",
-			"any_desc"=>"Per any (més recent a dalt)",
-			"any_asc"=>"Per any (més antic a dalt)",
-			"implicats"=>"Per nombre de persones implicades",
+		$options=[
+			"nom"      =>"alfabèticament",
+			"any_desc" =>"per any (més recent a dalt)",
+			"any_asc"  =>"per any (més antic a dalt)",
+			"implicats"=>"per nombre de persones implicades",
 		];
-		foreach($options as $key=>$value){
-			if(isset($_GET['order_by']) && $_GET['order_by']==$key)
-				echo "<option value='$key' selected>$value";
-			else
-				echo "<option value='$key'>$value";
-		}
 	?>
-	</select>
-</p>
+	<div><p class=descripcio>
+		Casos de corrupció ordenats <?php 
+			$order_by_key = isset($_GET['order_by']) ? $_GET['order_by'] : "nom";
+			echo $options[$order_by_key];
+		?>
+	</p></div>
+	<p style=font-size:12px>
+		&darr; Ordena:
+		<select onchange="window.location='casos.php?order_by='+this.value">
+			<?php
+				foreach($options as $key=>$value){
+					if(isset($_GET['order_by']) && $_GET['order_by']==$key)
+						echo "<option value='$key' selected>$value";
+					else
+						echo "<option value='$key'>$value";
+				}
+			?>
+		</select>
+	</p>
+<!--/menú ordenar casos per 'x'-->
 
 <!--resum-->
 <table id=casos>
