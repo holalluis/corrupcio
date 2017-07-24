@@ -14,7 +14,7 @@
 	Empreses
 </h1>
 
-<div><p class=descripcio>Empreses afectades per casos de corrupció</p></div>
+<div><p class=descripcio>Empreses/institucions afectades per casos de corrupció</p></div>
 
 <!--resum-->
 <table id=empreses>
