@@ -34,16 +34,13 @@
 		#formularis li form table input{
 			line-height:2em;
 			font-size:14px;
-			width:200px;
 			outline:none;
 		}
 		#formularis li form table select {
-			width:100%;
 			padding:1em;;
 		}
 		#formularis li form table button {
-			width:100%;
-			padding:1em;;
+			padding:0.5em;;
 		}
 	</style>
 	<script>
@@ -66,7 +63,9 @@
 <div id=root>
 
 <h1>Inserta a la base de dades</h1>
-<div style=font-size:10px>Les dades amb un asterisc (*) són obligatòries</div>
+<div class=portrait_marge>
+	<div class=descripcio>Les dades amb un asterisc (*) són obligatòries</div>
+</div>
 
 <ul id=formularis>
 	<li>

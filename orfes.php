@@ -7,7 +7,9 @@
 <div id=root>
 
 <h1>Elements orfes de la base de dades (=SOLUCIONAR!)</h1>
-<ul style="padding-left:1em;list-style:decimal">
+
+<div class=portrait_marge> 
+<ul>
 	<li>
 		<h3>Persones sense cas de corrupció associat</h3>
 		<table>
@@ -67,4 +69,6 @@
 		<div>per fer</div>
 	</li>
 </ul>
+</div>
+
 </div>
