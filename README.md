@@ -8,9 +8,6 @@
 - llista de casos que hauríem de tenir dins la web.
 
 ## Tasques pendents (bugs/millores)
-- [neccesari] posar marges a css mobile (portrait) 
-- [necessari] implementar servei per enviar mails amb PHP.
-- [millora] implementar textarea customitzat per fer updates (edit mode).
 - [millora] anar directament a la pàgina de perfil després de crear un cas, persona, partit o empresa.
 - [millora] quan es crea una relació persona-cas, la data de modificació del cas i la persona també s'han d'actualitzar.
 - [millora] canviar llista de passwords per edit mode.
@@ -19,6 +16,9 @@
 - [millora] CRUD - fixar caràcters màxims per updates.
 - [millora] afegir nou camp a la taula 'casos' per l'any que es va destapar el cas "any-destapat"
 - [millora] detector automàtic de problemes: veure pendents a la mateixa pàgina.
+
+## Tasques completades
+- Implementar textarea customitzat per fer updates (edit mode).
 
 ## Wish list (idees noves)
 - Afegir informació geogràfica (mireia: he pensat que al cas es podria afegir quines comunitats autonomes afecta (veig que punica, per exemple, esquitxa 4 comunitats)).

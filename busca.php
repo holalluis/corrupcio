@@ -11,7 +11,9 @@
 <style>
 	#busca {
 		text-align:center;
+		padding:0.4em 0.5em 0.65em 0em;
 	}
+
 	#busca form {
 		display:flex;
 	}
@@ -19,7 +21,7 @@
 		padding-top:0.5em;
 		padding-bottom:0.5em;
 		padding-left:0.2em;
-		width:99%;
+		width:265px;
 		height:30px;
 		outline:none;
 		border:1px solid #ccc;
@@ -34,5 +36,12 @@
 	}
 	#busca form button:hover {
 		background:#eee;
+	}
+
+	/*mobile portrait*/
+	@media only screen and (max-width:560px) { 
+		#busca {
+			margin:auto;
+		}
 	}
 </style>

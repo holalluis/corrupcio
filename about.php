@@ -1,10 +1,5 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
-	<style>
-		#root {
-			max-width:50em;
-		}
-	</Style>
 </head><body>
 <?php include'navbar.php'?>
 
@@ -14,37 +9,40 @@
 
 <h3>Quant a</h3>
 
-	<div style=color:#545454;>
-		L'Enciclopèdia de la Corrupció va néixer el març del 2017,
-		com a exercici de modelització informàtica amb l'objectiu d'ordenar 
-		tot el conjunt de dades generades pels mitjans de comunicació arran dels 
-		nombrosos casos de corrupció política que s'han fet públics els últims anys.
-		<br><br>
-		El model consta de 4 taules principals:
-		<ul>
-			<li>1. Persones
-			<li>2. Casos
-			<li>3. Partits
-			<li>4. Empreses
-		</ul>
-		<br>
-		A més, existeixen 4 taules addicionals amb informació relacionada amb les 4 primeres:
-		<ul>
-			<li>5. Condemnes
-			<li>6. Relacions Persona-Cas
-			<li>7. Relacions Partit-Cas
-			<li>8. Relacions Empresa-Cas
-		</ul>
-		<br>
-		Els llenguatges de programació que fan funcionar la web són:
-		<ul>
-			<li>- PHP
-			<li>- HTML/CSS
-			<li>- Javascript
-			<li>- MySQL
-		</ul>
-	</div>
-
+<div style="color:#545454">
+	L'Enciclopèdia de la Corrupció va néixer el març del 2017
+	com a exercici de modelització informàtica amb l'objectiu d'aproximar (des d'un punt de
+	vist datacèntric) les dades generades pels mitjans de comunicació relacionades amb 
+	els casos de corrupció política públicats en els els últims anys.
+	<br><br>
+	El model (és a dir, l'estructura de la base de dades) consta de 4 taules principals:
+	<ul>
+		<li>1. Persones
+		<li>2. Casos
+		<li>3. Partits
+		<li>4. Empreses
+	</ul>
+	<br>
+	A més, existeixen 4 taules addicionals amb informació relacionada amb les 4 primeres:
+	<ul>
+		<li>5. Condemnes
+		<li>6. Relacions Persona-Cas
+		<li>7. Relacions Partit-Cas
+		<li>8. Relacions Empresa-Cas
+	</ul>
+	<br>
+	Els llenguatges de programació que fan funcionar la web són:
+	<ul>
+		<li>- PHP
+		<li>- HTML/CSS
+		<li>- Javascript
+		<li>- MySQL
+	</ul>
+	<!--link github-->
+	<p>
+		El codi font de la web es pot trobar aquí: 
+		<a href=https://github.com/holalluis/corrupcio target=_blank>github</a>
+	</p>
 	<!--links
 	-->
 	<div><h3>Links (provisional)</h3>
@@ -57,6 +55,7 @@
 			es.wikipedia.org/[...]</a>
 		</ul>
 	</div>
+</div>
 
 </div>
 

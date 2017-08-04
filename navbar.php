@@ -6,7 +6,7 @@
 	<div class=item_container>
 		<!--burger simbol-->
 		<div class='item burger' onclick=burgerClick()>
-			<div style="border-radius:0.3em;border:1px solid #666;height:30px;width:30px;">
+			<div style="margin:auto;border-radius:0.3em;border:1px solid #666;height:30px;width:30px;">
 				<hr><hr><hr><!--3 linies-->
 				<script>
 					//mostra o amaga items per mobil portrait
@@ -30,9 +30,7 @@
 	</div>
 
 	<!--menu buscar-->
-	<div class="item invisible">
-		<?php include'busca.php'?>
-	</div>
+	<?php include'busca.php'?>
 
 </div>
 
@@ -42,13 +40,13 @@
 		margin:0;
 		background:#e5e5e5;
 		border-bottom:1px solid #ccc;
-		text-shadow: 0 1px 0 #fff;
-		display:flex;/*the net ninja css flexbox playlist*/
+		text-shadow:0 1px 0 #fff;
+		display:flex;
 		flex-wrap:wrap;
 		justify-content:space-between;
 	}
 	#navbar .item_container {
-		display:flex;/*the net ninja css flexbox playlist*/
+		display:flex;
 		flex-wrap:wrap;
 		justify-content:space-between;
 	}
@@ -66,23 +64,32 @@
 	}
 
 	/*burger symbol*/
-	#navbar .item.burger {display:none}
+	#navbar .item.burger {
+		display:none;
+	}
 	#navbar .burger hr {width:40%;border-bottom:1px solid #666;}
 
 	/*mobile portrait*/
 	@media only screen and (max-width:560px) { 
-		#navbar .item_container{display:block;} 
+		#navbar .item_container{
+			display:block;
+			width:99%;
+		} 
 		#navbar .item.burger{
 			display:block;
 			text-align:center;
-			width:32px;
 		}
-		#navbar .item_container .invisible {
+		#navbar .item_container .item.invisible {
 			color:transparent;
 			visibility:hidden;
 			height:0;
 			padding:0;
 			transition:all 0.15s;
+		}
+		#navbar .item {
+			display:block;
+			text-align:center;
+			margin:auto;
 		}
 	}
 </style>

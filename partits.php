@@ -14,7 +14,7 @@
 	Partits
 </h1>
 
-<p class=descripcio>Tots els partits polítics afectats per casos de corrupció</p>
+<p class=descripcio>Partits polítics afectats per casos de corrupció</p>
 
 <!--resum-->
 <table id=partits>
