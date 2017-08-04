@@ -14,7 +14,9 @@
 	Condemnes
 </h1>
 
-<div><p class=descripcio>Condemnes caigudes a persones implicades en casos de corrupció</p></div>
+<div class=portrait_marge>
+	<p class=descripcio>Condemnes caigudes a persones implicades en casos de corrupció</p>
+</div>
 
 <!--resum-->
 <table id=condemnes>

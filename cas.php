@@ -50,7 +50,7 @@
 
 <ul>
 	<!--descripció-->
-	<li>
+	<li class=portrait_marge>
 		<?php 
 			if(trim($cas->descripcio)=="")
 			{
@@ -76,7 +76,7 @@
 	<hr>
 
 	<!--any-->
-	<li>
+	<li class=portrait_marge>
 		Any: <?php echo $cas->any ?> 
 		<?php 
 			if($edit_mode) { 
@@ -88,7 +88,7 @@
 	</li>
 
 	<!--espoli-->
-	<li>
+	<li class=portrait_marge>
 		Espoli: 
 		<?php 
 			echo number_format($cas->espoli,0,",",".");
@@ -104,7 +104,7 @@
 	</li>
 
 	<!--estat-->
-	<li>
+	<li class=portrait_marge>
 		Estat: 
 		<?php 
 			if($cas->estat=="")
@@ -125,7 +125,7 @@
 	</li>
 
 	<!--implicats-->
-	<li>
+	<li class=portrait_marge>
 		Persones implicades: 
 		<?php 
 			if($cas->implicats=="") {
@@ -142,8 +142,6 @@
 			} 
 		?>
 	</li>
-
-	<hr>
 
 	<!--relacions persona-cas-->
 	<li>

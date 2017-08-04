@@ -14,7 +14,9 @@
 	Persones
 </h1>
 
-<p class=descripcio>Persones relacionades amb casos de corrupció</p>
+<div class=portrait_marge>
+	<p class=descripcio>Persones relacionades amb casos de corrupció</p>
+</div>
 
 <?php
 	if($edit_mode)

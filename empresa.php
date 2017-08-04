@@ -43,7 +43,7 @@
 
 <ul>
 	<!--descripció-->
-	<li>
+	<li class=portrait_marge>
 		<?php 
 			if(trim($empresa->descripcio)=="") {
 				echo "<i class=blanc>~no hi ha descripció</i>";
@@ -64,8 +64,6 @@
 			} 
 		?>
 	</li>
-
-	<hr>
 
 	<!--persones relacionades-->
 	<li>

@@ -11,7 +11,7 @@
 <style>
 	#busca {
 		text-align:center;
-		padding:0.4em 0.5em 0.65em 0em;
+		padding:0.4em 0.5em 0.65em 0.5em;
 	}
 
 	#busca form {

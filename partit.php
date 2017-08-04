@@ -43,7 +43,7 @@
 
 <ul>
 	<!--descripció-->
-	<li>
+	<li class=portrait_marge>
 		<?php 
 			if(trim($partit->descripcio)=="")
 			{
@@ -68,7 +68,7 @@
 		?>
 	</li>
 
-	<li>
+	<li class=portrait_marge>
 		Nom sencer: <?php echo $partit->nom_llarg ?>
 		<?php 
 			if($edit_mode)
@@ -81,8 +81,6 @@
 			} 
 		?>
 	</li>
-
-	<hr>
 
 	<li>
 		<?php

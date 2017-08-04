@@ -75,6 +75,10 @@
 			display:block;
 			width:99%;
 		} 
+		#navbar .item:hover {
+			background:inherit;
+			color:inherit;
+		}
 		#navbar .item.burger{
 			display:block;
 			text-align:center;

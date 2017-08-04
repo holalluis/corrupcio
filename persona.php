@@ -47,7 +47,7 @@
 
 <ul>
 	<!--data de naixement-->
-	<li>
+	<li class=portrait_marge>
 		Naixement:
 		<?php echo date("d/m/Y",strtotime($persona->naixement)) ?>
 		(<?php 
@@ -70,7 +70,6 @@
 			}
 		?>
 	</li>
-	<hr>
 
 	<!--relacions persona cas-->
 	<li>

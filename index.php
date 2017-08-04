@@ -20,7 +20,7 @@
 <h1>Enciclopèdia de la corrupció <i class=blanc>v0.1</i></h1>
 
 <!--resum-->
-<div>
+<div class=portrait_marge>
 	<ul>
 		<?php
 			function compta($taula){
@@ -47,8 +47,6 @@
 			?>)
 	</ul>
 </div>
-
-<hr>
 
 <!--top 5 casos-->
 <div>

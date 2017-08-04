@@ -14,7 +14,9 @@
 	Partits
 </h1>
 
-<p class=descripcio>Partits polítics afectats per casos de corrupció</p>
+<div class=portrait_marge>
+	<p class=descripcio>Partits polítics afectats per casos de corrupció</p>
+</div>
 
 <!--resum-->
 <table id=partits>

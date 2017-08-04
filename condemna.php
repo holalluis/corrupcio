@@ -34,7 +34,7 @@
 	<span onclick=window.location='condemnes.php'>Condemnes</span> &rsaquo; condemna
 </h1>
 
-<ul>
+<ul class=portrait_marge>
 	<!--persona-->
 	<li>
 		Persona: 
@@ -107,22 +107,22 @@
 			</button>
 		<?php } ?>
 	</li>
-
-	<!--data modificació-->
-	<li class=ultima_modificacio>
-		Última modificació: <?php echo date("d/m/Y H:i:s",strtotime($condemna->modificacio)) ?>
-	</li>
-
-	<!--esborrar-->
-	<?php
-		if($edit_mode) {
-			?>
-			<li>
-			  <button class=update onclick=esborra('condemnes',<?php echo $condemna->id ?>)>esborra condemna (perill!)</button>
-			</li>
-			<?php
-		}
-	?>
 </ul>
+
+<!--data modificació-->
+<div class=ultima_modificacio>
+	Última modificació: <?php echo date("d/m/Y H:i:s",strtotime($condemna->modificacio)) ?>
+</div>
+
+<!--esborrar-->
+<?php
+	if($edit_mode) {
+		?>
+		<li>
+			<button class=update onclick=esborra('condemnes',<?php echo $condemna->id ?>)>esborra condemna (perill!)</button>
+		</li>
+		<?php
+	}
+?>
 
 </div>

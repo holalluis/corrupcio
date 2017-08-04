@@ -2,6 +2,12 @@
 	<?php include'imports.php'?>
 	<style>
 		#navbar div[pagina=casos]{color:black}
+		
+		@media only screen and (max-width:560px) { 
+			progress{
+				display:none;
+			}
+		}
 	</style>
 </head><body>
 <?php include'navbar.php'?>
@@ -23,25 +29,27 @@
 			"implicats"=>"per nombre de persones implicades",
 		];
 	?>
-	<div><p class=descripcio>
-		Casos de corrupció ordenats <?php 
-			$order_by_key = isset($_GET['order_by']) ? $_GET['order_by'] : "nom";
-			echo $options[$order_by_key];
-		?>
-	</p></div>
-	<p style=font-size:12px>
-		&darr; Ordena:
-		<select onchange="window.location='casos.php?order_by='+this.value">
-			<?php
-				foreach($options as $key=>$value){
-					if(isset($_GET['order_by']) && $_GET['order_by']==$key)
-						echo "<option value='$key' selected>$value";
-					else
-						echo "<option value='$key'>$value";
-				}
+	<div class=portrait_marge>
+		<div><p class=descripcio>
+			Casos de corrupció ordenats <?php 
+				$order_by_key = isset($_GET['order_by']) ? $_GET['order_by'] : "nom";
+				echo $options[$order_by_key];
 			?>
-		</select>
-	</p>
+		</p></div>
+		<p style=font-size:12px>
+			&darr; Ordena:
+			<select onchange="window.location='casos.php?order_by='+this.value">
+				<?php
+					foreach($options as $key=>$value){
+						if(isset($_GET['order_by']) && $_GET['order_by']==$key)
+							echo "<option value='$key' selected>$value";
+						else
+							echo "<option value='$key'>$value";
+					}
+				?>
+			</select>
+		</p>
+	</div>
 <!--/menú ordenar casos per 'x'-->
 
 <!--resum-->
@@ -85,10 +93,9 @@
 				<tr>
 					<td><a href=cas.php?id=$id>$nom</a>
 					<td class=numero>$any
-					<td class=numero>$registrats 
-					de $implicats persones
+					<td class=numero> $registrats de $implicats
 					<td><progress max=100 value=$percentatge></progress>
-					<td align=right>".number_format($percentatge,1,",",".")." % 
+					<td class=numero>".number_format($percentatge,1,",",".")." % 
 			";
 		}
 	?>

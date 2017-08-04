@@ -13,13 +13,12 @@
 			background:linear-gradient(#eee,#fafafa);
 		}
 		#root button.toggleVisib:before {
-			content:'-';
+			content:'v';
 		}
 		#root button.toggleVisib.plegat:before {
-			content:'+';
+			content:'>';
 		}
 		#root h3 {
-			padding-left:0;
 			margin-bottom:5px;
 			margin-top:10px;
 		}
@@ -46,12 +45,15 @@
 	Connexions
 </h1>
 
-<p class=descripcio>Connexions entre persones amb casos, partits i/o empreses</p>
+<div class=portrait_marge>
+	<p class=descripcio>Connexions entre persones amb casos, partits i/o empreses</p>
+</div>
 
-<h3>
+<h3 class=portrait_marge>
 	<button class=toggleVisib onclick=toggleVisib('relacions_persona_cas',this)></button>
 	Persona &rarr; Cas
 </h3>
+
 <div>
 <table id=relacions_persona_cas>
 	<?php
@@ -90,7 +92,7 @@
 </table>
 </div>
 
-<h3>
+<h3 class=portrait_marge>
 	<button class=toggleVisib onclick=toggleVisib('relacions_persona_partit',this)></button>
 	Persona &rarr; Partit 
 </h3>
@@ -132,7 +134,7 @@
 </table>
 </div>
 
-<h3>
+<h3 class=portrait_marge>
 	<button class=toggleVisib onclick=toggleVisib('relacions_persona_empresa',this)></button>
 	Persona &rarr; Empresa
 </h3>
