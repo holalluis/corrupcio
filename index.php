@@ -5,7 +5,7 @@
 	</style>
 	<style>
 		#top5{
-			margin-top:10px;
+			margin-top:20px;
 		}
 		#top5 td, #top5 th{
 			padding:0.3em 0.5em;
@@ -17,7 +17,7 @@
 <div id=root>
 
 <!--titol-->
-<h1>Enciclopèdia de la corrupció <i class=blanc>beta</i></h1>
+<h1>Enciclopèdia de la corrupció <i class=blanc>beta (en desenvolupament)</i></h1>
 
 <!--resum-->
 <div class=portrait_marge>

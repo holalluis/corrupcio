@@ -2,7 +2,7 @@
 	body{
 		margin:0 auto;
 		overflow-y:scroll;
-		font-family:'Lucida Grande',helvetica,arial,verdana,sans-serif;
+		font-family:Lucida Grande,helvetica,arial,verdana,sans-serif;
 	}
 	h1{
 		font-size:18px;

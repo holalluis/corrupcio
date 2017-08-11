@@ -16,7 +16,7 @@
 
 <!--descripcio-->
 <div class=portrait_marge>
-	<p class=descripcio>Condemnes caigudes a persones implicades en casos de corrupció</p>
+	<p class=descripcio>Condemnes i/o multes caigudes a persones implicades en casos de corrupció</p>
 </div>
 
 <!--resum-->
