@@ -1,7 +1,7 @@
 <div id=footer>
 	<div class=titol>Corrupció <?php echo date("Y")?></div>
-	<div class=item onclick=window.location='contact.php'>Contacta</div>
-	<div class=item onclick=window.location='about.php'>Quant a</div>
+	<div class=item pagina=contact onclick=window.location='contact.php'>Contacta</div>
+	<div class=item pagina=about   onclick=window.location='about.php'>Quant a</div>
 	<!--edit mode-->
 	<?php
 		if(!$edit_mode and !$view_mode) {
@@ -39,11 +39,15 @@
 		flex-wrap:wrap;
 	}
 	#footer .titol {
-		padding:0.4em 0.5em 0.65em 0.5em;
+		padding:4px 5px 6px 5px;
+		line-height:30px;
 		color:black;
+		text-shadow:0 1px 0 #fff;
+		font-family:monospace;
 	}
 	#footer .item {
-		padding:0.4em 0.5em 0.65em 0.5em;
+		padding:4px 5px 6px 5px;
+		line-height:30px;
 		cursor:pointer;
 		color:rgba(0,0,0,0.55);
 	}

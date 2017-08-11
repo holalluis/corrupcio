@@ -46,7 +46,7 @@
 	<li class=portrait_marge>
 		<?php 
 			if(trim($empresa->descripcio)=="") {
-				echo "<i class=blanc>~no hi ha descripció</i>";
+				echo "<i class=blanc>no hi ha descripció</i>";
 			}
 			else {
 				echo "
@@ -83,12 +83,15 @@
 			Persones relacionades (<?php echo $n ?>)
 		</span>
 		<ul id=persones>
+			<?php //si no hi ha elements
+				if($n==0){ ?><li class="item blanc">no hi ha resultats</li><?php }
+			?>
 			<?php
 				while($row=mysqli_fetch_assoc($res)) {
 					$rel_id=$row['id'];
 					$persona=$row['persona'];
 					$persona_id=$row['persona_id'];
-					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
+					$descripcio=$row['descripcio']=="" ? "<i class=blanc>no hi ha descripció</i>" : $row['descripcio'];
 					echo "
 						<li class=item>
 						<a href=persona.php?id=$persona_id>$persona</a>
@@ -170,16 +173,19 @@
 			Casos relacionats (<?php echo $n ?>)
 		</span>
 		<ul id=casos>
-		<?php
-			while($row=mysqli_fetch_assoc($res)) {
-				$cas_id=$row['cas_id'];
-				$cas=$row['cas'];
-				echo "
-					<li class=item> 
-					<a href=cas.php?id=$cas_id>$cas</a>
-				";
-			}
-		?>
+			<?php //si no hi ha elements
+				if($n==0){ ?><li class="item blanc">no hi ha resultats</li><?php }
+			?>
+			<?php
+				while($row=mysqli_fetch_assoc($res)) {
+					$cas_id=$row['cas_id'];
+					$cas=$row['cas'];
+					echo "
+						<li class=item> 
+						<a href=cas.php?id=$cas_id>$cas</a>
+					";
+				}
+			?>
 		</ul>
 	</li>
 	<!--relacions persona-empresa * persona-partit-->
@@ -210,16 +216,19 @@
 			Partits relacionats (<?php echo $n ?>)
 		</span>
 		<ul id=partits>
-		<?php
-			while($row=mysqli_fetch_assoc($res)) {
-				$partit_id=$row['partit_id'];
-				$partit=$row['partit'];
-				echo "
-					<li class=item> 
-					<a href=partit.php?id=$partit_id>$partit</a>
-				";
-			}
-		?>
+			<?php //si no hi ha elements
+				if($n==0){ ?><li class="item blanc">no hi ha resultats</li><?php }
+			?>
+			<?php
+				while($row=mysqli_fetch_assoc($res)) {
+					$partit_id=$row['partit_id'];
+					$partit=$row['partit'];
+					echo "
+						<li class=item> 
+						<a href=partit.php?id=$partit_id>$partit</a>
+					";
+				}
+			?>
 		</ul>
 	</li>
 

@@ -6,28 +6,30 @@
 
 ## Temes a discutir (grup)
 - llista de casos que hauríem de tenir dins la web.
+- comprar domini (corrupcio.cat?)
 
-## Tasques pendents (bugs/millores)
-- [millora] anar directament a la pàgina de perfil després de crear un cas, persona, partit o empresa.
-- [millora] quan es crea una relació persona-cas, la data de modificació del cas i la persona també s'han d'actualitzar.
-- [millora] canviar llista de passwords per edit mode.
-- [millora] canviar el nom del camp "delictes" per "descripcio" a la taula "condemnes".
-- [millora] CRUD - fixar caràcters màxims per inserts.
-- [millora] CRUD - fixar caràcters màxims per updates.
-- [millora] afegir nou camp a la taula 'casos' per l'any que es va destapar el cas "any-destapat"
-- [millora] detector automàtic de problemes: veure pendents a la mateixa pàgina.
+## TASQUES PENDENTS
+  [bugs o millores]:
+    - afegir nou camp a la taula 'casos' per l'any que es va destapar el cas "any-destapat"
+    - anar directament a la pàgina de perfil després de crear un cas, persona, partit o empresa.
+    - quan es crea una relació persona-cas, la data de modificació del cas i la persona també s'han d'actualitzar.
+    - canviar llista de passwords per edit mode.
+    - CRUD - fixar caràcters màxims per inserts.
+    - CRUD - fixar caràcters màxims per updates.
+    - detector automàtic de problemes: veure pendents a la mateixa pàgina.
 
-## Tasques completades
-- Implementar textarea customitzat per fer updates (edit mode).
+  [completades]:
+    - Implementar textarea customitzat per fer updates (edit mode).
 
-## Wish list (idees noves)
-- Afegir informació geogràfica (mireia: he pensat que al cas es podria afegir quines comunitats autonomes afecta (veig que punica, per exemple, esquitxa 4 comunitats)).
-- Poder descarregar base de dades sencera (mysqldump).
-- Gràfic de barres sota del top5 a pàgina inicial.
-- Afegir un registre de canvis.
-	- 1. Col.laboradors (user, password).
-	- 2. Log: canvis associats a un col.laborador. 
-	- 3. Poder desfer canvis? (control de versions).
+  [wish list (idees noves)]:
+    - posar data de defunció de les persones per saber si estan vives o mortes.
+    - Afegir informació geogràfica (mireia: he pensat que al cas es podria afegir quines comunitats autonomes afecta (veig que punica, per exemple, esquitxa 4 comunitats)).
+    - Poder descarregar base de dades sencera (mysqldump).
+    - Gràfic de barres sota del top5 a pàgina inicial.
+    - Afegir un registre de canvis.
+      - 1. Col.laboradors (user, password).
+      - 2. Log: canvis associats a un col.laborador. 
+      - 3. Poder desfer canvis? (control de versions).
 
 ## CSS breakpoints triats (mòbils i tablets)
 - 560px (mobil portrait) (navbar).

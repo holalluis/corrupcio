@@ -1,7 +1,7 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
 	<?php
-		/* INPUT: id del partit*/
+		/*INPUT: id del partit*/
 		$id=$_GET['id'] or die('partit id no especificat');
 
 		//sql query
@@ -32,8 +32,7 @@
 <h1>
 	<span onclick=window.location='partits.php'>Partits</span> &rsaquo; <?php echo $partit->nom ?>
 	<?php 
-		if($edit_mode)
-		{
+		if($edit_mode) {
 			?>
 			<button class=update onclick="update('partits',<?php echo $partit->id ?>,'nom','<?php echo urlencode($partit->nom) ?>')">edita</button> 
 			<?php
@@ -45,20 +44,17 @@
 	<!--descripció-->
 	<li class=portrait_marge>
 		<?php 
-			if(trim($partit->descripcio)=="")
-			{
-				echo "<i class=blanc>~no hi ha descripció</i>";
+			if(trim($partit->descripcio)=="") {
+				echo "<i class=blanc>no hi ha descripció</i>";
 			}
-			else
-			{
+			else {
 				echo "
 					<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
 						$partit->descripcio
 					</div>
 				";
 			}
-			if($edit_mode)
-			{ 
+			if($edit_mode) { 
 				?>
 				<button class=update onclick="update('partits','<?php echo $partit->id ?>','descripcio','<?php echo urlencode($partit->descripcio) ?>')">
 					edita
@@ -68,11 +64,14 @@
 		?>
 	</li>
 
+	<!--nom sencer-->
 	<li class=portrait_marge>
-		Nom sencer: <?php echo $partit->nom_llarg ?>
+		Nom sencer: 
+		<span class=descripcio>
+			<?php echo $partit->nom_llarg ?>
+		</span>
 		<?php 
-			if($edit_mode)
-			{ 
+			if($edit_mode) { 
 				?>
 				<button class=update onclick="update('partits','<?php echo $partit->id ?>','nom_llarg','<?php echo urlencode($partit->nom_llarg) ?>')">
 					edita
@@ -82,6 +81,7 @@
 		?>
 	</li>
 
+	<!--persones relacionades-->
 	<li>
 		<?php
 			$sql="
@@ -99,13 +99,15 @@
 			Persones relacionades (<?php echo $n ?>)
 		</span>
 		<ul id=persones_relacionades>
+			<?php //si no hi ha elements
+				if($n==0){ ?><li class="item blanc">no hi ha resultats</li><?php }
+			?>
 			<?php
-				while($row=mysqli_fetch_assoc($res))
-				{
+				while($row=mysqli_fetch_assoc($res)) {
 					$rel_id=$row['id'];
 					$persona=$row['persona'];
 					$persona_id=$row['persona_id'];
-					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
+					$descripcio=$row['descripcio']=="" ? "<i class=blanc>no hi ha descripció</i>" : $row['descripcio'];
 					echo "
 						<li class=item>
 						<a href=persona.php?id=$persona_id>$persona</a>
@@ -117,8 +119,7 @@
 						</div>
 					";
 
-					if($edit_mode)
-					{
+					if($edit_mode) {
 						echo "
 							<button class=update onclick=update('relacions_persona_partit',$rel_id,'descripcio','".urlencode($row['descripcio'])."')>edita</button> 
 							<button class=update onclick=esborra('relacions_persona_partit',$rel_id)>esborra connexió</button>
@@ -189,6 +190,9 @@
 			Casos relacionats (<?php echo $n ?>)
 		</span>
 		<ul id=casos>
+			<?php //si no hi ha elements
+				if($n==0){ ?><li class="item blanc">no hi ha resultats</li><?php }
+			?>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{
@@ -231,17 +235,19 @@
 			Empreses relacionades (<?php echo $n ?>)
 		</span>
 		<ul id=empreses>
-		<?php
-			while($row=mysqli_fetch_assoc($res))
-			{
-				$empresa_id=$row['empresa_id'];
-				$empresa=$row['empresa'];
-				echo "
-					<li class=item> 
-					<a href=empresa.php?id=$empresa_id>$empresa</a>
-				";
-			}
-		?>
+			<?php //si no hi ha elements
+				if($n==0){ ?><li class="item blanc">no hi ha resultats</li><?php }
+			?>
+			<?php
+				while($row=mysqli_fetch_assoc($res)) {
+					$empresa_id=$row['empresa_id'];
+					$empresa=$row['empresa'];
+					echo "
+						<li class=item> 
+						<a href=empresa.php?id=$empresa_id>$empresa</a>
+					";
+				}
+			?>
 		</ul>
 	</li>
 

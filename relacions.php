@@ -25,6 +25,10 @@
 		#root div.invisible {
 			display:none;
 		}
+		/*camp relacionat amb la persona: cas, partit o empresa*/
+		table[id^=relacions_persona] td:nth-child(2){
+			font-size:11px;
+		}
 	</style>
 	<script>
 		//fes visible o invisible la taula id
@@ -45,15 +49,16 @@
 	Connexions
 </h1>
 
+<!--descripcio-->
 <div class=portrait_marge>
 	<p class=descripcio>Connexions entre persones amb casos, partits i/o empreses</p>
 </div>
 
+<!--persona-cas-->
 <h3 class=portrait_marge>
 	<button class=toggleVisib onclick=toggleVisib('relacions_persona_cas',this)></button>
 	Persona &rarr; Cas
 </h3>
-
 <div>
 <table id=relacions_persona_cas>
 	<?php
@@ -74,7 +79,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
 			{
-				echo "<tr><td><span class=blanc>~No hi ha resultats</span>";
+				echo "<tr><td><span class=blanc>no hi ha resultats</span>";
 			}
 			while($row=mysqli_fetch_assoc($res))
 			{
@@ -82,7 +87,7 @@
 				$persona_id=$row['persona_id'];
 				$cas=$row['cas'];
 				$cas_id=$row['cas_id'];
-				$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
+				$descripcio=$row['descripcio']=="" ? "<i class=blanc>no hi ha descripció</i>" : $row['descripcio'];
 				echo "<tr> 
 					<td><a href=persona.php?id=$persona_id>$persona</a> 
 					<td><a href=cas.php?id=$cas_id>$cas</a>
@@ -92,6 +97,7 @@
 </table>
 </div>
 
+<!--persona-partit-->
 <h3 class=portrait_marge>
 	<button class=toggleVisib onclick=toggleVisib('relacions_persona_partit',this)></button>
 	Persona &rarr; Partit 
@@ -116,7 +122,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
 			{
-				echo "<tr><td><span class=blanc>~No hi ha resultats</span>";
+				echo "<tr><td><span class=blanc>no hi ha resultats</span>";
 			}
 			while($row=mysqli_fetch_assoc($res))
 			{
@@ -124,7 +130,7 @@
 				$persona_id=$row['persona_id'];
 				$partit=$row['partit'];
 				$partit_id=$row['partit_id'];
-				$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
+				$descripcio=$row['descripcio']=="" ? "<i class=blanc>no hi ha descripció</i>" : $row['descripcio'];
 				echo "<tr>
 					<td><a href=persona.php?id=$persona_id>$persona</a>
 					<td><a href=partit.php?id=$partit_id>$partit</a>
@@ -134,6 +140,7 @@
 </table>
 </div>
 
+<!--persona-empresa-->
 <h3 class=portrait_marge>
 	<button class=toggleVisib onclick=toggleVisib('relacions_persona_empresa',this)></button>
 	Persona &rarr; Empresa
@@ -156,7 +163,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
 			{
-				echo "<tr><td><span class=blanc>~No hi ha resultats</span>";
+				echo "<tr><td><span class=blanc>no hi ha resultats</span>";
 			}
 			while($row=mysqli_fetch_assoc($res))
 			{
@@ -164,7 +171,7 @@
 				$persona_id=$row['persona_id'];
 				$empresa=$row['empresa'];
 				$empresa_id=$row['empresa_id'];
-				$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
+				$descripcio=$row['descripcio']=="" ? "<i class=blanc>no hi ha descripció</i>" : $row['descripcio'];
 				echo "<tr>
 					<td><a href=persona.php?id=$persona_id>$persona</a>
 					<td><a href=empresa.php?id=$empresa_id>$empresa</a>

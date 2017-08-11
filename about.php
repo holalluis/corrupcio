@@ -1,5 +1,8 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
+	<style>
+		#footer div.item[pagina=about]{ color:black; }
+	</style>
 </head><body>
 <?php include'navbar.php'?>
 

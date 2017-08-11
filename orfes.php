@@ -22,7 +22,7 @@
 				";
 				$res=$mysql->query($sql) or die(mysqli_error($mysql));
 				if(mysqli_num_rows($res)==0) {
-					echo "<tr><td><span class=blanc style=color:green>~No hi ha resultats: Totes les persones tenen un cas associat :)</span>";
+					echo "<tr><td><span class=blanc style=color:green>no hi ha resultats: Totes les persones tenen un cas associat :)</span>";
 				}
 				while($row=mysqli_fetch_assoc($res)) {
 					$id=$row['id'];
@@ -56,17 +56,17 @@
 
 	<!--per fer-->
 	<li>Casos de corrupció sense persones vinculades
-		<div>per fer</div>
+		<div>[per fer]</div>
 	</li>
 	<li>Partits sense persones vinculades
-		<div>per fer</div>
+		<div>[per fer]</div>
 	</li>
 	<li>Empreses sense persones vinculades
-		<div>per fer</div>
+		<div>[per fer]</div>
 	</li>
 	<li>
 		Noms repetits (casos,persones,partits,empreses)
-		<div>per fer</div>
+		<div>[per fer]</div>
 	</li>
 </ul>
 </div>

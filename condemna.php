@@ -31,54 +31,58 @@
 <div id=root>
 
 <h1>
-	<span onclick=window.location='condemnes.php'>Condemnes</span> &rsaquo; condemna
+	<span onclick=window.location='condemnes.php'>Condemnes</span> <!--&rsaquo; condemna-->
 </h1>
 
 <ul class=portrait_marge>
 	<!--persona-->
 	<li>
-		Persona: 
-		<?php
-			$sql="
-				SELECT persones.nom AS persona, persones.id AS persona_id
-				FROM persones, relacions_persona_cas AS rel
-				WHERE		
-					persones.id=rel.persona_id AND
-					rel.id=$condemna->relacio_persona_cas_id
-			";
-			$res=$mysql->query($sql) or die(mysqli_error($mysql));
-			$row=mysqli_fetch_assoc($res);
-			$persona=$row['persona'];
-			$persona_id=$row['persona_id'];
-			echo "<a href=persona.php?id=$persona_id>$persona</a>";
-		?>
+		Persona condemnada: 
+		<span class=descripcio>
+			<?php
+				$sql="
+					SELECT persones.nom AS persona, persones.id AS persona_id
+					FROM persones, relacions_persona_cas AS rel
+					WHERE		
+						persones.id=rel.persona_id AND
+						rel.id=$condemna->relacio_persona_cas_id
+				";
+				$res=$mysql->query($sql) or die(mysqli_error($mysql));
+				$row=mysqli_fetch_assoc($res);
+				$persona=$row['persona'];
+				$persona_id=$row['persona_id'];
+				echo "<a href=persona.php?id=$persona_id>$persona</a>";
+			?>
+		</span>
 	</li>
 
   <!--cas-->
 	<li>
 		Cas: 
-		<?php
-			$sql="
-				SELECT casos.nom AS cas, casos.id AS cas_id
-				FROM casos, relacions_persona_cas AS rel
-				WHERE		
-					casos.id=rel.cas_id AND
-					rel.id=$condemna->relacio_persona_cas_id
-			";
-			$res=$mysql->query($sql) or die(mysqli_error($mysql));
-			$row=mysqli_fetch_assoc($res);
-			$cas=$row['cas'];
-			$cas_id=$row['cas_id'];
-			echo "<a href=cas.php?id=$cas_id>$cas</a>";
-		?>
+		<span class=descripcio>
+			<?php
+				$sql="
+					SELECT casos.nom AS cas, casos.id AS cas_id
+					FROM casos, relacions_persona_cas AS rel
+					WHERE		
+						casos.id=rel.cas_id AND
+						rel.id=$condemna->relacio_persona_cas_id
+				";
+				$res=$mysql->query($sql) or die(mysqli_error($mysql));
+				$row=mysqli_fetch_assoc($res);
+				$cas=$row['cas'];
+				$cas_id=$row['cas_id'];
+				echo "<a href=cas.php?id=$cas_id>$cas</a>";
+			?>
+		</span>
 	</li>
 
 	<!--anys de presó-->
 	<li>
 		Anys de presó:
-		<?php
-			echo $condemna->anys_de_preso;
-		?>
+		<span class=descripcio>
+			<?php echo $condemna->anys_de_preso ?>
+		</span>
 		<?php if($edit_mode){ ?>
 			<button class=update onclick="update('condemnes','<?php echo $condemna->id ?>','anys_de_preso', '<?php echo urlencode($condemna->anys_de_preso) ?>')">
 				edita
@@ -89,7 +93,9 @@
 	<!--inici condemna-->
 	<li>
 		Inici condemna:
-		<?php echo $condemna->any ?>
+		<span class=descripcio>
+			<?php echo $condemna->any ?>
+		</span>
 		<?php if($edit_mode){ ?>
 			<button class=update onclick="update('condemnes','<?php echo $condemna->id ?>','any', '<?php echo urlencode($condemna->any) ?>')">edita</button>
 		<?php } ?>
@@ -107,22 +113,21 @@
 			</button>
 		<?php } ?>
 	</li>
+
+	<!--data modificació-->
+	<li class=ultima_modificacio>
+		Última modificació: <?php echo date("d/m/Y H:i:s",strtotime($condemna->modificacio)) ?>
+	</li>
+
+	<!--esborrar-->
+	<?php
+		if($edit_mode) { ?>
+			<li>
+				<button class=update onclick=esborra('condemnes',<?php echo $condemna->id ?>)>esborra condemna (perill!)</button>
+			</li>
+			<?php
+		}
+	?>
 </ul>
-
-<!--data modificació-->
-<div class=ultima_modificacio>
-	Última modificació: <?php echo date("d/m/Y H:i:s",strtotime($condemna->modificacio)) ?>
-</div>
-
-<!--esborrar-->
-<?php
-	if($edit_mode) {
-		?>
-		<li>
-			<button class=update onclick=esborra('condemnes',<?php echo $condemna->id ?>)>esborra condemna (perill!)</button>
-		</li>
-		<?php
-	}
-?>
 
 </div>

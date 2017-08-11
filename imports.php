@@ -16,7 +16,14 @@
 <link rel="stylesheet" href="css.css">
 <meta name="description" content="corrupció">
 
-<!--title--><title>Corrupció</title>
+<title>
+	Corrupció
+	<?php
+		if($_SERVER['SERVER_NAME']=='localhost'){
+			echo "(localhost)";
+		}
+	?>
+</title>
 
 <?php 
 	if($edit_mode){

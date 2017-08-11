@@ -20,6 +20,11 @@
 
 <!--resum-->
 <table id=empreses>
+	<style>
+		#empreses td:nth-child(n+2){
+			font-size:11px;
+		}
+	</style>
 	<?php
 			$sql="
 				SELECT e.id, e.nom, COUNT(rel.id) AS persones
@@ -32,7 +37,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
 			{
-				echo "<tr><td><span class=blanc>~No hi ha resultats</span>";
+				echo "<tr><td><span class=blanc>no hi ha resultats</span>";
 			}
 			while($row=mysqli_fetch_assoc($res))
 			{

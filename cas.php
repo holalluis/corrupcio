@@ -39,8 +39,7 @@
 <h1>
 	<span onclick=window.location='casos.php'>Casos de corrupció</span> &rsaquo; <?php echo $cas->nom ?>
 	<?php 
-		if($edit_mode)
-		{
+		if($edit_mode) {
 			?>
 			<button class=update onclick="update('casos',<?php echo $cas->id ?>,'nom','<?php echo urlencode($cas->nom) ?>')">edita</button> 
 			<?php
@@ -52,22 +51,21 @@
 	<!--descripció-->
 	<li class=portrait_marge>
 		<?php 
-			if(trim($cas->descripcio)=="")
-			{
-				echo "<i class=blanc>~no hi ha descripció</i>";
+			if(trim($cas->descripcio)=="") {
+				echo "<i class=blanc>no hi ha descripció</i>";
 			}
-			else
-			{
+			else {
 				echo "
 					<div class='nowrap descripcio' onclick=this.classList.toggle('nowrap')>
 						$cas->descripcio
 					</div>
 				";
 			}
-			if($edit_mode)
-			{ 
+			if($edit_mode) { 
 				?>
-				<button class=update onclick="update('casos','<?php echo $cas->id ?>','descripcio','<?php echo urlencode($cas->descripcio) ?>')">edita</button>
+				<button class=update onclick="update('casos','<?php echo $cas->id ?>','descripcio','<?php echo urlencode($cas->descripcio) ?>')">
+					edita
+				</button>
 				<?php 
 			} 
 		?>
@@ -77,7 +75,7 @@
 
 	<!--any-->
 	<li class=portrait_marge>
-		Any: <?php echo $cas->any ?> 
+		Any: <span class=descripcio><?php echo $cas->any ?></span>
 		<?php 
 			if($edit_mode) { 
 				?>
@@ -90,12 +88,11 @@
 	<!--espoli-->
 	<li class=portrait_marge>
 		Espoli: 
+		<span class=descripcio>
+			<?php echo number_format($cas->espoli,0,",","."); ?> euros 
+		</span>
 		<?php 
-			echo number_format($cas->espoli,0,",",".");
-		?> euros 
-		<?php 
-			if($edit_mode)
-			{ 
+			if($edit_mode) { 
 				?>
 				<button class=update onclick="update('casos','<?php echo $cas->id ?>','espoli','<?php echo urlencode($cas->espoli) ?>')">edita</button>
 				<?php 
@@ -106,41 +103,41 @@
 	<!--estat-->
 	<li class=portrait_marge>
 		Estat: 
-		<?php 
-			if($cas->estat=="")
-			{
-				echo "<span class=blanc>~no hi ha estat</span>";
-			}
-			else
-			{
-				echo $cas->estat;
-			}
-			if($edit_mode)
-			{ 
-				?>
-				<button class=update onclick="update('casos','<?php echo $cas->id ?>','estat','<?php echo urlencode($cas->estat) ?>')">edita</button>
-				<?php 
-			} 
-		?>
+		<span class=descripcio>
+			<?php 
+				if($cas->estat=="") {
+					echo "<span class=blanc>no hi ha estat</span>";
+				}
+				else {
+					echo $cas->estat;
+				}
+				if($edit_mode) { 
+					?>
+					<button class=update onclick="update('casos','<?php echo $cas->id ?>','estat','<?php echo urlencode($cas->estat) ?>')">edita</button>
+					<?php 
+				} 
+			?>
+		</span>
 	</li>
 
 	<!--implicats-->
 	<li class=portrait_marge>
 		Persones implicades: 
-		<?php 
-			if($cas->implicats=="") {
-				echo "<span class=blanc>~no hi ha persones implicades</span>";
-			}
-			else {
-				echo $cas->implicats;
-			}
-			if($edit_mode)
-			{ 
-				?>
-				<button class=update onclick="update('casos','<?php echo $cas->id ?>','implicats','<?php echo urlencode($cas->implicats) ?>')">edita</button>
-				<?php 
-			} 
-		?>
+		<span class=descripcio>
+			<?php 
+				if($cas->implicats=="") {
+					echo "<span class=blanc>no hi ha persones implicades</span>";
+				}
+				else {
+					echo $cas->implicats;
+				}
+				if($edit_mode) { 
+					?>
+					<button class=update onclick="update('casos','<?php echo $cas->id ?>','implicats','<?php echo urlencode($cas->implicats) ?>')">edita</button>
+					<?php 
+				} 
+			?>
+		</span>
 	</li>
 
 	<!--relacions persona-cas-->
@@ -165,13 +162,15 @@
 			?>)
 		</span>
 		<ul id=persones_relacionades>
+			<?php //si no hi ha elements
+				if($n==0){ ?><li class="item blanc">no hi ha resultats</li><?php }
+			?>
 			<?php
-				while($row=mysqli_fetch_assoc($res))
-				{
+				while($row=mysqli_fetch_assoc($res)) {
 					$rel_id=$row['id'];
 					$nom=$row['nom'];
 					$persona_id=$row['persona_id'];
-					$descripcio=$row['descripcio']=="" ? "<i class=blanc>~no hi ha descripció</i>" : $row['descripcio'];
+					$descripcio=$row['descripcio']=="" ? "<i class=blanc>no hi ha descripció</i>" : $row['descripcio'];
 					$ordre=$row['ordre'];
 					echo "<li class=item>";
 					if($edit_mode) {
@@ -204,8 +203,7 @@
 				}
 			?>
 			<?php
-				if($edit_mode)
-				{
+				if($edit_mode) {
 					?>
 					<li>
 						<form method=post action=data/insert/relacio_persona_cas.php>
@@ -262,6 +260,9 @@
 			Condemnes (<?php echo $n ?>)
 		</span>
 		<ul id=condemnes>
+			<?php //si no hi ha elements
+				if($n==0){ ?><li class="item blanc">no hi ha resultats</li><?php }
+			?>
 			<?php
 				while($row=mysqli_fetch_assoc($res)) {
 					$id=$row['id'];
@@ -347,9 +348,11 @@
 			Partits relacionats (<?php echo $n ?>)
 		</span>
 		<ul id=partits>
+			<?php //si no hi ha elements
+				if($n==0){ ?><li class="item blanc">no hi ha resultats</li><?php }
+			?>
 			<?php
-				while($row=mysqli_fetch_assoc($res))
-				{
+				while($row=mysqli_fetch_assoc($res)) {
 					$partit_id=$row['partit_id'];
 					$partit=$row['partit'];
 					echo "
@@ -389,6 +392,9 @@
 			Empreses relacionades (<?php echo $n ?>)
 		</span>
 		<ul id=empreses>
+			<?php //si no hi ha elements
+				if($n==0){ ?><li class="item blanc">no hi ha resultats</li><?php }
+			?>
 			<?php
 				while($row=mysqli_fetch_assoc($res))
 				{

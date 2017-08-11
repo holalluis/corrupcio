@@ -54,6 +54,11 @@
 
 <!--resum-->
 <table id=casos>
+	<style>
+		#casos td:nth-child(n+2){
+			font-size:11px;
+		}
+	</style>
 	<?php
 		//gestionar GET ordenar per:
 		if(isset($_GET['order_by'])){
@@ -80,7 +85,7 @@
 		$res=$mysql->query($sql) or die(mysqli_error($mysql));
 		if(mysqli_num_rows($res)==0)
 		{
-			echo "<tr><td><span class=blanc>~No hi ha resultats</span>";
+			echo "<tr><td><span class=blanc>no hi ha resultats</span>";
 		}
 		while($row=mysqli_fetch_assoc($res)) {
 			$id=$row['id'];
@@ -93,7 +98,7 @@
 				<tr>
 					<td><a href=cas.php?id=$id>$nom</a>
 					<td class=numero>$any
-					<td class=numero> $registrats de $implicats
+					<td class=numero title='Persones implicades'> $registrats de $implicats
 					<td><progress max=100 value=$percentatge></progress>
 					<td class=numero>".number_format($percentatge,1,",",".")." % 
 			";

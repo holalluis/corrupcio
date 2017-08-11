@@ -1,6 +1,7 @@
 <!doctype html><html><head>
 	<?php include'imports.php'?>
 	<style>
+		#footer div.item[pagina=contact]{ color:black; }
 		form > table td {
 			padding:0.3em 0.6em;
 		}
@@ -17,10 +18,13 @@
 </h1>
 
 <div class=portrait_marge>
-	<p>
-		Aquí apareixerà el mail de contacte de la pàgina (més endavant).
-		No apareixerà un formulari per enviar mails automàticament perquè porta problemes.
-	</p>
+	<div class=descripcio>
+		<p>
+			Aquí apareixerà un mail de contacte de la pàgina (més endavant).
+			<br>
+			No apareixerà un formulari per enviar mails automàticament perquè porten problemes.
+		</p>
+	</div>
 </div>
 
 </div>

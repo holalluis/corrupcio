@@ -14,12 +14,18 @@
 	Condemnes
 </h1>
 
+<!--descripcio-->
 <div class=portrait_marge>
 	<p class=descripcio>Condemnes caigudes a persones implicades en casos de corrupció</p>
 </div>
 
 <!--resum-->
 <table id=condemnes>
+	<style>
+		#condemnes td:nth-child(n+2){
+			font-size:11px;
+		}
+	</style>
 	<?php
 			$sql="
 				SELECT 
@@ -36,7 +42,7 @@
 			$res=$mysql->query($sql) or die(mysqli_error($mysql));
 			if(mysqli_num_rows($res)==0)
 			{
-				echo "<tr><td><span class=blanc>~No hi ha resultats</span>";
+				echo "<tr><td><span class=blanc>no hi ha resultats</span>";
 			}
 			while($row=mysqli_fetch_assoc($res))
 			{
