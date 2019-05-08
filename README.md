@@ -1,3 +1,5 @@
+status: inactiu & inacabat
+
 # ENCICLOPÈDIA DE LA CORRUPCIÓ
 - Web per recopilar casos de corrupció a l'estat espanyol.
 
